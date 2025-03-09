@@ -92,21 +92,84 @@ const HeroSection: NextPage<Props> = ({ }) => {
             <main className="relative">
 
 
-                {/* Features Section */}
-                <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-
-                    {/* Enhanced Cosmic Background */}
+                {/* Features Section - Neo-Tokyo 2077 */}
+                <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950">
+                
+                    {/* Neo-Tokyo Cyberpunk Background */}
                     <div className="absolute inset-0 overflow-hidden">
-                        {/* Base gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-purple-900/30 to-black/50"></div>
-
-                        {/* Star layers */}
-                        <div className="stars-container">
-                            <div className="parallax-stars stars-small"></div>
-                            <div className="parallax-stars stars-medium"></div>
-                            <div className="parallax-stars stars-large"></div>
+                        {/* Base gradient - cyberpunk inspired colors */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-indigo-200/70 via-purple-200/50 to-fuchsia-200/60 dark:from-indigo-900/80 dark:via-purple-900/70 dark:to-fuchsia-900/60"></div>
+                        
+                        {/* Cyberpunk Grid */}
+                        <div className="absolute inset-0 cyber-grid"></div>
+                        
+                        {/* Digital scan line effect - enhanced */}
+                        <div className="absolute inset-0 cyber-scan-lines"></div>
+                        
+                        {/* Neo-Tokyo cityscape silhouette */}
+                        <div className="absolute bottom-0 left-0 right-0 h-[30vh] neo-tokyo-skyline"></div>
+                        
+                        {/* Holographic interfaces */}
+                        <div className="absolute top-[10%] left-[5%] w-[200px] h-[150px] holo-interface holo-blue"></div>
+                        <div className="absolute bottom-[20%] right-[8%] w-[180px] h-[120px] holo-interface holo-purple"></div>
+                        
+                        {/* Floating kanji holograms */}
+                        <div className="absolute top-[15%] right-[15%] cyber-kanji text-[12rem] cyber-glow-text-pink">技</div>
+                        <div className="absolute bottom-[25%] left-[10%] cyber-kanji text-[10rem] cyber-glow-text-blue">未来</div>
+                        <div className="absolute top-[40%] left-[20%] cyber-kanji text-[8rem] cyber-glow-text-purple">力</div>
+                        
+                        {/* Digital cherry blossoms */}
+                        <div className="digital-sakura-container">
+                            {[...Array(15)].map((_, i) => (
+                                <div key={i} className={`digital-sakura sakura-${i + 1}`}></div>
+                            ))}
                         </div>
+                        
+                        {/* Cyberpunk torii gates with neon glow */}
+                        <div className="absolute bottom-[5%] left-[25%] w-[150px] h-[120px] cyber-torii-gate"></div>
+                        <div className="absolute bottom-[10%] right-[20%] w-[100px] h-[80px] cyber-torii-gate"></div>
+                        
+                        {/* Neon accent lines */}
+                        <div className="absolute top-0 left-0 h-[80vh] w-[3px] neon-line neon-blue"></div>
+                        <div className="absolute top-0 right-0 h-[60vh] w-[3px] neon-line neon-purple"></div>
+                        <div className="absolute top-[30%] left-[30%] h-[2px] w-[150px] neon-line neon-pink horizontal"></div>
+                        <div className="absolute bottom-[40%] right-[25%] h-[2px] w-[200px] neon-line neon-cyan horizontal"></div>
+                        
+                        {/* Digital data streams */}
+                        <div className="absolute top-0 left-[20%] data-stream data-stream-1"></div>
+                        <div className="absolute top-0 right-[40%] data-stream data-stream-2"></div>
+                        <div className="absolute top-[30%] right-0 data-stream data-stream-3 horizontal"></div>
+                        
+                        {/* Glitching elements */}
+                        <div className="absolute top-[10%] left-[40%] glitch-box"></div>
+                        <div className="absolute bottom-[15%] right-[30%] glitch-box"></div>
+                        
+                        {/* Cyberpunk UI elements */}
+                        <div className="absolute top-5 left-5 w-[250px] h-[150px] cyber-ui-element left-align"></div>
+                        <div className="absolute top-5 right-5 w-[250px] h-[150px] cyber-ui-element right-align"></div>
+                        <div className="absolute bottom-5 left-5 w-[200px] h-[100px] cyber-ui-element left-align bottom"></div>
+                        <div className="absolute bottom-5 right-5 w-[200px] h-[100px] cyber-ui-element right-align bottom"></div>
+                        
+                        {/* Neon Japanese patterns */}
+                        <div className="absolute top-[5%] left-0 w-full h-[80px] neon-seigaiha"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-[80px] neon-asanoha"></div>
+                        
+                        {/* Digital particles */}
+                        <div className="cyber-particles"></div>
+                        
+                        {/* Holographic circles */}
+                        <div className="absolute top-[30%] left-[10%] w-[150px] h-[150px] holo-circle"></div>
+                        <div className="absolute bottom-[30%] right-[15%] w-[200px] h-[200px] holo-circle"></div>
+                        
+                        {/* Cyberpunk tech circles */}
+                        <div className="absolute top-[20%] right-[30%] cyber-circle cyber-circle-lg"></div>
+                        <div className="absolute bottom-[20%] left-[35%] cyber-circle cyber-circle-md"></div>
+                        <div className="absolute top-[50%] left-[15%] cyber-circle cyber-circle-sm"></div>
+                        
+                        {/* Digital noise overlay */}
+                        <div className="absolute inset-0 digital-noise"></div>
                     </div>
+
 
                     {/* Content */}
                     <div className="relative z-10">
@@ -115,7 +178,7 @@ const HeroSection: NextPage<Props> = ({ }) => {
                             data-aos="fade-up"
                             data-aos-delay="200">
                             <section className="pt-24 py-2 px-2">
-                                <div className="parallax-bg rounded-[40px] overflow-hidden shadow-2xl border border-gray-200/20 relative group">
+                                <div className="parallax-bg rounded-[30px] overflow-hidden shadow-2xl border border-cyan-500/20 relative group">
                                     <video
                                         autoPlay
                                         loop
@@ -123,17 +186,40 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                         playsInline
                                         className="object-cover h-[700px] w-full scale-105 group-hover:scale-100 transition-transform duration-700"
                                     >
-                                        <source src="/Lines.mp4" type="video/mp4" />
+                                        <source src="/AnimeBackground.mp4" type="video/mp4" />
                                     </video>
 
-                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800/95 via-gray-700/90 to-gray-800/95 dark:from-gray-900/95 dark:via-gray-800/90 dark:to-gray-900/95 backdrop-blur-sm">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-violet-900/80 to-indigo-950/90 backdrop-blur-sm">
+                                        {/* Top border with pulse effect */}
+                                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400/90 via-fuchsia-500/90 to-cyan-400/90 animate-gradient-x"></div>
+
+                                        {/* Geometric decorative elements */}
+                                        <div className="absolute top-8 right-8">
+                                            <div className="w-20 h-20 border-r-2 border-t-2 border-cyan-400/40 rotate-12"></div>
+                                        </div>
+                                        <div className="absolute bottom-8 left-8">
+                                            <div className="w-20 h-20 border-l-2 border-b-2 border-fuchsia-500/40 -rotate-12"></div>
+                                        </div>
+
+                                        {/* Japanese tech-inspired decorative text */}
+                                        <div className="absolute top-10 left-10 text-cyan-400/20 font-bold text-5xl" style={{ writingMode: 'vertical-rl' }}>
+                                            データ
+                                        </div>
+                                        <div className="absolute bottom-10 right-10 text-fuchsia-500/20 font-bold text-5xl" style={{ writingMode: 'vertical-rl' }}>
+                                            システム
+                                        </div>
+
                                         <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8">
-                                            <h1 className="text-white text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto">
-                                                Secure Metadata
-                                                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-200 dark:from-white dark:to-gray-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
-                                                    on MoveVM
-                                                </span>
-                                            </h1>
+                                            <div className="relative">
+                                                {/* Subtle glow effect around title */}
+                                                <div className="absolute inset-0 blur-md bg-cyan-500/10 rounded-3xl"></div>
+                                                <h1 className="text-white text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+                                                    Secure Metadata
+                                                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
+                                                        on MoveVM
+                                                    </span>
+                                                </h1>
+                                            </div>
 
                                             <p className="text-white/90 text-center text-lg sm:text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
                                                 Build secure and transparent file metadata storage solutions powered by
@@ -142,16 +228,36 @@ const HeroSection: NextPage<Props> = ({ }) => {
 
                                             <div className="flex flex-wrap justify-center gap-4 mt-8">
                                                 <a href="https://docs.kanari.network/"
-                                                    className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:translate-y-0 animate-slide-up"
+                                                    className="relative bg-gradient-to-r from-cyan-600 to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
                                                 >
+                                                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/30 to-cyan-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
                                                     Explore Docs
                                                 </a>
                                                 <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                                    className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white/20 active:translate-y-0 animate-slide-up"
+                                                    className="relative bg-fuchsia-900/40 border border-fuchsia-500/30 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(217,70,239,0.4)] hover:bg-fuchsia-900/60 active:translate-y-0 animate-slide-up"
                                                 >
                                                     Join Testnet
+                                                    <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-fuchsia-400/50"></span>
+                                                    <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-fuchsia-400/50"></span>
                                                 </a>
                                             </div>
+                                        </div>
+
+                                        {/* Tech pulse indicator */}
+                                        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+                                            <div className="h-[30px] w-[2px] bg-cyan-400/40 mx-1"></div>
+                                            <div className="h-[20px] w-[2px] bg-fuchsia-400/30 mx-1"></div>
+                                            <div className="h-[40px] w-[2px] bg-cyan-400/40 mx-1"></div>
+                                            <div className="h-[15px] w-[2px] bg-fuchsia-400/30 mx-1"></div>
+                                            <div className="h-[25px] w-[2px] bg-cyan-400/40 mx-1"></div>
+                                        </div>
+
+                                        {/* Digital circuit lines */}
+                                        <div className="absolute bottom-0 left-0 w-full h-[50px] opacity-20">
+                                            <div className="absolute bottom-6 left-10 w-[100px] h-[1px] bg-cyan-400"></div>
+                                            <div className="absolute bottom-6 left-10 w-[1px] h-[20px] bg-cyan-400"></div>
+                                            <div className="absolute bottom-6 right-10 w-[100px] h-[1px] bg-fuchsia-400"></div>
+                                            <div className="absolute bottom-6 right-10 w-[1px] h-[20px] bg-fuchsia-400"></div>
                                         </div>
                                     </div>
                                 </div>

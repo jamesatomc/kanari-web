@@ -17,20 +17,82 @@ const PrivacyPolicy = () => {
             <main className="relative">
 
 
-                {/* Features Section */}
-                <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-
-                    {/* Enhanced Cosmic Background */}
+                {/* Features Section - Neo-Tokyo 2077 */}
+                <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950">
+                
+                    {/* Neo-Tokyo Cyberpunk Background */}
                     <div className="absolute inset-0 overflow-hidden">
-                        {/* Base gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-purple-900/30 to-black/50"></div>
-
-                        {/* Star layers */}
-                        <div className="stars-container">
-                            <div className="parallax-stars stars-small"></div>
-                            <div className="parallax-stars stars-medium"></div>
-                            <div className="parallax-stars stars-large"></div>
+                        {/* Base gradient - cyberpunk inspired colors */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-indigo-200/70 via-purple-200/50 to-fuchsia-200/60 dark:from-indigo-900/80 dark:via-purple-900/70 dark:to-fuchsia-900/60"></div>
+                        
+                        {/* Cyberpunk Grid */}
+                        <div className="absolute inset-0 cyber-grid"></div>
+                        
+                        {/* Digital scan line effect - enhanced */}
+                        <div className="absolute inset-0 cyber-scan-lines"></div>
+                        
+                        {/* Neo-Tokyo cityscape silhouette */}
+                        <div className="absolute bottom-0 left-0 right-0 h-[30vh] neo-tokyo-skyline"></div>
+                        
+                        {/* Holographic interfaces */}
+                        <div className="absolute top-[10%] left-[5%] w-[200px] h-[150px] holo-interface holo-blue"></div>
+                        <div className="absolute bottom-[20%] right-[8%] w-[180px] h-[120px] holo-interface holo-purple"></div>
+                        
+                        {/* Floating kanji holograms */}
+                        <div className="absolute top-[15%] right-[15%] cyber-kanji text-[12rem] cyber-glow-text-pink">技</div>
+                        <div className="absolute bottom-[25%] left-[10%] cyber-kanji text-[10rem] cyber-glow-text-blue">未来</div>
+                        <div className="absolute top-[40%] left-[20%] cyber-kanji text-[8rem] cyber-glow-text-purple">力</div>
+                        
+                        {/* Digital cherry blossoms */}
+                        <div className="digital-sakura-container">
+                            {[...Array(15)].map((_, i) => (
+                                <div key={i} className={`digital-sakura sakura-${i + 1}`}></div>
+                            ))}
                         </div>
+                        
+                        {/* Cyberpunk torii gates with neon glow */}
+                        <div className="absolute bottom-[5%] left-[25%] w-[150px] h-[120px] cyber-torii-gate"></div>
+                        <div className="absolute bottom-[10%] right-[20%] w-[100px] h-[80px] cyber-torii-gate"></div>
+                        
+                        {/* Neon accent lines */}
+                        <div className="absolute top-0 left-0 h-[80vh] w-[3px] neon-line neon-blue"></div>
+                        <div className="absolute top-0 right-0 h-[60vh] w-[3px] neon-line neon-purple"></div>
+                        <div className="absolute top-[30%] left-[30%] h-[2px] w-[150px] neon-line neon-pink horizontal"></div>
+                        <div className="absolute bottom-[40%] right-[25%] h-[2px] w-[200px] neon-line neon-cyan horizontal"></div>
+                        
+                        {/* Digital data streams */}
+                        <div className="absolute top-0 left-[20%] data-stream data-stream-1"></div>
+                        <div className="absolute top-0 right-[40%] data-stream data-stream-2"></div>
+                        <div className="absolute top-[30%] right-0 data-stream data-stream-3 horizontal"></div>
+                        
+                        {/* Glitching elements */}
+                        <div className="absolute top-[10%] left-[40%] glitch-box"></div>
+                        <div className="absolute bottom-[15%] right-[30%] glitch-box"></div>
+                        
+                        {/* Cyberpunk UI elements */}
+                        <div className="absolute top-5 left-5 w-[250px] h-[150px] cyber-ui-element left-align"></div>
+                        <div className="absolute top-5 right-5 w-[250px] h-[150px] cyber-ui-element right-align"></div>
+                        <div className="absolute bottom-5 left-5 w-[200px] h-[100px] cyber-ui-element left-align bottom"></div>
+                        <div className="absolute bottom-5 right-5 w-[200px] h-[100px] cyber-ui-element right-align bottom"></div>
+                        
+                        {/* Neon Japanese patterns */}
+                        <div className="absolute top-[5%] left-0 w-full h-[80px] neon-seigaiha"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-[80px] neon-asanoha"></div>
+                        
+                        {/* Digital particles */}
+                        <div className="cyber-particles"></div>
+                        
+                        {/* Holographic circles */}
+                        <div className="absolute top-[30%] left-[10%] w-[150px] h-[150px] holo-circle"></div>
+                        <div className="absolute bottom-[30%] right-[15%] w-[200px] h-[200px] holo-circle"></div>
+                        
+                        {/* Cyberpunk tech circles */}
+                        <div className="absolute top-[20%] right-[30%] cyber-circle cyber-circle-lg"></div>
+                        <div className="absolute bottom-[20%] left-[35%] cyber-circle cyber-circle-md"></div>
+                        <div className="absolute top-[50%] left-[15%] cyber-circle cyber-circle-sm"></div>
+                        
+                        {/* Digital noise overlay */}
+                        <div className="absolute inset-0 digital-noise"></div>
                     </div>
 
                     {/* Content */}
