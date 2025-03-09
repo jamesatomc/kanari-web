@@ -85,9 +85,6 @@
 /* Japanese-inspired design elements */
 /* Neo-Tokyo 2077 Cyberpunk styling */
 
-/* Import Japanese font for kanji elements */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
 /* Cyberpunk grid - retro futuristic grid layout */
 .cyber-grid {
   background-image: 
@@ -222,53 +219,6 @@
   100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* Digital cherry blossoms */
-.digital-sakura-container {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.digital-sakura {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff2d95' d='M50,0 C55,25 75,50 100,50 C75,50 55,75 50,100 C45,75 25,50 0,50 C25,50 45,25 50,0 Z'%3E%3C/path%3E%3C/svg%3E");
-  background-size: contain;
-  filter: drop-shadow(0 0 5px rgba(255, 45, 149, 0.7));
-  animation: digitalSakuraFall linear infinite, digitalSakuraSpin linear infinite;
-  opacity: 0.7;
-}
-
-@keyframes digitalSakuraFall {
-  0% { transform: translateY(-5vh); opacity: 0; }
-  5% { opacity: 0.7; }
-  95% { opacity: 0.7; }
-  100% { transform: translateY(105vh); opacity: 0; }
-}
-
-@keyframes digitalSakuraSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Generate 15 unique digital sakura petals with varying animations */
-.sakura-1 { left: 5%; animation-duration: 15s, 10s; }
-.sakura-2 { left: 10%; animation-duration: 12s, 8s; width: 20px; height: 20px; }
-.sakura-3 { left: 15%; animation-duration: 17s, 12s; filter: drop-shadow(0 0 5px rgba(79, 209, 255, 0.7)); }
-.sakura-4 { left: 25%; animation-duration: 14s, 9s; width: 10px; height: 10px; }
-.sakura-5 { left: 35%; animation-duration: 16s, 11s; filter: drop-shadow(0 0 5px rgba(185, 103, 255, 0.7)); }
-.sakura-6 { left: 40%; animation-duration: 13s, 8s; width: 18px; height: 18px; }
-.sakura-7 { left: 50%; animation-duration: 18s, 13s; filter: drop-shadow(0 0 5px rgba(255, 45, 149, 0.7)); }
-.sakura-8 { left: 60%; animation-duration: 15s, 10s; width: 12px; height: 12px; }
-.sakura-9 { left: 65%; animation-duration: 12s, 7s; filter: drop-shadow(0 0 5px rgba(79, 209, 255, 0.7)); }
-.sakura-10 { left: 75%; animation-duration: 16s, 11s; width: 22px; height: 22px; }
-.sakura-11 { left: 80%; animation-duration: 14s, 9s; filter: drop-shadow(0 0 5px rgba(185, 103, 255, 0.7)); }
-.sakura-12 { left: 85%; animation-duration: 17s, 12s; width: 15px; height: 15px; }
-.sakura-13 { left: 90%; animation-duration: 13s, 8s; filter: drop-shadow(0 0 5px rgba(255, 45, 149, 0.7)); }
-.sakura-14 { left: 95%; animation-duration: 15s, 10s; width: 17px; height: 17px; }
-.sakura-15 { left: 20%; animation-duration: 16s, 11s; filter: drop-shadow(0 0 5px rgba(79, 209, 255, 0.7)); }
 
 /* Cyberpunk torii gates */
 .cyber-torii-gate {
@@ -534,22 +484,6 @@
   100% { filter: drop-shadow(0 0 8px rgba(79, 209, 255, 0.7)); }
 }
 
-/* Digital particles */
-.cyber-particles {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                    radial-gradient(circle at 30% 60%, rgba(0, 238, 255, 0.15) 1px, transparent 1px),
-                    radial-gradient(circle at 70% 40%, rgba(255, 45, 149, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px, 30px 30px, 40px 40px;
-  animation: particleShift 10s linear infinite;
-  opacity: 0.5;
-}
-
-@keyframes particleShift {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 20px 20px, 30px 30px, 40px 40px; }
-}
 
 /* Holographic circles */
 .holo-circle {
