@@ -65,12 +65,6 @@ export default function MediaKit() {
                         <div className="absolute bottom-[25%] left-[10%] cyber-kanji text-[10rem] cyber-glow-text-blue">未来</div>
                         <div className="absolute top-[40%] left-[20%] cyber-kanji text-[8rem] cyber-glow-text-purple">力</div>
                         
-                        {/* Digital cherry blossoms */}
-                        <div className="digital-sakura-container">
-                            {[...Array(15)].map((_, i) => (
-                                <div key={i} className={`digital-sakura sakura-${i + 1}`}></div>
-                            ))}
-                        </div>
                         
                         {/* Cyberpunk torii gates with neon glow */}
                         <div className="absolute bottom-[5%] left-[25%] w-[150px] h-[120px] cyber-torii-gate"></div>
@@ -100,9 +94,6 @@ export default function MediaKit() {
                         {/* Neon Japanese patterns */}
                         <div className="absolute top-[5%] left-0 w-full h-[80px] neon-seigaiha"></div>
                         <div className="absolute bottom-0 left-0 w-full h-[80px] neon-asanoha"></div>
-                        
-                        {/* Digital particles */}
-                        <div className="cyber-particles"></div>
                         
                         {/* Holographic circles */}
                         <div className="absolute top-[30%] left-[10%] w-[150px] h-[150px] holo-circle"></div>
