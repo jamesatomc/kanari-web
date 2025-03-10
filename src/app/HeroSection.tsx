@@ -177,7 +177,7 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                         playsInline
                                         className="object-cover h-[700px] w-full scale-105 group-hover:scale-100 transition-transform duration-700"
                                     >
-                                        <source src="/AnimeBackground.mp4" type="video/mp4" />
+                                        <source src="/Lines.mp4" type="video/mp4" />
                                     </video>
 
                                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-violet-900/80 to-indigo-950/90 backdrop-blur-sm">
