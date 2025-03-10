@@ -266,19 +266,25 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                             </p>
 
                                             <div className="flex flex-wrap justify-center gap-4 mt-8">
-                                                <a href="https://docs.kanari.network/"
+                                                        <a href="https://docs.kanari.network/"
                                                     className="relative bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(220,38,38,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
                                                 >
                                                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-400/0 via-red-400/30 to-red-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
                                                     <span className="relative z-10 flex items-center">
-                                                        <span className="mr-2">探索</span> Explore Docs
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                                                        </svg>
+                                                        Explore Docs
                                                     </span>
                                                 </a>
                                                 <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
                                                     className="relative bg-indigo-900/40 border border-cyan-500/30 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:bg-indigo-900/60 active:translate-y-0 animate-slide-up"
                                                 >
                                                     <span className="relative z-10 flex items-center">
-                                                        <span className="mr-2">参加</span> Join Testnet
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                                        </svg>
+                                                        Join Testnet
                                                     </span>
                                                     <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-cyan-400/50"></span>
                                                     <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-cyan-400/50"></span>
