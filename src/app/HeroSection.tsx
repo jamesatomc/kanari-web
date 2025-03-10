@@ -181,35 +181,83 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                     </video>
 
                                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-violet-900/80 to-indigo-950/90 backdrop-blur-sm">
+                                        {/* Japanese-style decorative frame */}
+                                        <div className="absolute inset-8 border border-red-500/20 rounded-lg"></div>
+                                        <div className="absolute inset-10 border border-cyan-400/30 rounded-lg"></div>
+                                        
                                         {/* Top border with pulse effect */}
-                                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400/90 via-fuchsia-500/90 to-cyan-400/90 animate-gradient-x"></div>
+                                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500/90 via-fuchsia-500/90 to-cyan-400/90 animate-gradient-x"></div>
+                                        
+                                        {/* Japanese wave pattern (seigaiha) */}
+                                        <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-10" 
+                                             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
+                                        </div>
+                                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-repeat-x opacity-10 transform rotate-180"
+                                             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
+                                        </div>
 
-                                        {/* Geometric decorative elements */}
-                                        <div className="absolute top-8 right-8">
-                                            <div className="w-20 h-20 border-r-2 border-t-2 border-cyan-400/40 rotate-12"></div>
+                                        {/* Vertical Japanese Kanji decorations */}
+                                        <div className="absolute top-1/4 left-5 text-red-500/20 font-bold text-6xl transform -rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                            未来技術
                                         </div>
-                                        <div className="absolute bottom-8 left-8">
-                                            <div className="w-20 h-20 border-l-2 border-b-2 border-fuchsia-500/40 -rotate-12"></div>
+                                        <div className="absolute bottom-1/4 right-5 text-cyan-400/20 font-bold text-6xl transform rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                            安全保障
                                         </div>
 
-                                        {/* Japanese tech-inspired decorative text */}
-                                        <div className="absolute top-10 left-10 text-cyan-400/20 font-bold text-5xl" style={{ writingMode: 'vertical-rl' }}>
-                                            データ
+                                        {/* Cherry blossom decorative elements */}
+                                        <div className="absolute top-20 right-20">
+                                            <svg className="w-20 h-20 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"/>
+                                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                                <path d="M18.2,7.2c-1.6,0-2.6,1.3-3.2,2.3C14.4,8.5,13.4,7.2,12,7.2s-2.4,1.3-3,2.3c-0.6-1-1.6-2.3-3.2-2.3S2.7,8.5,2.1,9.5C1.5,8.5,0.5,7.2,0,7.2"/>
+                                                <path d="M18.2,16.8c-1.6,0-2.6-1.3-3.2-2.3c-0.6,1-1.6,2.3-3,2.3s-2.4-1.3-3-2.3c-0.6,1-1.6,2.3-3.2,2.3s-2.6-1.3-3.2-2.3c-0.6,1-1.5,2.3-2.1,2.3"/>
+                                                <path d="M23.4,12c0,1.6-1.3,2.6-2.3,3.2c1-0.6,2.3-1.6,2.3-3s-1.3-2.4-2.3-3c1-0.6,2.3-1.6,2.3-3.2s-1.3-2.6-2.3-3.2c1-0.6,2.3-1.5,2.3-2.1"/>
+                                                <path d="M0.6,12c0,1.6,1.3,2.6,2.3,3.2c-1-0.6-2.3-1.6-2.3-3s1.3-2.4,2.3-3c-1-0.6-2.3-1.6-2.3-3.2s1.3-2.6,2.3-3.2c-1-0.6-2.3-1.5-2.3-2.1"/>
+                                            </svg>
                                         </div>
-                                        <div className="absolute bottom-10 right-10 text-fuchsia-500/20 font-bold text-5xl" style={{ writingMode: 'vertical-rl' }}>
-                                            システム
+                                        <div className="absolute bottom-20 left-20">
+                                            <svg className="w-16 h-16 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"/>
+                                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                                <path d="M18.2,7.2c-1.6,0-2.6,1.3-3.2,2.3C14.4,8.5,13.4,7.2,12,7.2s-2.4,1.3-3,2.3c-0.6-1-1.6-2.3-3.2-2.3S2.7,8.5,2.1,9.5C1.5,8.5,0.5,7.2,0,7.2"/>
+                                                <path d="M18.2,16.8c-1.6,0-2.6-1.3-3.2-2.3c-0.6,1-1.6,2.3-3,2.3s-2.4-1.3-3-2.3c-0.6,1-1.6,2.3-3.2,2.3s-2.6-1.3-3.2-2.3c-0.6,1-1.5,2.3-2.1,2.3"/>
+                                                <path d="M23.4,12c0,1.6-1.3,2.6-2.3,3.2c1-0.6,2.3-1.6,2.3-3s-1.3-2.4-2.3-3c1-0.6,2.3-1.6,2.3-3.2s-1.3-2.6-2.3-3.2c1-0.6,2.3-1.5,2.3-2.1"/>
+                                                <path d="M0.6,12c0,1.6,1.3,2.6,2.3,3.2c-1-0.6-2.3-1.6-2.3-3s1.3-2.4,2.3-3c-1-0.6-2.3-1.6-2.3-3.2s1.3-2.6,2.3-3.2c-1-0.6-2.3-1.5-2.3-2.1"/>
+                                            </svg>
+                                        </div>
+
+                                        {/* Japanese-inspired geometric elements */}
+                                        <div className="absolute top-24 left-24">
+                                            <div className="w-16 h-16 border-r-2 border-t-2 border-red-500/30 rotate-12"></div>
+                                        </div>
+                                        <div className="absolute bottom-24 right-24">
+                                            <div className="w-16 h-16 border-l-2 border-b-2 border-cyan-400/30 -rotate-12"></div>
                                         </div>
 
                                         <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8">
                                             <div className="relative">
-                                                {/* Subtle glow effect around title */}
-                                                <div className="absolute inset-0 blur-md bg-cyan-500/10 rounded-3xl"></div>
+                                                {/* Japanese-style decorative element */}
+                                                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+                                                    <svg className="w-32 h-8 text-red-500/40" viewBox="0 0 100 20" fill="currentColor">
+                                                        <path d="M0,10 Q25,0 50,10 T100,10" />
+                                                    </svg>
+                                                </div>
+                                                
+                                                {/* Subtle glow effect around title with Japanese-inspired colors */}
+                                                <div className="absolute inset-0 blur-md bg-red-500/10 rounded-3xl"></div>
                                                 <h1 className="text-white text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
                                                     Secure Metadata
-                                                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
+                                                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-cyan-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
                                                         on MoveVM
                                                     </span>
                                                 </h1>
+                                                
+                                                {/* Japanese-style decorative element */}
+                                                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-180">
+                                                    <svg className="w-32 h-8 text-cyan-400/40" viewBox="0 0 100 20" fill="currentColor">
+                                                        <path d="M0,10 Q25,0 50,10 T100,10" />
+                                                    </svg>
+                                                </div>
                                             </div>
 
                                             <p className="text-white/90 text-center text-lg sm:text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
@@ -219,40 +267,45 @@ const HeroSection: NextPage<Props> = ({ }) => {
 
                                             <div className="flex flex-wrap justify-center gap-4 mt-8">
                                                 <a href="https://docs.kanari.network/"
-                                                    className="relative bg-gradient-to-r from-cyan-600 to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
+                                                    className="relative bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(220,38,38,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
                                                 >
-                                                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/30 to-cyan-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
-                                                    Explore Docs
+                                                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-400/0 via-red-400/30 to-red-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
+                                                    <span className="relative z-10 flex items-center">
+                                                        <span className="mr-2">探索</span> Explore Docs
+                                                    </span>
                                                 </a>
                                                 <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                                    className="relative bg-fuchsia-900/40 border border-fuchsia-500/30 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(217,70,239,0.4)] hover:bg-fuchsia-900/60 active:translate-y-0 animate-slide-up"
+                                                    className="relative bg-indigo-900/40 border border-cyan-500/30 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:bg-indigo-900/60 active:translate-y-0 animate-slide-up"
                                                 >
-                                                    Join Testnet
-                                                    <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-fuchsia-400/50"></span>
-                                                    <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-fuchsia-400/50"></span>
+                                                    <span className="relative z-10 flex items-center">
+                                                        <span className="mr-2">参加</span> Join Testnet
+                                                    </span>
+                                                    <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-cyan-400/50"></span>
+                                                    <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-cyan-400/50"></span>
                                                 </a>
                                             </div>
                                         </div>
 
-                                        {/* Tech pulse indicator */}
+                                        {/* Japanese-style tech pulse indicator */}
                                         <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-                                            <div className="h-[30px] w-[2px] bg-cyan-400/40 mx-1"></div>
-                                            <div className="h-[20px] w-[2px] bg-fuchsia-400/30 mx-1"></div>
+                                            <div className="h-[30px] w-[2px] bg-red-500/40 mx-1"></div>
+                                            <div className="h-[20px] w-[2px] bg-white/30 mx-1"></div>
                                             <div className="h-[40px] w-[2px] bg-cyan-400/40 mx-1"></div>
-                                            <div className="h-[15px] w-[2px] bg-fuchsia-400/30 mx-1"></div>
-                                            <div className="h-[25px] w-[2px] bg-cyan-400/40 mx-1"></div>
+                                            <div className="h-[15px] w-[2px] bg-white/30 mx-1"></div>
+                                            <div className="h-[25px] w-[2px] bg-red-500/40 mx-1"></div>
                                         </div>
 
-                                        {/* Digital circuit lines */}
+                                        {/* Digital circuit lines with Japanese style */}
                                         <div className="absolute bottom-0 left-0 w-full h-[50px] opacity-20">
-                                            <div className="absolute bottom-6 left-10 w-[100px] h-[1px] bg-cyan-400"></div>
-                                            <div className="absolute bottom-6 left-10 w-[1px] h-[20px] bg-cyan-400"></div>
-                                            <div className="absolute bottom-6 right-10 w-[100px] h-[1px] bg-fuchsia-400"></div>
-                                            <div className="absolute bottom-6 right-10 w-[1px] h-[20px] bg-fuchsia-400"></div>
+                                            <div className="absolute bottom-6 left-10 w-[100px] h-[1px] bg-red-400"></div>
+                                            <div className="absolute bottom-6 left-10 w-[1px] h-[20px] bg-red-400"></div>
+                                            <div className="absolute bottom-6 right-10 w-[100px] h-[1px] bg-cyan-400"></div>
+                                            <div className="absolute bottom-6 right-10 w-[1px] h-[20px] bg-cyan-400"></div>
                                         </div>
                                     </div>
                                 </div>
                             </section>
+
                         </div>
 
                         {/* Features Section */}
