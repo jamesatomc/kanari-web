@@ -109,53 +109,53 @@ const HeroSection: NextPage<Props> = ({ }) => {
                         {/* Neo-Tokyo cityscape silhouette */}
                         <div className="absolute bottom-0 left-0 right-0 h-[30vh] neo-tokyo-skyline"></div>
                         
-                        {/* Holographic interfaces */}
-                        <div className="absolute top-[10%] left-[5%] w-[200px] h-[150px] holo-interface holo-blue"></div>
-                        <div className="absolute bottom-[20%] right-[8%] w-[180px] h-[120px] holo-interface holo-purple"></div>
+                        {/* Holographic interfaces - hide on mobile */}
+                        <div className="absolute top-[10%] left-[5%] w-[200px] h-[150px] holo-interface holo-blue hidden sm:block"></div>
+                        <div className="absolute bottom-[20%] right-[8%] w-[180px] h-[120px] holo-interface holo-purple hidden sm:block"></div>
                         
-                        {/* Floating kanji holograms */}
-                        <div className="absolute top-[15%] right-[15%] cyber-kanji text-[12rem] cyber-glow-text-pink">技</div>
-                        <div className="absolute bottom-[25%] left-[10%] cyber-kanji text-[10rem] cyber-glow-text-blue">未来</div>
-                        <div className="absolute top-[40%] left-[20%] cyber-kanji text-[8rem] cyber-glow-text-purple">力</div>
+                        {/* Floating kanji holograms - reduced size on mobile */}
+                        <div className="absolute top-[15%] right-[15%] cyber-kanji text-[6rem] sm:text-[8rem] md:text-[12rem] cyber-glow-text-pink"></div>
+                        <div className="absolute bottom-[25%] left-[10%] cyber-kanji text-[5rem] sm:text-[7rem] md:text-[10rem] cyber-glow-text-blue hidden xs:block"></div>
+                        <div className="absolute top-[40%] left-[20%] cyber-kanji text-[4rem] sm:text-[6rem] md:text-[8rem] cyber-glow-text-purple hidden sm:block"></div>
                         
                         
-                        {/* Cyberpunk torii gates with neon glow */}
-                        <div className="absolute bottom-[5%] left-[25%] w-[150px] h-[120px] cyber-torii-gate"></div>
-                        <div className="absolute bottom-[10%] right-[20%] w-[100px] h-[80px] cyber-torii-gate"></div>
+                        {/* Cyberpunk torii gates with neon glow - hide on mobile */}
+                        <div className="absolute bottom-[5%] left-[25%] w-[150px] h-[120px] cyber-torii-gate hidden sm:block"></div>
+                        <div className="absolute bottom-[10%] right-[20%] w-[100px] h-[80px] cyber-torii-gate hidden sm:block"></div>
                         
                         {/* Neon accent lines */}
-                        <div className="absolute top-0 left-0 h-[80vh] w-[3px] neon-line neon-blue"></div>
-                        <div className="absolute top-0 right-0 h-[60vh] w-[3px] neon-line neon-purple"></div>
-                        <div className="absolute top-[30%] left-[30%] h-[2px] w-[150px] neon-line neon-pink horizontal"></div>
-                        <div className="absolute bottom-[40%] right-[25%] h-[2px] w-[200px] neon-line neon-cyan horizontal"></div>
+                        <div className="absolute top-0 left-0 h-[50vh] sm:h-[80vh] w-[2px] sm:w-[3px] neon-line neon-blue"></div>
+                        <div className="absolute top-0 right-0 h-[40vh] sm:h-[60vh] w-[2px] sm:w-[3px] neon-line neon-purple"></div>
+                        <div className="absolute top-[30%] left-[30%] h-[1px] sm:h-[2px] w-[100px] sm:w-[150px] neon-line neon-pink horizontal hidden xs:block"></div>
+                        <div className="absolute bottom-[40%] right-[25%] h-[1px] sm:h-[2px] w-[100px] sm:w-[200px] neon-line neon-cyan horizontal hidden xs:block"></div>
                         
-                        {/* Digital data streams */}
-                        <div className="absolute top-0 left-[20%] data-stream data-stream-1"></div>
-                        <div className="absolute top-0 right-[40%] data-stream data-stream-2"></div>
-                        <div className="absolute top-[30%] right-0 data-stream data-stream-3 horizontal"></div>
+                        {/* Digital data streams - hide on smallest screens */}
+                        <div className="absolute top-0 left-[20%] data-stream data-stream-1 hidden sm:block"></div>
+                        <div className="absolute top-0 right-[40%] data-stream data-stream-2 hidden sm:block"></div>
+                        <div className="absolute top-[30%] right-0 data-stream data-stream-3 horizontal hidden sm:block"></div>
                         
-                        {/* Glitching elements */}
-                        <div className="absolute top-[10%] left-[40%] glitch-box"></div>
-                        <div className="absolute bottom-[15%] right-[30%] glitch-box"></div>
+                        {/* Glitching elements - hide on mobile */}
+                        <div className="absolute top-[10%] left-[40%] glitch-box hidden md:block"></div>
+                        <div className="absolute bottom-[15%] right-[30%] glitch-box hidden md:block"></div>
                         
-                        {/* Cyberpunk UI elements */}
-                        <div className="absolute top-5 left-5 w-[250px] h-[150px] cyber-ui-element left-align"></div>
-                        <div className="absolute top-5 right-5 w-[250px] h-[150px] cyber-ui-element right-align"></div>
-                        <div className="absolute bottom-5 left-5 w-[200px] h-[100px] cyber-ui-element left-align bottom"></div>
-                        <div className="absolute bottom-5 right-5 w-[200px] h-[100px] cyber-ui-element right-align bottom"></div>
+                        {/* Cyberpunk UI elements - hide on mobile */}
+                        <div className="absolute top-5 left-5 w-[150px] sm:w-[250px] h-[100px] sm:h-[150px] cyber-ui-element left-align hidden sm:block"></div>
+                        <div className="absolute top-5 right-5 w-[150px] sm:w-[250px] h-[100px] sm:h-[150px] cyber-ui-element right-align hidden sm:block"></div>
+                        <div className="absolute bottom-5 left-5 w-[150px] sm:w-[200px] h-[70px] sm:h-[100px] cyber-ui-element left-align bottom hidden sm:block"></div>
+                        <div className="absolute bottom-5 right-5 w-[150px] sm:w-[200px] h-[70px] sm:h-[100px] cyber-ui-element right-align bottom hidden sm:block"></div>
                         
                         {/* Neon Japanese patterns */}
-                        <div className="absolute top-[5%] left-0 w-full h-[80px] neon-seigaiha"></div>
-                        <div className="absolute bottom-0 left-0 w-full h-[80px] neon-asanoha"></div>
+                        <div className="absolute top-[5%] left-0 w-full h-[40px] sm:h-[80px] neon-seigaiha"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-[40px] sm:h-[80px] neon-asanoha"></div>
                         
-                        {/* Holographic circles */}
-                        <div className="absolute top-[30%] left-[10%] w-[150px] h-[150px] holo-circle"></div>
-                        <div className="absolute bottom-[30%] right-[15%] w-[200px] h-[200px] holo-circle"></div>
+                        {/* Holographic circles - hide on mobile */}
+                        <div className="absolute top-[30%] left-[10%] w-[100px] sm:w-[150px] h-[100px] sm:h-[150px] holo-circle hidden sm:block"></div>
+                        <div className="absolute bottom-[30%] right-[15%] w-[120px] sm:w-[200px] h-[120px] sm:h-[200px] holo-circle hidden sm:block"></div>
                         
-                        {/* Cyberpunk tech circles */}
-                        <div className="absolute top-[20%] right-[30%] cyber-circle cyber-circle-lg"></div>
-                        <div className="absolute bottom-[20%] left-[35%] cyber-circle cyber-circle-md"></div>
-                        <div className="absolute top-[50%] left-[15%] cyber-circle cyber-circle-sm"></div>
+                        {/* Cyberpunk tech circles - smaller on mobile */}
+                        <div className="absolute top-[20%] right-[30%] cyber-circle cyber-circle-md sm:cyber-circle-lg"></div>
+                        <div className="absolute bottom-[20%] left-[35%] cyber-circle cyber-circle-sm sm:cyber-circle-md"></div>
+                        <div className="absolute top-[50%] left-[15%] cyber-circle cyber-circle-xs sm:cyber-circle-sm"></div>
                         
                         {/* Digital noise overlay */}
                         <div className="absolute inset-0 digital-noise"></div>
@@ -175,38 +175,38 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                         loop
                                         muted
                                         playsInline
-                                        className="object-cover h-[700px] w-full scale-105 group-hover:scale-100 transition-transform duration-700"
+                                        className="object-cover h-[500px] sm:h-[600px] md:h-[700px] w-full scale-105 group-hover:scale-100 transition-transform duration-700"
                                     >
                                         <source src="/Lines.mp4" type="video/mp4" />
                                     </video>
 
                                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-violet-900/80 to-indigo-950/90 backdrop-blur-sm">
-                                        {/* Japanese-style decorative frame */}
-                                        <div className="absolute inset-8 border border-red-500/20 rounded-lg"></div>
-                                        <div className="absolute inset-10 border border-cyan-400/30 rounded-lg"></div>
+                                        {/* Japanese-style decorative frame - smaller on mobile */}
+                                        <div className="absolute inset-4 sm:inset-8 border border-red-500/20 rounded-lg"></div>
+                                        <div className="absolute inset-6 sm:inset-10 border border-cyan-400/30 rounded-lg"></div>
                                         
                                         {/* Top border with pulse effect */}
                                         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500/90 via-fuchsia-500/90 to-cyan-400/90 animate-gradient-x"></div>
                                         
-                                        {/* Japanese wave pattern (seigaiha) */}
-                                        <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-10" 
+                                        {/* Japanese wave pattern (seigaiha) - smaller on mobile */}
+                                        <div className="absolute top-0 left-0 right-0 h-8 sm:h-16 bg-repeat-x opacity-10" 
                                              style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
                                         </div>
-                                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-repeat-x opacity-10 transform rotate-180"
+                                        <div className="absolute bottom-0 left-0 right-0 h-8 sm:h-16 bg-repeat-x opacity-10 transform rotate-180"
                                              style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
                                         </div>
 
-                                        {/* Vertical Japanese Kanji decorations */}
-                                        <div className="absolute top-1/4 left-5 text-red-500/20 font-bold text-6xl transform -rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                        {/* Vertical Japanese Kanji decorations - hide on mobile */}
+                                        <div className="absolute top-1/4 left-5 text-red-500/20 font-bold text-3xl sm:text-5xl md:text-6xl transform -rotate-12 hidden sm:block" style={{ writingMode: 'vertical-rl' }}>
                                             未来技術
                                         </div>
-                                        <div className="absolute bottom-1/4 right-5 text-cyan-400/20 font-bold text-6xl transform rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                        <div className="absolute bottom-1/4 right-5 text-cyan-400/20 font-bold text-3xl sm:text-5xl md:text-6xl transform rotate-12 hidden sm:block" style={{ writingMode: 'vertical-rl' }}>
                                             安全保障
                                         </div>
 
-                                        {/* Cherry blossom decorative elements */}
-                                        <div className="absolute top-20 right-20">
-                                            <svg className="w-20 h-20 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
+                                        {/* Cherry blossom decorative elements - hide on mobile */}
+                                        <div className="absolute top-20 right-20 hidden sm:block">
+                                            <svg className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"/>
                                                 <circle cx="12" cy="12" r="3" fill="currentColor"/>
                                                 <path d="M18.2,7.2c-1.6,0-2.6,1.3-3.2,2.3C14.4,8.5,13.4,7.2,12,7.2s-2.4,1.3-3,2.3c-0.6-1-1.6-2.3-3.2-2.3S2.7,8.5,2.1,9.5C1.5,8.5,0.5,7.2,0,7.2"/>
@@ -215,8 +215,8 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                                 <path d="M0.6,12c0,1.6,1.3,2.6,2.3,3.2c-1-0.6-2.3-1.6-2.3-3s1.3-2.4,2.3-3c-1-0.6-2.3-1.6-2.3-3.2s1.3-2.6,2.3-3.2c-1-0.6-2.3-1.5-2.3-2.1"/>
                                             </svg>
                                         </div>
-                                        <div className="absolute bottom-20 left-20">
-                                            <svg className="w-16 h-16 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
+                                        <div className="absolute bottom-20 left-20 hidden sm:block">
+                                            <svg className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-pink-400/20" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"/>
                                                 <circle cx="12" cy="12" r="3" fill="currentColor"/>
                                                 <path d="M18.2,7.2c-1.6,0-2.6,1.3-3.2,2.3C14.4,8.5,13.4,7.2,12,7.2s-2.4,1.3-3,2.3c-0.6-1-1.6-2.3-3.2-2.3S2.7,8.5,2.1,9.5C1.5,8.5,0.5,7.2,0,7.2"/>
@@ -226,62 +226,62 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                             </svg>
                                         </div>
 
-                                        {/* Japanese-inspired geometric elements */}
-                                        <div className="absolute top-24 left-24">
-                                            <div className="w-16 h-16 border-r-2 border-t-2 border-red-500/30 rotate-12"></div>
+                                        {/* Japanese-inspired geometric elements - hide on mobile */}
+                                        <div className="absolute top-24 left-24 hidden sm:block">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 border-r-2 border-t-2 border-red-500/30 rotate-12"></div>
                                         </div>
-                                        <div className="absolute bottom-24 right-24">
-                                            <div className="w-16 h-16 border-l-2 border-b-2 border-cyan-400/30 -rotate-12"></div>
+                                        <div className="absolute bottom-24 right-24 hidden sm:block">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 border-l-2 border-b-2 border-cyan-400/30 -rotate-12"></div>
                                         </div>
 
-                                        <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8">
+                                        <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-4 sm:space-y-8">
                                             <div className="relative">
-                                                {/* Japanese-style decorative element */}
-                                                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-                                                    <svg className="w-32 h-8 text-red-500/40" viewBox="0 0 100 20" fill="currentColor">
+                                                {/* Japanese-style decorative element - scaled for mobile */}
+                                                <div className="absolute -top-5 sm:-top-10 left-1/2 transform -translate-x-1/2">
+                                                    <svg className="w-16 h-4 sm:w-24 sm:h-6 md:w-32 md:h-8 text-red-500/40" viewBox="0 0 100 20" fill="currentColor">
                                                         <path d="M0,10 Q25,0 50,10 T100,10" />
                                                     </svg>
                                                 </div>
                                                 
                                                 {/* Subtle glow effect around title with Japanese-inspired colors */}
                                                 <div className="absolute inset-0 blur-md bg-red-500/10 rounded-3xl"></div>
-                                                <h1 className="text-white text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+                                                <h1 className="text-white text-center text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
                                                     Secure Metadata
-                                                    <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-cyan-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
+                                                    <span className="block mt-1 sm:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-cyan-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
                                                         on MoveVM
                                                     </span>
                                                 </h1>
                                                 
-                                                {/* Japanese-style decorative element */}
-                                                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-180">
-                                                    <svg className="w-32 h-8 text-cyan-400/40" viewBox="0 0 100 20" fill="currentColor">
+                                                {/* Japanese-style decorative element - scaled for mobile */}
+                                                <div className="absolute -bottom-5 sm:-bottom-10 left-1/2 transform -translate-x-1/2 rotate-180">
+                                                    <svg className="w-16 h-4 sm:w-24 sm:h-6 md:w-32 md:h-8 text-cyan-400/40" viewBox="0 0 100 20" fill="currentColor">
                                                         <path d="M0,10 Q25,0 50,10 T100,10" />
                                                     </svg>
                                                 </div>
                                             </div>
 
-                                            <p className="text-white/90 text-center text-lg sm:text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
+                                            <p className="text-white/90 text-center text-base xs:text-lg sm:text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s] px-2">
                                                 Build secure and transparent file metadata storage solutions powered by
                                                 Move Virtual Machine for the Web3 ecosystem.
                                             </p>
 
-                                            <div className="flex flex-wrap justify-center gap-4 mt-8">
+                                            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-4 sm:mt-8">
                                                         <a href="https://docs.kanari.network/"
-                                                    className="relative bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(220,38,38,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
+                                                    className="relative bg-gradient-to-r from-red-600 to-red-700 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(220,38,38,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn text-sm sm:text-base"
                                                 >
                                                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-400/0 via-red-400/30 to-red-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
                                                     <span className="relative z-10 flex items-center">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" viewBox="0 0 20 20" fill="currentColor">
                                                             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                                                         </svg>
                                                         Explore Docs
                                                     </span>
                                                 </a>
                                                 <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                                    className="relative bg-indigo-900/40 border border-cyan-500/30 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:bg-indigo-900/60 active:translate-y-0 animate-slide-up"
+                                                    className="relative bg-indigo-900/40 border border-cyan-500/30 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:bg-indigo-900/60 active:translate-y-0 animate-slide-up text-sm sm:text-base"
                                                 >
                                                     <span className="relative z-10 flex items-center">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" viewBox="0 0 20 20" fill="currentColor">
                                                             <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                                                         </svg>
                                                         Join Testnet
@@ -292,21 +292,21 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                             </div>
                                         </div>
 
-                                        {/* Japanese-style tech pulse indicator */}
-                                        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-                                            <div className="h-[30px] w-[2px] bg-red-500/40 mx-1"></div>
-                                            <div className="h-[20px] w-[2px] bg-white/30 mx-1"></div>
-                                            <div className="h-[40px] w-[2px] bg-cyan-400/40 mx-1"></div>
-                                            <div className="h-[15px] w-[2px] bg-white/30 mx-1"></div>
-                                            <div className="h-[25px] w-[2px] bg-red-500/40 mx-1"></div>
+                                        {/* Japanese-style tech pulse indicator - scaled for mobile */}
+                                        <div className="absolute bottom-5 sm:bottom-10 left-0 right-0 flex justify-center">
+                                            <div className="h-[15px] sm:h-[20px] md:h-[30px] w-[1px] sm:w-[2px] bg-red-500/40 mx-1"></div>
+                                            <div className="h-[10px] sm:h-[15px] md:h-[20px] w-[1px] sm:w-[2px] bg-white/30 mx-1"></div>
+                                            <div className="h-[20px] sm:h-[30px] md:h-[40px] w-[1px] sm:w-[2px] bg-cyan-400/40 mx-1"></div>
+                                            <div className="h-[8px] sm:h-[12px] md:h-[15px] w-[1px] sm:w-[2px] bg-white/30 mx-1"></div>
+                                            <div className="h-[12px] sm:h-[18px] md:h-[25px] w-[1px] sm:w-[2px] bg-red-500/40 mx-1"></div>
                                         </div>
 
-                                        {/* Digital circuit lines with Japanese style */}
-                                        <div className="absolute bottom-0 left-0 w-full h-[50px] opacity-20">
-                                            <div className="absolute bottom-6 left-10 w-[100px] h-[1px] bg-red-400"></div>
-                                            <div className="absolute bottom-6 left-10 w-[1px] h-[20px] bg-red-400"></div>
-                                            <div className="absolute bottom-6 right-10 w-[100px] h-[1px] bg-cyan-400"></div>
-                                            <div className="absolute bottom-6 right-10 w-[1px] h-[20px] bg-cyan-400"></div>
+                                        {/* Digital circuit lines with Japanese style - hide on smallest screens */}
+                                        <div className="absolute bottom-0 left-0 w-full h-[30px] sm:h-[50px] opacity-20 hidden xs:block">
+                                            <div className="absolute bottom-3 sm:bottom-6 left-5 sm:left-10 w-[50px] sm:w-[100px] h-[1px] bg-red-400"></div>
+                                            <div className="absolute bottom-3 sm:bottom-6 left-5 sm:left-10 w-[1px] h-[10px] sm:h-[20px] bg-red-400"></div>
+                                            <div className="absolute bottom-3 sm:bottom-6 right-5 sm:right-10 w-[50px] sm:w-[100px] h-[1px] bg-cyan-400"></div>
+                                            <div className="absolute bottom-3 sm:bottom-6 right-5 sm:right-10 w-[1px] h-[10px] sm:h-[20px] bg-cyan-400"></div>
                                         </div>
                                     </div>
                                 </div>
