@@ -41,8 +41,8 @@ export const InvestorCard: React.FC<InvestorCardProps> = ({ icon, title, descrip
                     <h3 className="text-2xl font-bold cyber-text-glitch bg-gradient-to-r from-cyan-400 via-blue-500 
                         to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-300 
                         bg-clip-text text-transparent group-hover:scale-105 transition-transform relative">
-                        {/* Glitch effect container */}
-                        <span className="cyber-glitch-effect">{title}</span>
+                        {/* Glitch effect container - Fixed by adding data-text attribute */}
+                        <span className="cyber-glitch-effect" data-text={title}>{title}</span>
                         {/* Underline with neo effect */}
                         <div className="h-1 w-2/3 mt-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full 
                              cyber-glow group-hover:w-full transition-all duration-500 opacity-80"></div>
