@@ -1,4 +1,6 @@
 import React from 'react';
+import './InvestorCard.css';
+
 
 interface InvestorCardProps {
     icon: React.ReactNode;
