@@ -70,3 +70,6 @@ export const InvestorCard: React.FC<InvestorCardProps> = memo(({ icon, title, de
         </div>
     );
 });
+
+// Add display name to fix react/display-name rule
+InvestorCard.displayName = 'InvestorCard';
