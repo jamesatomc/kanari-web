@@ -128,3 +128,210 @@
     transform: scale(1.1);
   }
 }
+
+/* Neo-Tokyo/Japanese Cyberpunk 2077 styles */
+
+/* Tokyo cyber card base effects */
+.tokyo-cyber-card {
+  box-shadow: 0 0 10px -5px rgba(239, 68, 68, 0.2);
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Tokyo glow effects */
+.tokyo-glow {
+  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
+}
+
+.dark .tokyo-glow {
+  box-shadow: 0 0 6px 1px rgba(236, 72, 153, 0.4);
+}
+
+.tokyo-glow-red {
+  box-shadow: 0 0 4px 1px rgba(239, 68, 68, 0.4);
+}
+
+.tokyo-glow-purple {
+  box-shadow: 0 0 4px 1px rgba(236, 72, 153, 0.4);
+}
+
+.tokyo-glow-text {
+  filter: drop-shadow(0 0 1px rgba(239, 68, 68, 0.4));
+}
+
+/* Japanese patterns */
+.tokyo-pattern {
+  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Japanese sakura pattern */
+.tokyo-sakura-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%23ef4444' fill-opacity='0.2' d='M20 0c-4 0-7.5 2-9.5 5-2 3-2 7 0 10 1 1.5 2.5 2.7 4 3.5-1.5.8-3 2-4 3.5-2 3-2 7 0 10 2 3 5.5 5 9.5 5s7.5-2 9.5-5c2-3 2-7 0-10-1-1.5-2.5-2.7-4-3.5 1.5-.8 3-2 4-3.5 2-3 2-7 0-10-2-3-5.5-5-9.5-5zm0 6.5c1.5 0 2.7.8 3.5 2 .7 1.2.7 2.8 0 4-.7 1.2-2 2-3.5 2s-2.7-.8-3.5-2c-.7-1.2-.7-2.8 0-4 .7-1.2 2-2 3.5-2zm0 20c-1.5 0-2.7-.8-3.5-2-.7-1.2-.7-2.8 0-4 .7-1.2 2-2 3.5-2s2.7.8 3.5 2c.7 1.2.7 2.8 0 4-.7 1.2-2 2-3.5 2z'/%3E%3C/svg%3E");
+}
+
+/* Tokyo wave pattern */
+.tokyo-wave-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath fill='%23ef4444' fill-opacity='0.2' d='M21.2 18.4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm29.6 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm44.4 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z'/%3E%3C/svg%3E");
+}
+
+/* Tokyo digital circuits */
+.tokyo-circuit-vertical {
+  background-image: linear-gradient(to bottom, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-size: 8px 12px;
+  opacity: 0.2;
+}
+
+.tokyo-circuit-horizontal {
+  background-image: linear-gradient(to right, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-size: 12px 8px;
+  opacity: 0.2;
+}
+
+/* Tokyo holographic effect */
+.tokyo-holo-ring {
+  background: linear-gradient(45deg, transparent 40%, rgba(239, 68, 68, 0.3) 45%, rgba(236, 72, 153, 0.3) 55%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tokyo-icon-container:hover .tokyo-holo-ring {
+  opacity: 0.5;
+  animation: tokyo-holo-rotate 3s linear infinite;
+}
+
+/* Tokyo shadow effect */
+.shadow-tokyo {
+  box-shadow: 0 0 10px -2px rgba(239, 68, 68, 0.3), 0 0 6px -2px rgba(236, 72, 153, 0.4);
+}
+
+/* Tokyo glitch effect */
+.tokyo-text-glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.tokyo-glitch-effect {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.9), rgba(236, 72, 153, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Tokyo digital bits decoration */
+.tokyo-bits {
+  width: 40px;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, rgba(239, 68, 68, 0.4) 40%, rgba(236, 72, 153, 0.4) 80%, transparent);
+}
+
+/* Tokyo pulse animation */
+.tokyo-pulse {
+  animation: tokyo-pulse 6s ease-in-out infinite alternate;
+}
+
+/* Tokyo digital corner elements */
+.tokyo-corner-tr, .tokyo-corner-bl {
+  width: 16px;
+  height: 16px;
+}
+
+.tokyo-corner-tr {
+  border-right: 2px solid rgba(239, 68, 68, 0.25);
+  border-top: 2px solid rgba(239, 68, 68, 0.25);
+}
+
+.tokyo-corner-bl {
+  border-left: 2px solid rgba(236, 72, 153, 0.25);
+  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+}
+
+/* Tokyo scan lines */
+.tokyo-scan-lines {
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 4px;
+}
+
+/* Tokyo katakana text */
+.tokyo-katakana {
+  font-family: "Noto Sans JP", sans-serif;
+  opacity: 0.4;
+  letter-spacing: 0.05em;
+}
+
+/* Tokyo kanji text */
+.tokyo-kanji {
+  font-family: "Noto Sans JP", sans-serif;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+/* Tokyo shimmer */
+.tokyo-shimmer {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 200%;
+  animation: tokyo-shimmer 3s ease-in-out infinite alternate;
+}
+
+/* Neon text effect */
+.tokyo-neon-glow {
+  filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.7));
+}
+
+/* Tokyo noise background */
+.tokyo-noise-bg {
+  position: relative;
+}
+
+.tokyo-noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noisy'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noisy)'/%3E%3C/svg%3E");
+}
+
+/* Tokyo animations */
+@keyframes tokyo-holo-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes tokyo-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes tokyo-shimmer {
+  0% {
+    background-position: -100% -100%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* Keep existing animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.1);
+  }
+}
