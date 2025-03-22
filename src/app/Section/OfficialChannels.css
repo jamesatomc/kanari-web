@@ -1,272 +1,131 @@
-/* Neo-Tokyo 2077 Cyberpunk Styles for OfficialChannels */
+/* Tokyo-style cyberpunk effects for channel cards */
 
-/* Section styling */
-.cyber-channels-section {
-  position: relative;
-  overflow-x: hidden;
+/* Tokyo cyber card base effects */
+.tokyo-channel-card {
+  box-shadow: 0 0 10px -5px rgba(239, 68, 68, 0.2);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
-/* Grid patterns */
-.cyber-grid-horizontal {
-  background-image: linear-gradient(to right, 
-      transparent 40%, rgba(56, 189, 248, 0.3) 40%, 
-      rgba(56, 189, 248, 0.3) 60%, transparent 60%);
-  background-size: 20px 2px;
+/* Tokyo glow effects */
+.tokyo-glow {
+  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
 }
 
-.cyber-grid-vertical {
-  background-image: linear-gradient(to bottom, 
-      transparent 40%, rgba(56, 189, 248, 0.3) 40%, 
-      rgba(56, 189, 248, 0.3) 60%, transparent 60%);
-  background-size: 2px 20px;
+.dark .tokyo-glow {
+  box-shadow: 0 0 6px 1px rgba(236, 72, 153, 0.4);
 }
 
-/* Tech patterns for cards */
-.tech-pattern {
-  background-image: 
-      radial-gradient(circle, rgba(139, 92, 246, 0.2) 1px, transparent 1px);
-  background-size: 8px 8px;
+.tokyo-glow-red {
+  box-shadow: 0 0 4px 1px rgba(239, 68, 68, 0.4);
 }
 
-/* Digital circuits */
-.cyber-circuit-vertical {
-  background-image: linear-gradient(to bottom, transparent 45%, rgba(99, 179, 237, 0.3) 45%, rgba(99, 179, 237, 0.3) 55%, transparent 55%);
+.tokyo-glow-blue {
+  box-shadow: 0 0 4px 1px rgba(59, 130, 246, 0.4);
+}
+
+.tokyo-glow-purple {
+  box-shadow: 0 0 4px 1px rgba(139, 92, 246, 0.4);
+}
+
+.tokyo-glow-cyan {
+  box-shadow: 0 0 4px 1px rgba(14, 165, 233, 0.4);
+}
+
+/* Japanese patterns */
+.tokyo-pattern {
+  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Digital circuits with Japanese style */
+.tokyo-circuit-vertical {
+  background-image: linear-gradient(to bottom, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
   background-size: 8px 12px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
-.cyber-circuit-horizontal {
-  background-image: linear-gradient(to right, transparent 45%, rgba(99, 179, 237, 0.3) 45%, rgba(99, 179, 237, 0.3) 55%, transparent 55%);
+.tokyo-circuit-horizontal {
+  background-image: linear-gradient(to right, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
   background-size: 12px 8px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
-/* Channel card styling */
-.cyber-channel-card {
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform, box-shadow;
+/* Tokyo holographic effect */
+.tokyo-holo-ring {
+  background: linear-gradient(45deg, transparent 40%, rgba(239, 68, 68, 0.3) 45%, rgba(236, 72, 153, 0.3) 55%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Neon effects */
-.cyber-glow {
-  box-shadow: 0 0 8px 2px rgba(49, 130, 206, 0.5);
+.tokyo-icon-container:hover .tokyo-holo-ring {
+  opacity: 0.5;
+  animation: tokyo-holo-rotate 3s linear infinite;
 }
 
-.cyber-glow-blue {
-  box-shadow: 0 0 8px 2px rgba(66, 153, 225, 0.6);
-}
-
-.cyber-glow-purple {
-  box-shadow: 0 0 8px 2px rgba(159, 122, 234, 0.6);
-}
-
-.cyber-glow-cyan {
-  box-shadow: 0 0 8px 2px rgba(56, 189, 248, 0.6);
-}
-
-/* Circles */
-.cyber-circle {
-  border-radius: 50%;
-  border: 1px dashed rgba(139, 92, 246, 0.3);
-}
-
-.cyber-circle-sm {
-  width: 60px;
-  height: 60px;
-  animation: rotate 20s linear infinite;
-}
-
-.cyber-circle-md {
-  width: 120px;
-  height: 120px;
-  animation: rotate-reverse 30s linear infinite;
-}
-
-/* Neon lines */
-.neon-line {
-  position: relative;
-  overflow: hidden;
-}
-
-.neon-cyan {
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.7), transparent);
-  box-shadow: 0 0 8px 2px rgba(56, 189, 248, 0.4);
-}
-
-.horizontal {
-  height: 1px;
-}
-
-/* Cyber kanji */
-.cyber-kanji {
+/* Japanese kanji text */
+.tokyo-kanji {
   font-family: "Noto Sans JP", sans-serif;
   opacity: 0.7;
   mix-blend-mode: overlay;
 }
 
-.cyber-glow-text-blue {
-  color: rgba(56, 189, 248, 0.7);
-  text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+/* Tokyo shadow effect */
+.shadow-tokyo {
+  box-shadow: 0 0 10px -2px rgba(239, 68, 68, 0.3), 0 0 6px -2px rgba(236, 72, 153, 0.4);
 }
 
-/* Scan lines */
-.cyber-scan-lines {
-  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.05) 50%);
-  background-size: 100% 4px;
-}
-
-/* Digital corner elements */
-.cyber-corner-tr, .cyber-corner-bl {
-  width: 15px;
-  height: 15px;
-}
-
-.cyber-corner-tr {
-  border-right: 2px solid rgba(56, 189, 248, 0.5);
-  border-top: 2px solid rgba(56, 189, 248, 0.5);
-}
-
-.cyber-corner-bl {
-  border-left: 2px solid rgba(139, 92, 246, 0.5);
-  border-bottom: 2px solid rgba(139, 92, 246, 0.5);
-}
-
-/* Shadow effect */
-.shadow-neo {
-  box-shadow: 0 0 15px -2px rgba(66, 153, 225, 0.4), 0 0 8px -2px rgba(159, 122, 234, 0.6);
-}
-
-/* Holographic ring */
-.holo-ring {
-  background: linear-gradient(45deg, transparent 40%, rgba(66, 153, 225, 0.4) 45%, rgba(159, 122, 234, 0.4) 55%, transparent 60%);
-  filter: blur(1px);
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.cyber-icon-container:hover .holo-ring {
-  opacity: 0.7;
-  animation: holo-rotate 3s linear infinite;
-}
-
-/* Connect button effect */
-.cyber-connect-text {
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.cyber-connect-arrow {
-  transition: transform 0.3s ease;
-}
-
-.cyber-channel-card:hover .cyber-connect-text {
-  transform: translateX(-5px);
-}
-
-.cyber-channel-card:hover .cyber-connect-arrow {
-  transform: translateX(3px);
-}
-
-/* Holographic shimmer */
-.cyber-shimmer {
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 200%;
-  animation: shimmer 3s ease-in-out infinite alternate;
-}
-
-/* Pulse animation */
-.cyber-pulse {
-  animation: pulse 4s ease-in-out infinite alternate;
-}
-
-/* Glitch text effect */
-.cyber-glitch-effect {
+/* Tokyo glitch effect */
+.tokyo-text-glitch {
   position: relative;
   display: inline-block;
 }
 
-.cyber-glitch-effect::before,
-.cyber-glitch-effect::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+/* Tokyo connect button */
+.tokyo-connect-text {
+  font-family: monospace;
+  position: relative;
+  letter-spacing: 0.1em;
 }
 
-.cyber-channel-card:hover .cyber-glitch-effect::before {
-  opacity: 0.5;
-  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 1;
-  animation-delay: 0.2s;
+.tokyo-connect-arrow {
+  animation: tokyo-arrow-pulse 2s infinite;
 }
 
-.cyber-channel-card:hover .cyber-glitch-effect::after {
-  opacity: 0.5;
-  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 1;
-  animation-delay: 0.3s;
+/* Tokyo digital corner elements */
+.tokyo-corner-tr, .tokyo-corner-bl {
+  width: 16px;
+  height: 16px;
 }
 
-/* Animations */
-@keyframes holo-rotate {
+.tokyo-corner-tr {
+  border-right: 2px solid rgba(239, 68, 68, 0.25);
+  border-top: 2px solid rgba(239, 68, 68, 0.25);
+}
+
+.tokyo-corner-bl {
+  border-left: 2px solid rgba(236, 72, 153, 0.25);
+  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+}
+
+/* Tokyo animations */
+@keyframes tokyo-holo-rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes tokyo-arrow-pulse {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
 }
 
-@keyframes rotate-reverse {
-  0% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 1px);
-  }
-  40% {
-    transform: translate(-1px, -1px);
-  }
-  60% {
-    transform: translate(1px, 1px);
-  }
-  80% {
-    transform: translate(1px, -1px);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-@keyframes pulse {
+@keyframes tokyo-pulse {
   0%, 100% {
-    opacity: 0.2;
+    opacity: 0.15;
     transform: scale(1);
   }
   50% {
-    opacity: 0.3;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -100% -100%;
-  }
-  100% {
-    background-position: 200% 200%;
+    opacity: 0.25;
+    transform: scale(1.1);
   }
 }

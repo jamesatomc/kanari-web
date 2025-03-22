@@ -5,43 +5,59 @@ import './NewsletterSection.css';
 import { createPortal } from 'react-dom';
 
 export function NewsletterSection() {
-
     // Add state near the top of component
     const [showTerms, setShowTerms] = useState(false);
 
     return (
         <>
-            <section className="py-20 px-4 ">
-                <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl p-8 sm:p-10 backdrop-blur-sm 
-                bg-white/30 dark:bg-gray-800/30 border border-gray-200/50 dark:border-gray-700/50 
-                hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <section className="py-20 px-4 relative overflow-hidden">
+                {/* Tokyo-style pattern overlay */}
+                <div className="absolute inset-0 tokyo-pattern-overlay"></div>
+                
+                {/* Japanese decorative kanji */}
+                <div className="absolute -right-4 top-20 text-6xl font-bold text-red-500/5 tokyo-kanji">ニュース</div>
+                <div className="absolute -left-4 top-40 text-5xl font-bold text-pink-500/5 tokyo-kanji">情報</div>
+                
+                <div className="max-w-4xl mx-auto rounded-2xl shadow-lg p-8 sm:p-10 backdrop-blur-sm 
+                bg-white/20 dark:bg-gray-800/20 border border-red-300/30 dark:border-red-500/30 
+                hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-newsletter-card relative">
+                    {/* Neo-Tokyo decorative elements */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-pink-600 tokyo-glow"></div>
+                    <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
+                    <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-pink-400 tokyo-glow-pink"></div>
+                    
+                    {/* Tokyo corner elements */}
+                    <div className="absolute tokyo-corner-tr"></div>
+                    <div className="absolute tokyo-corner-tl"></div>
+                    <div className="absolute tokyo-corner-br"></div>
+                    <div className="absolute tokyo-corner-bl"></div>
+
                     <h2 className="text-4xl sm:text-5xl font-bold text-center mb-6 bg-gradient-to-r 
-                    from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 
-                    dark:to-purple-200 bg-clip-text text-transparent">
+                    from-red-600 via-pink-500 to-purple-600 dark:from-red-300 dark:via-pink-300 
+                    dark:to-purple-300 bg-clip-text text-transparent">
                         Subscribe to Kanari Network Newsletter
                     </h2>
 
-                    <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-xl text-center mb-8">
+                    <p className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl text-center mb-8">
                         Get the latest news, updates, and insights delivered straight to your inbox.
                     </p>
-
 
                     <form className="flex flex-col items-center space-y-6 w-full max-w-2xl mx-auto">
                         <div className="relative w-full">
                             <input
                                 type="email"
                                 id="Email"
-                                className="w-full pl-12 pr-6 py-4 text-base bg-white/30 dark:bg-gray-800/30 
-                                border border-gray-200/50 dark:border-gray-700/50 rounded-xl focus:ring-2 
-                                ring-blue-500/30 text-gray-900 dark:text-white 
+                                className="w-full pl-12 pr-6 py-4 text-base bg-white/20 dark:bg-gray-800/20 
+                                border border-red-300/30 dark:border-red-500/30 rounded-xl focus:ring-2 
+                                ring-red-500/30 text-gray-900 dark:text-white 
                                 placeholder:text-gray-500 dark:placeholder:text-gray-400 
-                                backdrop-blur-sm transition-all duration-300"
+                                backdrop-blur-sm transition-all duration-300 tokyo-input"
                                 placeholder="Enter your email"
                                 required
                             />
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                 <svg
-                                    className="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                    className="h-5 w-5 text-red-500 dark:text-red-400"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -59,9 +75,9 @@ export function NewsletterSection() {
 
                         <button
                             type="submit"
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold 
-                            py-3 px-8 rounded-xl shadow-lg hover:shadow-xl 
-                            transition-all duration-300 hover:-translate-y-1"
+                            className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 
+                            text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl 
+                            transition-all duration-300 hover:-translate-y-1 tokyo-button"
                         >
                             Subscribe
                         </button>
@@ -71,10 +87,10 @@ export function NewsletterSection() {
                                 id="link-checkbox"
                                 type="checkbox"
                                 required
-                                className="w-5 h-5 rounded border-gray-200/50 dark:border-gray-700/50 
-                                bg-white/30 dark:bg-gray-800/30 checked:bg-blue-500"
+                                className="w-5 h-5 rounded border-red-300/30 dark:border-red-500/30 
+                                bg-white/20 dark:bg-gray-800/20 checked:bg-pink-500"
                             />
-                            <label htmlFor="link-checkbox" className="text-sm text-gray-600 dark:text-gray-300">
+                            <label htmlFor="link-checkbox" className="text-sm text-gray-700 dark:text-gray-300">
                                 I agree with the{' '}
                                 <a
                                     href="#"
@@ -82,46 +98,59 @@ export function NewsletterSection() {
                                         e.preventDefault();
                                         setShowTerms(true);
                                     }}
-                                    className="text-blue-500 hover:text-blue-600 transition-colors duration-300"
+                                    className="text-red-500 hover:text-red-600 transition-colors duration-300"
                                 >
                                     terms and conditions
                                 </a>
                             </label>
-
-
                         </div>
                     </form>
                 </div>
-
-
             </section>
 
             {showTerms && createPortal(
-                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[9999]">
-                    <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl max-w-3xl w-full mx-4 shadow-xl relative">
+                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[9999] tokyo-modal-overlay">
+                    <div className="bg-white/90 dark:bg-gray-900/90 p-8 rounded-2xl max-w-3xl w-full mx-4 shadow-xl relative tokyo-modal">
+                        {/* Tokyo-style decorative elements */}
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-pink-600 tokyo-glow"></div>
+                        <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
+                        <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-pink-400 tokyo-glow-pink"></div>
+
+                        {/* Corner elements */}
+                        <div className="absolute tokyo-corner-tr"></div>
+                        <div className="absolute tokyo-corner-tl"></div>
+                        <div className="absolute tokyo-corner-br"></div>
+                        <div className="absolute tokyo-corner-bl"></div>
+
+                        {/* Japanese kanji decoration */}
+                        <div className="absolute right-16 bottom-16 text-5xl font-bold text-red-500/5 tokyo-kanji">契約</div>
+
                         <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Terms and Conditions</h2>
+                            <h2 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-pink-600 
+                                dark:from-red-300 dark:to-pink-300 bg-clip-text text-transparent">
+                                Terms and Conditions
+                            </h2>
                             <button
                                 onClick={() => setShowTerms(false)}
-                                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                                className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-200"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
-                        <div className="prose dark:prose-invert max-h-[60vh] overflow-y-auto mb-6 text-gray-600 dark:text-gray-300 custom-scrollbar">
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">1. Introduction</h3>
+                        <div className="prose dark:prose-invert max-h-[60vh] overflow-y-auto mb-6 text-gray-700 dark:text-gray-300 custom-scrollbar">
+                            <h3 className="text-xl font-semibold text-red-600 dark:text-red-300 mb-4">1. Introduction</h3>
                             <p className="mb-6">
                                 These Website Terms and Conditions contained herein on this webpage, shall govern your use of this website, including all pages within it. These Terms apply in full force and effect to your use of this Website and by using this Website, you expressly accept all terms and conditions.
                             </p>
 
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">2. Intellectual Property Rights</h3>
+                            <h3 className="text-xl font-semibold text-red-600 dark:text-red-300 mb-4">2. Intellectual Property Rights</h3>
                             <p className="mb-6">
                                 Other than content you own, which you may have opted to include on this Website, under these Terms, Kanari Network and/or its licensors own all rights to the intellectual property and material contained in this Website.
                             </p>
 
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">3. Your Rights and Responsibilities</h3>
+                            <h3 className="text-xl font-semibold text-red-600 dark:text-red-300 mb-4">3. Your Rights and Responsibilities</h3>
                             <ul className="list-disc pl-6 mb-6 space-y-2">
                                 <li>Respect the intellectual property rights of others</li>
                                 <li>Maintain the security of your account</li>
@@ -129,7 +158,7 @@ export function NewsletterSection() {
                                 <li>Report any security vulnerabilities or violations</li>
                             </ul>
 
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">4. Privacy & Security</h3>
+                            <h3 className="text-xl font-semibold text-red-600 dark:text-red-300 mb-4">4. Privacy & Security</h3>
                             <p className="mb-6">
                                 We prioritize the protection of your personal information. For detailed information about our data practices, please refer to our Privacy Policy.
                             </p>
@@ -137,13 +166,16 @@ export function NewsletterSection() {
                         <div className="flex justify-end space-x-4">
                             <button
                                 onClick={() => setShowTerms(false)}
-                                className="px-6 py-2.5 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-colors duration-200"
+                                className="px-6 py-2.5 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 
+                                text-white rounded-lg transition-colors duration-200"
                             >
                                 Close
                             </button>
                             <button
                                 onClick={() => setShowTerms(false)}
-                                className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200"
+                                className="px-6 py-2.5 bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 
+                                dark:from-red-500 dark:to-pink-500 dark:hover:from-red-600 dark:hover:to-pink-600 
+                                text-white rounded-lg transition-colors duration-200 tokyo-button"
                             >
                                 Accept Terms
                             </button>
@@ -154,7 +186,4 @@ export function NewsletterSection() {
             )}
         </>
     );
-
-
-
 }

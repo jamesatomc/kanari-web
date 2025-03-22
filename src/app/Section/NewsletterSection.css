@@ -1,3 +1,6 @@
+/* Tokyo-style cyberpunk effects for newsletter section */
+
+/* Custom scrollbar styling with Tokyo theme */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
@@ -5,16 +8,143 @@
     background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
+    background-color: rgba(239, 68, 68, 0.4);
     border-radius: 20px;
 }
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(75, 85, 99, 0.5);
+    background-color: rgba(236, 72, 153, 0.4);
 }
 
-/* Optimized animations for newsletter section */
+/* Tokyo-styled form elements */
+.tokyo-input {
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.2);
+}
 
-/* Fade in animation for modal */
+.tokyo-input:focus {
+  box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.5), 0 0 0 1px rgba(239, 68, 68, 0.3);
+}
+
+.tokyo-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tokyo-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0));
+  transform: rotate(45deg);
+  animation: tokyo-shimmer 3s ease-in-out infinite;
+}
+
+/* Tokyo newsletter card */
+.tokyo-newsletter-card {
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  position: relative;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.tokyo-newsletter-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.5), transparent);
+  z-index: -1;
+}
+
+/* Tokyo modal styles */
+.tokyo-modal-overlay {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.tokyo-modal {
+  position: relative;
+  animation: scaleIn 0.3s ease-out forwards;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.tokyo-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.5), transparent);
+}
+
+/* Japanese patterns */
+.tokyo-pattern-overlay {
+  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-size: 12px 12px;
+  opacity: 0.2;
+}
+
+/* Tokyo digital corner elements */
+.tokyo-corner-tr, .tokyo-corner-tl, .tokyo-corner-br, .tokyo-corner-bl {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+
+.tokyo-corner-tr {
+  top: 4px;
+  right: 4px;
+  border-right: 2px solid rgba(239, 68, 68, 0.25);
+  border-top: 2px solid rgba(239, 68, 68, 0.25);
+}
+
+.tokyo-corner-tl {
+  top: 4px;
+  left: 4px;
+  border-left: 2px solid rgba(239, 68, 68, 0.25);
+  border-top: 2px solid rgba(239, 68, 68, 0.25);
+}
+
+.tokyo-corner-br {
+  bottom: 4px;
+  right: 4px;
+  border-right: 2px solid rgba(236, 72, 153, 0.25);
+  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+}
+
+.tokyo-corner-bl {
+  bottom: 4px;
+  left: 4px;
+  border-left: 2px solid rgba(236, 72, 153, 0.25);
+  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+}
+
+/* Tokyo glow effects */
+.tokyo-glow {
+  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
+}
+
+.tokyo-glow-red {
+  box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.5);
+}
+
+.tokyo-glow-pink {
+  box-shadow: 0 0 8px 2px rgba(236, 72, 153, 0.5);
+}
+
+/* Japanese kanji text */
+.tokyo-kanji {
+  font-family: "Noto Sans JP", sans-serif;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -24,7 +154,6 @@
   }
 }
 
-/* Scale in animation for modal content */
 @keyframes scaleIn {
   from {
     transform: scale(0.95);
@@ -36,32 +165,31 @@
   }
 }
 
-/* Apply animations */
-.animate-fade-in {
-  animation: fadeIn 0.2s ease-out forwards;
+@keyframes tokyo-shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
 }
 
-.animate-scale-in {
-  animation: scaleIn 0.3s ease-out forwards;
+/* For hiding scrollbar but allowing scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Custom scrollbar styling */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-/* Performance optimizations */
-.will-change-transform {
-  will-change: transform;
-}
-
-/* Focus styles for better accessibility */
+/* Focus styles with Tokyo theme */
 input:focus, button:focus, a:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4);
 }
 
 .dark input:focus, .dark button:focus, .dark a:focus {
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.4);
 }
