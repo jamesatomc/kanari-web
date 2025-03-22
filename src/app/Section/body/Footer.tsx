@@ -67,8 +67,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                 <h2 className={`text-sm font-bold uppercase tracking-wider flex items-center
                   ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
                   <span className="w-1 h-4 mr-2 rounded-full bg-current"></span>
-                  リソース
-                  <span className="ml-1 text-xs font-normal opacity-70">(Resources)</span>
+                  Resources
                 </h2>
                 <ul className="space-y-3">
                   <li>
@@ -104,8 +103,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                 <h2 className={`text-sm font-bold uppercase tracking-wider flex items-center
                   ${darkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>
                   <span className="w-1 h-4 mr-2 rounded-full bg-current"></span>
-                  ソリューション
-                  <span className="ml-1 text-xs font-normal opacity-70">(Solutions)</span>
+                  Solutions
                 </h2>
                 <ul className="space-y-3">
                   <li>
@@ -131,8 +129,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                 <h2 className={`text-sm font-bold uppercase tracking-wider flex items-center
                   ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
                   <span className="w-1 h-4 mr-2 rounded-full bg-current"></span>
-                  概要
-                  <span className="ml-1 text-xs font-normal opacity-70">(About)</span>
+                  About
                 </h2>
                 <ul className="space-y-3">
                   <li>
