@@ -130,8 +130,7 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 : 'bg-white/90 backdrop-blur-sm border border-red-300/20'
               }`}
           >
-            {/* Decorative element */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/80 via-transparent to-indigo-500/80 rounded-t-xl"></div>
+
             <div className="mb-3 pb-2 border-b border-gray-200/20 flex items-center">
               <span className={`text-sm font-semibold ${darkMode ? 'text-red-300' : 'text-red-600'}`}>
                 Learning Resources
@@ -157,7 +156,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 </Link>
               </li>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-transparent to-red-500/80 rounded-b-xl"></div>
           </div>
         </li>
 
@@ -197,8 +195,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 : 'bg-white/90 backdrop-blur-sm border border-red-300/20'
               }`}
           >
-            {/* Decorative element */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/80 via-transparent to-indigo-500/80 rounded-t-xl"></div>
             <div className="mb-3 pb-2 border-b border-gray-200/20 flex items-center">
               <span className={`text-sm font-semibold ${darkMode ? 'text-indigo-300' : 'text-indigo-600'}`}>
                 Development Resources
@@ -224,7 +220,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 </Link>
               </li>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-transparent to-red-500/80 rounded-b-xl"></div>
           </div>
         </li>
 
@@ -264,8 +259,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 : 'bg-white/90 backdrop-blur-sm border border-red-300/20'
               }`}
           >
-            {/* Decorative element */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/80 via-transparent to-indigo-500/80 rounded-t-xl"></div>
             <div className="mb-3 pb-2 border-b border-gray-200/20 flex items-center">
               <span className={`text-sm font-semibold ${darkMode ? 'text-red-300' : 'text-red-600'}`}>
                 Community
@@ -291,7 +284,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                 </Link>
               </li>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-transparent to-red-500/80 rounded-b-xl"></div>
           </div>
         </li>
       </ul>
