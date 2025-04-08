@@ -76,17 +76,17 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://docs.kanari.network/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://docs.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
                       Docs
                     </a>
                   </li>
                   <li>
-                    <a href="https://karimove.kanari.network/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://karimove.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
                       Kari Move
                     </a>
                   </li>
                   <li>
-                    <a href="https://whitepaper.kanari.network/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://whitepaper.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
                       Whitepaper
                     </a>
                   </li>
@@ -148,7 +148,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://blog.kanari.network/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://blog.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
                       Blog
                     </a>
                   </li>
@@ -192,7 +192,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               {/* Social icons with Japanese-style hover effect */}
               {/* Bluesky */}
               <a
-                href="https://bsky.app/profile/kanari.network"
+                href="https://bsky.app/profile/kanari.site"
                 className="relative group"
                 onMouseEnter={() => setBlueskyHover(true)}
                 onMouseLeave={() => setBlueskyHover(false)}

@@ -20,7 +20,7 @@ export function NewsletterSection() {
                 
                 <div className="max-w-4xl mx-auto rounded-2xl shadow-lg p-8 sm:p-10 backdrop-blur-sm 
                 bg-white/20 dark:bg-gray-800/20 border border-red-300/30 dark:border-red-500/30 
-                hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-newsletter-card relative">
+                hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-newsletter-card relative overflow-hidden">
                     {/* Neo-Tokyo decorative elements */}
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-pink-600 tokyo-glow"></div>
                     <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
