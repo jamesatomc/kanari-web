@@ -314,8 +314,136 @@ const HeroSection: NextPage<Props> = ({ }) => {
 
                         </div>
 
-                        {/* Features Section */}
+                        {/* TPS Performance Indicator - Positioned as floating element */}
+                        <div className="relative py-10 px-4">
+                            <div className="max-w-7xl mx-auto">
+                                <div className="relative overflow-hidden bg-gradient-to-r from-gray-900/80 to-indigo-900/90 dark:from-gray-950/90 dark:to-indigo-950/90 rounded-xl shadow-2xl border border-cyan-500/30 backdrop-blur-md transform hover:scale-[1.01] transition-all duration-500"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300">
+                                    
+                                    {/* Animated background elements */}
+                                    <div className="absolute inset-0 overflow-hidden">
+                                        {/* Background grid */}
+                                        <div className="absolute inset-0 cyber-grid opacity-20"></div>
+                                        
+                                        {/* Digital scan lines */}
+                                        <div className="absolute inset-0 cyber-scan-lines opacity-20"></div>
+                                        
+                                        {/* Animated circles */}
+                                        <div className="absolute top-[20%] left-[10%] w-[80px] h-[80px] cyber-circle cyber-circle-sm opacity-20"></div>
+                                        <div className="absolute bottom-[30%] right-[15%] w-[60px] h-[60px] cyber-circle cyber-circle-sm opacity-20"></div>
+                                        
+                                        {/* Data flow animation */}
+                                        <div className="absolute top-0 left-[30%] h-full w-[1px] data-stream data-stream-1 opacity-30"></div>
+                                        <div className="absolute top-0 right-[40%] h-full w-[1px] data-stream data-stream-2 opacity-30"></div>
+                                    </div>
+                                    
+                                    {/* Cyberpunk decorative elements */}
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x"></div>
+                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 animate-gradient-x"></div>
+                                    <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600"></div>
+                                    <div className="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-purple-600 via-blue-500 to-cyan-400"></div>
+                                    
+                                    {/* Corner design elements */}
+                                    <div className="absolute top-0 left-0 w-[20px] h-[20px] border-t-2 border-l-2 border-cyan-400/70"></div>
+                                    <div className="absolute top-0 right-0 w-[20px] h-[20px] border-t-2 border-r-2 border-purple-500/70"></div>
+                                    <div className="absolute bottom-0 left-0 w-[20px] h-[20px] border-b-2 border-l-2 border-purple-500/70"></div>
+                                    <div className="absolute bottom-0 right-0 w-[20px] h-[20px] border-b-2 border-r-2 border-cyan-400/70"></div>
+                                    
+                                    {/* Horizontal scan animation */}
+                                    <div className="absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent animate-[neonHorizontalMove_4s_infinite_linear]"></div>
+                                    
+                                    {/* TPS Counter content */}
+                                    <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8 relative z-10">
+                                        {/* Left section - System status */}
+                                        <div className="mb-6 md:mb-0 text-center md:text-left">
+                                            <div className="inline-flex items-center mb-2 bg-gray-800/50 px-3 py-1 rounded-md border border-cyan-500/30">
+                                                <div className="h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+                                                <p className="text-cyan-300 font-mono text-xs">NETWORK ONLINE</p>
+                                            </div>
+                                            <h3 className="text-lg md:text-xl font-mono text-cyan-400 font-bold tracking-wide mb-2">SYSTEM PERFORMANCE</h3>
+                                            <div className="flex items-center justify-center md:justify-start space-x-2">
+                                                <div className="h-4 w-[1px] bg-cyan-500/30"></div>
+                                                <div className="h-6 w-[1px] bg-cyan-500/50"></div>
+                                                <div className="h-8 w-[1px] bg-cyan-500/70"></div>
+                                                <div className="h-10 w-[1px] bg-cyan-500/90"></div>
+                                                <div className="h-12 w-[1px] bg-cyan-500"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Center section - TPS counter */}
+                                        <div className="flex flex-col items-center justify-center relative mb-6 md:mb-0">
+                                            {/* Glowing background effect */}
+                                            <div className="absolute -inset-4 blur-xl bg-cyan-500/10 rounded-full"></div>
+                                            
+                                            {/* TPS count with animated border */}
+                                            <div className="relative bg-gray-900/70 border border-cyan-400/30 rounded-xl p-5 shadow-lg overflow-hidden">
+                                                <div className="absolute inset-0 overflow-hidden">
+                                                    <div className="absolute -inset-1 animate-[scanUI_3s_infinite_linear]">
+                                                        <div className="h-full w-full border border-cyan-400/30 rounded-xl"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="relative z-10">
+                                                    <span className="block text-6xl font-bold text-white font-mono tracking-tighter mb-1 relative">
+                                                        <span className="relative inline-block">
+                                                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-100 to-cyan-200">164,000</span>
+                                                            {/* Glitch effect */}
+                                                            <span className="absolute top-0 left-0 text-cyan-400 opacity-70 animate-pulse">164,000</span>
+                                                        </span>
+                                                        <span className="text-cyan-400 ml-1 animate-pulse">+</span>
+                                                    </span>
+                                                    <div className="text-sm text-cyan-300 font-mono tracking-widest uppercase text-center">
+                                                        TPS
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mt-2 text-xs text-cyan-400/70 font-medium font-mono">
+                                                TRANSACTIONS PER SECOND
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Right section - Performance metrics */}
+                                        <div className="flex flex-col items-center md:items-end">
+                                            <div className="flex items-center space-x-1 mb-2">
+                                                <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                                <span className="text-xs font-mono text-cyan-300">HIGH PERFORMANCE</span>
+                                            </div>
+                                            <div className="p-3 rounded-lg border border-purple-500/30 bg-gray-900/50 flex flex-col items-center">
+                                                <div className="grid grid-cols-10 gap-1 mb-2">
+                                                    {[...Array(10)].map((_, i) => (
+                                                        <div 
+                                                            key={i} 
+                                                            className={`h-8 w-2 rounded-sm ${
+                                                                i < 2 ? "bg-cyan-900" : 
+                                                                i < 4 ? "bg-cyan-700" : 
+                                                                i < 6 ? "bg-cyan-500" : 
+                                                                i < 8 ? "bg-cyan-400" : 
+                                                                "bg-cyan-300 animate-pulse"
+                                                            }`}
+                                                        ></div>
+                                                    ))}
+                                                </div>
+                                                <div className="w-full bg-gray-800 h-[1px] mb-2"></div>
+                                                <p className="text-[10px] text-gray-300 font-mono">MOVE VM BLOCKCHAIN</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Japanese-inspired decorative elements */}
+                                    <div className="absolute bottom-2 left-4 text-cyan-400/10 font-bold text-xl" style={{ writingMode: 'vertical-rl' }}>
+                                        高速処理
+                                    </div>
+                                    <div className="absolute top-2 right-4 text-purple-500/10 font-bold text-xl" style={{ writingMode: 'vertical-rl' }}>
+                                        パフォーマンス
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        {/* Features Section */}
                         <section className="py-20 px-4">
                             <div className="max-w-7xl mx-auto">
                                 <div className="text-center space-y-4 sm:space-y-6">
