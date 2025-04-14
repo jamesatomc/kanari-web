@@ -353,81 +353,188 @@ const HeroSection: NextPage<Props> = ({ }) => {
                                     {/* Horizontal scan animation */}
                                     <div className="absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent animate-[neonHorizontalMove_4s_infinite_linear]"></div>
                                     
-                                    {/* TPS Counter content */}
-                                    <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8 relative z-10">
-                                        {/* Left section - System status */}
-                                        <div className="mb-6 md:mb-0 text-center md:text-left">
-                                            <div className="inline-flex items-center mb-2 bg-gray-800/50 px-3 py-1 rounded-md border border-cyan-500/30">
+                                    {/* Content Header - Added title for the entire panel */}
+                                    <div className="relative z-10 flex justify-between items-center border-b border-cyan-500/30 px-6 py-3">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="h-3 w-3 rounded-full bg-cyan-500 animate-pulse"></div>
+                                            <h2 className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+                                                KANARI CORE TECHNOLOGY
+                                            </h2>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="inline-flex items-center bg-gray-800/50 px-3 py-1 rounded-md border border-cyan-500/30">
                                                 <div className="h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></div>
                                                 <p className="text-cyan-300 font-mono text-xs">NETWORK ONLINE</p>
                                             </div>
-                                            <h3 className="text-lg md:text-xl font-mono text-cyan-400 font-bold tracking-wide mb-2">SYSTEM PERFORMANCE</h3>
-                                            <div className="flex items-center justify-center md:justify-start space-x-2">
-                                                <div className="h-4 w-[1px] bg-cyan-500/30"></div>
-                                                <div className="h-6 w-[1px] bg-cyan-500/50"></div>
-                                                <div className="h-8 w-[1px] bg-cyan-500/70"></div>
-                                                <div className="h-10 w-[1px] bg-cyan-500/90"></div>
-                                                <div className="h-12 w-[1px] bg-cyan-500"></div>
-                                            </div>
                                         </div>
-                                        
-                                        {/* Center section - TPS counter */}
-                                        <div className="flex flex-col items-center justify-center relative mb-6 md:mb-0">
-                                            {/* Glowing background effect */}
-                                            <div className="absolute -inset-4 blur-xl bg-cyan-500/10 rounded-full"></div>
+                                    </div>
+
+                                    {/* Main Panel Content - Divided into two rows */}
+                                    <div className="relative z-10">
+                                        {/* TPS Counter row */}
+                                        <div className="flex flex-col md:flex-row items-center justify-between p-6 relative z-10 border-b border-cyan-500/20">
+                                            {/* Left section - System status */}
+                                            <div className="mb-6 md:mb-0 text-center md:text-left">
+                                                <h3 className="text-lg md:text-xl font-mono text-cyan-400 font-bold tracking-wide mb-2">SYSTEM PERFORMANCE</h3>
+                                                <div className="flex items-center justify-center md:justify-start space-x-2">
+                                                    <div className="h-4 w-[1px] bg-cyan-500/30"></div>
+                                                    <div className="h-6 w-[1px] bg-cyan-500/50"></div>
+                                                    <div className="h-8 w-[1px] bg-cyan-500/70"></div>
+                                                    <div className="h-10 w-[1px] bg-cyan-500/90"></div>
+                                                    <div className="h-12 w-[1px] bg-cyan-500"></div>
+                                                </div>
+                                            </div>
                                             
-                                            {/* TPS count with animated border */}
-                                            <div className="relative bg-gray-900/70 border border-cyan-400/30 rounded-xl p-5 shadow-lg overflow-hidden">
-                                                <div className="absolute inset-0 overflow-hidden">
-                                                    <div className="absolute -inset-1 animate-[scanUI_3s_infinite_linear]">
-                                                        <div className="h-full w-full border border-cyan-400/30 rounded-xl"></div>
+                                            {/* Center section - TPS counter */}
+                                            <div className="flex flex-col items-center justify-center relative mb-6 md:mb-0">
+                                                {/* Glowing background effect */}
+                                                <div className="absolute -inset-4 blur-xl bg-cyan-500/10 rounded-full"></div>
+                                                
+                                                {/* TPS count with animated border */}
+                                                <div className="relative bg-gray-900/70 border border-cyan-400/30 rounded-xl p-5 shadow-lg overflow-hidden">
+                                                    <div className="absolute inset-0 overflow-hidden">
+                                                        <div className="absolute -inset-1 animate-[scanUI_3s_infinite_linear]">
+                                                            <div className="h-full w-full border border-cyan-400/30 rounded-xl"></div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div className="relative z-10">
+                                                        <span className="block text-6xl font-bold text-white font-mono tracking-tighter mb-1 relative">
+                                                            <span className="relative inline-block">
+                                                                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-100 to-cyan-200">164,000</span>
+                                                                {/* Glitch effect */}
+                                                                <span className="absolute top-0 left-0 text-cyan-400 opacity-70 animate-pulse">164,000</span>
+                                                            </span>
+                                                            <span className="text-cyan-400 ml-1 animate-pulse">+</span>
+                                                        </span>
+                                                        <div className="text-sm text-cyan-300 font-mono tracking-widest uppercase text-center">
+                                                            TPS
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                
-                                                <div className="relative z-10">
-                                                    <span className="block text-6xl font-bold text-white font-mono tracking-tighter mb-1 relative">
-                                                        <span className="relative inline-block">
-                                                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-100 to-cyan-200">164,000</span>
-                                                            {/* Glitch effect */}
-                                                            <span className="absolute top-0 left-0 text-cyan-400 opacity-70 animate-pulse">164,000</span>
-                                                        </span>
-                                                        <span className="text-cyan-400 ml-1 animate-pulse">+</span>
-                                                    </span>
-                                                    <div className="text-sm text-cyan-300 font-mono tracking-widest uppercase text-center">
-                                                        TPS
-                                                    </div>
+                                                <div className="mt-2 text-xs text-cyan-400/70 font-medium font-mono">
+                                                    TRANSACTIONS PER SECOND
                                                 </div>
                                             </div>
-                                            <div className="mt-2 text-xs text-cyan-400/70 font-medium font-mono">
-                                                TRANSACTIONS PER SECOND
+                                            
+                                            {/* Right section - Performance metrics */}
+                                            <div className="flex flex-col items-center md:items-end">
+                                                <div className="flex items-center space-x-1 mb-2">
+                                                    <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                    </svg>
+                                                    <span className="text-xs font-mono text-cyan-300">HIGH PERFORMANCE</span>
+                                                </div>
+                                                <div className="p-3 rounded-lg border border-purple-500/30 bg-gray-900/50 flex flex-col items-center">
+                                                    <div className="grid grid-cols-10 gap-1 mb-2">
+                                                        {[...Array(10)].map((_, i) => (
+                                                            <div 
+                                                                key={i} 
+                                                                className={`h-8 w-2 rounded-sm ${
+                                                                    i < 2 ? "bg-cyan-900" : 
+                                                                    i < 4 ? "bg-cyan-700" : 
+                                                                    i < 6 ? "bg-cyan-500" : 
+                                                                    i < 8 ? "bg-cyan-400" : 
+                                                                    "bg-cyan-300 animate-pulse"
+                                                                }`}
+                                                            ></div>
+                                                        ))}
+                                                    </div>
+                                                    <div className="w-full bg-gray-800 h-[1px] mb-2"></div>
+                                                    <p className="text-[10px] text-gray-300 font-mono">MOVE VM BLOCKCHAIN</p>
+                                                </div>
                                             </div>
                                         </div>
                                         
-                                        {/* Right section - Performance metrics */}
-                                        <div className="flex flex-col items-center md:items-end">
-                                            <div className="flex items-center space-x-1 mb-2">
-                                                <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                </svg>
-                                                <span className="text-xs font-mono text-cyan-300">HIGH PERFORMANCE</span>
-                                            </div>
-                                            <div className="p-3 rounded-lg border border-purple-500/30 bg-gray-900/50 flex flex-col items-center">
-                                                <div className="grid grid-cols-10 gap-1 mb-2">
-                                                    {[...Array(10)].map((_, i) => (
-                                                        <div 
-                                                            key={i} 
-                                                            className={`h-8 w-2 rounded-sm ${
-                                                                i < 2 ? "bg-cyan-900" : 
-                                                                i < 4 ? "bg-cyan-700" : 
-                                                                i < 6 ? "bg-cyan-500" : 
-                                                                i < 8 ? "bg-cyan-400" : 
-                                                                "bg-cyan-300 animate-pulse"
-                                                            }`}
-                                                        ></div>
-                                                    ))}
+                                        {/* Panorama SDK row */}
+                                        <div className="p-6 relative z-10">
+                                            <div className="flex flex-col lg:flex-row items-start lg:items-center mb-4">
+                                                <div className="flex items-center mb-4 lg:mb-0 lg:mr-6">
+                                                    <div className="mr-3 p-2 rounded-md bg-indigo-900/50 border border-indigo-500/30">
+                                                        <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                                                        </svg>
+                                                    </div>
+                                                    <div>
+                                                        <h3 className="text-xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                                                            panorama
+                                                        </h3>
+                                                        <p className="text-xs text-gray-300 font-mono">CORE BLOCKCHAIN SDK</p>
+                                                    </div>
                                                 </div>
-                                                <div className="w-full bg-gray-800 h-[1px] mb-2"></div>
-                                                <p className="text-[10px] text-gray-300 font-mono">MOVE VM BLOCKCHAIN</p>
+                                                <p className="text-sm text-gray-300 leading-relaxed flex-1 mb-4 lg:mb-0">
+                                                    A foundational crate within the Kanari SDK that provides essential functionalities for building secure and high-performance blockchain applications.
+                                                </p>
+                                            </div>
+                                            
+                                            {/* Panorama Components Grid */}
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                                {[
+                                                    {
+                                                        title: "Data Structures",
+                                                        description: "Definitions for fundamental blockchain elements like blocks, transactions, and state",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: "Consensus Mechanisms",
+                                                        description: "Implementation of consensus algorithms for block validation and chain agreement",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: "Virtual Machine Integration",
+                                                        description: "Support for executing smart contracts through MoveVM",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: "Cryptography",
+                                                        description: "Cryptographic primitives for secure transactions and data integrity",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: "Networking",
+                                                        description: "Networking protocols for peer-to-peer communication and block propagation",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                    {
+                                                        title: "APIs",
+                                                        description: "APIs for interacting with the blockchain and managing accounts",
+                                                        icon: (
+                                                            <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                            </svg>
+                                                        )
+                                                    },
+                                                ].map((item, index) => (
+                                                    <div key={index} className="flex p-3 rounded-lg border border-indigo-500/20 bg-gray-900/40 hover:bg-gray-900/60 transition-colors">
+                                                        <div className="mr-3 p-2 rounded-md bg-gray-800/80 border border-indigo-500/20">
+                                                            {item.icon}
+                                                        </div>
+                                                        <div>
+                                                            <h4 className="text-sm font-mono font-semibold text-white mb-1">{item.title}</h4>
+                                                            <p className="text-xs text-gray-400">{item.description}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
