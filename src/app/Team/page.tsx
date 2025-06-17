@@ -34,20 +34,20 @@ const Team = () => {
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+            
             <main className="relative">
-
-
-                {/* Features Section - Neo-Tokyo 2077 */}
+                {/* Team Section */}
                 <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950">
-
                     {/* Content */}
                     <div className="relative z-10">
-                        <section className="pt-16 sm:pt-24 py-2 px-2"></section>
-
-                        <section className="py-10 sm:py-20 px-4"> {/* Improved mobile padding */}
-
+                        {/* Header spacing */}
+                        <div className="h-24"></div>
+                        
+                        {/* Team Section Content */}
+                        <section className="py-12 sm:py-20 px-4"> 
                             <div className="max-w-7xl mx-auto text-center">
-                                <div className="text-center space-y-4 sm:space-y-6">
+                                {/* Section Header */}
+                                <div className="text-center space-y-4 sm:space-y-6 mb-12">
                                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
                                         Kanari Network:
                                         <span className="block mt-2 group-hover:translate-x-2 transition-transform">
@@ -56,13 +56,13 @@ const Team = () => {
                                         <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                     </h2>
 
-                                    <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+                                    <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                                         Our team is made up of a diverse group of individuals with a wide range of skills and experience. We are united by our passion for blockchain technology and our belief in the transformative power of decentralized finance.
                                     </p>
                                 </div>
 
-                                {/* Team Members Grid - Improved for Mobile */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-16">
+                                {/* Team Members Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                                     {teamMembers.map((member, index) => (
                                         <div key={index} className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border border-gray-200/50 
                                           dark:border-gray-700/50 rounded-xl p-4 sm:p-8 hover:scale-105 hover:shadow-xl transition-all 
@@ -110,7 +110,6 @@ const Team = () => {
                         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
                     </div>
                 </section>
-
             </main>
         </div>
     );

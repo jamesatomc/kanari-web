@@ -28,28 +28,26 @@ export default function MediaKit() {
         document.body.removeChild(link);
     };
 
-
     return (
-
         <div className={`transition-colors duration-300 ${darkMode
             ? 'dark bg-gray-900 dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-900'
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+            
             <main className="relative">
-
-
-                {/* Features Section - Neo-Tokyo 2077 */}
+                {/* Media Kit Section */}
                 <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950">
-                
-
                     {/* Content */}
                     <div className="relative z-10">
-                        <section className="pt-16 sm:pt-24 py-2 px-2"></section>
-
-                        <section className="py-10 sm:py-20 px-4"> {/* Improved mobile padding */}
+                        {/* Header spacing */}
+                        <div className="h-24"></div>
+                        
+                        {/* Media Kit Content */}
+                        <section className="py-12 sm:py-20 px-4">
                             <div className="max-w-7xl mx-auto text-center">
-                                <div className="text-center space-y-4 sm:space-y-6"> {/* Adjusted spacing */}
+                                {/* Section Header */}
+                                <div className="text-center space-y-4 sm:space-y-6 mb-12">
                                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
                                         Kanari Network:
                                         <span className="block mt-2 group-hover:translate-x-2 transition-transform">
@@ -58,13 +56,13 @@ export default function MediaKit() {
                                         <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                     </h2>
 
-                                    <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+                                    <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                                         The Kanari Media Kit is a collection of resources for journalists, content creators, and community members to use when writing about the Kanari Network. The kit includes logos, brand guidelines, and other assets that can be used to create content that is consistent with the Kanari brand.
                                     </p>
                                 </div>
 
-                                {/* Resources Colors - Improved Mobile Layout */}
-                                <div className="py-8 sm:py-12 flex flex-col gap-6 sm:gap-8">
+                                {/* Resources Colors */}
+                                <div className="py-8 sm:py-12 flex flex-col gap-6 sm:gap-8 mb-12">
                                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                                         <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-500 to-blue-500"></div>
                                         <h2 className="text-2xl sm:text-3xl font-bold dark:text-white bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Brand Colors</h2>
@@ -101,7 +99,7 @@ export default function MediaKit() {
                                     </div>
                                 </div>
 
-                                {/* Logo Assets Section - Improved Mobile Layout */}
+                                {/* Logo Assets Section */}
                                 <div className="py-8 sm:py-12 flex flex-col gap-6 sm:gap-8">
                                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                                         <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-500 to-blue-500"></div>
@@ -200,9 +198,8 @@ export default function MediaKit() {
                         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
                     </div>
                 </section>
-
             </main>
         </div>
     );
-};
+}
 
