@@ -2,26 +2,22 @@
 import React, { useState } from 'react';
 import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
-import Image from 'next/image'
 
 
 export default function DeveloperPortal() {
     const [darkMode, setDarkMode] = useState(false);
 
     return (
-
         <div className={`transition-colors duration-300 ${darkMode
             ? 'dark bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950'
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
 
-            <main className="relative min-h-screen overflow-hidden ">
-
+            <main className="relative min-h-screen overflow-hidden">
                 {/* Content */}
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
-                    <section className="pt-16 sm:pt-24 py-2 px-2 "></section>
+                    <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
                     <section className="py-10 sm:py-20 px-4"> {/* Improved mobile padding */}
                         <div className="max-w-7xl mx-auto text-center">

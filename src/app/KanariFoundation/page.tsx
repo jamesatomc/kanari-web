@@ -5,24 +5,20 @@ import Footer from '../Section/body/Footer';
 import { InvestorCard } from '../Section/body/InvestorCard';
 
 
-const KanariFoundation = () => {
+export default function KanariFoundation() {
     const [darkMode, setDarkMode] = useState(false);
 
     return (
-
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'dark bg-gray-900 dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-900'
+            ? 'dark bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950'
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
-            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-            
-            <main className="relative">
-                {/* Foundation Section */}
-                <section className="relative min-h-screen overflow-hidden bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950">
-                    {/* Content */}
-                    <div className="relative z-10">
-                        {/* Header spacing */}
-                        <div className="h-24"></div>
+
+            <main className="relative min-h-screen overflow-hidden">
+                {/* Content */}
+                <div className="relative z-10">
+                    <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+                    <section className="pt-16 sm:pt-24 py-2 px-2"></section>
                         
                         {/* Foundation Content */}
                         <section className="py-12 sm:py-20 px-4">
@@ -92,10 +88,8 @@ const KanariFoundation = () => {
 
                         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
                     </div>
-                </section>
+
             </main>
         </div>
     );
 };
-
-export default KanariFoundation;

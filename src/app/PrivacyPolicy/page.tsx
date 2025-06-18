@@ -1,60 +1,55 @@
 'use client';
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
+import {
+    AnchorHTMLAttributes,
+    HTMLAttributes,
+    BlockquoteHTMLAttributes,
+    OlHTMLAttributes,
+    LiHTMLAttributes
+} from 'react';
 import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { privacyPolicyContent } from '../data/privacy-policy.md';
+import { privacyPolicyContent } from '../data/privacy-policy';
 
 export default function PrivacyPolicy() {
     const [darkMode, setDarkMode] = useState(false);
 
+    // Define renderers with proper types that match ReactMarkdown's Components interface
     const renderers = {
-        h1: ({ children }) => (
-            <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">{children}</h1>
-        ),
-        h2: ({ children }) => (
-            <h2 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">{children}</h2>
-        ),
-        h3: ({ children }) => (
-            <h3 className="text-lg font-medium mt-4 mb-2 text-gray-800 dark:text-gray-200">{children}</h3>
-        ),
-        p: ({ children }) => (
-            <p className="mb-4 text-gray-700 dark:text-gray-300">{children}</p>
-        ),
-        ul: ({ children }) => (
-            <ul className="list-disc ml-6 mb-4 text-gray-700 dark:text-gray-300">{children}</ul>
-        ),
-        ol: ({ children }) => (
-            <ol className="list-decimal ml-6 mb-4 text-gray-700 dark:text-gray-300">{children}</ol>
-        ),
-        li: ({ children }) => (
-            <li className="mb-1 text-gray-700 dark:text-gray-300">{children}</li>
-        ),
-        strong: ({ children }) => (
-            <strong className="font-bold text-gray-800 dark:text-gray-200">{children}</strong>
-        ),
-        em: ({ children }) => (
-            <em className="italic text-gray-800 dark:text-gray-200">{children}</em>
-        ),
-        a: ({ href, children }) => (
-            <a
-                href={href}
-                className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                {children}
-            </a>
-        ),
-        hr: () => (
-            <hr className="my-6 border-gray-300 dark:border-gray-700" />
-        ),
-        blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 py-2 mb-4 italic text-gray-700 dark:text-gray-400">
-                {children}
-            </blockquote>
-        ),
+        h1: function H1({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
+            return <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100" {...rest}>{children}</h1>;
+        },
+        h2: function H2({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
+            return <h2 className="text-2xl font-bold mb-3 mt-6 text-gray-800 dark:text-gray-200" {...rest}>{children}</h2>;
+        },
+        h3: function H3({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
+            return <h3 className="text-xl font-bold mb-2 mt-4 text-gray-800 dark:text-gray-200" {...rest}>{children}</h3>;
+        },
+        p: function Paragraph({ node, children, ...rest }: HTMLAttributes<HTMLParagraphElement> & { node?: any, children?: ReactNode }) {
+            return <p className="mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</p>;
+        },
+        ul: function UnorderedList({ node, children, ...rest }: HTMLAttributes<HTMLUListElement> & { node?: any, children?: ReactNode }) {
+            return <ul className="list-disc pl-5 mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</ul>;
+        },
+        ol: function OrderedList({ node, children, ...rest }: OlHTMLAttributes<HTMLOListElement> & { node?: any, children?: ReactNode }) {
+            return <ol className="list-decimal pl-5 mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</ol>;
+        },
+        li: function ListItem({ node, children, ...rest }: LiHTMLAttributes<HTMLLIElement> & { node?: any, children?: ReactNode }) {
+            return <li className="mb-1 text-gray-700 dark:text-gray-300" {...rest}>{children}</li>;
+        },
+        strong: function Strong({ node, children, ...rest }: HTMLAttributes<HTMLElement> & { node?: any, children?: ReactNode }) {
+            return <strong className="font-bold text-gray-900 dark:text-white" {...rest}>{children}</strong>;
+        },
+        em: function Emphasis({ node, children, ...rest }: HTMLAttributes<HTMLElement> & { node?: any, children?: ReactNode }) {
+            return <em className="italic text-gray-800 dark:text-gray-200" {...rest}>{children}</em>;
+        },
+        a: function Anchor({ node, href, children, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { node?: any, children?: ReactNode }) {
+            return <a href={href} className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300" {...rest}>{children}</a>;
+        },
+        blockquote: function BlockQuote({ node, children, ...rest }: BlockquoteHTMLAttributes<HTMLQuoteElement> & { node?: any, children?: ReactNode }) {
+            return <blockquote className="border-l-4 border-gray-200 dark:border-gray-700 pl-4 py-2 mb-4 italic text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-gray-800" {...rest}>{children}</blockquote>;
+        },
     };
 
     // Format the current date
