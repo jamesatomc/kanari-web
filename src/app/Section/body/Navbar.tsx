@@ -137,24 +137,24 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/learn/basics" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Basics
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/learn/advanced" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Advanced
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/learn/tutorials" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Tutorials
                 </Link>
-              </li>
+              </div>
             </div>
           </div>
         </li>
@@ -201,24 +201,24 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/build/docs" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Documentation
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/build/tools" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Tools
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/build/resources" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Resources
                 </Link>
-              </li>
+              </div>
             </div>
           </div>
         </li>
@@ -265,24 +265,24 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/connect/community" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Community Hub
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/connect/events" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Events
                 </Link>
-              </li>
-              <li className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
+              </div>
+              <div className={`py-1 rounded-xl transition-all duration-200 ease-in-out transform 
                   hover:-translate-y-1 hover:shadow-sm ${darkMode ? 'hover:bg-gray-700/70' : 'hover:bg-gray-50/70'}`}>
                 <Link href="/connect/support" className={`block px-3 py-2 ${darkMode ? 'text-white' : 'text-gray-800'} hover:pl-4 transition-all duration-200 rounded-lg`}>
                   Support
                 </Link>
-              </li>
+              </div>
             </div>
           </div>
         </li>
@@ -385,32 +385,32 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                   </div>
                   
                   {learnOpen && (
-                    <ul className="pl-8 mt-3 space-y-3 border-l-2 border-indigo-500/30">
-                      <li>
+                    <div className="pl-8 mt-3 space-y-3 border-l-2 border-indigo-500/30">
+                      <div>
                         <Link href="/learn/basics" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Basics
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/learn/advanced" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Advanced
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/learn/tutorials" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Tutorials
                         </Link>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                   )}
                 </li>
                 
@@ -428,32 +428,32 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                   </div>
                   
                   {buildOpen && (
-                    <ul className="pl-8 mt-3 space-y-3 border-l-2 border-red-500/30">
-                      <li>
+                    <div className="pl-8 mt-3 space-y-3 border-l-2 border-red-500/30">
+                      <div>
                         <Link href="/build/docs" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Documentation
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/build/tools" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Tools
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/build/resources" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Resources
                         </Link>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                   )}
                 </li>
                 
@@ -471,32 +471,32 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
                   </div>
                   
                   {connectOpen && (
-                    <ul className="pl-8 mt-3 space-y-3 border-l-2 border-indigo-500/30">
-                      <li>
+                    <div className="pl-8 mt-3 space-y-3 border-l-2 border-indigo-500/30">
+                      <div>
                         <Link href="/connect/community" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Community Hub
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/connect/events" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Events
                         </Link>
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <Link href="/connect/support" 
                           className={`block py-1 hover:translate-x-2 transition-transform ${darkMode ? 'text-gray-300' : 'text-gray-600'} rounded-md p-2 hover:bg-opacity-10 hover:bg-gray-500`}
                           onClick={() => setNav(false)}
                         >
                           Support
                         </Link>
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                   )}
                 </li>
               </ul>
