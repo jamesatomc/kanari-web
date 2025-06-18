@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import './VCSection.css';
 
 export function VCSection() {
+    const [darkMode, setDarkMode] = useState(false);
+
+    
     // Sample VC and Investor data (replace with your actual data)
     const vcs = [
         {
@@ -77,7 +80,10 @@ export function VCSection() {
                             <div className="h-1 w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                         </h2>
 
-                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                            ? 'dark:text-gray-300'
+                            : 'text-gray-600 '
+                            }`}>
                             Kanari Network is supported by a strong network of investors who believe in our vision.
                         </p>
                     </div>

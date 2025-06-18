@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image'
 import './OfficialChannels.css';
 
 export function OfficialChannels() {
+    const [darkMode, setDarkMode] = useState(false);
+
     const channels = [
         {
             name: "Bluesky",
@@ -69,22 +71,9 @@ export function OfficialChannels() {
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto text-center">
 
-                <div className="text-center space-y-6">
-                    <h2 className="text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r 
-                            from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 
-                            dark:to-purple-200 bg-clip-text text-transparent group">
-                        Kanari Network:
-                        <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                            Official Channels
-                        </span>
-                        <div className="h-1 w-32 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 
-                                rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                    </h2>
 
-                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                        Connect with us through our official channels to stay updated on the latest developments, announcements, and community discussions.
-                    </p>
-                </div>
+
+
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     {channels.map((channel, index) => (
@@ -102,14 +91,14 @@ export function OfficialChannels() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-purple-600 tokyo-glow"></div>
                             <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
                             <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-purple-400 tokyo-glow-purple"></div>
-                            
+
                             {/* Japanese pattern overlay */}
                             <div className="absolute right-0 top-0 h-full w-1/3 tokyo-pattern opacity-20"></div>
-                            
+
                             {/* Japanese calligraphy decorative elements */}
                             <div className="absolute -left-2 top-1/4 text-3xl font-bold text-red-500/10 tokyo-kanji rotate-90">{channel.kanji}</div>
                             <div className="absolute right-4 bottom-8 text-2xl font-bold text-purple-500/10 tokyo-kanji">接続</div>
-                            
+
                             {/* Digital circuits with Japanese style */}
                             <div className="absolute left-2 top-8 w-8 h-32 tokyo-circuit-vertical"></div>
                             <div className="absolute right-8 bottom-2 h-8 w-32 tokyo-circuit-horizontal"></div>
@@ -150,7 +139,7 @@ export function OfficialChannels() {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Digital corner elements */}
                             <div className="absolute top-0 right-0 tokyo-corner-tr"></div>
                             <div className="absolute bottom-0 left-0 tokyo-corner-bl"></div>

@@ -5,7 +5,7 @@ import './NewsletterSection.css';
 import { createPortal } from 'react-dom';
 
 export function NewsletterSection() {
-    // Add state near the top of component
+    const [darkMode, setDarkMode] = useState(false);
     const [showTerms, setShowTerms] = useState(false);
 
     return (
@@ -13,11 +13,11 @@ export function NewsletterSection() {
             <section className="py-20 px-4 relative overflow-hidden">
                 {/* Tokyo-style pattern overlay */}
                 <div className="absolute inset-0 tokyo-pattern-overlay"></div>
-                
+
                 {/* Japanese decorative kanji */}
                 <div className="absolute -right-4 top-20 text-6xl font-bold text-red-500/5 tokyo-kanji">ニュース</div>
                 <div className="absolute -left-4 top-40 text-5xl font-bold text-pink-500/5 tokyo-kanji">情報</div>
-                
+
                 <div className="max-w-4xl mx-auto rounded-2xl shadow-lg p-8 sm:p-10 backdrop-blur-sm 
                 bg-white/20 dark:bg-gray-800/20 border border-red-300/30 dark:border-red-500/30 
                 hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-newsletter-card relative overflow-hidden">
@@ -25,7 +25,7 @@ export function NewsletterSection() {
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-pink-600 tokyo-glow"></div>
                     <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
                     <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-pink-400 tokyo-glow-pink"></div>
-                    
+
                     {/* Tokyo corner elements */}
                     <div className="absolute tokyo-corner-tr"></div>
                     <div className="absolute tokyo-corner-tl"></div>

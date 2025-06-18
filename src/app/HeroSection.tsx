@@ -210,7 +210,10 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
+                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                                    }`}>
                                     Kanari Network:
                                     <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                                         Use Cases and Features
@@ -218,7 +221,10 @@ module kanari::example {
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                    ? 'dark:text-gray-300'
+                                    : 'text-gray-600 '
+                                    }`}>
                                     Explore the capabilities of Kanari Network and Move VM for secure and transparent file metadata management in the Web3 ecosystem.
                                 </p>
                             </div>
@@ -316,7 +322,10 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
+                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                                    }`}>
                                     Kanari Network:
                                     <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                                         Secure File Metadata Platform
@@ -324,7 +333,10 @@ module kanari::example {
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                    ? 'dark:text-gray-300'
+                                    : 'text-gray-600 '
+                                    }`}>
                                     A decentralized platform leveraging MoveVM to provide secure, transparent, and efficient file metadata management in the Web3 ecosystem.
                                 </p>
                             </div>
@@ -391,7 +403,10 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
+                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                                    }`}>
                                     Kanari Network:
                                     <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                                         Web3 Metadata Solutions
@@ -399,7 +414,10 @@ module kanari::example {
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                    ? 'dark:text-gray-300'
+                                    : 'text-gray-600 '
+                                    }`}>
                                     Revolutionizing file metadata management with secure, transparent, and efficient blockchain solutions.
                                 </p>
                             </div>
@@ -452,7 +470,52 @@ module kanari::example {
                     </section>
 
                     {/* Updates and Channels Sections */}
+                    {/* Section Header */}
+                    <div className="text-center space-y-4 sm:space-y-6 mb-12">
+                        <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                            ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                            : ' from-gray-900 via-blue-800 to-purple-900'
+                            }`}>
+                            Kanari Network:
+                            <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                                Latest Updates
+                            </span>
+                            <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                        </h2>
+
+                        <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                            ? 'dark:text-gray-300'
+                            : 'text-gray-600 '
+                            }`}>
+                            Stay updated with the latest news and insights from the Kanari Network.
+                            Our blog features articles on blockchain technology, digital assets, and more.
+                            Explore our latest posts to learn about the innovations and developments
+                            shaping the future of the Kanari Network.
+                        </p>
+                    </div>
                     <LatestUpdates />
+
+                    {/* Section Header */}
+                    <div className="text-center space-y-6">
+                        <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                            ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                            : ' from-gray-900 via-blue-800 to-purple-900'
+                            }`}>
+                            Kanari Network:
+                            <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                                Official Channels
+                            </span>
+                            <div className="h-1 w-32 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                                rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                        </h2>
+
+                        <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                            ? 'dark:text-gray-300'
+                            : 'text-gray-600 '
+                            }`}>
+                            Connect with us through our official channels to stay updated on the latest developments, announcements, and community discussions.
+                        </p>
+                    </div>
                     <OfficialChannels />
 
                     {/* Newsletter Section */}
