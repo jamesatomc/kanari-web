@@ -4,38 +4,68 @@ import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { privacyPolicyContent } from '../data/privacy-policy-data.md';
+import { privacyPolicyContent } from '../data/privacy-policy.md';
 
 export default function PrivacyPolicy() {
     const [darkMode, setDarkMode] = useState(false);
 
     const renderers = {
-        h1: ({ children }: { children: React.ReactNode }) => (
-            <h3 className="flex items-center text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
-                {children}
-            </h3>
+        h1: ({ children }) => (
+            <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">{children}</h1>
         ),
-        h2: ({ children }: { children: React.ReactNode }) => (
-            <h4 className="text-lg sm:text-xl font-medium text-gray-900 dark:text-white mb-3 sm:mb-4">
-                {children}
-            </h4>
+        h2: ({ children }) => (
+            <h2 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">{children}</h2>
         ),
-        ul: ({ children }: { children: React.ReactNode }) => (
-            <ul className="space-y-3 sm:space-y-4 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                {children}
-            </ul>
+        h3: ({ children }) => (
+            <h3 className="text-lg font-medium mt-4 mb-2 text-gray-800 dark:text-gray-200">{children}</h3>
         ),
-        li: ({ children }: { children: React.ReactNode }) => (
-            <li className="flex items-start">
-                <span className="bg-blue-100 dark:bg-blue-900 rounded-full p-1 mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0">
-                    <svg className="w-2 h-2 sm:w-3 sm:h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                    </svg>
-                </span>
+        p: ({ children }) => (
+            <p className="mb-4 text-gray-700 dark:text-gray-300">{children}</p>
+        ),
+        ul: ({ children }) => (
+            <ul className="list-disc ml-6 mb-4 text-gray-700 dark:text-gray-300">{children}</ul>
+        ),
+        ol: ({ children }) => (
+            <ol className="list-decimal ml-6 mb-4 text-gray-700 dark:text-gray-300">{children}</ol>
+        ),
+        li: ({ children }) => (
+            <li className="mb-1 text-gray-700 dark:text-gray-300">{children}</li>
+        ),
+        strong: ({ children }) => (
+            <strong className="font-bold text-gray-800 dark:text-gray-200">{children}</strong>
+        ),
+        em: ({ children }) => (
+            <em className="italic text-gray-800 dark:text-gray-200">{children}</em>
+        ),
+        a: ({ href, children }) => (
+            <a
+                href={href}
+                className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 {children}
-            </li>
+            </a>
+        ),
+        hr: () => (
+            <hr className="my-6 border-gray-300 dark:border-gray-700" />
+        ),
+        blockquote: ({ children }) => (
+            <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 py-2 mb-4 italic text-gray-700 dark:text-gray-400">
+                {children}
+            </blockquote>
         ),
     };
+
+    // Format the current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Replace the placeholder with the actual date
+    const updatedContent = privacyPolicyContent.replace('[Current Date]', currentDate);
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
@@ -51,7 +81,7 @@ export default function PrivacyPolicy() {
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
                     {/* Privacy policy Section - Improved Mobile Layout */}
-                    <section className="px-4 py-6 sm:py-10">
+                    <section className="px-2 py-6 sm:py-10">
                         <div className="max-w-7xl mx-auto text-center">
                             <div className="text-center space-y-4 sm:space-y-6">
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r 
@@ -68,19 +98,14 @@ export default function PrivacyPolicy() {
                             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6">
                                 Your privacy is important to us. It is Kanari Network&apos;s policy to respect your privacy regarding any information we may collect from you across our website, <a href="#" className="text-blue-600 dark:text-blue-400">https://kanari.network</a>, and other sites we own and operate.
                             </p>
-                            <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300">Last updated: March 14, 2024</p>
                         </div>
                     </section>
 
                     {/* Policy Content - Improved Mobile Layout */}
                     <section className="px-4 md:px-6 lg:px-8">
-                        <div className="mt-8 sm:mt-16 max-w-4xl mx-auto space-y-8 sm:space-y-12">
-                            <ReactMarkdown 
-                                remarkPlugins={[remarkGfm]} 
-                                components={renderers}
-                                className="space-y-8 sm:space-y-12"
-                            >
-                                {privacyPolicyContent}
+                        <div className="container mx-auto px-4 py-8">
+                            <ReactMarkdown components={renderers}>
+                                {updatedContent}
                             </ReactMarkdown>
                         </div>
                     </section>
