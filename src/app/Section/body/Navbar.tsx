@@ -114,8 +114,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             onMouseLeave={() => setDropdownOpen(menu.title.toLowerCase() as keyof typeof dropdownStates, false)}
             darkMode={darkMode}
             titleColor={darkMode ? menu.titleColor.dark : menu.titleColor.light}
-            gradientColors={darkMode ? menu.gradientColors.dark : menu.gradientColors.light}
-          />
+            gradientColors={darkMode ? menu.gradientColors.dark : menu.gradientColors.light} hoverEffect={""}          />
         ))}
       </ul>
 
