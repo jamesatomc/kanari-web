@@ -109,15 +109,15 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-purple-950'
-            : 'bg-gradient-to-br from-white via-blue-50 to-purple-50'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
+            : 'bg-gradient-to-br from-white via-gray-50 to-blue-50'
         }`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/5' : 'bg-indigo-200/20'} rounded-full blur-3xl`}></div>
                 </div>
 
                 <div className="relative z-10">
@@ -125,27 +125,27 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
                     {/* Hero Section */}
-                    <section className="py-16 sm:py-24 px-4">
+                    <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="space-y-6 sm:space-y-8 mb-16">
+                            <div className="space-y-6 sm:space-y-8 mb-12">
                                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
-                                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' 
-                                    : 'bg-purple-100 text-purple-800 border border-purple-200'
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
                                 }`}>
                                     🌟 Join Our Growing Community
                                 </div>
                                 
-                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-purple-200 to-blue-200'
-                                    : 'from-gray-900 via-purple-800 to-blue-900'
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-blue-200 to-indigo-200'
+                                    : 'from-gray-900 via-blue-800 to-indigo-900'
                                 } bg-clip-text text-transparent`}>
                                     Community Hub
-                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-3xl font-medium opacity-80">
                                         Connect, Learn, Build Together
                                     </span>
                                 </h1>
 
-                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                <p className={`text-lg sm:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
                                     Join thousands of developers, innovators, and blockchain enthusiasts building the future of decentralized finance on Kanari Network.
                                 </p>
                             </div>
@@ -156,14 +156,14 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
-                                ? 'bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-500/20'
-                                : 'bg-gradient-to-r from-purple-600 to-blue-600'
+                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
                             } backdrop-blur-sm`}>
                                 <div className="text-center mb-12">
                                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                                         Our Community in Numbers
                                     </h2>
-                                    <p className="text-purple-100 text-lg">
+                                    <p className="text-blue-100 text-lg">
                                         Growing stronger every day
                                     </p>
                                 </div>
@@ -195,12 +195,12 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-purple-300 to-blue-300'
-                                    : 'from-purple-800 to-blue-800'
+                                    ? 'from-blue-300 to-indigo-300'
+                                    : 'from-blue-800 to-indigo-800'
                                 } bg-clip-text text-transparent`}>
                                     Join Our Channels
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto mb-8`}>
+                                <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto mb-8`}>
                                     Choose the perfect platform to connect with fellow community members
                                 </p>
 
@@ -213,8 +213,8 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                             className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                                                 activeFilter === filter.key
                                                     ? darkMode
-                                                        ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/25'
-                                                        : 'bg-purple-600 text-white shadow-lg shadow-purple-500/25'
+                                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                                                        : 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
                                                     : darkMode
                                                         ? 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
                                                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -232,8 +232,8 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                     <div
                                         key={channel.id}
                                         className={`group p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
-                                            ? 'bg-gray-800/50 border border-purple-500/20 hover:border-purple-400/40'
-                                            : 'bg-white border border-purple-200 hover:border-purple-300 shadow-lg hover:shadow-xl'
+                                            ? 'bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm hover:border-blue-500/40'
+                                            : 'bg-white/70 border border-gray-200/50 backdrop-blur-sm shadow-xl hover:border-blue-300'
                                         }`}
                                     >
                                         {/* Channel Header */}
@@ -260,7 +260,7 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
                                                 {channel.description}
                                             </p>
-                                            <div className={`flex items-center space-x-2 ${darkMode ? 'text-purple-300' : 'text-purple-600'}`}>
+                                            <div className={`flex items-center space-x-2 ${darkMode ? 'text-blue-300' : 'text-blue-600'}`}>
                                                 <span className="text-sm font-medium">👥 {channel.members} members</span>
                                             </div>
                                         </div>
@@ -272,8 +272,8 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${darkMode
-                                                    ? 'bg-purple-600 text-white hover:bg-purple-500 shadow-lg shadow-purple-500/25'
-                                                    : 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-500/25'
+                                                    ? 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-500/25'
+                                                    : 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/25'
                                                 }`}
                                             >
                                                 Join Channel
@@ -292,9 +292,9 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                     <section className="py-16 px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
-                                ? 'bg-gray-800/30 border border-gray-700/50'
-                                : 'bg-white/70 border border-gray-200/50 shadow-xl'
-                            } backdrop-blur-sm`}>
+                                ? 'bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm'
+                                : 'bg-white/70 border border-gray-200/50 backdrop-blur-sm shadow-xl'
+                            }`}>
                                 <div className="text-center mb-8">
                                     <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Community Guidelines
