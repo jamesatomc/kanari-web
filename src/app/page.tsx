@@ -1,8 +1,16 @@
+'use client';
 
+import PageWrapper from "./components/PageWrapper";
 import HeroSection from "./HeroSection";
+
 
 export default function Home() {
   return (
-    <HeroSection />
+        <PageWrapper>
+            {({ darkMode, setDarkMode }) => (
+                <HeroSection darkMode={darkMode} setDarkMode={setDarkMode} />
+            )}
+        </PageWrapper>
   );
 }
+

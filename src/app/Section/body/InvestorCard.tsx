@@ -10,16 +10,20 @@ interface InvestorCardProps {
     description: string;
     darkMode: boolean;
     setDarkMode: (darkMode: boolean) => void;
+    onClick?: () => void;
 }
 
 // Memoize component for better performance
-export const InvestorCard: React.FC<InvestorCardProps> = memo(({ icon, title, description, darkMode, setDarkMode }) => {
+export const InvestorCard: React.FC<InvestorCardProps> = memo(({ icon, title, description, darkMode, setDarkMode, onClick }) => {
     return (
-        <div className={`backdrop-blur-sm rounded-xl p-8 hover:scale-105 hover:shadow-xl transition-all 
-                  duration-300 group relative overflow-hidden tokyo-cyber-card ${darkMode
+        <div 
+            className={`backdrop-blur-sm rounded-xl p-8 hover:scale-105 hover:shadow-xl transition-all 
+                  duration-300 group relative overflow-hidden tokyo-cyber-card ${onClick ? 'cursor-pointer' : ''} ${darkMode
                 ? 'bg-gray-900/30 border border-red-400/30'
                 : 'bg-white/20 border border-red-500/30'
-            }`}>
+            }`}
+            onClick={onClick}
+        >
 
 
             {/* Neo-Tokyo decorative elements */}

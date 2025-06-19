@@ -1,136 +1,187 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
 import PageWrapper from '../components/PageWrapper';
+import { DeveloperCard } from '../components/DeveloperCard';
+import { getResourcesByCategory } from '../data/developerResources';
+import { Icons } from '../components/IconLibrary';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function DeveloperPortalComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
+function DeveloperPortalComponent({ 
+    darkMode: externalDarkMode, 
+    setDarkMode: externalSetDarkMode 
+}: { 
+    darkMode?: boolean; 
+    setDarkMode?: (darkMode: boolean) => void 
+} = {}) {
+    const [internalDarkMode, setInternalDarkMode] = useState(false);
+    
+    const darkMode = externalDarkMode !== undefined ? externalDarkMode : internalDarkMode;
+    const setDarkMode = externalSetDarkMode || setInternalDarkMode;
+
+    const quickStartResources = getResourcesByCategory('quick-start');
+    const popularResources = getResourcesByCategory('popular');
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    }, []);
+
+    const renderIcon = (iconType: string) => {
+        const IconComponent = Icons[iconType as keyof typeof Icons];
+        return IconComponent ? <IconComponent /> : <Icons.document />;
+    };
+
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-r from-gray-950 to-indigo-950'
-            : 'bg-gradient-to-r from-gray-100 to-gray-200'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-purple-950'
+            : 'bg-gradient-to-br from-white via-blue-50 to-purple-50'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
-                {/* Content */}
+                {/* Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                </div>
+
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
-                    <section className="py-10 sm:py-20 px-4">
+                    {/* Hero Section */}
+                    <section className="py-16 sm:py-24 px-4" data-aos="fade-up">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="text-center space-y-4 sm:space-y-6">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-300 to-purple-200'
-                                    : 'from-gray-900 via-blue-800 to-purple-900'
-                                } bg-clip-text text-transparent group`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                                        Developer Portal
+                            <div className="space-y-6 sm:space-y-8 mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
+                                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' 
+                                    : 'bg-purple-100 text-purple-800 border border-purple-200'
+                                }`}>
+                                    🚀 Build the Future
+                                </div>
+                                
+                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-purple-200 to-blue-200'
+                                    : 'from-gray-900 via-purple-800 to-blue-900'
+                                } bg-clip-text text-transparent`}>
+                                    Developer Portal
+                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                        Build on Kanari Network
                                     </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                                </h2>
+                                </h1>
 
-                                <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed px-2 sm:px-0`}>
-                                    Welcome to the Kanari Network Developer Portal. Here you will find all the resources you need to get started building on the Kanari Network.
+                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                    Access comprehensive documentation, SDKs, and tools to build secure metadata solutions on MoveVM blockchain infrastructure.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+                                    <a href="https://docs.kanari.site/"
+                                        className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
+                                            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500 shadow-lg shadow-purple-500/25'
+                                            : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg shadow-purple-500/25'
+                                        }`}>
+                                        📚 View Documentation
+                                    </a>
+                                    <a href="https://github.com/kanari-network"
+                                        className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
+                                            ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                                            : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
+                                        }`}>
+                                        💻 GitHub Repository
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Quick Start Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="text-center mb-16" data-aos="fade-up">
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-purple-300 to-blue-300'
+                                    : 'from-purple-800 to-blue-800'
+                                } bg-clip-text text-transparent`}>
+                                    Quick Start Guide
+                                </h2>
+                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                                    Get started with Kanari Network development using our comprehensive resources and tools.
                                 </p>
                             </div>
 
-                            {/* Feature Cards - Improved Mobile Layout */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-16 px-2 sm:px-4">
-                                {/* Quick Start Guide */}
-                                <div className={`p-4 sm:p-6 rounded-xl backdrop-blur-lg border ${darkMode
-                                    ? 'bg-gray-800/20 border-gray-700'
-                                    : 'bg-white/10 border-gray-200'
-                                } hover:transform hover:scale-105 transition-all`}>
-                                    <div className="h-10 w-10 sm:h-12 sm:w-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3 sm:mb-4 mx-auto sm:mx-0">
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                        </svg>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {quickStartResources.map((resource, index) => (
+                                    <div key={resource.id} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                                        <DeveloperCard 
+                                            darkMode={darkMode}
+                                            icon={renderIcon(resource.icon)}
+                                            title={resource.title}
+                                            description={resource.description}
+                                            url={resource.url}
+                                        />
                                     </div>
-                                    <h3 className={`text-lg sm:text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2 text-center sm:text-left`}>Quick Start Guide</h3>
-                                    <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Get up and running with Kanari Network in minutes with our comprehensive quick start guide.</p>
-                                </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
 
-                                {/* API Documentation */}
-                                <div className={`p-4 sm:p-6 rounded-xl backdrop-blur-lg border ${darkMode
-                                    ? 'bg-gray-800/20 border-gray-700'
-                                    : 'bg-white/10 border-gray-200'
-                                } hover:transform hover:scale-105 transition-all`}>
-                                    <div className="h-10 w-10 sm:h-12 sm:w-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3 sm:mb-4 mx-auto sm:mx-0">
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                        </svg>
-                                    </div>
-                                    <h3 className={`text-lg sm:text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2 text-center sm:text-left`}>API Documentation</h3>
-                                    <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Explore our detailed API documentation with examples and use cases.</p>
-                                </div>
-
-                                {/* SDKs & Tools */}
-                                <div className={`p-4 sm:p-8 rounded-xl backdrop-blur-lg border ${darkMode
-                                    ? 'bg-gray-800/20 border-gray-700'
-                                    : 'bg-white/10 border-gray-200'
-                                } hover:transform hover:scale-105 transition-all shadow-lg`}>
-                                    <div className="h-12 w-12 sm:h-16 sm:w-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transform hover:rotate-6 transition-all shadow-lg mx-auto sm:mx-0">
-                                        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                                        </svg>
-                                    </div>
-                                    <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-3 sm:mb-4 text-center sm:text-left`}>SDKs & Tools</h3>
-                                    <p className={`text-sm sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>Access our developer tools and SDKs for multiple programming languages.</p>
-                                </div>
+                    {/* Popular Resources Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="text-center mb-16" data-aos="fade-up">
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
+                                } bg-clip-text text-transparent`}>
+                                    Development Tools
+                                </h2>
+                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                                    Essential resources and tools for building secure metadata solutions on Kanari Network.
+                                </p>
                             </div>
 
-                            {/* Documentation Links - Improved Mobile Layout */}
-                            <div className="mt-12 sm:mt-20">
-                                <div className="max-w-4xl mx-auto">
-                                    <h3 className={`text-2xl sm:text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-8 sm:mb-12 text-center`}>
-                                        Popular Resources
-                                        <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mt-3 sm:mt-4 rounded-full"></div>
-                                    </h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                                        {[
-                                            {
-                                                title: 'Installation Guide',
-                                                description: 'Step-by-step guide to install and configure Kanari Network',
-                                                icon: (
-                                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                )
-                                            },
-                                            {
-                                                title: 'API Reference',
-                                                description: 'Complete API documentation with examples and endpoints',
-                                                icon: (
-                                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                                    </svg>
-                                                )
-                                            },
-                                            {
-                                                title: 'Best Practices',
-                                                description: 'Learn about recommended practices and optimization tips',
-                                                icon: (
-                                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                )
-                                            },
-                                        ].map((item, index) => (
-                                            <div key={index} className={`p-4 sm:p-6 rounded-xl backdrop-blur-lg border ${darkMode
-                                                ? 'bg-white/5 border-gray-700 hover:bg-white/10'
-                                                : 'bg-white/5 border-gray-200 hover:bg-white/10'
-                                            } transition-all duration-300 hover:shadow-xl group`}>
-                                                <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4">
-                                                    <div className={`p-2 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} group-hover:scale-110 transition-transform mx-auto sm:mx-0 mb-2 sm:mb-0`}>
-                                                        {item.icon}
-                                                    </div>
-                                                    <h4 className={`text-lg sm:text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} sm:ml-4 text-center sm:text-left`}>{item.title}</h4>
-                                                </div>
-                                                <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{item.description}</p>
-                                            </div>
-                                        ))}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {popularResources.map((resource, index) => (
+                                    <div key={resource.id} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                                        <DeveloperCard 
+                                            darkMode={darkMode}
+                                            icon={renderIcon(resource.icon)}
+                                            title={resource.title}
+                                            description={resource.description}
+                                            url={resource.url}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Community Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
+                                ? 'bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-500/20'
+                                : 'bg-gradient-to-r from-purple-600 to-blue-600'
+                            } backdrop-blur-sm`}>
+                                <div className="text-center">
+                                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                        Join Our Developer Community
+                                    </h2>
+                                    <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
+                                        Connect with other developers, get support, and stay updated with the latest developments in the Kanari ecosystem.
+                                    </p>
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                        <button className="px-8 py-4 bg-white text-purple-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                            Join Discord
+                                        </button>
+                                        <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-purple-600">
+                                            Follow on Twitter
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -143,6 +194,9 @@ function DeveloperPortalComponent({ darkMode, setDarkMode }: { darkMode: boolean
         </div>
     );
 }
+
+// Export the component directly for reuse
+export { DeveloperPortalComponent };
 
 export default function DeveloperPortal() {
     return (

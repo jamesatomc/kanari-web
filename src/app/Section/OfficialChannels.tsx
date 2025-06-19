@@ -72,6 +72,29 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
 
     return (
         <section className="py-20 px-4">
+
+            {/* Section Header */}
+            <div className="text-center space-y-6">
+                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                    : ' from-gray-900 via-blue-800 to-purple-900'
+                    }`}>
+                    Kanari Network:
+                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                        Official Channels
+                    </span>
+                    <div className="h-1 w-32 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                                rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                </h2>
+
+                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                    ? 'dark:text-gray-300'
+                    : 'text-gray-600 '
+                    }`}>
+                    Connect with us through our official channels to stay updated on the latest developments, announcements, and community discussions.
+                </p>
+            </div>
+
             <div className="max-w-7xl mx-auto text-center">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     {channels.map((channel, index) => (
@@ -81,11 +104,10 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                             rel="noopener noreferrer"
                             data-aos={channel.animation}
                             data-aos-delay={200 + (index * 100)}
-                            className={`backdrop-blur-sm ${
-                                darkMode 
-                                    ? 'bg-gray-800/20 border-red-500/30' 
-                                    : 'bg-white/20 border-red-400/30'
-                            } border rounded-xl p-8 group relative overflow-hidden 
+                            className={`backdrop-blur-sm ${darkMode
+                                ? 'bg-gray-800/20 border-red-500/30'
+                                : 'bg-white/20 border-red-400/30'
+                                } border rounded-xl p-8 group relative overflow-hidden 
                             hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-channel-card`}>
 
                             {/* Neo-Tokyo decorative elements */}

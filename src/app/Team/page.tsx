@@ -13,104 +13,186 @@ interface TeamMember {
     social?: {
         linkedin?: string;
         twitter?: string;
+        github?: string;
     };
+    skills?: string[];
 }
 
 function TeamComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
     const teamMembers: TeamMember[] = [
         {
-            name: "james atomc",
-            position: "Co-Founder",
+            name: "James Atomc",
+            position: "Co-Founder & Lead Developer",
             image: "/jamesatomc.png",
-            bio: "James is a blockchain enthusiast and a seasoned software developer. He has a wealth of experience in building decentralized applications and is passionate about the potential of blockchain technology to revolutionize the financial industry.",
+            bio: "Blockchain pioneer and seasoned software architect with 8+ years of experience building decentralized applications. Passionate about revolutionizing finance through innovative blockchain solutions.",
+            skills: ["Blockchain", "DeFi", "Smart Contracts", "Full-Stack Development"],
+            social: {
+                linkedin: "https://linkedin.com/in/jamesatomc",
+                twitter: "https://twitter.com/jamesatomc",
+                github: "https://github.com/jamesatomc"
+            }
         },
+        // Add more team members here
     ];
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-r from-gray-950 to-indigo-950'
-            : 'bg-gradient-to-r from-gray-100 to-gray-200'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
+            : 'bg-gradient-to-br from-white via-blue-50 to-indigo-50'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute top-32 right-32 w-96 h-96 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-32 left-32 w-80 h-80 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                </div>
+
                 {/* Content */}
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
-                    {/* Team Section Content */}
-                    <section className="py-12 sm:py-20 px-4">
+                    {/* Hero Section */}
+                    <section className="py-16 sm:py-24 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            {/* Section Header */}
-                            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-300 to-purple-200'
-                                    : 'from-gray-900 via-blue-800 to-purple-900'
-                                } bg-clip-text text-transparent group`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                                        Our Team
-                                    </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                                </h2>
+                            <div className="space-y-6 sm:space-y-8 mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
+                                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' 
+                                    : 'bg-purple-100 text-purple-800 border border-purple-200'
+                                }`}>
+                                    👥 Meet Our Visionaries
+                                </div>
 
-                                <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed`}>
-                                    Our team is made up of a diverse group of individuals with a wide range of skills and experience. We are united by our passion for blockchain technology and our belief in the transformative power of decentralized finance.
+                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-purple-200 to-blue-200'
+                                    : 'from-gray-900 via-purple-800 to-blue-900'
+                                } bg-clip-text text-transparent`}>
+                                    Our Team
+                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                        Building the Future Together
+                                    </span>
+                                </h1>
+
+                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                    A diverse group of innovators, developers, and visionaries united by our passion for blockchain technology and belief in decentralized finance's transformative power.
                                 </p>
                             </div>
+                        </div>
+                    </section>
 
-                            {/* Team Members Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                    {/* Team Members Grid */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {teamMembers.map((member, index) => (
-                                    <div key={index} className={`backdrop-blur-sm ${darkMode
-                                        ? 'bg-gray-800/30 border-gray-700/50'
-                                        : 'bg-white/30 border-gray-200/50'
-                                    } border rounded-xl p-4 sm:p-8 hover:scale-105 hover:shadow-xl transition-all 
-                                            duration-300 group relative overflow-hidden`}>
-                                        
-                                        <div className="relative z-10 flex flex-col items-center space-y-4 sm:space-y-6">
-                                            {/* Image container - Smaller on mobile */}
-                                            <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg mx-auto mb-3 sm:mb-6 
-                                                    transform hover:rotate-6 transition-transform relative">
+                                    <div key={index} className={`group relative p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
+                                        ? 'bg-gradient-to-br from-gray-800/50 to-slate-900/30 border border-purple-500/20 hover:border-purple-400/40'
+                                        : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg'
+                                    }`}>
+                                        {/* Profile Image */}
+                                        <div className="relative mb-6">
+                                            <div className="w-32 h-32 mx-auto rounded-3xl overflow-hidden shadow-xl transform group-hover:rotate-3 transition-transform duration-300">
                                                 <Image
                                                     src={member.image}
                                                     alt={member.name}
                                                     fill
-                                                    className="w-full h-full object-cover"
+                                                    className="object-cover"
                                                 />
                                             </div>
-
-                                            {/* Content - Improved Typography for Mobile */}
-                                            <div className="space-y-2 sm:space-y-4 w-full text-center">
-                                                <h3 className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${darkMode
-                                                    ? 'from-white via-blue-300 to-purple-200'
-                                                    : 'from-gray-900 via-blue-800 to-purple-900'
-                                                } bg-clip-text text-transparent group-hover:scale-105 transition-transform`}>
-                                                    {member.name}
-                                                </h3>
-                                                <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'} font-medium`}>
-                                                    {member.position}
-                                                </p>
-                                                <p className={`text-xs sm:text-sm md:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
-                                                    {member.bio}
-                                                </p>
+                                            <div className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full ${darkMode ? 'bg-purple-500' : 'bg-purple-600'} flex items-center justify-center`}>
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
                                             </div>
                                         </div>
 
-                                        {/* Background decoration */}
-                                        <div className={`absolute inset-0 ${darkMode
-                                            ? 'bg-gradient-to-br from-blue-900/10 to-purple-900/10'
-                                            : 'bg-gradient-to-br from-blue-50/50 to-purple-50/50'
-                                        } rounded-xl -z-10`}></div>
-                                        
-                                        {/* Additional decorative elements for better visual appeal */}
-                                        <div className={`absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br blur-2xl rounded-full 
-                                                group-hover:scale-150 group-hover:opacity-30 transition-all duration-500 ${darkMode
-                                                ? 'from-orange-600/20 to-pink-600/20'
-                                                : 'from-orange-400/20 to-pink-400/20'
-                                            }`}></div>
+                                        {/* Member Info */}
+                                        <div className="text-center space-y-4">
+                                            <div>
+                                                <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                    {member.name}
+                                                </h3>
+                                                <p className={`text-lg font-medium ${darkMode ? 'text-purple-300' : 'text-purple-600'}`}>
+                                                    {member.position}
+                                                </p>
+                                            </div>
+
+                                            <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed text-sm`}>
+                                                {member.bio}
+                                            </p>
+
+                                            {/* Skills */}
+                                            {member.skills && (
+                                                <div className="flex flex-wrap gap-2 justify-center">
+                                                    {member.skills.map((skill, skillIndex) => (
+                                                        <span key={skillIndex} className={`px-3 py-1 rounded-full text-xs font-medium ${darkMode
+                                                            ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+                                                            : 'bg-purple-100 text-purple-800 border border-purple-200'
+                                                        }`}>
+                                                            {skill}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+
+                                            {/* Social Links */}
+                                            {member.social && (
+                                                <div className="flex justify-center space-x-4 pt-4">
+                                                    {member.social.linkedin && (
+                                                        <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" 
+                                                           className={`p-2 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}>
+                                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                                            </svg>
+                                                        </a>
+                                                    )}
+                                                    {member.social.twitter && (
+                                                        <a href={member.social.twitter} target="_blank" rel="noopener noreferrer"
+                                                           className={`p-2 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}>
+                                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                                            </svg>
+                                                        </a>
+                                                    )}
+                                                    {member.social.github && (
+                                                        <a href={member.social.github} target="_blank" rel="noopener noreferrer"
+                                                           className={`p-2 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}>
+                                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                                            </svg>
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Join Our Team CTA */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <div className={`rounded-3xl p-8 sm:p-12 text-center ${darkMode
+                                ? 'bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-500/20'
+                                : 'bg-gradient-to-r from-purple-600 to-blue-600'
+                            } backdrop-blur-sm`}>
+                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                    Join Our Mission
+                                </h2>
+                                <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
+                                    We're always looking for passionate individuals to join our team and help shape the future of decentralized finance.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button className="px-8 py-4 bg-white text-purple-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                        View Open Positions
+                                    </button>
+                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-purple-600">
+                                        Contact Us
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>

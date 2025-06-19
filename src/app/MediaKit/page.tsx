@@ -6,17 +6,22 @@ import Footer from '../Section/body/Footer';
 import Image from 'next/image'
 import PageWrapper from '../components/PageWrapper';
 
-
 const colors = [
-    { name: 'Purple', hex: '#7C3AED', bgClass: 'bg-purple-600' },
-    { name: 'Orange', hex: '#F97316', bgClass: 'bg-orange-500' },
-    { name: 'White', hex: '#FFFFFF', bgClass: 'bg-white' },
+    { name: 'Primary Purple', hex: '#7C3AED', bgClass: 'bg-purple-600', description: 'Main brand color' },
+    { name: 'Accent Orange', hex: '#F97316', bgClass: 'bg-orange-500', description: 'Highlight color' },
+    { name: 'Pure White', hex: '#FFFFFF', bgClass: 'bg-white', description: 'Clean backgrounds' },
+    { name: 'Deep Blue', hex: '#1E40AF', bgClass: 'bg-blue-700', description: 'Trust & stability' },
 ];
 
 function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
     const copyToClipboard = (hex: string) => {
         navigator.clipboard.writeText(hex);
-        toast.success(`Copied ${hex} to clipboard!`);
+        toast.success(`Copied ${hex} to clipboard!`, {
+            style: {
+                background: darkMode ? '#374151' : '#fff',
+                color: darkMode ? '#fff' : '#000',
+            },
+        });
     };
 
     const downloadFile = (url: string) => {
@@ -26,171 +31,231 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        toast.success('Download started!', {
+            style: {
+                background: darkMode ? '#374151' : '#fff',
+                color: darkMode ? '#fff' : '#000',
+            },
+        });
     };
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-r from-gray-950 to-indigo-950'
-            : 'bg-gradient-to-r from-gray-100 to-gray-200'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-purple-950'
+            : 'bg-gradient-to-br from-white via-orange-50 to-purple-50'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute top-32 right-32 w-96 h-96 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-32 left-32 w-80 h-80 ${darkMode ? 'bg-orange-500/10' : 'bg-orange-200/30'} rounded-full blur-3xl`}></div>
+                </div>
+
                 {/* Content */}
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
-                    {/* Media Kit Content */}
-                    <section className="py-12 sm:py-20 px-4">
+                    {/* Hero Section */}
+                    <section className="py-16 sm:py-24 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            {/* Section Header */}
-                            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-300 to-purple-200'
-                                    : 'from-gray-900 via-blue-800 to-purple-900'
-                                    } bg-clip-text text-transparent group`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                                        Media Kit
-                                    </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                                </h2>
+                            <div className="space-y-6 sm:space-y-8 mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
+                                    ? 'bg-orange-500/20 text-orange-300 border border-orange-500/30' 
+                                    : 'bg-orange-100 text-orange-800 border border-orange-200'
+                                }`}>
+                                    🎨 Brand Resources & Assets
+                                </div>
 
-                                <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed`}>
-                                    The Kanari Media Kit is a collection of resources for journalists, content creators, and community members to use when writing about the Kanari Network. The kit includes logos, brand guidelines, and other assets that can be used to create content that is consistent with the Kanari brand.
+                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-orange-200 to-purple-200'
+                                    : 'from-gray-900 via-orange-800 to-purple-900'
+                                } bg-clip-text text-transparent`}>
+                                    Media Kit
+                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                        Everything You Need
+                                    </span>
+                                </h1>
+
+                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                    Professional brand assets, logos, and guidelines for journalists, partners, and community members creating content about Kanari Network.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Brand Colors Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="text-center mb-12">
+                                <h2 className={`text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-orange-300 to-purple-300'
+                                    : 'from-orange-800 to-purple-800'
+                                } bg-clip-text text-transparent`}>
+                                    Brand Colors
+                                </h2>
+                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
+                                    Our carefully selected palette that represents innovation, trust, and energy
                                 </p>
                             </div>
 
-                            {/* Resources Colors */}
-                            <div className="py-8 sm:py-12 flex flex-col gap-6 sm:gap-8 mb-12">
-                                <div className="flex items-center justify-center gap-2 sm:gap-3">
-                                    <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-500 to-blue-500"></div>
-                                    <h2 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${darkMode
-                                        ? 'from-white to-gray-300'
-                                        : 'from-gray-800 to-gray-600'
-                                        } bg-clip-text text-transparent`}>Brand Colors</h2>
-                                    <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-                                </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                                    {colors.map((color) => (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {colors.map((color) => (
+                                    <div
+                                        key={color.hex}
+                                        className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 ${darkMode 
+                                            ? 'bg-gray-800/50 border border-gray-700/50 hover:border-gray-600/70' 
+                                            : 'bg-white border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
+                                        }`}
+                                    >
                                         <div
-                                            key={color.hex}
-                                            className={`flex flex-col overflow-hidden rounded-xl border ${darkMode ? 'border-gray-700' : 'border-gray-200'} hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+                                            onClick={() => copyToClipboard(color.hex)}
+                                            className={`w-full h-32 ${color.bgClass} cursor-pointer transition-all duration-300 group-hover:h-36 ${
+                                                color.name === 'Pure White' ? `border-b ${darkMode ? 'border-gray-600' : 'border-gray-200'}` : ''
+                                            }`}
+                                            title={`Click to copy: ${color.hex}`}
                                         >
-                                            <div
-                                                onClick={() => copyToClipboard(color.hex)}
-                                                className={`w-full h-20 sm:h-28 ${color.bgClass} cursor-pointer ${color.name === 'White' ? `border-b ${darkMode ? 'border-gray-600' : 'border-gray-200'}` : ''}`}
-                                                title={`Click to copy: ${color.hex}`}
-                                            ></div>
-                                            <div className={`p-3 sm:p-4 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-                                                <h3 className={`text-base sm:text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{color.name}</h3>
-                                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-2">
-                                                    <span className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-2 sm:mb-0`}>{color.hex}</span>
-                                                    <button
-                                                        onClick={() => copyToClipboard(color.hex)}
-                                                        className={`text-xs sm:text-sm ${darkMode ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-800'} flex items-center gap-1 justify-center sm:justify-start`}
-                                                    >
-                                                        <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                                        </svg>
-                                                        Copy
-                                                    </button>
-                                                </div>
+                                            <div className="w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                                </svg>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Logo Assets Section */}
-                            <div className="py-8 sm:py-12 flex flex-col gap-6 sm:gap-8">
-                                <div className="flex items-center justify-center gap-2 sm:gap-3">
-                                    <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-purple-500 to-blue-500"></div>
-                                    <h2 className="text-2xl sm:text-3xl font-bold dark:text-white bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Logo Assets</h2>
-                                    <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
-                                    {/* Light Logo */}
-                                    <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white dark:bg-gray-800">
-                                        <div className="bg-gray-800 p-6 sm:p-8 flex justify-center items-center h-40 sm:h-56">
-                                            <Image
-                                                src="/images/logo-light.png"
-                                                alt="Kanari Light Logo"
-                                                width={200}
-                                                height={50}
-                                                className="w-auto max-h-24 sm:max-h-32 mx-auto"
-                                            />
-                                        </div>
-                                        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                                            <div className="flex items-center gap-2">
-                                                <div className="h-3 sm:h-4 w-1 bg-purple-600 rounded-full"></div>
-                                                <h3 className="text-lg sm:text-xl font-semibold dark:text-white">Light Logo</h3>
-                                            </div>
-                                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pb-3 border-b border-gray-100 dark:border-gray-700">
-                                                For use on dark backgrounds. Available in PNG and SVG formats.
+                                        <div className="p-6">
+                                            <h3 className={`text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                {color.name}
+                                            </h3>
+                                            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-3`}>
+                                                {color.description}
                                             </p>
-                                            <div className="flex gap-3 sm:gap-4 justify-center pt-2">
+                                            <div className="flex items-center justify-between">
+                                                <span className={`text-sm font-mono ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                                    {color.hex}
+                                                </span>
                                                 <button
-                                                    onClick={() => downloadFile('/images/logo-light.png')}
-                                                    className="px-3 sm:px-5 py-2 sm:py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm"
+                                                    onClick={() => copyToClipboard(color.hex)}
+                                                    className={`text-sm font-medium transition-colors ${darkMode 
+                                                        ? 'text-purple-400 hover:text-purple-300' 
+                                                        : 'text-purple-600 hover:text-purple-800'
+                                                    }`}
                                                 >
-                                                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    PNG
-                                                </button>
-                                                <button
-                                                    onClick={() => downloadFile('/images/logo-light.svg')}
-                                                    className="px-3 sm:px-5 py-2 sm:py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm"
-                                                >
-                                                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    SVG
+                                                    Copy
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
 
-                                    {/* Dark Logo */}
-                                    <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white dark:bg-gray-800">
-                                        <div className="bg-gray-100 p-6 sm:p-8 flex justify-center items-center h-40 sm:h-56">
-                                            <Image
-                                                src="/images/logo-dark.png"
-                                                alt="Kanari Dark Logo"
-                                                width={200}
-                                                height={50}
-                                                className="w-auto max-h-24 sm:max-h-32 mx-auto"
-                                            />
+                    {/* Logo Assets Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="text-center mb-12">
+                                <h2 className={`text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-purple-300 to-orange-300'
+                                    : 'from-purple-800 to-orange-800'
+                                } bg-clip-text text-transparent`}>
+                                    Logo Assets
+                                </h2>
+                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
+                                    High-quality logos optimized for different use cases and backgrounds
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                {/* Light Logo */}
+                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode 
+                                    ? 'bg-gray-800/50 border border-gray-700/50' 
+                                    : 'bg-white border border-gray-200 shadow-xl'
+                                }`}>
+                                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 flex justify-center items-center min-h-[200px]">
+                                        <Image
+                                            src="/images/logo-light.png"
+                                            alt="Kanari Light Logo"
+                                            width={250}
+                                            height={60}
+                                            className="w-auto max-h-16 mx-auto"
+                                        />
+                                    </div>
+                                    <div className="p-8">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full"></div>
+                                            <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                Light Version
+                                            </h3>
                                         </div>
-                                        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                                            <div className="flex items-center gap-2">
-                                                <div className="h-3 sm:h-4 w-1 bg-purple-600 rounded-full"></div>
-                                                <h3 className="text-lg sm:text-xl font-semibold dark:text-white">Dark Logo</h3>
-                                            </div>
-                                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pb-3 border-b border-gray-100 dark:border-gray-700">
-                                                For use on light backgrounds. Available in PNG and SVG formats.
-                                            </p>
-                                            <div className="flex gap-3 sm:gap-4 justify-center pt-2">
-                                                <button
-                                                    onClick={() => downloadFile('/images/logo-dark.png')}
-                                                    className="px-3 sm:px-5 py-2 sm:py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm"
-                                                >
-                                                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    PNG
-                                                </button>
-                                                <button
-                                                    onClick={() => downloadFile('/images/logo-dark.svg')}
-                                                    className="px-3 sm:px-5 py-2 sm:py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm"
-                                                >
-                                                    <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    SVG
-                                                </button>
-                                            </div>
+                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
+                                            Perfect for dark backgrounds, presentations, and digital media. Available in multiple formats for maximum compatibility.
+                                        </p>
+                                        <div className="flex gap-4">
+                                            <button
+                                                onClick={() => downloadFile('/images/logo-light.png')}
+                                                className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-xl hover:from-purple-700 hover:to-orange-700 flex items-center justify-center gap-2 transition-all duration-300 font-semibold"
+                                            >
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                </svg>
+                                                PNG
+                                            </button>
+                                            <button
+                                                onClick={() => downloadFile('/images/logo-light.svg')}
+                                                className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
+                                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
+                                                }`}
+                                            >
+                                                SVG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Dark Logo */}
+                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode 
+                                    ? 'bg-gray-800/50 border border-gray-700/50' 
+                                    : 'bg-white border border-gray-200 shadow-xl'
+                                }`}>
+                                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-12 flex justify-center items-center min-h-[200px]">
+                                        <Image
+                                            src="/images/logo-dark.png"
+                                            alt="Kanari Dark Logo"
+                                            width={250}
+                                            height={60}
+                                            className="w-auto max-h-16 mx-auto"
+                                        />
+                                    </div>
+                                    <div className="p-8">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full"></div>
+                                            <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                Dark Version
+                                            </h3>
+                                        </div>
+                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
+                                            Ideal for light backgrounds, documents, and print materials. Maintains brand consistency across all mediums.
+                                        </p>
+                                        <div className="flex gap-4">
+                                            <button
+                                                onClick={() => downloadFile('/images/logo-dark.png')}
+                                                className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-600 to-purple-600 text-white rounded-xl hover:from-orange-700 hover:to-purple-700 flex items-center justify-center gap-2 transition-all duration-300 font-semibold"
+                                            >
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                                </svg>
+                                                PNG
+                                            </button>
+                                            <button
+                                                onClick={() => downloadFile('/images/logo-dark.svg')}
+                                                className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
+                                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
+                                                }`}
+                                            >
+                                                SVG
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -198,11 +263,35 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                         </div>
                     </section>
 
+                    {/* Usage Guidelines CTA */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <div className={`rounded-3xl p-8 sm:p-12 text-center ${darkMode
+                                ? 'bg-gradient-to-r from-orange-900/50 to-purple-900/50 border border-orange-500/20'
+                                : 'bg-gradient-to-r from-orange-600 to-purple-600'
+                            } backdrop-blur-sm`}>
+                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                    Need More Resources?
+                                </h2>
+                                <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
+                                    Looking for specific assets, brand guidelines, or have questions about usage? We're here to help.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button className="px-8 py-4 bg-white text-orange-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                        Download Full Kit
+                                    </button>
+                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-orange-600">
+                                        Contact Brand Team
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
                 </div>
-
             </main>
-        </div >
+        </div>
     );
 }
 

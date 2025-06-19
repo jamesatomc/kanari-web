@@ -70,46 +70,85 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-r from-gray-950 to-indigo-950'
-            : 'bg-gradient-to-r from-gray-100 to-gray-200'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
+            : 'bg-gradient-to-br from-white via-gray-50 to-blue-50'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/5' : 'bg-indigo-200/20'} rounded-full blur-3xl`}></div>
+                </div>
+
                 {/* Content */}
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
-                    {/* Privacy policy Section - Improved Mobile Layout */}
-                    <section className="px-2 py-6 sm:py-10">
+                    {/* Hero Section */}
+                    <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="text-center space-y-4 sm:space-y-6">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r 
-                                        ${darkMode
-                                        ? 'from-white via-blue-300 to-purple-200'
-                                        : 'from-gray-900 via-blue-800 to-purple-900'
-                                    } bg-clip-text text-transparent group`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                                        Privacy Policy
+                            <div className="space-y-6 sm:space-y-8 mb-12">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
+                                }`}>
+                                    🔒 Your Privacy Matters
+                                </div>
+
+                                <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-blue-200 to-indigo-200'
+                                    : 'from-gray-900 via-blue-800 to-indigo-900'
+                                } bg-clip-text text-transparent`}>
+                                    Privacy Policy
+                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-3xl font-medium opacity-80">
+                                        Transparent & Secure
                                     </span>
-                                    <div className="h-1 w-24 sm:w-32 mx-auto mt-3 sm:mt-4 bg-gradient-to-r from-blue-500 to-purple-600 
-                                            rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                                </h2>
+                                </h1>
+
+                                <p className={`text-lg sm:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                    Your privacy is important to us. Learn how Kanari Network collects, uses, and protects your information across our platform and services.
+                                </p>
+
+                                <div className={`inline-flex items-center px-4 py-2 rounded-lg text-sm ${darkMode ? 'bg-gray-800 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
+                                    Last updated: {currentDate}
+                                </div>
                             </div>
-                            <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6`}>
-                                Your privacy is important to us. It is Kanari Network&apos;s policy to respect your privacy regarding any information we may collect from you across our website, <a href="#" className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>https://kanari.network</a>, and other sites we own and operate.
-                            </p>
                         </div>
                     </section>
 
-                    {/* Policy Content - Improved Mobile Layout */}
-                    <section className="px-4 md:px-6 lg:px-8">
-                        <div className="container mx-auto px-4 py-8">
-                            <ReactMarkdown components={renderers}>
-                                {updatedContent}
-                            </ReactMarkdown>
+                    {/* Policy Content */}
+                    <section className="py-8 px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
+                                ? 'bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm'
+                                : 'bg-white/70 border border-gray-200/50 backdrop-blur-sm shadow-xl'
+                            }`}>
+                                <ReactMarkdown components={renderers}>
+                                    {updatedContent}
+                                </ReactMarkdown>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Contact Section */}
+                    <section className="py-16 px-4">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
+                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+                            } backdrop-blur-sm`}>
+                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                    Questions About Privacy?
+                                </h2>
+                                <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                                    If you have any questions about this Privacy Policy or our data practices, we're here to help.
+                                </p>
+                                <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                    Contact Privacy Team
+                                </button>
+                            </div>
                         </div>
                     </section>
 
