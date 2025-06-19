@@ -22,9 +22,9 @@ export const menuData: MenuSection[] = [
   {
     title: 'Learn',
     items: [
-      { href: '/learn/basics', label: 'Basics' },
-      { href: '/learn/advanced', label: 'Advanced' },
-      { href: '/learn/tutorials', label: 'Tutorials' }
+      { href: '/DeveloperPortal', label: 'DeveloperPortal' },
+      { href: 'https://kanari.site/api', label: 'API Reference' },
+      { href: 'https://kanari.site/tutorials', label: 'Tutorials' }
     ],
     titleColor: {
       light: 'text-purple-600',
@@ -40,9 +40,9 @@ export const menuData: MenuSection[] = [
   {
     title: 'Build',
     items: [
-      { href: '/build/docs', label: 'Documentation' },
-      { href: '/build/tools', label: 'Tools' },
-      { href: '/build/resources', label: 'Resources' }
+      { href: 'https://docs.kanari.site/', label: 'Documentation' },
+      { href: 'https://kanari.site/build/tools', label: 'Tools' },
+      { href: 'https://kanari.site/build/resources', label: 'Resources' }
     ],
     titleColor: {
       light: 'text-blue-600',
@@ -59,8 +59,6 @@ export const menuData: MenuSection[] = [
     title: 'Connect',
     items: [
       { href: '/connect/community', label: 'Community Hub' },
-      { href: '/connect/events', label: 'Events' },
-      { href: '/connect/support', label: 'Support' }
     ],
     titleColor: {
       light: 'text-purple-600',
