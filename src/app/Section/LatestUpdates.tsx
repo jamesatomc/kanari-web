@@ -72,18 +72,18 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
 
             {/* Section Header */}
             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-indigo-200'
-                    : ' from-gray-900 via-blue-800 to-indigo-900'
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                    : ' from-gray-900 via-blue-800 to-purple-900'
                     }`}>
                     Kanari Network:
-                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
                         Latest Updates
                     </span>
-                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                 </h2>
 
-                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
                     ? 'dark:text-gray-300'
                     : 'text-gray-600 '
                     }`}>
@@ -93,7 +93,6 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                     shaping the future of the Kanari Network.
                 </p>
             </div>
-
 
             {/* Japanese pattern background */}
             <div className="absolute inset-0 tokyo-pattern-overlay opacity-10"></div>
@@ -258,15 +257,15 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                         <div className="w-2/3 p-3 relative">
                                             {/* Tech pattern background with better opacity */}
                                             <div className="absolute inset-0 tokyo-grid-bg opacity-30"></div>
-                                            
+
                                             {/* Solid background overlay for better text readability */}
                                             <div className={`absolute inset-0 ${darkMode ? 'bg-gray-800/60' : 'bg-white/60'} rounded-r-lg`}></div>
 
                                             <div className="flex flex-col justify-between h-full relative z-10">
                                                 <div>
                                                     <h3 className={`text-sm font-bold line-clamp-2 leading-tight ${darkMode
-                                                            ? 'text-white drop-shadow-sm'
-                                                            : 'text-gray-900 drop-shadow-sm'
+                                                        ? 'text-white drop-shadow-sm'
+                                                        : 'text-gray-900 drop-shadow-sm'
                                                         }`}>
                                                         {blog.description}
                                                     </h3>
