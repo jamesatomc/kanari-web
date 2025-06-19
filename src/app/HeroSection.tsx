@@ -147,7 +147,7 @@ module kanari::example {
                                         </div>
 
                                         <div className="absolute inset-0 blur-md bg-red-500/10 rounded-3xl"></div>
-                                        <h1 className="text-white text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+                                        <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
                                             Secure Metadata
                                             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-cyan-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
                                                 on MoveVM
@@ -161,7 +161,7 @@ module kanari::example {
                                         </div>
                                     </div>
 
-                                    <p className="text-white/90 text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
+                                    <p className="text-white/90 text-center text-sm sm:text-base md:text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
                                         Build secure and transparent file metadata storage solutions powered by
                                         Move Virtual Machine for the Web3 ecosystem.
                                     </p>
@@ -211,18 +211,18 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
                                     ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
                                     : ' from-gray-900 via-blue-800 to-purple-900'
                                     }`}>
                                     Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
                                         Use Cases and Features
                                     </span>
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
                                     ? 'dark:text-gray-300'
                                     : 'text-gray-600 '
                                     }`}>
@@ -238,14 +238,14 @@ module kanari::example {
                                     data-aos-delay="100"
                                     className="w-full space-y-6 p-6 bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-lg backdrop-blur-sm"
                                 >
-                                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                                         Secure Metadata Management
-                                        <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                                        <span className="block mt-2 text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                                             Powered by MoveVM
                                         </span>
                                     </h3>
 
-                                    <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                                         Store, track, and manage file metadata with enterprise-grade security.
                                         Our MoveVM implementation ensures tamper-proof records and verifiable
                                         ownership across the Web3 ecosystem.
@@ -323,18 +323,18 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
                                     ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
                                     : ' from-gray-900 via-blue-800 to-purple-900'
                                     }`}>
                                     Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
                                         Secure File Metadata Platform
                                     </span>
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
                                     ? 'dark:text-gray-300'
                                     : 'text-gray-600 '
                                     }`}>
@@ -404,18 +404,18 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
                                     ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
                                     : ' from-gray-900 via-blue-800 to-purple-900'
                                     }`}>
                                     Kanari Network:
-                                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
                                         Web3 Metadata Solutions
                                     </span>
                                     <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
 
-                                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
                                     ? 'dark:text-gray-300'
                                     : 'text-gray-600 '
                                     }`}>
@@ -456,9 +456,9 @@ module kanari::example {
                                     <InvestorCard darkMode={darkMode} setDarkMode={setDarkMode}
                                         icon={
                                             <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                                     d="M12 8c-1.658 0-3 .895-3 2s1.342 2 3 2 3-.895 3-2-1.342-2-3-2zM3 12c0 4.411 3.589 8 8 8s8-3.589 8-8-3.589-8-8-8-8 3.589-8 8z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                                     d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
                                             </svg>
                                         }

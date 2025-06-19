@@ -39,15 +39,15 @@ function DeveloperPortalComponent({
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-purple-950'
-            : 'bg-gradient-to-br from-white via-blue-50 to-purple-50'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
+            : 'bg-gradient-to-br from-white via-gray-50 to-blue-50'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/5' : 'bg-indigo-200/20'} rounded-full blur-3xl`}></div>
                 </div>
 
                 <div className="relative z-10">
@@ -55,35 +55,35 @@ function DeveloperPortalComponent({
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
                     {/* Hero Section */}
-                    <section className="py-16 sm:py-24 px-4" data-aos="fade-up">
+                    <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="space-y-6 sm:space-y-8 mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
-                                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' 
-                                    : 'bg-purple-100 text-purple-800 border border-purple-200'
-                                }`}>
+                            <div className="space-y-6 sm:space-y-8 mb-12">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
+                                    }`}>
                                     🚀 Build the Future
                                 </div>
                                 
-                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-purple-200 to-blue-200'
-                                    : 'from-gray-900 via-purple-800 to-blue-900'
-                                } bg-clip-text text-transparent`}>
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-blue-200 to-indigo-200'
+                                    : 'from-gray-900 via-blue-800 to-indigo-900'
+                                    } bg-clip-text text-transparent`}>
                                     Developer Portal
-                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
                                         Build on Kanari Network
                                     </span>
                                 </h1>
 
-                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
                                     Access comprehensive documentation, SDKs, and tools to build secure metadata solutions on MoveVM blockchain infrastructure.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
                                     <a href="https://docs.kanari.site/"
                                         className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
-                                            ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500 shadow-lg shadow-purple-500/25'
-                                            : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg shadow-purple-500/25'
+                                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25'
+                                            : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25'
                                         }`}>
                                         📚 View Documentation
                                     </a>
@@ -103,13 +103,13 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-16" data-aos="fade-up">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-purple-300 to-blue-300'
-                                    : 'from-purple-800 to-blue-800'
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-blue-300 to-indigo-300'
+                                    : 'from-blue-800 to-indigo-800'
                                 } bg-clip-text text-transparent`}>
                                     Quick Start Guide
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Get started with Kanari Network development using our comprehensive resources and tools.
                                 </p>
                             </div>
@@ -134,13 +134,13 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-16" data-aos="fade-up">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-300 to-purple-300'
-                                    : 'from-blue-800 to-purple-800'
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-indigo-300 to-blue-300'
+                                    : 'from-indigo-800 to-blue-800'
                                 } bg-clip-text text-transparent`}>
                                     Development Tools
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Essential resources and tools for building secure metadata solutions on Kanari Network.
                                 </p>
                             </div>
@@ -165,21 +165,21 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
-                                ? 'bg-gradient-to-r from-purple-900/50 to-blue-900/50 border border-purple-500/20'
-                                : 'bg-gradient-to-r from-purple-600 to-blue-600'
+                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
                             } backdrop-blur-sm`}>
                                 <div className="text-center">
-                                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                         Join Our Developer Community
                                     </h2>
-                                    <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
+                                    <p className="text-blue-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
                                         Connect with other developers, get support, and stay updated with the latest developments in the Kanari ecosystem.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <button className="px-8 py-4 bg-white text-purple-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                        <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                                             Join Discord
                                         </button>
-                                        <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-purple-600">
+                                        <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600">
                                             Follow on Twitter
                                         </button>
                                     </div>

@@ -58,9 +58,9 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
 
                     {/* Hero Section */}
-                    <section className="py-16 sm:py-24 px-4">
+                    <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="space-y-6 sm:space-y-8 mb-16">
+                            <div className="space-y-6 sm:space-y-8 mb-12">
                                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
                                     ? 'bg-orange-500/20 text-orange-300 border border-orange-500/30' 
                                     : 'bg-orange-100 text-orange-800 border border-orange-200'
@@ -68,17 +68,17 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     🎨 Brand Resources & Assets
                                 </div>
 
-                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
                                     ? 'from-white via-orange-200 to-purple-200'
                                     : 'from-gray-900 via-orange-800 to-purple-900'
                                 } bg-clip-text text-transparent`}>
                                     Media Kit
-                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
                                         Everything You Need
                                     </span>
                                 </h1>
 
-                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
                                     Professional brand assets, logos, and guidelines for journalists, partners, and community members creating content about Kanari Network.
                                 </p>
                             </div>
@@ -89,13 +89,13 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
-                                <h2 className={`text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-orange-300 to-purple-300'
                                     : 'from-orange-800 to-purple-800'
                                 } bg-clip-text text-transparent`}>
                                     Brand Colors
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
                                     Our carefully selected palette that represents innovation, trust, and energy
                                 </p>
                             </div>
@@ -123,7 +123,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                             </div>
                                         </div>
                                         <div className="p-6">
-                                            <h3 className={`text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                            <h3 className={`text-base sm:text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                                 {color.name}
                                             </h3>
                                             <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-3`}>
@@ -154,13 +154,13 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
-                                <h2 className={`text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-purple-300 to-orange-300'
                                     : 'from-purple-800 to-orange-800'
                                 } bg-clip-text text-transparent`}>
                                     Logo Assets
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
                                     High-quality logos optimized for different use cases and backgrounds
                                 </p>
                             </div>
@@ -183,11 +183,11 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     <div className="p-8">
                                         <div className="flex items-center gap-3 mb-4">
                                             <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full"></div>
-                                            <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                            <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                                 Light Version
                                             </h3>
                                         </div>
-                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
+                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm sm:text-base mb-6 leading-relaxed`}>
                                             Perfect for dark backgrounds, presentations, and digital media. Available in multiple formats for maximum compatibility.
                                         </p>
                                         <div className="flex gap-4">
@@ -230,11 +230,11 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     <div className="p-8">
                                         <div className="flex items-center gap-3 mb-4">
                                             <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full"></div>
-                                            <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                            <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                                 Dark Version
                                             </h3>
                                         </div>
-                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
+                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm sm:text-base mb-6 leading-relaxed`}>
                                             Ideal for light backgrounds, documents, and print materials. Maintains brand consistency across all mediums.
                                         </p>
                                         <div className="flex gap-4">
@@ -270,10 +270,10 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 ? 'bg-gradient-to-r from-orange-900/50 to-purple-900/50 border border-orange-500/20'
                                 : 'bg-gradient-to-r from-orange-600 to-purple-600'
                             } backdrop-blur-sm`}>
-                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                     Need More Resources?
                                 </h2>
-                                <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
+                                <p className="text-orange-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
                                     Looking for specific assets, brand guidelines, or have questions about usage? We&apos;re here to help.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

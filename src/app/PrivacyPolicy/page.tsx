@@ -45,16 +45,16 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
             return <em className={`italic ${darkMode ? 'text-gray-200' : 'text-gray-800'}`} {...rest}>{children}</em>;
         },
         a: function Anchor({ node, href, children, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { node?: any, children?: ReactNode }) {
-            return <a href={href} className={`${darkMode 
-                ? 'text-blue-400 hover:text-blue-300' 
+            return <a href={href} className={`${darkMode
+                ? 'text-blue-400 hover:text-blue-300'
                 : 'text-blue-600 hover:underline'
-            }`} {...rest}>{children}</a>;
+                }`} {...rest}>{children}</a>;
         },
         blockquote: function BlockQuote({ node, children, ...rest }: BlockquoteHTMLAttributes<HTMLQuoteElement> & { node?: any, children?: ReactNode }) {
             return <blockquote className={`border-l-4 pl-4 py-2 mb-4 italic ${darkMode
                 ? 'border-gray-700 text-gray-400 bg-gray-800'
                 : 'border-gray-200 text-gray-700 bg-gray-50'
-            }`} {...rest}>{children}</blockquote>;
+                }`} {...rest}>{children}</blockquote>;
         },
     };
 
@@ -90,17 +90,17 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
                             <div className="space-y-6 sm:space-y-8 mb-12">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
                                     : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                }`}>
+                                    }`}>
                                     🔒 Your Privacy Matters
                                 </div>
 
-                                <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-200 to-indigo-200'
-                                    : 'from-gray-900 via-blue-800 to-indigo-900'
-                                } bg-clip-text text-transparent`}>
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+                                    ? 'from-white via-blue-200 to-purple-200'
+                                    : 'from-gray-900 via-blue-800 to-purple-900'
+                                    } bg-clip-text text-transparent group`}>
                                     Privacy Policy
                                     <span className="block mt-2 text-2xl sm:text-3xl md:text-3xl font-medium opacity-80">
                                         Transparent & Secure
@@ -124,7 +124,7 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
                                 ? 'bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm'
                                 : 'bg-white/70 border border-gray-200/50 backdrop-blur-sm shadow-xl'
-                            }`}>
+                                }`}>
                                 <ReactMarkdown components={renderers}>
                                     {updatedContent}
                                 </ReactMarkdown>
@@ -138,11 +138,11 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
                                 ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
                                 : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                            } backdrop-blur-sm`}>
-                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                } backdrop-blur-sm`}>
+                                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                     Questions About Privacy?
                                 </h2>
-                                <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                                <p className="text-blue-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
                                     If you have any questions about this Privacy Policy or our data practices, we&apos;re here to help.
                                 </p>
                                 <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
@@ -151,6 +151,8 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                             </div>
                         </div>
                     </section>
+
+
 
                     <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
                 </div>

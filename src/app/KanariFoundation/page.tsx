@@ -23,29 +23,29 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
                     <section className="pt-16 sm:pt-24 py-2 px-2"></section>
-                        
+
                     {/* Hero Section */}
-                    <section className="py-16 sm:py-24 px-4">
+                    <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
-                            <div className="space-y-6 sm:space-y-8 mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
+                            <div className="space-y-6 sm:space-y-8 mb-12">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
                                     : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                }`}>
+                                    }`}>
                                     🌟 Leading the Future of Digital Innovation
                                 </div>
-                                
-                                <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
                                     ? 'from-white via-blue-200 to-purple-200'
                                     : 'from-gray-900 via-blue-800 to-purple-900'
-                                } bg-clip-text text-transparent group`}>
+                                    } bg-clip-text text-transparent group`}>
                                     Kanari Foundation
-                                    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium opacity-80">
+                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
                                         Empowering Digital Transformation
                                     </span>
                                 </h1>
 
-                                <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
                                     A pioneering non-profit organization driving innovation, education, and sustainable technology solutions across Thailand and Southeast Asia.
                                 </p>
 
@@ -53,13 +53,13 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                                     <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
                                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
                                         : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
-                                    }`}>
+                                        }`}>
                                         Explore Our Impact
                                     </button>
                                     <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
                                         ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
                                         : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                    }`}>
+                                        }`}>
                                         Join Our Mission
                                     </button>
                                 </div>
@@ -71,13 +71,13 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-16">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
                                     : 'from-blue-800 to-purple-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Our Core Strengths
                                 </h2>
-                                <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Building sustainable digital ecosystems through strategic partnerships and innovative solutions
                                 </p>
                             </div>
@@ -87,30 +87,30 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                                 <div className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
                                     ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
                                     : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
-                                }`}>
+                                    }`}>
                                     <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center ${darkMode
                                         ? 'bg-gradient-to-br from-blue-500 to-purple-600'
                                         : 'bg-gradient-to-br from-blue-500 to-purple-600'
-                                    }`}>
+                                        }`}>
                                         <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                         </svg>
                                     </div>
-                                    <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Education Excellence
                                     </h3>
-                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
+                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base leading-relaxed`}>
                                         Comprehensive digital literacy programs reaching over 50,000 students across Thailand, fostering next-generation tech leaders.
                                     </p>
                                     <div className="mt-6 flex items-center space-x-4">
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-blue-500/20 text-blue-300'
                                             : 'bg-blue-100 text-blue-800'
-                                        }`}>50K+ Students</span>
+                                            }`}>50K+ Students</span>
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-purple-500/20 text-purple-300'
                                             : 'bg-purple-100 text-purple-800'
-                                        }`}>200+ Schools</span>
+                                            }`}>200+ Schools</span>
                                     </div>
                                 </div>
 
@@ -118,30 +118,30 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                                 <div className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
                                     ? 'bg-gradient-to-br from-gray-800/50 to-purple-900/30 border border-purple-500/20 hover:border-purple-400/40'
                                     : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg'
-                                }`}>
+                                    }`}>
                                     <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center ${darkMode
                                         ? 'bg-gradient-to-br from-purple-500 to-pink-600'
                                         : 'bg-gradient-to-br from-purple-500 to-pink-600'
-                                    }`}>
+                                        }`}>
                                         <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                         </svg>
                                     </div>
-                                    <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Innovation Hub
                                     </h3>
-                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
+                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base leading-relaxed`}>
                                         State-of-the-art research facilities developing blockchain, AI, and IoT solutions for sustainable development.
                                     </p>
                                     <div className="mt-6 flex items-center space-x-4">
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-purple-500/20 text-purple-300'
                                             : 'bg-purple-100 text-purple-800'
-                                        }`}>15+ Projects</span>
+                                            }`}>15+ Projects</span>
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-pink-500/20 text-pink-300'
                                             : 'bg-pink-100 text-pink-800'
-                                        }`}>5 Patents</span>
+                                            }`}>5 Patents</span>
                                     </div>
                                 </div>
 
@@ -149,30 +149,30 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                                 <div className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
                                     ? 'bg-gradient-to-br from-gray-800/50 to-green-900/30 border border-green-500/20 hover:border-green-400/40'
                                     : 'bg-gradient-to-br from-white to-green-50 border border-green-200 hover:border-green-300 shadow-lg'
-                                }`}>
+                                    }`}>
                                     <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center ${darkMode
                                         ? 'bg-gradient-to-br from-green-500 to-teal-600'
                                         : 'bg-gradient-to-br from-green-500 to-teal-600'
-                                    }`}>
+                                        }`}>
                                         <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
                                     </div>
-                                    <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    <h3 className={`text-xl sm:text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Community Impact
                                     </h3>
-                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} leading-relaxed`}>
+                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base leading-relaxed`}>
                                         Empowering rural communities with digital infrastructure and technology access, bridging the digital divide.
                                     </p>
                                     <div className="mt-6 flex items-center space-x-4">
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-green-500/20 text-green-300'
                                             : 'bg-green-100 text-green-800'
-                                        }`}>100+ Villages</span>
+                                            }`}>100+ Villages</span>
                                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
                                             ? 'bg-teal-500/20 text-teal-300'
                                             : 'bg-teal-100 text-teal-800'
-                                        }`}>250K+ Lives</span>
+                                            }`}>250K+ Lives</span>
                                     </div>
                                 </div>
                             </div>
@@ -185,16 +185,16 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
                                 ? 'bg-gradient-to-r from-gray-800/80 to-gray-900/80 border border-gray-700/50'
                                 : 'bg-gradient-to-r from-blue-600 to-purple-600'
-                            } backdrop-blur-sm`}>
+                                } backdrop-blur-sm`}>
                                 <div className="text-center mb-12">
-                                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                         Our Impact in Numbers
                                     </h2>
-                                    <p className="text-blue-100 text-lg">
+                                    <p className="text-blue-100 text-base sm:text-lg">
                                         Measurable results driving sustainable change
                                     </p>
                                 </div>
-                                
+
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                                     <div className="text-center">
                                         <div className="text-4xl sm:text-5xl font-bold text-white mb-2">300K+</div>
@@ -220,25 +220,24 @@ function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolea
                     {/* Call to Action */}
                     <section className="py-16 px-4">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                Ready to Shape the Future?
-                            </h2>
-                            <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-8`}>
-                                Join us in building a more connected, educated, and innovative society through technology.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
-                                    ? 'bg-white text-gray-900 hover:bg-gray-100'
-                                    : 'bg-gray-900 text-white hover:bg-gray-800'
-                                }`}>
-                                    Partner With Us
-                                </button>
-                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
-                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
-                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                }`}>
-                                    Learn More
-                                </button>
+                            <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
+                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+                                } backdrop-blur-sm`}>
+                                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                    Ready to Shape the Future?
+                                </h2>
+                                <p className="text-blue-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                                    Join us in building a more connected, educated, and innovative society through technology.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                        Partner With Us
+                                    </button>
+                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600">
+                                        Learn More
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>
