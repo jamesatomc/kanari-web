@@ -1,13 +1,18 @@
-import React from 'react';
-import './LatestUpdates.css';
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Image from 'next/image'
+import './LatestUpdates.css';
 
 interface LatestUpdatesProps {
     darkMode: boolean;
     setDarkMode: (darkMode: boolean) => void;
 }
 
-function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
+
+export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
     // Japanese kanji for each blog post
     const kanjiSymbols = ["更新", "情報", "技術", "未来", "発展"];
 
@@ -67,8 +72,16 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
     // Remaining blog posts for the secondary column
     const secondaryBlogs = blogupdates.slice(1);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    }, []);
+
     return (
-        <section className=" px-4 tokyo-update-section relative overflow-hidden">
+        <section className="py-20 px-4">
 
             {/* Section Header */}
             <div className="text-center space-y-4 sm:space-y-6 mb-12">
@@ -96,8 +109,6 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
 
             {/* Japanese pattern background */}
             <div className="absolute inset-0 tokyo-pattern-overlay opacity-10"></div>
-
-
 
 
             {/* Two-column layout */}
