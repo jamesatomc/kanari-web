@@ -7,22 +7,22 @@
 
 /* Tokyo card base effects */
 .tokyo-update-card {
-  box-shadow: 0 0 10px -5px rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 10px -5px rgba(59, 130, 246, 0.2);
   will-change: transform;
   transform: translateZ(0);
 }
 
 /* Tokyo glow effects */
 .tokyo-glow {
-  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 6px 1px rgba(59, 130, 246, 0.4);
 }
 
-.tokyo-glow-red {
-  box-shadow: 0 0 4px 1px rgba(239, 68, 68, 0.4);
+.tokyo-glow-blue {
+  box-shadow: 0 0 4px 1px rgba(59, 130, 246, 0.4);
 }
 
-.tokyo-glow-pink {
-  box-shadow: 0 0 4px 1px rgba(236, 72, 153, 0.4);
+.tokyo-glow-indigo {
+  box-shadow: 0 0 4px 1px rgba(99, 102, 241, 0.4);
 }
 
 /* Tokyo navigation buttons */
@@ -34,34 +34,34 @@
   transform: scale(1.05);
 }
 
-.shadow-tokyo-red {
-  box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.3);
+.shadow-tokyo-blue {
+  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.3);
 }
 
-.shadow-tokyo-pink {
-  box-shadow: 0 0 10px 2px rgba(236, 72, 153, 0.3);
+.shadow-tokyo-indigo {
+  box-shadow: 0 0 10px 2px rgba(99, 102, 241, 0.3);
 }
 
 /* Japanese patterns */
 .tokyo-pattern-overlay {
-  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
   background-size: 12px 12px;
   opacity: 0.2;
 }
 
 .tokyo-wave-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath fill='%23ef4444' fill-opacity='0.2' d='M21.2 18.4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm29.6 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm44.4 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath fill='%233b82f6' fill-opacity='0.2' d='M21.2 18.4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm29.6 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm44.4 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z'/%3E%3C/svg%3E");
 }
 
 /* Digital circuits with Japanese style */
 .tokyo-circuit-vertical {
-  background-image: linear-gradient(to bottom, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to bottom, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
   background-size: 8px 12px;
   opacity: 0.2;
 }
 
 .tokyo-circuit-horizontal {
-  background-image: linear-gradient(to right, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to right, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
   background-size: 12px 8px;
   opacity: 0.2;
 }
@@ -75,10 +75,10 @@
 
 /* Tokyo tech badge */
 .tokyo-tech-badge {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   padding: 2px 6px;
   border-radius: 4px;
-  border-left: 2px solid rgba(239, 68, 68, 0.4);
+  border-left: 2px solid rgba(59, 130, 246, 0.4);
 }
 
 /* Tokyo digital corner elements */
@@ -91,29 +91,29 @@
 .tokyo-corner-tr {
   top: 4px;
   right: 4px;
-  border-right: 2px solid rgba(239, 68, 68, 0.25);
-  border-top: 2px solid rgba(239, 68, 68, 0.25);
+  border-right: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
 }
 
 .tokyo-corner-tl {
   top: 4px;
   left: 4px;
-  border-left: 2px solid rgba(239, 68, 68, 0.25);
-  border-top: 2px solid rgba(239, 68, 68, 0.25);
+  border-left: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
 }
 
 .tokyo-corner-br {
   bottom: 4px;
   right: 4px;
-  border-right: 2px solid rgba(236, 72, 153, 0.25);
-  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+  border-right: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
 .tokyo-corner-bl {
   bottom: 4px;
   left: 4px;
-  border-left: 2px solid rgba(236, 72, 153, 0.25);
-  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+  border-left: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
 /* Tokyo scan lines */
@@ -122,12 +122,12 @@
   background-size: 100% 4px;
 }
 
-/* Tokyo grid background */
+/* Tokyo grid background with better opacity control */
 .tokyo-grid-bg {
   background-size: 20px 20px;
   background-image:
-    linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
 }
 
 /* Pulse animations */
@@ -164,13 +164,31 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.5), rgba(236, 72, 153, 0.5), rgba(239, 68, 68, 0));
+  background: linear-gradient(to right, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.5), rgba(99, 102, 241, 0.5), rgba(59, 130, 246, 0));
   transform: translateX(-100%);
   transition: transform 0.4s ease-out;
 }
 
 .group:hover .tokyo-link::after {
   transform: translateX(0);
+}
+
+/* Add better text contrast utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Improve text shadows for better visibility */
+.drop-shadow-sm {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.dark .drop-shadow-sm {
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
 }
 
 /* For hiding scrollbar but allowing scroll */

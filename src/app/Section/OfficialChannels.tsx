@@ -42,7 +42,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
             ),
             link: "https://discord.gg/QU6fTacXab",
             color: "bg-indigo-500",
-            glowColor: "tokyo-glow-purple",
+            glowColor: "tokyo-glow-indigo",
             animation: "fade-up",
             kanji: "和" // means "harmony" in Japanese
         },
@@ -56,7 +56,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
             ),
             link: "https://github.com/kanari-network",
             color: "bg-white",
-            glowColor: "tokyo-glow-cyan",
+            glowColor: "tokyo-glow-blue",
             animation: "fade-left",
             kanji: "開" // means "open" in Japanese
         }
@@ -76,14 +76,14 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
             {/* Section Header */}
             <div className="text-center space-y-6">
                 <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                    : ' from-gray-900 via-blue-800 to-purple-900'
+                    ? ' dark:from-white dark:via-blue-300  dark:to-indigo-200'
+                    : ' from-gray-900 via-blue-800 to-indigo-900'
                     }`}>
                     Kanari Network:
                     <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                         Official Channels
                     </span>
-                    <div className="h-1 w-32 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                    <div className="h-1 w-32 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 
                                 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                 </h2>
 
@@ -105,22 +105,22 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                             data-aos={channel.animation}
                             data-aos-delay={200 + (index * 100)}
                             className={`backdrop-blur-sm ${darkMode
-                                ? 'bg-gray-800/20 border-red-500/30'
-                                : 'bg-white/20 border-red-400/30'
+                                ? 'bg-gray-800/20 border-blue-500/30'
+                                : 'bg-white/20 border-blue-400/30'
                                 } border rounded-xl p-8 group relative overflow-hidden 
                             hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-channel-card`}>
 
                             {/* Neo-Tokyo decorative elements */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-purple-600 tokyo-glow"></div>
-                            <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-red-400 tokyo-glow-red"></div>
-                            <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-purple-400 tokyo-glow-purple"></div>
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600 tokyo-glow"></div>
+                            <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-blue-400 tokyo-glow-blue"></div>
+                            <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-indigo-400 tokyo-glow-indigo"></div>
 
                             {/* Japanese pattern overlay */}
                             <div className="absolute right-0 top-0 h-full w-1/3 tokyo-pattern opacity-20"></div>
 
                             {/* Japanese calligraphy decorative elements */}
-                            <div className="absolute -left-2 top-1/4 text-3xl font-bold text-red-500/10 tokyo-kanji rotate-90">{channel.kanji}</div>
-                            <div className="absolute right-4 bottom-8 text-2xl font-bold text-purple-500/10 tokyo-kanji">接続</div>
+                            <div className="absolute -left-2 top-1/4 text-3xl font-bold text-blue-500/10 tokyo-kanji rotate-90">{channel.kanji}</div>
+                            <div className="absolute right-4 bottom-8 text-2xl font-bold text-indigo-500/10 tokyo-kanji">接続</div>
 
                             {/* Digital circuits with Japanese style */}
                             <div className="absolute left-2 top-8 w-8 h-32 tokyo-circuit-vertical"></div>
@@ -141,12 +141,12 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                                     {/* Tokyo-styled name */}
                                     <h3 className={`text-2xl font-bold tokyo-text-glitch bg-gradient-to-r 
                                         ${darkMode
-                                            ? 'from-red-300 via-pink-300 to-purple-200'
-                                            : 'from-red-600 via-pink-500 to-purple-600'
+                                            ? 'from-blue-300 via-indigo-300 to-blue-200'
+                                            : 'from-blue-600 via-indigo-500 to-blue-600'
                                         }
                                         bg-clip-text text-transparent group-hover:scale-105 transition-transform relative`}>
                                         <span>{channel.name}</span>
-                                        <div className="h-1 w-2/3 mt-1 bg-gradient-to-r from-red-500 to-purple-600 rounded-full 
+                                        <div className="h-1 w-2/3 mt-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full 
                                              transform origin-left group-hover:w-full transition-all duration-500"></div>
                                     </h3>
 
@@ -157,7 +157,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                                     {/* Tokyo connect button */}
                                     <div className="mt-4 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className={`flex items-center justify-end space-x-1 text-sm font-mono 
-                                            ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
+                                            ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
                                             <span className="tokyo-connect-text">CONNECT</span>
                                             <svg className="w-4 h-4 tokyo-connect-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

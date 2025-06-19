@@ -85,7 +85,7 @@ module kanari::example {
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'dark bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950'
+            ? 'dark bg-gradient-to-r from-gray-100 to-blue-100 dark:from-gray-950 dark:to-indigo-950'
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
 
@@ -101,7 +101,7 @@ module kanari::example {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        <div className="parallax-bg rounded-[30px] overflow-hidden shadow-2xl border border-cyan-500/20 relative group">
+                        <div className="parallax-bg rounded-[30px] overflow-hidden shadow-2xl border border-blue-500/20 relative group">
                             <video
                                 autoPlay
                                 loop
@@ -112,27 +112,27 @@ module kanari::example {
                                 <source src="/Lines.mp4" type="video/mp4" />
                             </video>
 
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/90 via-violet-900/80 to-indigo-950/90 backdrop-blur-sm">
+                            <div className="absolute inset-0 bg-gradient-to-br from-gray-950/90 via-slate-900/80 to-indigo-950/90 backdrop-blur-sm">
                                 {/* Japanese-style decorative elements */}
-                                <div className="absolute inset-8 border border-red-500/20 rounded-lg"></div>
-                                <div className="absolute inset-10 border border-cyan-400/30 rounded-lg"></div>
+                                <div className="absolute inset-8 border border-blue-500/20 rounded-lg"></div>
+                                <div className="absolute inset-10 border border-indigo-400/30 rounded-lg"></div>
 
                                 {/* Top border with pulse effect */}
-                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500/90 via-fuchsia-500/90 to-cyan-400/90 animate-gradient-x"></div>
+                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/90 via-indigo-500/90 to-blue-400/90 animate-gradient-x"></div>
 
                                 {/* Japanese patterns */}
                                 <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-10"
-                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
+                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
                                 </div>
                                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-repeat-x opacity-10 transform rotate-180"
-                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
+                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
                                 </div>
 
                                 {/* Japanese Kanji decorations */}
-                                <div className="absolute top-1/4 left-5 text-red-500/20 font-bold text-6xl transform -rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                <div className="absolute top-1/4 left-5 text-blue-500/20 font-bold text-6xl transform -rotate-12" style={{ writingMode: 'vertical-rl' }}>
                                     未来技術
                                 </div>
-                                <div className="absolute bottom-1/4 right-5 text-cyan-400/20 font-bold text-6xl transform rotate-12" style={{ writingMode: 'vertical-rl' }}>
+                                <div className="absolute bottom-1/4 right-5 text-indigo-400/20 font-bold text-6xl transform rotate-12" style={{ writingMode: 'vertical-rl' }}>
                                     安全保障
                                 </div>
 
@@ -141,21 +141,21 @@ module kanari::example {
                                     <div className="relative">
                                         {/* Title with decorative elements */}
                                         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-                                            <svg className="w-32 h-8 text-red-500/40" viewBox="0 0 100 20" fill="currentColor">
+                                            <svg className="w-32 h-8 text-blue-500/40" viewBox="0 0 100 20" fill="currentColor">
                                                 <path d="M0,10 Q25,0 50,10 T100,10" />
                                             </svg>
                                         </div>
 
-                                        <div className="absolute inset-0 blur-md bg-red-500/10 rounded-3xl"></div>
+                                        <div className="absolute inset-0 blur-md bg-blue-500/10 rounded-3xl"></div>
                                         <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
                                             Secure Metadata
-                                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-cyan-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
+                                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
                                                 on MoveVM
                                             </span>
                                         </h1>
 
                                         <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-180">
-                                            <svg className="w-32 h-8 text-cyan-400/40" viewBox="0 0 100 20" fill="currentColor">
+                                            <svg className="w-32 h-8 text-indigo-400/40" viewBox="0 0 100 20" fill="currentColor">
                                                 <path d="M0,10 Q25,0 50,10 T100,10" />
                                             </svg>
                                         </div>
@@ -169,9 +169,9 @@ module kanari::example {
                                     {/* CTA Buttons */}
                                     <div className="flex flex-wrap justify-center gap-4 mt-8">
                                         <a href="https://docs.kanari.network/"
-                                            className="relative bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(220,38,38,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
+                                            className="relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
                                         >
-                                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-red-400/0 via-red-400/30 to-red-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
+                                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400/0 via-blue-400/30 to-blue-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
                                             <span className="relative z-10 flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
@@ -180,7 +180,7 @@ module kanari::example {
                                             </span>
                                         </a>
                                         <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                            className="relative bg-indigo-900/40 border border-cyan-500/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:bg-indigo-900/60 active:translate-y-0 animate-slide-up"
+                                            className="relative bg-gray-900/40 border border-indigo-500/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:bg-gray-900/60 active:translate-y-0 animate-slide-up"
                                         >
                                             <span className="relative z-10 flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -188,19 +188,19 @@ module kanari::example {
                                                 </svg>
                                                 Join Testnet
                                             </span>
-                                            <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-cyan-400/50"></span>
-                                            <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-cyan-400/50"></span>
+                                            <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-indigo-400/50"></span>
+                                            <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-indigo-400/50"></span>
                                         </a>
                                     </div>
                                 </div>
 
                                 {/* Decorative pulse indicators */}
                                 <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-                                    <div className="h-[30px] w-[2px] bg-red-500/40 mx-1"></div>
+                                    <div className="h-[30px] w-[2px] bg-blue-500/40 mx-1"></div>
                                     <div className="h-[20px] w-[2px] bg-white/30 mx-1"></div>
-                                    <div className="h-[40px] w-[2px] bg-cyan-400/40 mx-1"></div>
+                                    <div className="h-[40px] w-[2px] bg-indigo-400/40 mx-1"></div>
                                     <div className="h-[15px] w-[2px] bg-white/30 mx-1"></div>
-                                    <div className="h-[25px] w-[2px] bg-red-500/40 mx-1"></div>
+                                    <div className="h-[25px] w-[2px] bg-blue-500/40 mx-1"></div>
                                 </div>
                             </div>
                         </div>

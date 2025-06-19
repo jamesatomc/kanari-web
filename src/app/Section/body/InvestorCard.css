@@ -2,50 +2,50 @@
 
 /* Base card effects */
 .tokyo-cyber-card {
-  box-shadow: 0 0 10px -5px rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 10px -5px rgba(59, 130, 246, 0.2);
   will-change: transform;
   transform: translateZ(0);
 }
 
 /* Glow effects */
 .tokyo-glow {
-  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 6px 1px rgba(59, 130, 246, 0.4);
 }
 
 .dark .tokyo-glow {
-  box-shadow: 0 0 6px 1px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 6px 1px rgba(99, 102, 241, 0.4);
 }
 
-.tokyo-glow-red {
-  box-shadow: 0 0 4px 1px rgba(239, 68, 68, 0.4);
+.tokyo-glow-blue {
+  box-shadow: 0 0 4px 1px rgba(59, 130, 246, 0.4);
 }
 
-.tokyo-glow-purple {
-  box-shadow: 0 0 4px 1px rgba(236, 72, 153, 0.4);
+.tokyo-glow-indigo {
+  box-shadow: 0 0 4px 1px rgba(99, 102, 241, 0.4);
 }
 
 /* Japanese patterns */
 .tokyo-pattern {
-  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
   background-size: 12px 12px;
 }
 
 /* Digital circuits */
 .tokyo-circuit-vertical {
-  background-image: linear-gradient(to bottom, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to bottom, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
   background-size: 8px 12px;
   opacity: 0.2;
 }
 
 .tokyo-circuit-horizontal {
-  background-image: linear-gradient(to right, transparent 45%, rgba(239, 68, 68, 0.2) 45%, rgba(239, 68, 68, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to right, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
   background-size: 12px 8px;
   opacity: 0.2;
 }
 
 /* Holographic effect */
 .tokyo-holo-ring {
-  background: linear-gradient(45deg, transparent 40%, rgba(239, 68, 68, 0.3) 45%, rgba(236, 72, 153, 0.3) 55%, transparent 60%);
+  background: linear-gradient(45deg, transparent 40%, rgba(59, 130, 246, 0.3) 45%, rgba(99, 102, 241, 0.3) 55%, transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -57,14 +57,14 @@
 
 /* Shadow effect */
 .shadow-tokyo {
-  box-shadow: 0 0 10px -2px rgba(239, 68, 68, 0.3), 0 0 6px -2px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 10px -2px rgba(59, 130, 246, 0.3), 0 0 6px -2px rgba(99, 102, 241, 0.4);
 }
 
 /* Digital bits decoration */
 .cyber-bits {
   width: 40px;
   height: 2px;
-  background-image: linear-gradient(to right, transparent, rgba(99, 179, 237, 0.4) 40%, rgba(159, 122, 234, 0.4) 80%, transparent);
+  background-image: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.4) 40%, rgba(99, 102, 241, 0.4) 80%, transparent);
 }
 
 /* Pulse animation */
@@ -79,13 +79,13 @@
 }
 
 .cyber-corner-tr {
-  border-right: 2px solid rgba(99, 179, 237, 0.25);
-  border-top: 2px solid rgba(99, 179, 237, 0.25);
+  border-right: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
 }
 
 .cyber-corner-bl {
-  border-left: 2px solid rgba(159, 122, 234, 0.25);
-  border-bottom: 2px solid rgba(159, 122, 234, 0.25);
+  border-left: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
 /* Japanese typography */
@@ -97,7 +97,7 @@
 
 /* Neon glow for text and icons */
 .tokyo-neon-glow {
-  filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.7));
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.7));
 }
 
 /* Animations */

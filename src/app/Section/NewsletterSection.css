@@ -8,21 +8,21 @@
     background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(239, 68, 68, 0.4);
+    background-color: rgba(59, 130, 246, 0.4);
     border-radius: 20px;
 }
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(236, 72, 153, 0.4);
+    background-color: rgba(99, 102, 241, 0.4);
 }
 
 /* Tokyo-styled form elements */
 .tokyo-input {
   transition: all 0.3s ease;
-  box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2);
 }
 
 .tokyo-input:focus {
-  box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.5), 0 0 0 1px rgba(239, 68, 68, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.3);
 }
 
 .tokyo-button {
@@ -37,18 +37,18 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0));
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0));
   transform: rotate(45deg);
   animation: tokyo-shimmer 3s ease-in-out infinite;
 }
 
 /* Tokyo newsletter card */
 .tokyo-newsletter-card {
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   position: relative;
   z-index: 0;
   transition: all 0.5s ease;
-  overflow: hidden; /* Ensure decorative elements stay contained */
+  overflow: hidden;
 }
 
 .tokyo-newsletter-card::before {
@@ -58,12 +58,12 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
   z-index: -1;
 }
 
 /* Contain Neo-Tokyo decorative elements */
-.tokyo-glow, .tokyo-glow-red, .tokyo-glow-pink {
+.tokyo-glow, .tokyo-glow-blue, .tokyo-glow-indigo {
   pointer-events: none; /* Prevent interfering with interactions */
 }
 
@@ -75,7 +75,7 @@
 .tokyo-modal {
   position: relative;
   animation: scaleIn 0.3s ease-out forwards;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .tokyo-modal::before {
@@ -85,12 +85,12 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
 }
 
 /* Japanese patterns */
 .tokyo-pattern-overlay {
-  background-image: radial-gradient(circle, rgba(239, 68, 68, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
   background-size: 12px 12px;
   opacity: 0.2;
 }
@@ -105,42 +105,42 @@
 .tokyo-corner-tr {
   top: 4px;
   right: 4px;
-  border-right: 2px solid rgba(239, 68, 68, 0.25);
-  border-top: 2px solid rgba(239, 68, 68, 0.25);
+  border-right: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
 }
 
 .tokyo-corner-tl {
   top: 4px;
   left: 4px;
-  border-left: 2px solid rgba(239, 68, 68, 0.25);
-  border-top: 2px solid rgba(239, 68, 68, 0.25);
+  border-left: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
 }
 
 .tokyo-corner-br {
   bottom: 4px;
   right: 4px;
-  border-right: 2px solid rgba(236, 72, 153, 0.25);
-  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+  border-right: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
 .tokyo-corner-bl {
   bottom: 4px;
   left: 4px;
-  border-left: 2px solid rgba(236, 72, 153, 0.25);
-  border-bottom: 2px solid rgba(236, 72, 153, 0.25);
+  border-left: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
 /* Tokyo glow effects */
 .tokyo-glow {
-  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 6px 1px rgba(59, 130, 246, 0.4);
 }
 
-.tokyo-glow-red {
-  box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.5);
+.tokyo-glow-blue {
+  box-shadow: 0 0 8px 2px rgba(59, 130, 246, 0.5);
 }
 
-.tokyo-glow-pink {
-  box-shadow: 0 0 8px 2px rgba(236, 72, 153, 0.5);
+.tokyo-glow-indigo {
+  box-shadow: 0 0 8px 2px rgba(99, 102, 241, 0.5);
 }
 
 /* Japanese kanji text */
@@ -193,9 +193,9 @@
 /* Focus styles with Tokyo theme */
 input:focus, button:focus, a:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
 }
 
 .dark input:focus, .dark button:focus, .dark a:focus {
-  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
 }

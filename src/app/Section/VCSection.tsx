@@ -72,12 +72,12 @@ export function VCSection() {
             <section className="py-20">
                 <div className="w-full mx-auto">
                     <div className="text-center space-y-6">
-                        <h2 className="text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-200 bg-clip-text text-transparent group">
+                        <h2 className="text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 dark:from-white dark:via-blue-300 dark:to-indigo-200 bg-clip-text text-transparent group">
                             Kanari Network:
                             <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                                 Backed by Leading Investors
                             </span>
-                            <div className="h-1 w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                            <div className="h-1 w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                         </h2>
 
                         <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode

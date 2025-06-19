@@ -45,16 +45,16 @@ export const menuData: MenuSection[] = [
       }
     ],
     titleColor: {
-      light: 'text-red-600',
-      dark: 'text-red-300'
+      light: 'text-blue-600',
+      dark: 'text-blue-300'
     },
     gradientColors: {
-      light: 'bg-gradient-to-r from-red-500 via-purple-500 to-red-500',
-      dark: 'bg-gradient-to-r from-red-400 via-purple-400 to-red-400'
+      light: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500',
+      dark: 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400'
     },
-    mobileColor: 'text-red-500',
-    mobileBorderColor: 'border-red-500/30',
-    hoverEffect: 'hover:bg-red-50 dark:hover:bg-red-900/20'
+    mobileColor: 'text-blue-500',
+    mobileBorderColor: 'border-blue-500/30',
+    hoverEffect: 'hover:bg-blue-50 dark:hover:bg-blue-900/20'
   },
   {
     title: 'Build',
@@ -79,16 +79,16 @@ export const menuData: MenuSection[] = [
       }
     ],
     titleColor: {
-      light: 'text-purple-600',
-      dark: 'text-purple-300'
+      light: 'text-indigo-600',
+      dark: 'text-indigo-300'
     },
     gradientColors: {
-      light: 'bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500',
-      dark: 'bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400'
+      light: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-500',
+      dark: 'bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-400'
     },
-    mobileColor: 'text-purple-500',
-    mobileBorderColor: 'border-purple-500/30',
-    hoverEffect: 'hover:bg-purple-50 dark:hover:bg-purple-900/20'
+    mobileColor: 'text-indigo-500',
+    mobileBorderColor: 'border-indigo-500/30',
+    hoverEffect: 'hover:bg-indigo-50 dark:hover:bg-indigo-900/20'
   },
   {
     title: 'Connect',
@@ -105,8 +105,8 @@ export const menuData: MenuSection[] = [
       dark: 'text-blue-300'
     },
     gradientColors: {
-      light: 'bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500',
-      dark: 'bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400'
+      light: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500',
+      dark: 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400'
     },
     mobileColor: 'text-blue-500',
     mobileBorderColor: 'border-blue-500/30',

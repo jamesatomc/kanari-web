@@ -17,16 +17,16 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
   return (
     <div className="pt-4 px-4 pb-4">
       <footer className={`backdrop-blur-sm ${darkMode
-        ? 'bg-gray-900/90 text-gray-100 border border-indigo-700/30'
-        : 'bg-white/90 text-gray-800 border border-red-300/30'
+        ? 'bg-gray-900/90 text-gray-100 border border-blue-700/30'
+        : 'bg-white/90 text-gray-800 border border-blue-300/30'
         } rounded-2xl shadow-xl p-8 sm:p-10 transition-all duration-300 relative overflow-hidden`}>
         
         {/* Japanese-inspired decorative elements */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/80 via-indigo-500/60 to-red-500/80"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/80 via-indigo-500/60 to-blue-500/80"></div>
         
         {/* Japanese wave pattern (seigaiha) */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-5" 
-             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjOEI1Q0YwIiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
+             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
         </div>
         
         {/* Asanoha pattern */}
@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               <Link href="/" className="flex items-center">
                 <div className="relative">
                   {/* Decorative "stamp" effect behind logo */}
-                  <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-red-500/10' : 'bg-red-500/5'}`}></div>
+                  <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-blue-500/10' : 'bg-blue-500/5'}`}></div>
                   <Image
                     src="/kariicon1.png"
                     className="h-10 w-10 mr-3 transform group-hover:rotate-6 transition-transform relative z-10"
@@ -51,8 +51,8 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                   />
                 </div>
                 <span className={`text-2xl font-bold bg-gradient-to-r ${darkMode 
-                  ? 'from-red-400 to-indigo-400' 
-                  : 'from-red-600 to-indigo-600'} 
+                  ? 'from-blue-400 to-indigo-400' 
+                  : 'from-blue-600 to-indigo-600'} 
                   bg-clip-text text-transparent transition-all duration-300`}>
                   Kanari Network
                 </span>
@@ -65,33 +65,33 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               {/* Resources */}
               <div className="space-y-5">
                 <h2 className={`text-sm font-bold uppercase tracking-wider flex items-center
-                  ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
+                  ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
                   <span className="w-1 h-4 mr-2 rounded-full bg-current"></span>
                   Resources
                 </h2>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/DeveloperPortal" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="/DeveloperPortal" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Developer Portal
                     </a>
                   </li>
                   <li>
-                    <a href="https://docs.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://docs.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Docs
                     </a>
                   </li>
                   <li>
-                    <a href="https://karimove.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://karimove.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Kari Move
                     </a>
                   </li>
                   <li>
-                    <a href="https://whitepaper.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://whitepaper.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Whitepaper
                     </a>
                   </li>
                   <li>
-                    <a href="https://kanarinet.slack.com/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://kanarinet.slack.com/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Developer forum
                     </a>
                   </li>
@@ -127,33 +127,33 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               {/* About */}
               <div className="space-y-5">
                 <h2 className={`text-sm font-bold uppercase tracking-wider flex items-center
-                  ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
+                  ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
                   <span className="w-1 h-4 mr-2 rounded-full bg-current"></span>
                   About
                 </h2>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/KanariFoundation" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="/KanariFoundation" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Kanari Foundation
                     </a>
                   </li>
                   <li>
-                    <a href="/MediaKit" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="/MediaKit" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Media Kit
                     </a>
                   </li>
                   <li>
-                    <a href="/Team" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="/Team" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Team
                     </a>
                   </li>
                   <li>
-                    <a href="https://blog.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="https://blog.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Blog
                     </a>
                   </li>
                   <li>
-                    <a href="/PrivacyPolicy" className="inline-block hover:translate-x-1 transition-transform hover:text-red-500 decoration-2 underline-offset-4">
+                    <a href="/PrivacyPolicy" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       PrivacyPolicy
                     </a>
                   </li>
@@ -164,8 +164,8 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
 
           {/* Divider - Japanese style with mon pattern */}
           <div className="my-8 flex items-center">
-            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent"></div>
-            <div className={`px-4 ${darkMode ? 'text-red-400/50' : 'text-red-600/50'}`}>
+            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+            <div className={`px-4 ${darkMode ? 'text-blue-400/50' : 'text-blue-600/50'}`}>
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                 <path d="M12,6a6,6,0,1,0,6,6A6,6,0,0,0,12,6Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/>
@@ -179,7 +179,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className={`text-sm sm:text-center ${darkMode ? 'text-gray-400' : 'text-gray-600'} relative inline-block`}>
               © 2025{' '}
-              <Link href="/" className={`${darkMode ? 'text-white' : 'text-gray-900'} hover:text-red-500 transition-colors`}>
+              <Link href="/" className={`${darkMode ? 'text-white' : 'text-gray-900'} hover:text-blue-500 transition-colors`}>
                 Kanari Network™
               </Link>
               <span className="relative inline-flex items-center">
@@ -256,7 +256,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
         </div>
         
         {/* Bottom decorative bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-red-500/60 to-indigo-500/80"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-blue-500/60 to-indigo-500/80"></div>
       </footer>
     </div>
   );
