@@ -143,7 +143,7 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                                     Questions About Privacy?
                                 </h2>
                                 <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                                    If you have any questions about this Privacy Policy or our data practices, we're here to help.
+                                    If you have any questions about this Privacy Policy or our data practices, we&apos;re here to help.
                                 </p>
                                 <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                                     Contact Privacy Team

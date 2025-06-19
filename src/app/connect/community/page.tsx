@@ -307,7 +307,7 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/30' : 'bg-gray-50'}`}>
                                         <h3 className={`text-xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                            ✅ Do's
+                                            ✅ Do&apos;s
                                         </h3>
                                         <ul className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                             <li>• Be respectful and inclusive</li>
@@ -318,7 +318,7 @@ function CommunityHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                     </div>
                                     <div className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700/30' : 'bg-gray-50'}`}>
                                         <h3 className={`text-xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                            ❌ Don'ts
+                                            ❌ Don&apos;ts
                                         </h3>
                                         <ul className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                             <li>• No spam or self-promotion</li>

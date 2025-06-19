@@ -195,9 +195,6 @@ function DeveloperPortalComponent({
     );
 }
 
-// Export the component directly for reuse
-export { DeveloperPortalComponent };
-
 export default function DeveloperPortal() {
     return (
         <PageWrapper>

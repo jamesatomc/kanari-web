@@ -75,7 +75,7 @@ function TeamComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMo
                                 </h1>
 
                                 <p className={`text-lg sm:text-xl md:text-2xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
-                                    A diverse group of innovators, developers, and visionaries united by our passion for blockchain technology and belief in decentralized finance's transformative power.
+                                    A diverse group of innovators, developers, and visionaries united by our passion for blockchain technology and belief in decentralized finance&apos;s transformative power.
                                 </p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@ function TeamComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMo
                                     Join Our Mission
                                 </h2>
                                 <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
-                                    We're always looking for passionate individuals to join our team and help shape the future of decentralized finance.
+                                    We&apos;re always looking for passionate individuals to join our team and help shape the future of decentralized finance.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <button className="px-8 py-4 bg-white text-purple-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">

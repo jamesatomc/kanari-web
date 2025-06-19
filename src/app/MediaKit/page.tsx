@@ -274,7 +274,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     Need More Resources?
                                 </h2>
                                 <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
-                                    Looking for specific assets, brand guidelines, or have questions about usage? We're here to help.
+                                    Looking for specific assets, brand guidelines, or have questions about usage? We&apos;re here to help.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <button className="px-8 py-4 bg-white text-orange-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
