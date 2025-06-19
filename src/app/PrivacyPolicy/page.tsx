@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import {
     AnchorHTMLAttributes,
     HTMLAttributes,
@@ -11,44 +11,50 @@ import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
 import ReactMarkdown from 'react-markdown';
 import { privacyPolicyContent } from '../data/privacy-policy';
+import PageWrapper from '../components/PageWrapper';
 
-export default function PrivacyPolicy() {
-    const [darkMode, setDarkMode] = useState(false);
 
+function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
     // Define renderers with proper types that match ReactMarkdown's Components interface
     const renderers = {
         h1: function H1({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
-            return <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100" {...rest}>{children}</h1>;
+            return <h1 className={`text-3xl font-bold mb-4 ${darkMode ? 'text-gray-100' : 'text-gray-900'}`} {...rest}>{children}</h1>;
         },
         h2: function H2({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
-            return <h2 className="text-2xl font-bold mb-3 mt-6 text-gray-800 dark:text-gray-200" {...rest}>{children}</h2>;
+            return <h2 className={`text-2xl font-bold mb-3 mt-6 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`} {...rest}>{children}</h2>;
         },
         h3: function H3({ node, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & { node?: any, children?: ReactNode }) {
-            return <h3 className="text-xl font-bold mb-2 mt-4 text-gray-800 dark:text-gray-200" {...rest}>{children}</h3>;
+            return <h3 className={`text-xl font-bold mb-2 mt-4 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`} {...rest}>{children}</h3>;
         },
         p: function Paragraph({ node, children, ...rest }: HTMLAttributes<HTMLParagraphElement> & { node?: any, children?: ReactNode }) {
-            return <p className="mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</p>;
+            return <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} {...rest}>{children}</p>;
         },
         ul: function UnorderedList({ node, children, ...rest }: HTMLAttributes<HTMLUListElement> & { node?: any, children?: ReactNode }) {
-            return <ul className="list-disc pl-5 mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</ul>;
+            return <ul className={`list-disc pl-5 mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} {...rest}>{children}</ul>;
         },
         ol: function OrderedList({ node, children, ...rest }: OlHTMLAttributes<HTMLOListElement> & { node?: any, children?: ReactNode }) {
-            return <ol className="list-decimal pl-5 mb-4 text-gray-700 dark:text-gray-300" {...rest}>{children}</ol>;
+            return <ol className={`list-decimal pl-5 mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} {...rest}>{children}</ol>;
         },
         li: function ListItem({ node, children, ...rest }: LiHTMLAttributes<HTMLLIElement> & { node?: any, children?: ReactNode }) {
-            return <li className="mb-1 text-gray-700 dark:text-gray-300" {...rest}>{children}</li>;
+            return <li className={`mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`} {...rest}>{children}</li>;
         },
         strong: function Strong({ node, children, ...rest }: HTMLAttributes<HTMLElement> & { node?: any, children?: ReactNode }) {
-            return <strong className="font-bold text-gray-900 dark:text-white" {...rest}>{children}</strong>;
+            return <strong className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`} {...rest}>{children}</strong>;
         },
         em: function Emphasis({ node, children, ...rest }: HTMLAttributes<HTMLElement> & { node?: any, children?: ReactNode }) {
-            return <em className="italic text-gray-800 dark:text-gray-200" {...rest}>{children}</em>;
+            return <em className={`italic ${darkMode ? 'text-gray-200' : 'text-gray-800'}`} {...rest}>{children}</em>;
         },
         a: function Anchor({ node, href, children, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { node?: any, children?: ReactNode }) {
-            return <a href={href} className="text-blue-600 hover:underline dark:text-blue-400 dark:hover:text-blue-300" {...rest}>{children}</a>;
+            return <a href={href} className={`${darkMode 
+                ? 'text-blue-400 hover:text-blue-300' 
+                : 'text-blue-600 hover:underline'
+            }`} {...rest}>{children}</a>;
         },
         blockquote: function BlockQuote({ node, children, ...rest }: BlockquoteHTMLAttributes<HTMLQuoteElement> & { node?: any, children?: ReactNode }) {
-            return <blockquote className="border-l-4 border-gray-200 dark:border-gray-700 pl-4 py-2 mb-4 italic text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-gray-800" {...rest}>{children}</blockquote>;
+            return <blockquote className={`border-l-4 pl-4 py-2 mb-4 italic ${darkMode
+                ? 'border-gray-700 text-gray-400 bg-gray-800'
+                : 'border-gray-200 text-gray-700 bg-gray-50'
+            }`} {...rest}>{children}</blockquote>;
         },
     };
 
@@ -64,7 +70,7 @@ export default function PrivacyPolicy() {
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'dark bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-950 dark:to-indigo-950'
+            ? 'bg-gradient-to-r from-gray-950 to-indigo-950'
             : 'bg-gradient-to-r from-gray-100 to-gray-200'
             }`}>
 
@@ -79,9 +85,11 @@ export default function PrivacyPolicy() {
                     <section className="px-2 py-6 sm:py-10">
                         <div className="max-w-7xl mx-auto text-center">
                             <div className="text-center space-y-4 sm:space-y-6">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r 
-                                        from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-300 
-                                        dark:to-purple-200 bg-clip-text text-transparent group">
+                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r 
+                                        ${darkMode
+                                        ? 'from-white via-blue-300 to-purple-200'
+                                        : 'from-gray-900 via-blue-800 to-purple-900'
+                                    } bg-clip-text text-transparent group`}>
                                     Kanari Network:
                                     <span className="block mt-2 group-hover:translate-x-2 transition-transform">
                                         Privacy Policy
@@ -90,8 +98,8 @@ export default function PrivacyPolicy() {
                                             rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                                 </h2>
                             </div>
-                            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6">
-                                Your privacy is important to us. It is Kanari Network&apos;s policy to respect your privacy regarding any information we may collect from you across our website, <a href="#" className="text-blue-600 dark:text-blue-400">https://kanari.network</a>, and other sites we own and operate.
+                            <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6`}>
+                                Your privacy is important to us. It is Kanari Network&apos;s policy to respect your privacy regarding any information we may collect from you across our website, <a href="#" className={`${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>https://kanari.network</a>, and other sites we own and operate.
                             </p>
                         </div>
                     </section>
@@ -109,5 +117,15 @@ export default function PrivacyPolicy() {
                 </div>
             </main>
         </div>
+    );
+}
+
+export default function PrivacyPolicy() {
+    return (
+        <PageWrapper>
+            {({ darkMode, setDarkMode }) => (
+                <PrivacyPolicyComponent darkMode={darkMode} setDarkMode={setDarkMode} />
+            )}
+        </PageWrapper>
     );
 }

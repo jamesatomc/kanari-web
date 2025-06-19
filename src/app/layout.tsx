@@ -1,30 +1,47 @@
-import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react"
-import { Inter } from "next/font/google";
-import "./globals.css";
+'use client';
 
+import { useState, useEffect } from 'react';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import React from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Kanari Network",
-  description: "Kanari Network - A secure blockchain platform for file metadata storage and verification powered by Move VM, offering smart contract capabilities and transparent metadata management in the Web3 ecosystem.",
-  icons: {
-    icon: ['/icons/favicon.ico?v=4'],
-    apple:['/icons/apple-touch-icon.png?v=4'],
-    shortcut:['/icons/apple-touch-icon.png'],
-  }
-};
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Load dark mode preference from localStorage on component mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedDarkMode = localStorage.getItem('darkMode');
+      if (storedDarkMode === 'true') {
+        setDarkMode(true);
+      }
+    }
+  }, []);
+
+  // Save dark mode preference to localStorage whenever it changes
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    }
+  }, [darkMode]);
+
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Analytics />
+    <html lang="en" className={darkMode ? 'dark' : ''}>
+      <body className={inter.className}>
+        <div data-darkmode={darkMode}>
+          {/* Clone children and pass darkMode props */}
+          {typeof children === 'object' && children !== null && 'type' in children
+            ? React.cloneElement(children as React.ReactElement, { darkMode, setDarkMode } as any)
+            : children
+          }
+        </div>
+      </body>
     </html>
   );
 }

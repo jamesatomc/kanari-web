@@ -1,14 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image'
 import './OfficialChannels.css';
 
-export function OfficialChannels() {
-    const [darkMode, setDarkMode] = useState(false);
+interface OfficialChannelsProps {
+    darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
+}
 
+export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProps) {
     const channels = [
         {
             name: "Bluesky",
@@ -70,11 +73,6 @@ export function OfficialChannels() {
     return (
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto text-center">
-
-
-
-
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     {channels.map((channel, index) => (
                         <a key={channel.name}
@@ -83,9 +81,12 @@ export function OfficialChannels() {
                             rel="noopener noreferrer"
                             data-aos={channel.animation}
                             data-aos-delay={200 + (index * 100)}
-                            className="backdrop-blur-sm bg-white/20 dark:bg-gray-800/20 border border-red-400/30 
-                            dark:border-red-500/30 rounded-xl p-8 group relative overflow-hidden 
-                            hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-channel-card">
+                            className={`backdrop-blur-sm ${
+                                darkMode 
+                                    ? 'bg-gray-800/20 border-red-500/30' 
+                                    : 'bg-white/20 border-red-400/30'
+                            } border rounded-xl p-8 group relative overflow-hidden 
+                            hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-channel-card`}>
 
                             {/* Neo-Tokyo decorative elements */}
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-purple-600 tokyo-glow"></div>
@@ -116,21 +117,25 @@ export function OfficialChannels() {
                                 {/* Content */}
                                 <div className="space-y-4 relative">
                                     {/* Tokyo-styled name */}
-                                    <h3 className="text-2xl font-bold tokyo-text-glitch bg-gradient-to-r from-red-600 via-pink-500 
-                                        to-purple-600 dark:from-red-300 dark:via-pink-300 dark:to-purple-200 
-                                        bg-clip-text text-transparent group-hover:scale-105 transition-transform relative">
+                                    <h3 className={`text-2xl font-bold tokyo-text-glitch bg-gradient-to-r 
+                                        ${darkMode
+                                            ? 'from-red-300 via-pink-300 to-purple-200'
+                                            : 'from-red-600 via-pink-500 to-purple-600'
+                                        }
+                                        bg-clip-text text-transparent group-hover:scale-105 transition-transform relative`}>
                                         <span>{channel.name}</span>
                                         <div className="h-1 w-2/3 mt-1 bg-gradient-to-r from-red-500 to-purple-600 rounded-full 
                                              transform origin-left group-hover:w-full transition-all duration-500"></div>
                                     </h3>
 
-                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed relative">
+                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} leading-relaxed relative`}>
                                         {channel.description}
                                     </p>
 
                                     {/* Tokyo connect button */}
                                     <div className="mt-4 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className="flex items-center justify-end space-x-1 text-sm font-mono text-red-600 dark:text-red-400">
+                                        <div className={`flex items-center justify-end space-x-1 text-sm font-mono 
+                                            ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
                                             <span className="tokyo-connect-text">CONNECT</span>
                                             <svg className="w-4 h-4 tokyo-connect-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -146,7 +151,6 @@ export function OfficialChannels() {
                         </a>
                     ))}
                 </div>
-
             </div>
         </section>
     );

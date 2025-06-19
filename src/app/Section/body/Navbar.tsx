@@ -6,7 +6,12 @@ import { FaBars, FaSun, FaTimes } from "react-icons/fa";
 import Image from "next/image"; 
 import { FaMoon } from "react-icons/fa6";
 
-export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, setDarkMode: (darkMode: boolean) => void }) {
+interface NavbarProps {
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
+}
+
+export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   const [nav, setNav] = useState(false);
   const [learnOpen, setLearnOpen] = useState(false);
   const [buildOpen, setBuildOpen] = useState(false);
@@ -24,19 +29,6 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean, s
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
-
-  // Load dark mode preference from localStorage on component mount
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode === 'true') {
-      setDarkMode(true);
-    }
-  }, [setDarkMode]); 
-
-  // Save dark mode preference to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('darkMode', darkMode.toString());
-  }, [darkMode]);
 
   return (
     <nav className={`m-2 backdrop-blur-md bg-opacity-50 flex justify-between items-center w-[calc(100%-40px)] z-20 h-20 mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-xl transition-all duration-300 

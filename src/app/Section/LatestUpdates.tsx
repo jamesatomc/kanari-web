@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LatestUpdates.css';
 import Image from 'next/image'
 
-function LatestUpdates() {
-    const [darkMode, setDarkMode] = useState(false);
+interface LatestUpdatesProps {
+    darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
+}
 
+function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
     // Japanese kanji for each blog post
     const kanjiSymbols = ["更新", "情報", "技術", "未来", "発展"];
 
@@ -80,12 +83,15 @@ function LatestUpdates() {
                             href={featuredBlog.Url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block h-full backdrop-blur-sm 
-                                  bg-white/10 dark:bg-gray-800/10
-                                  border border-red-300/20 dark:border-red-500/20
+                            className={`block h-full backdrop-blur-sm 
+                                  ${darkMode 
+                                    ? 'bg-gray-800/10 border-red-500/20'
+                                    : 'bg-white/10 border-red-300/20'
+                                  }
+                                  border
                                   rounded-lg overflow-hidden 
                                   hover:scale-[1.02] hover:shadow-xl transition-all 
-                                  duration-300 group tokyo-update-card"
+                                  duration-300 group tokyo-update-card`}
                         >
                             {/* Neo-Tokyo styled header line */}
                             <div className="h-1 w-full bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 tokyo-glow"></div>
@@ -137,29 +143,37 @@ function LatestUpdates() {
 
                                 <div className="space-y-6 relative z-10">
                                     {/* Tokyo styled heading */}
-                                    <h3 className="text-2xl md:text-3xl font-bold 
-                                          bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 
-                                          dark:from-red-300 dark:via-pink-400 dark:to-purple-400 
-                                          bg-clip-text text-transparent">
+                                    <h3 className={`text-2xl md:text-3xl font-bold 
+                                          bg-gradient-to-r ${darkMode
+                                            ? 'from-red-300 via-pink-400 to-purple-400'
+                                            : 'from-red-400 via-pink-500 to-purple-500'
+                                          }
+                                          bg-clip-text text-transparent`}>
                                         {featuredBlog.description}
                                     </h3>
 
                                     {/* Date with Tokyo styling */}
                                     <div className="flex items-center gap-2">
                                         <div className="h-4 w-1 bg-pink-500 rounded-full"></div>
-                                        <p className="text-sm font-mono text-pink-600 dark:text-pink-400">
+                                        <p className={`text-sm font-mono ${darkMode ? 'text-pink-400' : 'text-pink-600'}`}>
                                             {featuredBlog.data}
                                         </p>
                                     </div>
 
                                     {/* Tokyo-style button */}
-                                    <div className="pt-4 mt-4 border-t border-red-300/20 dark:border-red-500/20">
+                                    <div className={`pt-4 mt-4 border-t ${darkMode ? 'border-red-500/20' : 'border-red-300/20'}`}>
                                         <div className="tokyo-link-container group-hover:tokyo-link-hover flex justify-end">
                                             <div className="tokyo-link">
-                                                <span className="text-sm md:text-base font-mono text-red-600 dark:text-red-400 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors">
+                                                <span className={`text-sm md:text-base font-mono ${darkMode
+                                                  ? 'text-red-400 group-hover:text-pink-400'
+                                                  : 'text-red-600 group-hover:text-pink-500'
+                                                } transition-colors`}>
                                                     READ MORE
                                                 </span>
-                                                <svg className="w-4 h-4 ml-1 text-red-600 dark:text-red-400 group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors"
+                                                <svg className={`w-4 h-4 ml-1 ${darkMode
+                                                  ? 'text-red-400 group-hover:text-pink-400'
+                                                  : 'text-red-600 group-hover:text-pink-500'
+                                                } transition-colors`}
                                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                                 </svg>
@@ -180,12 +194,15 @@ function LatestUpdates() {
                                     href={blog.Url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex-shrink-0 backdrop-blur-sm 
-                                          bg-white/10 dark:bg-gray-800/10
-                                          border border-red-300/20 dark:border-red-500/20
+                                    className={`flex-shrink-0 backdrop-blur-sm 
+                                          ${darkMode
+                                            ? 'bg-gray-800/10 border-red-500/20'
+                                            : 'bg-white/10 border-red-300/20'
+                                          }
+                                          border
                                           rounded-lg overflow-hidden 
                                           hover:scale-[1.02] hover:shadow-xl transition-all 
-                                          duration-300 group tokyo-update-card"
+                                          duration-300 group tokyo-update-card`}
                                 >
                                     <div className="flex flex-col h-full">
                                         {/* Neo-Tokyo styled header line */}
@@ -220,17 +237,19 @@ function LatestUpdates() {
 
                                                 <div className="flex flex-col justify-between h-full relative z-10">
                                                     <div>
-                                                        <h3 className="text-sm font-bold line-clamp-2 
-                                                              bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 
-                                                              dark:from-red-300 dark:via-pink-400 dark:to-purple-400 
-                                                              bg-clip-text text-transparent">
+                                                        <h3 className={`text-sm font-bold line-clamp-2 
+                                                              bg-gradient-to-r ${darkMode
+                                                                ? 'from-red-300 via-pink-400 to-purple-400'
+                                                                : 'from-red-400 via-pink-500 to-purple-500'
+                                                              }
+                                                              bg-clip-text text-transparent`}>
                                                             {blog.description}
                                                         </h3>
                                                     </div>
 
                                                     <div className="flex items-center gap-1">
                                                         <div className="h-3 w-1 bg-pink-500 rounded-full"></div>
-                                                        <p className="text-xs font-mono text-pink-600 dark:text-pink-400">
+                                                        <p className={`text-xs font-mono ${darkMode ? 'text-pink-400' : 'text-pink-600'}`}>
                                                             {blog.data}
                                                         </p>
                                                     </div>
@@ -244,7 +263,7 @@ function LatestUpdates() {
                             {/* Scroll indicator - only shows if there are more than 4 items */}
                             {secondaryBlogs.length > 4 && (
                                 <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900/20 to-transparent pointer-events-none flex justify-center items-end pb-2">
-                                    <div className="text-pink-500 dark:text-pink-400 animate-bounce">
+                                    <div className={`${darkMode ? 'text-pink-400' : 'text-pink-500'} animate-bounce`}>
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
