@@ -86,12 +86,18 @@ module kanari::example {
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'dark bg-gradient-to-r from-gray-100 to-blue-100 dark:from-gray-950 dark:to-indigo-950'
-            : 'bg-gradient-to-r from-gray-100 to-gray-200'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
+            : 'bg-gradient-to-br from-white via-blue-50 to-indigo-50'
             }`}>
 
 
-            <main className="relative min-h-screen overflow-hidden ">
+            <main className="relative min-h-screen overflow-hidden">
+
+                {/* Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
+                </div>
 
                 <div className="relative z-10">
                     <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -114,39 +120,16 @@ module kanari::example {
                             </video>
 
                             <div className="absolute inset-0 bg-gradient-to-br from-gray-950/90 via-slate-900/80 to-indigo-950/90 backdrop-blur-sm">
-                                {/* Japanese-style decorative elements */}
+                                {/* Clean decorative elements */}
                                 <div className="absolute inset-8 border border-blue-500/20 rounded-lg"></div>
                                 <div className="absolute inset-10 border border-indigo-400/30 rounded-lg"></div>
 
-                                {/* Top border with pulse effect */}
-                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/90 via-indigo-500/90 to-blue-400/90 animate-gradient-x"></div>
-
-                                {/* Japanese patterns */}
-                                <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-10"
-                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
-                                </div>
-                                <div className="absolute bottom-0 left-0 right-0 h-16 bg-repeat-x opacity-10 transform rotate-180"
-                                    style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
-                                </div>
-
-                                {/* Japanese Kanji decorations */}
-                                <div className="absolute top-1/4 left-5 text-blue-500/20 font-bold text-6xl transform -rotate-12" style={{ writingMode: 'vertical-rl' }}>
-                                    未来技術
-                                </div>
-                                <div className="absolute bottom-1/4 right-5 text-indigo-400/20 font-bold text-6xl transform rotate-12" style={{ writingMode: 'vertical-rl' }}>
-                                    安全保障
-                                </div>
+                                {/* Top border with gradient */}
+                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/90 via-indigo-500/90 to-blue-400/90"></div>
 
                                 {/* Main Hero Content */}
-                                <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8">
-                                    <div className="relative">
-                                        {/* Title with decorative elements */}
-                                        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-                                            <svg className="w-32 h-8 text-blue-500/40" viewBox="0 0 100 20" fill="currentColor">
-                                                <path d="M0,10 Q25,0 50,10 T100,10" />
-                                            </svg>
-                                        </div>
-
+                                <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8 relative z-20">
+                                    <div className="relative text-center">
                                         <div className="absolute inset-0 blur-md bg-blue-500/10 rounded-3xl"></div>
                                         <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
                                             Secure Metadata
@@ -154,12 +137,6 @@ module kanari::example {
                                                 on MoveVM
                                             </span>
                                         </h1>
-
-                                        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 rotate-180">
-                                            <svg className="w-32 h-8 text-indigo-400/40" viewBox="0 0 100 20" fill="currentColor">
-                                                <path d="M0,10 Q25,0 50,10 T100,10" />
-                                            </svg>
-                                        </div>
                                     </div>
 
                                     <p className="text-white/90 text-center text-sm sm:text-base md:text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
@@ -167,41 +144,43 @@ module kanari::example {
                                         Move Virtual Machine for the Web3 ecosystem.
                                     </p>
 
-                                    {/* CTA Buttons */}
-                                    <div className="flex flex-wrap justify-center gap-4 mt-8">
-                                        <a href="https://docs.kanari.network/"
-                                            className="relative bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)] active:translate-y-0 animate-slide-up overflow-hidden group/btn"
+                                    {/* CTA Buttons - Fixed z-index and interactivity */}
+                                    <div className="flex flex-wrap justify-center gap-4 mt-8 relative z-30">
+                                        <a
+                                            href="https://docs.kanari.network/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`relative px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer ${darkMode
+                                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
+                                                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
+                                                }`}
+                                            style={{ pointerEvents: 'auto' }}
                                         >
-                                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400/0 via-blue-400/30 to-blue-400/0 -translate-x-[100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
-                                            <span className="relative z-10 flex items-center">
+                                            <span className="flex items-center relative z-10">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                                                 </svg>
                                                 Explore Docs
                                             </span>
                                         </a>
-                                        <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                            className="relative bg-gray-900/40 border border-indigo-500/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:bg-gray-900/60 active:translate-y-0 animate-slide-up"
+                                        <a
+                                            href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`relative px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 cursor-pointer ${darkMode
+                                                ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white hover:bg-gray-700/30'
+                                                : 'border-gray-300 text-white hover:border-gray-400 hover:bg-white/10'
+                                                }`}
+                                            style={{ pointerEvents: 'auto' }}
                                         >
-                                            <span className="relative z-10 flex items-center">
+                                            <span className="flex items-center relative z-10">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                                                 </svg>
                                                 Join Testnet
                                             </span>
-                                            <span className="absolute top-0 right-0 h-[30%] w-[30%] border-t border-r border-indigo-400/50"></span>
-                                            <span className="absolute bottom-0 left-0 h-[30%] w-[30%] border-b border-l border-indigo-400/50"></span>
                                         </a>
                                     </div>
-                                </div>
-
-                                {/* Decorative pulse indicators */}
-                                <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-                                    <div className="h-[30px] w-[2px] bg-blue-500/40 mx-1"></div>
-                                    <div className="h-[20px] w-[2px] bg-white/30 mx-1"></div>
-                                    <div className="h-[40px] w-[2px] bg-indigo-400/40 mx-1"></div>
-                                    <div className="h-[15px] w-[2px] bg-white/30 mx-1"></div>
-                                    <div className="h-[25px] w-[2px] bg-blue-500/40 mx-1"></div>
                                 </div>
                             </div>
                         </div>
@@ -211,22 +190,22 @@ module kanari::example {
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto">
                             {/* Section Header */}
-                            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                            <div className="text-center mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
                                     }`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
-                                        Use Cases and Features
-                                    </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                                    🚀 Secure Metadata Management
+                                </div>
+
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
+                                    } bg-clip-text text-transparent`}>
+                                    Use Cases and Features
                                 </h2>
 
-                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                                    ? 'dark:text-gray-300'
-                                    : 'text-gray-600 '
-                                    }`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Explore the capabilities of Kanari Network and Move VM for secure and transparent file metadata management in the Web3 ecosystem.
                                 </p>
                             </div>
@@ -237,31 +216,36 @@ module kanari::example {
                                 <div
                                     data-aos="fade-right"
                                     data-aos-delay="100"
-                                    className="w-full space-y-6 p-6 bg-white/80 dark:bg-gray-800/80 rounded-xl shadow-lg backdrop-blur-sm"
+                                    className={`w-full space-y-6 p-8 rounded-3xl shadow-lg backdrop-blur-sm ${darkMode
+                                        ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20'
+                                        : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                                        }`}
                                 >
-                                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                                    <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Secure Metadata Management
                                         <span className="block mt-2 text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                                             Powered by MoveVM
                                         </span>
                                     </h3>
 
-                                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    <p className={`text-sm sm:text-base leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                         Store, track, and manage file metadata with enterprise-grade security.
                                         Our MoveVM implementation ensures tamper-proof records and verifiable
                                         ownership across the Web3 ecosystem.
                                     </p>
 
                                     <div className="space-y-3">
-                                        {[
-                                            'Cryptographic file validation',
+                                        {['Cryptographic file validation',
                                             'Immutable ownership records',
                                             'Smart contract integration',
                                             'Decentralized storage',
                                         ].map((feature, index) => (
                                             <div
                                                 key={index}
-                                                className="flex items-center space-x-3 bg-white/50 dark:bg-gray-700/50 p-3 rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                                                className={`flex items-center space-x-3 p-3 rounded-lg hover:scale-[1.02] transition-transform duration-300 ${darkMode
+                                                    ? 'bg-white/5 border border-blue-500/10'
+                                                    : 'bg-white/50 border border-blue-200/50'
+                                                    }`}
                                             >
                                                 <svg
                                                     className="h-5 w-5 flex-shrink-0 text-blue-500"
@@ -276,7 +260,7 @@ module kanari::example {
                                                         d="M5 13l4 4L19 7"
                                                     />
                                                 </svg>
-                                                <span className="text-sm sm:text-base text-gray-700 dark:text-gray-200">
+                                                <span className={`text-sm sm:text-base ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
                                                     {feature}
                                                 </span>
                                             </div>
@@ -323,22 +307,22 @@ module kanari::example {
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
-                            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                            <div className="text-center mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
                                     }`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
-                                        Secure File Metadata Platform
-                                    </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                                    🔐 Secure File Metadata Platform
+                                </div>
+
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
+                                    } bg-clip-text text-transparent`}>
+                                    Secure File Metadata Platform
                                 </h2>
 
-                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                                    ? 'dark:text-gray-300'
-                                    : 'text-gray-600 '
-                                    }`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     A decentralized platform leveraging MoveVM to provide secure, transparent, and efficient file metadata management in the Web3 ecosystem.
                                 </p>
                             </div>
@@ -404,22 +388,22 @@ module kanari::example {
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
-                            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                                    : ' from-gray-900 via-blue-800 to-purple-900'
+                            <div className="text-center mb-16">
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
                                     }`}>
-                                    Kanari Network:
-                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
-                                        Web3 Metadata Solutions
-                                    </span>
-                                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                                    🌐 Web3 Metadata Solutions
+                                </div>
+
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
+                                    } bg-clip-text text-transparent`}>
+                                    Web3 Metadata Solutions
                                 </h2>
 
-                                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                                    ? 'dark:text-gray-300'
-                                    : 'text-gray-600 '
-                                    }`}>
+                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Revolutionizing file metadata management with secure, transparent, and efficient blockchain solutions.
                                 </p>
                             </div>
@@ -473,7 +457,6 @@ module kanari::example {
 
                     {/* Updates and Channels Sections */}
                     <LatestUpdates darkMode={darkMode} setDarkMode={setDarkMode} />
-
 
                     <OfficialChannels darkMode={darkMode} setDarkMode={setDarkMode} />
 

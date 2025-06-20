@@ -28,9 +28,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
             ),
             link: "https://bsky.app/profile/kanari.network",
             color: "bg-blue-500",
-            glowColor: "tokyo-glow-blue",
             animation: "fade-right",
-            kanji: "空"  // means "sky" in Japanese
         },
         {
             name: "Discord",
@@ -42,9 +40,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
             ),
             link: "https://discord.gg/QU6fTacXab",
             color: "bg-indigo-500",
-            glowColor: "tokyo-glow-indigo",
             animation: "fade-up",
-            kanji: "和" // means "harmony" in Japanese
         },
         {
             name: "GitHub",
@@ -55,10 +51,8 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                 </svg>
             ),
             link: "https://github.com/kanari-network",
-            color: "bg-white",
-            glowColor: "tokyo-glow-blue",
+            color: "bg-gray-800",
             animation: "fade-left",
-            kanji: "開" // means "open" in Japanese
         }
     ];
 
@@ -71,31 +65,32 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
     }, []);
 
     return (
-        <section className="py-20 px-4">
+        <section className="py-16 sm:py-20 px-4">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Header - matching KanariFoundation style */}
+                <div className="text-center mb-16">
+                    <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                        ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                        : 'bg-blue-100 text-blue-800 border border-blue-200'
+                        }`}>
+                        📢 Connect with Our Community
+                    </div>
 
-            {/* Section Header */}
-            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                    : ' from-gray-900 via-blue-800 to-purple-900'
-                    }`}>
-                    Kanari Network:
-                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                        ? 'from-blue-300 to-purple-300'
+                        : 'from-blue-800 to-purple-800'
+                        } bg-clip-text text-transparent`}>
                         Official Channels
-                    </span>
-                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                </h2>
+                    </h2>
+                    
+                    <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                        Connect with us through our official channels to stay updated on the latest developments, 
+                        announcements, and community discussions.
+                    </p>
+                </div>
 
-                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                    ? 'dark:text-gray-300'
-                    : 'text-gray-600 '
-                    }`}>
-                    Connect with us through our official channels to stay updated on the latest developments, announcements, and community discussions.
-                </p>
-            </div>
-
-            <div className="max-w-7xl mx-auto text-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                {/* Channels Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {channels.map((channel, index) => (
                         <a key={channel.name}
                             href={channel.link}
@@ -103,72 +98,36 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                             rel="noopener noreferrer"
                             data-aos={channel.animation}
                             data-aos-delay={200 + (index * 100)}
-                            className={`backdrop-blur-sm ${darkMode
-                                ? 'bg-gray-800/20 border-blue-500/30'
-                                : 'bg-white/20 border-blue-400/30'
-                                } border rounded-xl p-8 group relative overflow-hidden 
-                            hover:scale-105 hover:shadow-xl transition-all duration-300 tokyo-channel-card`}>
-
-                            {/* Neo-Tokyo decorative elements */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600 tokyo-glow"></div>
-                            <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-blue-400 tokyo-glow-blue"></div>
-                            <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-indigo-400 tokyo-glow-indigo"></div>
-
-                            {/* Japanese pattern overlay */}
-                            <div className="absolute right-0 top-0 h-full w-1/3 tokyo-pattern opacity-20"></div>
-
-                            {/* Japanese calligraphy decorative elements */}
-                            <div className="absolute -left-2 top-1/4 text-3xl font-bold text-blue-500/10 tokyo-kanji rotate-90">{channel.kanji}</div>
-                            <div className="absolute right-4 bottom-8 text-2xl font-bold text-indigo-500/10 tokyo-kanji">接続</div>
-
-                            {/* Digital circuits with Japanese style */}
-                            <div className="absolute left-2 top-8 w-8 h-32 tokyo-circuit-vertical"></div>
-                            <div className="absolute right-8 bottom-2 h-8 w-32 tokyo-circuit-horizontal"></div>
-
-                            <div className="relative z-10 flex flex-col items-start space-y-6">
-                                {/* Icon container - Tokyo cyberpunk style */}
-                                <div className={`tokyo-icon-container ${channel.color} p-4 rounded-xl shadow-tokyo 
-                                     mx-auto mb-6 w-fit transform group-hover:rotate-3 group-hover:scale-110 
-                                     transition-all duration-500 relative ${channel.glowColor}`}>
-                                    {/* Holographic ring effect */}
-                                    <div className="absolute inset-0 rounded-xl tokyo-holo-ring"></div>
-                                    <div className="relative z-10">{channel.icon}</div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="space-y-4 relative">
-                                    {/* Tokyo-styled name */}
-                                    <h3 className={`text-2xl font-bold tokyo-text-glitch bg-gradient-to-r 
-                                        ${darkMode
-                                            ? 'from-blue-300 via-indigo-300 to-blue-200'
-                                            : 'from-blue-600 via-indigo-500 to-blue-600'
-                                        }
-                                        bg-clip-text text-transparent group-hover:scale-105 transition-transform relative`}>
-                                        <span>{channel.name}</span>
-                                        <div className="h-1 w-2/3 mt-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full 
-                                             transform origin-left group-hover:w-full transition-all duration-500"></div>
-                                    </h3>
-
-                                    <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} leading-relaxed relative`}>
-                                        {channel.description}
-                                    </p>
-
-                                    {/* Tokyo connect button */}
-                                    <div className="mt-4 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className={`flex items-center justify-end space-x-1 text-sm font-mono 
-                                            ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                                            <span className="tokyo-connect-text">CONNECT</span>
-                                            <svg className="w-4 h-4 tokyo-connect-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg>
-                                        </div>
-                                    </div>
+                            className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 group ${darkMode
+                                ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
+                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
+                                }`}>
+                            
+                            {/* Icon container */}
+                            <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center ${channel.color} transform group-hover:scale-110 transition-transform duration-300`}>
+                                <div className="text-white">
+                                    {channel.icon}
                                 </div>
                             </div>
 
-                            {/* Digital corner elements */}
-                            <div className="absolute top-0 right-0 tokyo-corner-tr"></div>
-                            <div className="absolute bottom-0 left-0 tokyo-corner-bl"></div>
+                            {/* Content */}
+                            <div className="space-y-4">
+                                <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    {channel.name}
+                                </h3>
+                                
+                                <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base leading-relaxed`}>
+                                    {channel.description}
+                                </p>
+
+                                {/* Connect button */}
+                                <div className="flex items-center space-x-2 text-blue-600 group-hover:text-blue-700 transition-colors pt-4">
+                                    <span className="text-sm font-medium">Connect Now</span>
+                                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
+                            </div>
                         </a>
                     ))}
                 </div>

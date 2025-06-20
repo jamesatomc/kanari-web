@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './LatestUpdates.css';
 import Image from 'next/image'
 
@@ -8,10 +8,6 @@ interface LatestUpdatesProps {
 }
 
 export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
-
-    // Japanese kanji for each blog post
-    const kanjiSymbols = ["更新", "情報", "技術", "未来", "発展"];
-
     const blogupdates = [
         {
             title: '#01',
@@ -19,7 +15,6 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[0] // "update"
         },
         {
             title: '#02',
@@ -27,7 +22,6 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[1] // "information"
         },
         {
             title: '#03',
@@ -35,7 +29,6 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[2] // "technology"
         },
         {
             title: '#04',
@@ -43,7 +36,6 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[3] // "future"
         },
         {
             title: '#05',
@@ -51,7 +43,6 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[4] // "development"
         },
         {
             title: '#06',
@@ -59,243 +50,234 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             Url: 'https://blog.kanari.network/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
-            // kanji: kanjiSymbols[4] // "development"
         },
     ];
 
-    // First blog post is the featured one
     const featuredBlog = blogupdates[0];
-    // Remaining blog posts for the secondary column
-    const secondaryBlogs = blogupdates.slice(1);
+    const secondaryBlogs = blogupdates.slice(1); // Show all remaining blogs to enable scrolling
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [showTopArrow, setShowTopArrow] = useState(false);
+    const [showBottomArrow, setShowBottomArrow] = useState(true);
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+            setShowTopArrow(scrollTop > 0);
+            setShowBottomArrow(scrollTop < scrollHeight - clientHeight);
+        }
+    };
+
+    const scrollUp = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ top: -150, behavior: 'smooth' });
+        }
+    };
+
+    const scrollDown = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ top: 150, behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (scrollElement) {
+            scrollElement.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+            return () => scrollElement.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
 
     return (
-        <section className="px-4 tokyo-update-section relative">
+        <section className="py-16 sm:py-20 px-4">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Header - matching KanariFoundation style */}
+                <div className="text-center mb-16">
+                    <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                        ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                        : 'bg-blue-100 text-blue-800 border border-blue-200'
+                        }`}>
+                        📰 Stay Updated with Our Latest News
+                    </div>
 
-            {/* Section Header */}
-            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                    : ' from-gray-900 via-blue-800 to-purple-900'
-                    }`}>
-                    Kanari Network:
-                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                        ? 'from-blue-300 to-purple-300'
+                        : 'from-blue-800 to-purple-800'
+                        } bg-clip-text text-transparent`}>
                         Latest Updates and Insights
-                    </span>
-                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                </h2>
+                    </h2>
+                    
+                    <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                        Stay updated with the latest news and insights from the Kanari Network. 
+                        Our blog features articles on blockchain technology, digital assets, and more.
+                    </p>
+                </div>
 
-                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                    ? 'dark:text-gray-300'
-                    : 'text-gray-600 '
-                    }`}>
-                    Stay updated with the latest news and insights from the Kanari Network.
-                    Our blog features articles on blockchain technology, digital assets, and more.
-                    Explore our latest posts to learn about the innovations and developments
-                    shaping the future of the Kanari Network.
-                </p>
-            </div>
-
-
-            {/* Japanese pattern background - Fixed positioning */}
-            <div className="tokyo-pattern-overlay opacity-10"></div>
-
-            {/* Two-column layout - Fixed container */}
-            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
-                {/* Featured article (left column) - takes up 2/3 of the space */}
-                <div className="lg:col-span-2">
-                    <a
-                        href={featuredBlog.Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`block backdrop-blur-sm 
-                                  ${darkMode
-                                ? 'bg-gray-800/10 border-blue-500/20'
-                                : 'bg-white/10 border-blue-300/20'
-                            }
-                                  border
-                                  rounded-lg overflow-hidden 
-                                  hover:scale-[1.02] hover:shadow-xl transition-all 
-                                  duration-300 group tokyo-update-card`}
-                    >
-                        {/* Neo-Tokyo styled header line */}
-                        <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-600 tokyo-glow"></div>
-
-                        <div className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 relative">
-                            {/* Tokyo-style decorative elements */}
-                            <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-blue-400 tokyo-glow-blue"></div>
-                            <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-indigo-400 tokyo-glow-indigo"></div>
-
-                            {/* Corner elements */}
-                            <div className="absolute tokyo-corner-tr"></div>
-                            <div className="absolute tokyo-corner-tl"></div>
-                            <div className="absolute tokyo-corner-br"></div>
-                            <div className="absolute tokyo-corner-bl"></div>
-
-                            <Image
-                                src={featuredBlog.image}
-                                alt={featuredBlog.title}
-                                width={800}
-                                height={400}
-                                className="w-full h-64 md:h-80 object-cover transform 
-                                           group-hover:scale-110 transition-transform
-                                           duration-700 ease-out mix-blend-luminosity
-                                           opacity-80 group-hover:opacity-100 group-hover:mix-blend-normal"
-                            />
-
-                            {/* Tokyo-style scan line */}
-                            <div className="absolute inset-0 tokyo-scan-lines opacity-10"></div>
-
-                            {/* Futuristic UI elements with Tokyo style */}
-                            <div className="absolute top-4 left-4 flex items-center gap-2 tokyo-tech-badge">
-                                <div className="w-2 h-2 bg-blue-400 rounded-full pulse-slow"></div>
-                                <span className="text-xs font-mono text-blue-400 tracking-wider">KANARI-NET</span>
-                            </div>
-
-                            {/* Tech corner elements */}
-                            <div className="absolute bottom-4 right-4">
-                                <span className="text-sm font-mono text-indigo-400 tracking-wider">{featuredBlog.title}</span>
-                            </div>
-                        </div>
-
-                        <div className="p-8 relative">
-                            {/* Tech pattern background */}
-                            <div className="absolute inset-0 tokyo-grid-bg opacity-20"></div>
-
-                            {/* Tokyo-style circuit elements */}
-                            <div className="absolute left-2 top-8 w-8 h-32 tokyo-circuit-vertical"></div>
-                            <div className="absolute right-8 bottom-2 h-8 w-32 tokyo-circuit-horizontal"></div>
-
-                            <div className="space-y-6 relative z-10">
-                                {/* Tokyo styled heading */}
-                                <h3 className={`text-2xl md:text-3xl font-bold 
-                                          bg-gradient-to-r ${darkMode
-                                        ? 'from-blue-300 via-indigo-400 to-blue-400'
-                                        : 'from-blue-400 via-indigo-500 to-blue-500'
-                                    }
-                                          bg-clip-text text-transparent`}>
-                                    {featuredBlog.description}
-                                </h3>
-
-                                {/* Date with Tokyo styling */}
-                                <div className="flex items-center gap-2">
-                                    <div className="h-4 w-1 bg-indigo-500 rounded-full"></div>
-                                    <p className={`text-sm font-mono ${darkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>
-                                        {featuredBlog.data}
-                                    </p>
+                {/* Two-column layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Featured article (left column) */}
+                    <div className="lg:col-span-2">
+                        <a
+                            href={featuredBlog.Url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`block rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 group ${darkMode
+                                ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
+                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
+                                }`}
+                        >
+                            <div className="relative h-64 md:h-80 overflow-hidden">
+                                <Image
+                                    src={featuredBlog.image}
+                                    alt={featuredBlog.title}
+                                    width={800}
+                                    height={400}
+                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                                />
+                                
+                                {/* Gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                
+                                {/* Badge */}
+                                <div className="absolute top-4 left-4">
+                                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
+                                        ? 'bg-blue-500/20 text-blue-300 backdrop-blur-sm'
+                                        : 'bg-white/90 text-blue-800 backdrop-blur-sm'
+                                        }`}>
+                                        Featured
+                                    </span>
                                 </div>
+                                
+                                {/* Article number */}
+                                <div className="absolute bottom-4 right-4">
+                                    <span className="text-white/80 font-mono text-sm">{featuredBlog.title}</span>
+                                </div>
+                            </div>
 
-                                {/* Tokyo-style button */}
-                                <div className={`pt-4 mt-4 border-t ${darkMode ? 'border-blue-500/20' : 'border-blue-300/20'}`}>
-                                    <div className="tokyo-link-container group-hover:tokyo-link-hover flex justify-end">
-                                        <div className="tokyo-link">
-                                            <span className={`text-sm md:text-base font-mono ${darkMode
-                                                ? 'text-blue-400 group-hover:text-indigo-400'
-                                                : 'text-blue-600 group-hover:text-indigo-500'
-                                                } transition-colors`}>
-                                                READ MORE
+                            <div className="p-8">
+                                <div className="space-y-4">
+                                    <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} line-clamp-2`}>
+                                        {featuredBlog.description}
+                                    </h3>
+                                    
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center space-x-2">
+                                            <div className={`w-2 h-2 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+                                            <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                                {featuredBlog.data}
                                             </span>
-                                            <svg className={`w-4 h-4 ml-1 ${darkMode
-                                                ? 'text-blue-400 group-hover:text-indigo-400'
-                                                : 'text-blue-600 group-hover:text-indigo-500'
-                                                } transition-colors`}
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        </div>
+                                        
+                                        <div className="flex items-center space-x-2 text-blue-600 group-hover:text-blue-700 transition-colors">
+                                            <span className="text-sm font-medium">Read More</span>
+                                            <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                {/* Secondary articles (right column) - Fixed height constraints */}
-                <div className="lg:col-span-1">
-                    <div className="max-h-[600px] overflow-y-auto scrollbar-hide pr-2 flex flex-col space-y-6">
-                        {secondaryBlogs.map((blog, index) => (
-                            <a key={index}
-                                href={blog.Url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`flex-shrink-0 backdrop-blur-sm 
-                                          ${darkMode
-                                        ? 'bg-gray-800/40 border border-blue-500/30'
-                                        : 'bg-white/80 border border-blue-300/40'
-                                    }
-                                          rounded-lg overflow-hidden 
-                                          hover:scale-[1.02] hover:shadow-xl transition-all 
-                                          duration-300 group tokyo-update-card shadow-lg`}
+                    {/* Secondary articles (right column) */}
+                    <div className="lg:col-span-1 relative">
+                        {/* Scroll Up Arrow */}
+                        {showTopArrow && (
+                            <button
+                                onClick={scrollUp}
+                                className={`absolute top-2 right-2 z-10 p-2 rounded-full transition-all duration-300 ${
+                                    darkMode 
+                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-purple-400 hover:text-purple-300' 
+                                    : 'bg-white/80 hover:bg-gray-100/80 text-purple-600 hover:text-purple-700'
+                                } backdrop-blur-sm shadow-lg hover:scale-110`}
                             >
-                                <div className="flex flex-col">
-                                    {/* Neo-Tokyo styled header line */}
-                                    <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-600 tokyo-glow"></div>
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                </svg>
+                            </button>
+                        )}
 
-                                    <div className="flex flex-row h-28 bg-gradient-to-br from-blue-900/30 to-indigo-900/30 relative">
-                                        {/* Corner elements */}
-                                        <div className="absolute tokyo-corner-tr"></div>
-                                        <div className="absolute tokyo-corner-tl"></div>
-                                        <div className="absolute tokyo-corner-br"></div>
-                                        <div className="absolute tokyo-corner-bl"></div>
+                        {/* Scroll Down Arrow */}
+                        {showBottomArrow && (
+                            <button
+                                onClick={scrollDown}
+                                className={`absolute bottom-2 right-2 z-10 p-2 rounded-full transition-all duration-300 ${
+                                    darkMode 
+                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-purple-400 hover:text-purple-300' 
+                                    : 'bg-white/80 hover:bg-gray-100/80 text-purple-600 hover:text-purple-700'
+                                } backdrop-blur-sm shadow-lg hover:scale-110`}
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        )}
 
-                                        <div className="w-1/3 relative">
-                                            <Image
-                                                src={blog.image}
-                                                alt={blog.title}
-                                                width={200}
-                                                height={200}
-                                                className="w-full h-full object-cover transform 
-                                                           group-hover:scale-110 transition-transform
-                                                           duration-700 ease-out"
-                                            />
-
-                                            {/* Tokyo-style scan line */}
-                                            <div className="absolute inset-0 tokyo-scan-lines opacity-10"></div>
-                                        </div>
-
-                                        <div className="w-2/3 p-3 relative">
-                                            {/* Tech pattern background with better opacity */}
-                                            <div className="absolute inset-0 tokyo-grid-bg opacity-20"></div>
-
-                                            {/* Solid background overlay for better text readability */}
-                                            <div className={`absolute inset-0 ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} rounded-r-lg`}></div>
-
-                                            <div className="flex flex-col justify-between h-full relative z-10">
-                                                <div>
-                                                    <h3 className={`text-sm font-bold line-clamp-2 leading-tight ${darkMode
-                                                        ? 'text-white drop-shadow-sm'
-                                                        : 'text-gray-900 drop-shadow-sm'
-                                                        }`}>
-                                                        {blog.description}
-                                                    </h3>
+                        <div 
+                            ref={scrollRef}
+                            className="h-[500px] overflow-y-scroll custom-scrollbar"
+                            onScroll={handleScroll}
+                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        >
+                            <div className="space-y-4 pr-3">
+                                {secondaryBlogs.map((blog, index) => (
+                                    <a
+                                        key={index}
+                                        href={blog.Url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`block rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 group min-h-[120px] ${darkMode
+                                            ? 'bg-gradient-to-br from-gray-800/50 to-purple-900/30 border border-purple-500/20 hover:border-purple-400/40'
+                                            : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg'
+                                            }`}
+                                    >
+                                        <div className="flex">
+                                            <div className="w-1/3 relative">
+                                                <Image
+                                                    src={blog.image}
+                                                    alt={blog.title}
+                                                    width={200}
+                                                    height={200}
+                                                    className="w-full h-24 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                                                />
+                                                
+                                                {/* Article number overlay */}
+                                                <div className="absolute bottom-1 right-1">
+                                                    <span className="text-white/80 font-mono text-xs bg-black/50 px-1 rounded">
+                                                        {blog.title}
+                                                    </span>
                                                 </div>
-
-                                                <div className="flex items-center gap-1 mt-2">
-                                                    <div className="h-3 w-1 bg-indigo-500 rounded-full flex-shrink-0"></div>
-                                                    <p className={`text-xs font-mono ${darkMode ? 'text-indigo-300' : 'text-indigo-700'} font-medium`}>
-                                                        {blog.data}
-                                                    </p>
+                                            </div>
+                                            
+                                            <div className="w-2/3 p-4 flex flex-col justify-between">
+                                                <h3 className={`text-sm font-semibold line-clamp-2 leading-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                    {blog.description}
+                                                </h3>
+                                                
+                                                <div className="flex items-center justify-between mt-3">
+                                                    <div className="flex items-center space-x-2">
+                                                        <div className={`w-1.5 h-1.5 rounded-full ${darkMode ? 'bg-purple-400' : 'bg-purple-600'}`}></div>
+                                                        <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                                            {blog.data}
+                                                        </span>
+                                                    </div>
+                                                    
+                                                <svg className={`w-4 h-4 transform group-hover:translate-x-1 transition-transform ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} 
+                                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </a>
-                        ))}
-
-                        {/* Scroll indicator - simplified */}
-                        {secondaryBlogs.length > 4 && (
-                            <div className="flex justify-center py-2">
-                                <div className={`${darkMode ? 'text-indigo-400' : 'text-indigo-500'} animate-bounce`}>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </div>
+                                    </a>
+                                ))}
                             </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
     );
 }

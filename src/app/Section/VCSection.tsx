@@ -13,36 +13,35 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
     // Sample VC and Investor data (replace with your actual data)
     const vcs = [
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "Leading Venture Partners",
+            logo: "https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=LVP",
+            investmentDetails: "Invested $2.5 million in Series A funding to support blockchain infrastructure development.",
         },
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "Innovation Capital",
+            logo: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=IC",
+            investmentDetails: "Strategic partner providing $1.8 million for AI and machine learning initiatives.",
         },
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "Tech Growth Fund",
+            logo: "https://via.placeholder.com/150x150/10B981/FFFFFF?text=TGF",
+            investmentDetails: "Early investor with $3.2 million commitment to digital transformation projects.",
         },
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "Digital Future Ventures",
+            logo: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=DFV",
+            investmentDetails: "Series B lead investor contributing $5 million for Southeast Asia expansion.",
         },
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "Blockchain Capital Asia",
+            logo: "https://via.placeholder.com/150x150/EF4444/FFFFFF?text=BCA",
+            investmentDetails: "Specialized blockchain investor with $4.1 million in funding and strategic guidance.",
         },
         {
-            name: "1",
-            logo: "",
-            investmentDetails: "Invested $1 million in Series A funding.",
+            name: "NextGen Partners",
+            logo: "https://via.placeholder.com/150x150/6366F1/FFFFFF?text=NGP",
+            investmentDetails: "Growth stage investor providing $2.8 million for technology scaling and team expansion.",
         },
-        // ... add more VCs with investment details
     ];
 
     const [selectedVC, setSelectedVC] = useState<number | null>(null);
@@ -79,109 +78,179 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
     }, [isPaused]);
 
     return (
-        <section className="px-4 tokyo-update-section relative">
+        <section className="py-16 sm:py-20 px-4">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Header - matching KanariFoundation style */}
+                <div className="text-center mb-16">
+                    <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
+                        ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                        : 'bg-blue-100 text-blue-800 border border-blue-200'
+                        }`}>
+                        💼 Trusted by Leading Investors
+                    </div>
 
-            {/* Section Header */}
-            <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
-                    : ' from-gray-900 via-blue-800 to-purple-900'
-                    }`}>
-                    Kanari Network:
-                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                        ? 'from-blue-300 to-purple-300'
+                        : 'from-blue-800 to-purple-800'
+                        } bg-clip-text text-transparent`}>
                         Backed by Leading Investors
-                    </span>
-                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                </h2>
+                    </h2>
+                    
+                    <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                        Kanari Network is supported by a strong network of investors who believe in our vision 
+                        for the future of blockchain technology and digital innovation.
+                    </p>
+                </div>
 
-                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
-                    ? 'dark:text-gray-300'
-                    : 'text-gray-600 '
-                    }`}>
-                    Kanari Network is supported by a strong network of investors who believe in our vision.
-                </p>
-            </div>
-
-            {/* VC Cards Scrolling Section */}
-            <div 
-                className="relative overflow-hidden"
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-            >
-                <div
-                    ref={scrollContainerRef}
-                    className="flex space-x-6 overflow-x-hidden"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                {/* VC Cards Scrolling Section */}
+                <div 
+                    className="relative overflow-hidden mb-8"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
                 >
-                    {/* Duplicate the array to create seamless loop */}
-                    {[...vcs, ...vcs].map((vc, index) => (
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex space-x-6 overflow-x-hidden scrollbar-hide"
+                    >
+                        {/* Duplicate the array to create seamless loop */}
+                        {[...vcs, ...vcs].map((vc, index) => (
+                            <div
+                                key={index}
+                                className="flex-shrink-0 w-48 h-48 cursor-pointer group"
+                                onClick={() => setSelectedVC(index % vcs.length)}
+                            >
+                                <div className={`w-full h-full rounded-3xl p-6 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center ${darkMode
+                                    ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
+                                    : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg hover:shadow-xl'
+                                    }`}>
+                                    
+                                    <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 ring-2 ring-blue-500/20 group-hover:ring-blue-500/40 transition-all duration-300">
+                                        <Image
+                                            src={vc.logo}
+                                            alt={vc.name}
+                                            width={80}
+                                            height={80}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    
+                                    <h3 className={`text-sm font-semibold text-center line-clamp-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                        {vc.name}
+                                    </h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Static grid for desktop */}
+                {/* <div className="hidden lg:grid lg:grid-cols-3 gap-8 mt-16">
+                    {vcs.slice(0, 6).map((vc, index) => (
                         <div
                             key={index}
-                            className="flex-shrink-0 w-48 h-48 cursor-pointer transform hover:scale-105 transition-transform duration-200"
-                            onClick={() => setSelectedVC(index % vcs.length)}
+                            className="cursor-pointer group"
+                            onClick={() => setSelectedVC(index)}
                         >
-                            <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full p-4 shadow-md hover:shadow-lg transition-shadow border-2 border-gray-200 dark:border-gray-600">
-                                <Image
-                                    src={vc.logo}
-                                    alt={vc.name}
-                                    width={96}
-                                    height={96}
-                                    className="w-full h-full object-contain rounded-full"
-                                />
+                            <div className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
+                                ? 'bg-gradient-to-br from-gray-800/50 to-purple-900/30 border border-purple-500/20 hover:border-purple-400/40'
+                                : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg hover:shadow-xl'
+                                }`}>
+                                
+                                <div className="flex items-center space-x-4 mb-4">
+                                    <div className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-purple-500/20 group-hover:ring-purple-500/40 transition-all duration-300">
+                                        <Image
+                                            src={vc.logo}
+                                            alt={vc.name}
+                                            width={64}
+                                            height={64}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                            {vc.name}
+                                        </h3>
+                                    </div>
+                                </div>
+                                
+                                <p className={`text-sm leading-relaxed line-clamp-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                    {vc.investmentDetails}
+                                </p>
+
+                                <div className="flex items-center space-x-2 text-purple-600 group-hover:text-purple-700 transition-colors pt-4 mt-4 border-t border-gray-200/20">
+                                    <span className="text-sm font-medium">Learn More</span>
+                                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
+                </div> */}
 
-            {/* Modal/Popup for VC Details */}
-            {selectedVC !== null && (
-                <div
-                    className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm"
-                    onClick={() => setSelectedVC(null)}
-                >
+                {/* Modal/Popup for VC Details */}
+                {selectedVC !== null && (
                     <div
-                        className="bg-white dark:bg-gray-800 w-11/12 md:w-2/3 lg:w-1/2 p-6 md:p-10 rounded-lg shadow-2xl relative transform transition-transform duration-300 ease-in-out"
-                        onClick={(e) => e.stopPropagation()}
+                        className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm p-4"
+                        onClick={() => setSelectedVC(null)}
                     >
-                        <button
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                            onClick={() => setSelectedVC(null)}
+                        <div
+                            className={`w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative transform transition-all duration-300 ${darkMode
+                                ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700'
+                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                                }`}
+                            onClick={(e) => e.stopPropagation()}
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                            <button
+                                className={`absolute top-6 right-6 p-2 rounded-full transition-colors ${darkMode
+                                    ? 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                onClick={() => setSelectedVC(null)}
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </button>
-                        <div className="flex flex-col items-center">
-                            <Image
-                                src={vcs[selectedVC].logo}
-                                alt={vcs[selectedVC].name}
-                                width={128}
-                                height={128}
-                                className="w-32 h-32 rounded-full mb-6"
-                            />
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-                                {vcs[selectedVC].name}
-                            </h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-center">
-                                {vcs[selectedVC].investmentDetails}
-                            </p>
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            
+                            <div className="flex flex-col items-center text-center">
+                                <div className="w-32 h-32 rounded-3xl overflow-hidden mb-6 ring-4 ring-blue-500/20">
+                                    <Image
+                                        src={vcs[selectedVC].logo}
+                                        alt={vcs[selectedVC].name}
+                                        width={128}
+                                        height={128}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                
+                                <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    {vcs[selectedVC].name}
+                                </h3>
+                                
+                                <p className={`text-base sm:text-lg leading-relaxed max-w-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                    {vcs[selectedVC].investmentDetails}
+                                </p>
+
+                                <div className="flex items-center space-x-4 mt-8">
+                                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                        ? 'bg-blue-500/20 text-blue-300'
+                                        : 'bg-blue-100 text-blue-800'
+                                        }`}>
+                                        Strategic Partner
+                                    </span>
+                                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                        ? 'bg-purple-500/20 text-purple-300'
+                                        : 'bg-purple-100 text-purple-800'
+                                        }`}>
+                                        Active Investor
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-
+                )}
+            </div>
         </section>
     );
 }
