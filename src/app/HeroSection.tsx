@@ -10,6 +10,7 @@ import LoadingHeroSection from './Section/body/LoadingHeroSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Highlight } from 'prism-react-renderer'
+import { VCSection } from './Section/VCSection';
 
 
 interface Props {
@@ -475,6 +476,8 @@ module kanari::example {
 
 
                     <OfficialChannels darkMode={darkMode} setDarkMode={setDarkMode} />
+
+                    <VCSection darkMode={darkMode} setDarkMode={setDarkMode} />
 
                     {/* Newsletter Section */}
                     <div data-aos="fade-left" data-aos-delay="300">

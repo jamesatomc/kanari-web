@@ -7,7 +7,8 @@ interface LatestUpdatesProps {
     setDarkMode: (darkMode: boolean) => void;
 }
 
-function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
+export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
+
     // Japanese kanji for each blog post
     const kanjiSymbols = ["更新", "情報", "技術", "未来", "発展"];
 
@@ -68,22 +69,22 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
     const secondaryBlogs = blogupdates.slice(1);
 
     return (
-        <section className=" px-4 tokyo-update-section relative overflow-hidden">
+        <section className="px-4 tokyo-update-section relative">
 
             {/* Section Header */}
             <div className="text-center space-y-4 sm:space-y-6 mb-12">
-                <h2 className={`text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
-                    ? ' dark:from-white dark:via-blue-300  dark:to-indigo-200'
-                    : ' from-gray-900 via-blue-800 to-indigo-900'
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                    : ' from-gray-900 via-blue-800 to-purple-900'
                     }`}>
                     Kanari Network:
-                    <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                        Latest Updates
+                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
+                        Latest Updates and Insights
                     </span>
-                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
                 </h2>
 
-                <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
+                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
                     ? 'dark:text-gray-300'
                     : 'text-gray-600 '
                     }`}>
@@ -95,21 +96,18 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
             </div>
 
 
-            {/* Japanese pattern background */}
-            <div className="absolute inset-0 tokyo-pattern-overlay opacity-10"></div>
+            {/* Japanese pattern background - Fixed positioning */}
+            <div className="tokyo-pattern-overlay opacity-10"></div>
 
-
-
-
-            {/* Two-column layout */}
-            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Two-column layout - Fixed container */}
+            <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
                 {/* Featured article (left column) - takes up 2/3 of the space */}
                 <div className="lg:col-span-2">
                     <a
                         href={featuredBlog.Url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`block h-full backdrop-blur-sm 
+                        className={`block backdrop-blur-sm 
                                   ${darkMode
                                 ? 'bg-gray-800/10 border-blue-500/20'
                                 : 'bg-white/10 border-blue-300/20'
@@ -122,7 +120,7 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                         {/* Neo-Tokyo styled header line */}
                         <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-600 tokyo-glow"></div>
 
-                        <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-900/50 to-indigo-900/50 relative">
+                        <div className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 relative">
                             {/* Tokyo-style decorative elements */}
                             <div className="absolute top-1 left-4 w-3 h-3 rounded-full bg-blue-400 tokyo-glow-blue"></div>
                             <div className="absolute top-1 left-10 w-2 h-2 rounded-full bg-indigo-400 tokyo-glow-indigo"></div>
@@ -161,7 +159,7 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
 
                         <div className="p-8 relative">
                             {/* Tech pattern background */}
-                            <div className="absolute inset-0 tokyo-grid-bg"></div>
+                            <div className="absolute inset-0 tokyo-grid-bg opacity-20"></div>
 
                             {/* Tokyo-style circuit elements */}
                             <div className="absolute left-2 top-8 w-8 h-32 tokyo-circuit-vertical"></div>
@@ -211,10 +209,9 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                     </a>
                 </div>
 
-                {/* Secondary articles (right column) - takes up 1/3 of the space */}
+                {/* Secondary articles (right column) - Fixed height constraints */}
                 <div className="lg:col-span-1">
-                    {/* Modified to show exactly 4 items with hint for scrolling */}
-                    <div className="h-[540px] md:h-[540px] overflow-y-auto scrollbar-hide pr-2 flex flex-col space-y-6 relative">
+                    <div className="max-h-[600px] overflow-y-auto scrollbar-hide pr-2 flex flex-col space-y-6">
                         {secondaryBlogs.map((blog, index) => (
                             <a key={index}
                                 href={blog.Url}
@@ -229,7 +226,7 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                           hover:scale-[1.02] hover:shadow-xl transition-all 
                                           duration-300 group tokyo-update-card shadow-lg`}
                             >
-                                <div className="flex flex-col h-full">
+                                <div className="flex flex-col">
                                     {/* Neo-Tokyo styled header line */}
                                     <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-600 tokyo-glow"></div>
 
@@ -257,16 +254,16 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
 
                                         <div className="w-2/3 p-3 relative">
                                             {/* Tech pattern background with better opacity */}
-                                            <div className="absolute inset-0 tokyo-grid-bg opacity-30"></div>
-                                            
+                                            <div className="absolute inset-0 tokyo-grid-bg opacity-20"></div>
+
                                             {/* Solid background overlay for better text readability */}
-                                            <div className={`absolute inset-0 ${darkMode ? 'bg-gray-800/60' : 'bg-white/60'} rounded-r-lg`}></div>
+                                            <div className={`absolute inset-0 ${darkMode ? 'bg-gray-800/70' : 'bg-white/70'} rounded-r-lg`}></div>
 
                                             <div className="flex flex-col justify-between h-full relative z-10">
                                                 <div>
                                                     <h3 className={`text-sm font-bold line-clamp-2 leading-tight ${darkMode
-                                                            ? 'text-white drop-shadow-sm'
-                                                            : 'text-gray-900 drop-shadow-sm'
+                                                        ? 'text-white drop-shadow-sm'
+                                                        : 'text-gray-900 drop-shadow-sm'
                                                         }`}>
                                                         {blog.description}
                                                     </h3>
@@ -285,9 +282,9 @@ function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                             </a>
                         ))}
 
-                        {/* Scroll indicator - only shows if there are more than 4 items */}
+                        {/* Scroll indicator - simplified */}
                         {secondaryBlogs.length > 4 && (
-                            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900/20 to-transparent pointer-events-none flex justify-center items-end pb-2">
+                            <div className="flex justify-center py-2">
                                 <div className={`${darkMode ? 'text-indigo-400' : 'text-indigo-500'} animate-bounce`}>
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

@@ -32,25 +32,6 @@
   box-shadow: 0 0 4px 1px rgba(14, 165, 233, 0.4);
 }
 
-/* Japanese patterns */
-.tokyo-pattern {
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-  background-size: 12px 12px;
-}
-
-/* Digital circuits with Japanese style */
-.tokyo-circuit-vertical {
-  background-image: linear-gradient(to bottom, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
-  background-size: 8px 12px;
-  opacity: 0.2;
-}
-
-.tokyo-circuit-horizontal {
-  background-image: linear-gradient(to right, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
-  background-size: 12px 8px;
-  opacity: 0.2;
-}
-
 /* Tokyo holographic effect */
 .tokyo-holo-ring {
   background: linear-gradient(45deg, transparent 40%, rgba(59, 130, 246, 0.3) 45%, rgba(99, 102, 241, 0.3) 55%, transparent 60%);
@@ -63,18 +44,37 @@
   animation: tokyo-holo-rotate 3s linear infinite;
 }
 
-/* Japanese kanji text */
-.tokyo-kanji {
-  font-family: "Noto Sans JP", sans-serif;
-  opacity: 0.7;
-  mix-blend-mode: overlay;
+/* Tokyo connect button */
+.tokyo-connect-arrow {
+  animation: tokyo-arrow-pulse 2s infinite;
 }
 
-/* Tokyo shadow effect */
-.shadow-tokyo {
-  box-shadow: 0 0 10px -2px rgba(59, 130, 246, 0.3), 0 0 6px -2px rgba(99, 102, 241, 0.4);
+/* Tokyo digital corner elements */
+.tokyo-corner-tr, .tokyo-corner-bl {
+  width: 16px;
+  height: 16px;
 }
 
+.tokyo-corner-tr {
+  border-right: 2px solid rgba(59, 130, 246, 0.25);
+  border-top: 2px solid rgba(59, 130, 246, 0.25);
+}
+
+.tokyo-corner-bl {
+  border-left: 2px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
+}
+
+/* Tokyo animations */
+@keyframes tokyo-holo-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes tokyo-arrow-pulse {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
 /* Tokyo glitch effect */
 .tokyo-text-glitch {
   position: relative;

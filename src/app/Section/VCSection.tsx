@@ -3,40 +3,43 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
 import './VCSection.css';
 
-export function VCSection() {
-    const [darkMode, setDarkMode] = useState(false);
+interface VCSectionProps {
+    darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
+}
 
-    
+export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
+
     // Sample VC and Investor data (replace with your actual data)
     const vcs = [
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         {
             name: "1",
-            logo: "https://raw.githubusercontent.com/kanari-network/about/main/kari1.png",
+            logo: "",
             investmentDetails: "Invested $1 million in Series A funding.",
         },
         // ... add more VCs with investment details
@@ -49,94 +52,88 @@ export function VCSection() {
     // Auto scroll effect
     useEffect(() => {
         if (!isPaused) {
-            const interval = setInterval(() => {
+            let animationId: number;
+            
+            const scroll = () => {
                 if (scrollContainerRef.current) {
-                    const isAtEnd = scrollContainerRef.current.scrollLeft + scrollContainerRef.current.offsetWidth >=
-                        scrollContainerRef.current.scrollWidth;
+                    const container = scrollContainerRef.current;
+                    const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 1;
 
                     if (isAtEnd) {
-                        scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+                        container.scrollLeft = 0;
                     } else {
-                        scrollContainerRef.current.scrollBy({ left: 1, behavior: 'smooth' });
+                        container.scrollLeft += 1;
                     }
                 }
-            }, 30); // Adjust speed here
+                animationId = requestAnimationFrame(scroll);
+            };
 
-            return () => clearInterval(interval);
+            animationId = requestAnimationFrame(scroll);
+
+            return () => {
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+            };
         }
     }, [isPaused]);
 
     return (
-        <>
-            {/* VC Section */}
-            <section className="py-20">
-                <div className="w-full mx-auto">
-                    <div className="text-center space-y-6">
-                        <h2 className="text-5xl font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 dark:from-white dark:via-blue-300 dark:to-indigo-200 bg-clip-text text-transparent group">
-                            Kanari Network:
-                            <span className="block mt-2 group-hover:translate-x-2 transition-transform">
-                                Backed by Leading Investors
-                            </span>
-                            <div className="h-1 w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
-                        </h2>
+        <section className="px-4 tokyo-update-section relative">
 
-                        <p className={`text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${darkMode
-                            ? 'dark:text-gray-300'
-                            : 'text-gray-600 '
-                            }`}>
-                            Kanari Network is supported by a strong network of investors who believe in our vision.
-                        </p>
-                    </div>
-                    <div className="relative">
-                        {/* Gradient Masks */}
-                        <div className="absolute left-0 top-0 bottom-0"></div>
-                        <div className="absolute right-0 top-0 bottom-0"></div>
+            {/* Section Header */}
+            <div className="text-center space-y-4 sm:space-y-6 mb-12">
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight bg-clip-text text-transparent group bg-gradient-to-r ${darkMode
+                    ? ' dark:from-white dark:via-blue-300  dark:to-purple-200'
+                    : ' from-gray-900 via-blue-800 to-purple-900'
+                    }`}>
+                    Kanari Network:
+                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl group-hover:translate-x-2 transition-transform">
+                        Backed by Leading Investors
+                    </span>
+                    <div className="h-1 w-32 sm:w-48 mx-auto mt-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left group-hover:scale-x-125 transition-transform"></div>
+                </h2>
 
-                        <div className="relative overflow-hidden">
-                            {/* Gradient Masks */}
-                            <div className="absolute left-0 top-0 bottom-0 w-8"></div>
-                            <div className="absolute right-0 top-0 bottom-0 w-8"></div>
+                <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed ${darkMode
+                    ? 'dark:text-gray-300'
+                    : 'text-gray-600 '
+                    }`}>
+                    Kanari Network is supported by a strong network of investors who believe in our vision.
+                </p>
+            </div>
 
-                            {/* Scrollable Container */}
-                            <div
-                                ref={scrollContainerRef}
-                                className="flex overflow-x-auto scrollbar-hide gap-6 px-10 py-4"
-                                onMouseEnter={() => setIsPaused(true)}
-                                onMouseLeave={() => setIsPaused(false)}
-                                style={{
-                                    scrollbarWidth: 'none',
-                                    msOverflowStyle: 'none',
-                                    scrollBehavior: 'smooth'
-                                }}
-                            >
-                                {vcs.concat(vcs).map((vc, index) => (
-                                    <button
-                                        key={`${index}-${vc.name}`}
-                                        onClick={() => setSelectedVC(index % vcs.length)}
-                                        className="flex-none w-[200px] h-[200px] rounded-full overflow-hidden shadow-lg 
-                                                 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-                                    >
-                                        <div className="relative w-full h-full bg-gray-100 dark:bg-gray-800 rounded-full">
-                                            {/* Image with fallback */}
-                                            <Image
-                                                src={vc.logo}
-                                                alt={vc.name}
-                                                width={100}
-                                                height={100}
-                                                className="w-full h-full object-cover rounded-full"
-                                                onError={(e) => {
-                                                    e.currentTarget.src = '/placeholder.png';
-                                                }}
-                                            />
-                                        </div>
-                                    </button>
-                                ))}
+            {/* VC Cards Scrolling Section */}
+            <div 
+                className="relative overflow-hidden"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+            >
+                <div
+                    ref={scrollContainerRef}
+                    className="flex space-x-6 overflow-x-hidden"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                    {/* Duplicate the array to create seamless loop */}
+                    {[...vcs, ...vcs].map((vc, index) => (
+                        <div
+                            key={index}
+                            className="flex-shrink-0 w-48 h-48 cursor-pointer transform hover:scale-105 transition-transform duration-200"
+                            onClick={() => setSelectedVC(index % vcs.length)}
+                        >
+                            <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full p-4 shadow-md hover:shadow-lg transition-shadow border-2 border-gray-200 dark:border-gray-600">
+                                <Image
+                                    src={vc.logo}
+                                    alt={vc.name}
+                                    width={96}
+                                    height={96}
+                                    className="w-full h-full object-contain rounded-full"
+                                />
                             </div>
-
                         </div>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
+
             {/* Modal/Popup for VC Details */}
             {selectedVC !== null && (
                 <div
@@ -185,6 +182,6 @@ export function VCSection() {
                 </div>
             )}
 
-        </>
+        </section>
     );
 }

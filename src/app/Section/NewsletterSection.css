@@ -1,6 +1,6 @@
 /* Tokyo-style cyberpunk effects for newsletter section */
 
-/* Custom scrollbar styling with Tokyo theme */
+/* Custom scrollbar styling */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
@@ -62,11 +62,6 @@
   z-index: -1;
 }
 
-/* Contain Neo-Tokyo decorative elements */
-.tokyo-glow, .tokyo-glow-blue, .tokyo-glow-indigo {
-  pointer-events: none; /* Prevent interfering with interactions */
-}
-
 /* Tokyo modal styles */
 .tokyo-modal-overlay {
   animation: fadeIn 0.2s ease-out forwards;
@@ -86,68 +81,6 @@
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
-}
-
-/* Japanese patterns */
-.tokyo-pattern-overlay {
-  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-  background-size: 12px 12px;
-  opacity: 0.2;
-}
-
-/* Tokyo digital corner elements */
-.tokyo-corner-tr, .tokyo-corner-tl, .tokyo-corner-br, .tokyo-corner-bl {
-  width: 12px;
-  height: 12px;
-  position: absolute;
-}
-
-.tokyo-corner-tr {
-  top: 4px;
-  right: 4px;
-  border-right: 2px solid rgba(59, 130, 246, 0.25);
-  border-top: 2px solid rgba(59, 130, 246, 0.25);
-}
-
-.tokyo-corner-tl {
-  top: 4px;
-  left: 4px;
-  border-left: 2px solid rgba(59, 130, 246, 0.25);
-  border-top: 2px solid rgba(59, 130, 246, 0.25);
-}
-
-.tokyo-corner-br {
-  bottom: 4px;
-  right: 4px;
-  border-right: 2px solid rgba(99, 102, 241, 0.25);
-  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
-}
-
-.tokyo-corner-bl {
-  bottom: 4px;
-  left: 4px;
-  border-left: 2px solid rgba(99, 102, 241, 0.25);
-  border-bottom: 2px solid rgba(99, 102, 241, 0.25);
-}
-
-/* Tokyo glow effects */
-.tokyo-glow {
-  box-shadow: 0 0 6px 1px rgba(59, 130, 246, 0.4);
-}
-
-.tokyo-glow-blue {
-  box-shadow: 0 0 8px 2px rgba(59, 130, 246, 0.5);
-}
-
-.tokyo-glow-indigo {
-  box-shadow: 0 0 8px 2px rgba(99, 102, 241, 0.5);
-}
-
-/* Japanese kanji text */
-.tokyo-kanji {
-  font-family: "Noto Sans JP", sans-serif;
-  opacity: 0.7;
-  mix-blend-mode: overlay;
 }
 
 /* Animations */
@@ -180,7 +113,7 @@
   }
 }
 
-/* For hiding scrollbar but allowing scroll */
+/* Scrollbar hiding */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -190,7 +123,7 @@
   display: none;
 }
 
-/* Focus styles with Tokyo theme */
+/* Focus styles */
 input:focus, button:focus, a:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
