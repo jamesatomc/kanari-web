@@ -25,20 +25,20 @@ export const menuData: MenuSection[] = [
   {
     title: 'Learn',
     items: [
-      { 
-        href: '/DeveloperPortal', 
+      {
+        href: '/DeveloperPortal',
         label: 'Developer Portal',
         icon: '🚀',
         description: 'Build on Kanari Network'
       },
-      { 
-        href: 'https://kanari.site/api', 
+      {
+        href: 'https://kanari.site/api',
         label: 'API Reference',
         icon: '📚',
         description: 'Complete API documentation'
       },
-      { 
-        href: 'https://kanari.site/tutorials', 
+      {
+        href: 'https://kanari.site/tutorials',
         label: 'Tutorials',
         icon: '🎓',
         description: 'Step-by-step guides'
@@ -59,20 +59,20 @@ export const menuData: MenuSection[] = [
   {
     title: 'Build',
     items: [
-      { 
-        href: 'https://docs.kanari.site/', 
+      {
+        href: 'https://docs.kanari.site/',
         label: 'Documentation',
         icon: '📖',
         description: 'Technical documentation'
       },
-      { 
-        href: 'https://kanari.site/build/tools', 
+      {
+        href: 'https://kanari.site/build/tools',
         label: 'Tools',
         icon: '🛠️',
         description: 'Development tools'
       },
-      { 
-        href: 'https://kanari.site/build/resources', 
+      {
+        href: 'https://kanari.site/build/resources',
         label: 'Resources',
         icon: '💎',
         description: 'Additional resources'
@@ -93,10 +93,16 @@ export const menuData: MenuSection[] = [
   {
     title: 'Connect',
     items: [
-      { 
-        href: '/connect/community', 
-        label: 'Community Hub',
+      {
+        href: '/connect/ecosystem',
+        label: 'Ecosystem Hub',
         icon: '🌐',
+        description: 'Join our ecosystem'
+      },
+      {
+        href: '/connect/community',
+        label: 'Community Hub',
+        icon: '🤝',
         description: 'Join our community'
       },
     ],

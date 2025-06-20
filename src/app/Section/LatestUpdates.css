@@ -3,6 +3,8 @@
 /* Tokyo update section */
 .tokyo-update-section {
   position: relative;
+  min-height: auto;
+  overflow: visible;
 }
 
 /* Tokyo card base effects */
@@ -25,52 +27,31 @@
   box-shadow: 0 0 4px 1px rgba(99, 102, 241, 0.4);
 }
 
-/* Tokyo navigation buttons */
-.tokyo-button-left, .tokyo-button-right {
-  transition: all 0.3s ease;
-}
-
-.tokyo-button-left:hover, .tokyo-button-right:hover {
-  transform: scale(1.05);
-}
-
-.shadow-tokyo-blue {
-  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.3);
-}
-
-.shadow-tokyo-indigo {
-  box-shadow: 0 0 10px 2px rgba(99, 102, 241, 0.3);
-}
-
 /* Japanese patterns */
 .tokyo-pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
   background-size: 12px 12px;
-  opacity: 0.2;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.tokyo-wave-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath fill='%233b82f6' fill-opacity='0.2' d='M21.2 18.4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm29.6 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm44.4 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0-12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8 4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm0 8c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14.8-4c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z'/%3E%3C/svg%3E");
-}
-
-/* Digital circuits with Japanese style */
+/* Digital circuits */
 .tokyo-circuit-vertical {
-  background-image: linear-gradient(to bottom, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to bottom, transparent 45%, rgba(59, 130, 246, 0.15) 45%, rgba(59, 130, 246, 0.15) 55%, transparent 55%);
   background-size: 8px 12px;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .tokyo-circuit-horizontal {
-  background-image: linear-gradient(to right, transparent 45%, rgba(59, 130, 246, 0.2) 45%, rgba(59, 130, 246, 0.2) 55%, transparent 55%);
+  background-image: linear-gradient(to right, transparent 45%, rgba(59, 130, 246, 0.15) 45%, rgba(59, 130, 246, 0.15) 55%, transparent 55%);
   background-size: 12px 8px;
-  opacity: 0.2;
-}
-
-/* Japanese kanji text */
-.tokyo-kanji {
-  font-family: "Noto Sans JP", sans-serif;
-  opacity: 0.7;
-  mix-blend-mode: overlay;
+  opacity: 0.3;
 }
 
 /* Tokyo tech badge */
@@ -79,6 +60,16 @@
   padding: 2px 6px;
   border-radius: 4px;
   border-left: 2px solid rgba(59, 130, 246, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Tokyo tech badge - Smaller variant */
+.tokyo-tech-badge-small {
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1px 4px;
+  border-radius: 3px;
+  border-left: 1px solid rgba(59, 130, 246, 0.4);
+  backdrop-filter: blur(4px);
 }
 
 /* Tokyo digital corner elements */
@@ -86,6 +77,7 @@
   width: 12px;
   height: 12px;
   position: absolute;
+  z-index: 2;
 }
 
 .tokyo-corner-tr {
@@ -116,18 +108,56 @@
   border-bottom: 2px solid rgba(99, 102, 241, 0.25);
 }
 
+/* Tokyo digital corner elements - Smaller variants */
+.tokyo-corner-tr-small, .tokyo-corner-tl-small, .tokyo-corner-br-small, .tokyo-corner-bl-small {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  z-index: 2;
+}
+
+.tokyo-corner-tr-small {
+  top: 2px;
+  right: 2px;
+  border-right: 1px solid rgba(59, 130, 246, 0.25);
+  border-top: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.tokyo-corner-tl-small {
+  top: 2px;
+  left: 2px;
+  border-left: 1px solid rgba(59, 130, 246, 0.25);
+  border-top: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.tokyo-corner-br-small {
+  bottom: 2px;
+  right: 2px;
+  border-right: 1px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.tokyo-corner-bl-small {
+  bottom: 2px;
+  left: 2px;
+  border-left: 1px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+}
+
 /* Tokyo scan lines */
 .tokyo-scan-lines {
   background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.05) 50%);
   background-size: 100% 4px;
+  pointer-events: none;
 }
 
-/* Tokyo grid background with better opacity control */
+/* Tokyo grid background */
 .tokyo-grid-bg {
   background-size: 20px 20px;
   background-image:
-    linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  pointer-events: none;
 }
 
 /* Pulse animations */
@@ -155,6 +185,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .tokyo-link::after {
@@ -173,7 +204,7 @@
   transform: translateX(0);
 }
 
-/* Add better text contrast utilities */
+/* Text utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -182,21 +213,35 @@
   overflow: hidden;
 }
 
-/* Improve text shadows for better visibility */
 .drop-shadow-sm {
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .dark .drop-shadow-sm {
-  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.1));
 }
 
-/* For hiding scrollbar but allowing scroll */
+/* Scrollbar hiding */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scrollbar-gutter: stable;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Responsive improvements */
+@media (max-width: 1024px) {
+  .tokyo-update-section {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tokyo-update-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
