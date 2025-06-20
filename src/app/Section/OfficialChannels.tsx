@@ -98,7 +98,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                             rel="noopener noreferrer"
                             data-aos={channel.animation}
                             data-aos-delay={200 + (index * 100)}
-                            className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 group ${darkMode
+                            className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 group mx-auto flex flex-col items-center text-center ${darkMode
                                 ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
                                 : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
                                 }`}>
@@ -121,7 +121,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                                 </p>
 
                                 {/* Connect button */}
-                                <div className="flex items-center space-x-2 text-blue-600 group-hover:text-blue-700 transition-colors pt-4">
+                                <div className="flex items-center justify-center space-x-2 text-blue-600 group-hover:text-blue-700 transition-colors pt-4">
                                     <span className="text-sm font-medium">Connect Now</span>
                                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

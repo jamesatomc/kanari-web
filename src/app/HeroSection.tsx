@@ -420,6 +420,7 @@ module kanari::example {
                                         }
                                         title="Secure File Tracking"
                                         description="Track file history and maintain immutable records of metadata changes with transparent audit trails."
+                                        // onClick={() => window.open('https://kanari.site/', '_blank')}
                                     />
                                 </div>
 
