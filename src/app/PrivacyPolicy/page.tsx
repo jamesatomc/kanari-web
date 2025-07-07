@@ -70,15 +70,15 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
 
     return (
         <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
-            : 'bg-gradient-to-br from-white via-gray-50 to-blue-50'
+            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-blue-950'
+            : 'bg-gradient-to-br from-white via-gray-50 to-blue-100'
             }`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/5' : 'bg-indigo-200/20'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/10' : 'bg-indigo-200/30'} rounded-full blur-3xl`}></div>
                 </div>
 
                 {/* Content */}
@@ -98,9 +98,9 @@ function PrivacyPolicyComponent({ darkMode, setDarkMode }: { darkMode: boolean; 
                                 </div>
 
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-200 to-purple-200'
-                                    : 'from-gray-900 via-blue-800 to-purple-900'
-                                    } bg-clip-text text-transparent group`}>
+                                    ? 'from-white via-blue-300 to-indigo-300'
+                                    : 'from-gray-900 via-blue-700 to-indigo-800'
+                                    } bg-clip-text text-transparent`}>
                                     Privacy Policy
                                     <span className="block mt-2 text-2xl sm:text-3xl md:text-3xl font-medium opacity-80">
                                         Transparent & Secure

@@ -20,7 +20,7 @@ export const InvestorCard: React.FC<InvestorCardProps> = memo(({ icon, title, de
         <div
             className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 group relative overflow-hidden mx-auto flex flex-col items-center text-center ${onClick ? 'cursor-pointer' : ''} ${darkMode
                 ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
-                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg hover:shadow-xl'
+                : 'bg-gradient-to-br from-white to-blue-100 border border-gray-200 hover:border-blue-300 shadow-lg hover:shadow-xl'
                 }`}
             onClick={onClick}
         >

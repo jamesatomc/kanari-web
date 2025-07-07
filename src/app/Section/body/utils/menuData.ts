@@ -45,16 +45,16 @@ export const menuData: MenuSection[] = [
       }
     ],
     titleColor: {
-      light: 'text-blue-600',
+      light: 'text-blue-700',
       dark: 'text-blue-300'
     },
     gradientColors: {
-      light: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500',
-      dark: 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400'
+      light: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600',
+      dark: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500'
     },
-    mobileColor: 'text-blue-500',
-    mobileBorderColor: 'border-blue-500/30',
-    hoverEffect: 'hover:bg-blue-50 dark:hover:bg-blue-900/20'
+    mobileColor: 'text-blue-600',
+    mobileBorderColor: 'border-blue-600/30',
+    hoverEffect: 'hover:bg-blue-100 dark:hover:bg-blue-800/20'
   },
   {
     title: 'Build',
@@ -79,16 +79,16 @@ export const menuData: MenuSection[] = [
       }
     ],
     titleColor: {
-      light: 'text-indigo-600',
+      light: 'text-indigo-700',
       dark: 'text-indigo-300'
     },
     gradientColors: {
-      light: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-500',
-      dark: 'bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-400'
+      light: 'bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600',
+      dark: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-500'
     },
-    mobileColor: 'text-indigo-500',
-    mobileBorderColor: 'border-indigo-500/30',
-    hoverEffect: 'hover:bg-indigo-50 dark:hover:bg-indigo-900/20'
+    mobileColor: 'text-indigo-600',
+    mobileBorderColor: 'border-indigo-600/30',
+    hoverEffect: 'hover:bg-indigo-100 dark:hover:bg-indigo-800/20'
   },
   // {
   //   title: 'Connect',
