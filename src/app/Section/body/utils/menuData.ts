@@ -90,32 +90,32 @@ export const menuData: MenuSection[] = [
     mobileBorderColor: 'border-indigo-500/30',
     hoverEffect: 'hover:bg-indigo-50 dark:hover:bg-indigo-900/20'
   },
-  {
-    title: 'Connect',
-    items: [
-      {
-        href: '/connect/ecosystem',
-        label: 'Ecosystem Hub',
-        icon: '🌐',
-        description: 'Join our ecosystem'
-      },
-      {
-        href: '/connect/community',
-        label: 'Community Hub',
-        icon: '🤝',
-        description: 'Join our community'
-      },
-    ],
-    titleColor: {
-      light: 'text-blue-600',
-      dark: 'text-blue-300'
-    },
-    gradientColors: {
-      light: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500',
-      dark: 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400'
-    },
-    mobileColor: 'text-blue-500',
-    mobileBorderColor: 'border-blue-500/30',
-    hoverEffect: 'hover:bg-blue-50 dark:hover:bg-blue-900/20'
-  }
+  // {
+  //   title: 'Connect',
+  //   items: [
+  //     {
+  //       href: '/connect/ecosystem',
+  //       label: 'Ecosystem Hub',
+  //       icon: '🌐',
+  //       description: 'Join our ecosystem'
+  //     },
+  //     {
+  //       href: '/connect/community',
+  //       label: 'Community Hub',
+  //       icon: '🤝',
+  //       description: 'Join our community'
+  //     },
+  //   ],
+  //   titleColor: {
+  //     light: 'text-blue-600',
+  //     dark: 'text-blue-300'
+  //   },
+  //   gradientColors: {
+  //     light: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500',
+  //     dark: 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400'
+  //   },
+  //   mobileColor: 'text-blue-500',
+  //   mobileBorderColor: 'border-blue-500/30',
+  //   hoverEffect: 'hover:bg-blue-50 dark:hover:bg-blue-900/20'
+  // }
 ];
