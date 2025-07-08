@@ -61,13 +61,12 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto text-center">
                             <div className="space-y-6 sm:space-y-8 mb-12">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode 
-                                    ? 'bg-orange-500/20 text-orange-300 border border-orange-500/30' 
-                                    : 'bg-orange-100 text-orange-800 border border-orange-200'
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
                                 }`}>
                                     🎨 Brand Resources & Assets
                                 </div>
-
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
                                     ? 'from-white via-blue-300 to-indigo-300'
                                     : 'from-gray-900 via-blue-700 to-indigo-800'
@@ -77,10 +76,23 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                         Everything You Need
                                     </span>
                                 </h1>
-
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
                                     Professional brand assets, logos, and guidelines for journalists, partners, and community members creating content about Kanari Network.
                                 </p>
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
+                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
+                                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
+                                }`}>
+                                    Download Full Kit
+                                </button>
+                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
+                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
+                                }`}>
+                                    Contact Brand Team
+                                </button>
                             </div>
                         </div>
                     </section>
@@ -267,8 +279,8 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                     <section className="py-16 px-4">
                         <div className="max-w-4xl mx-auto">
                             <div className={`rounded-3xl p-8 sm:p-12 text-center ${darkMode
-                                ? 'bg-gradient-to-r from-orange-900/50 to-purple-900/50 border border-orange-500/20'
-                                : 'bg-gradient-to-r from-orange-600 to-purple-600'
+                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
                             } backdrop-blur-sm`}>
                                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                     Need More Resources?
@@ -277,10 +289,10 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     Looking for specific assets, brand guidelines, or have questions about usage? We&apos;re here to help.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button className="px-8 py-4 bg-white text-orange-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                                    <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                                         Download Full Kit
                                     </button>
-                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-orange-600">
+                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600">
                                         Contact Brand Team
                                     </button>
                                 </div>
