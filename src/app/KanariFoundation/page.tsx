@@ -7,10 +7,7 @@ import PageWrapper from '../components/PageWrapper';
 
 function KanariFoundationComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
     return (
-        <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-blue-950'
-            : 'bg-gradient-to-br from-white via-gray-50 to-blue-100'
-            }`}>
+        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white' }`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}

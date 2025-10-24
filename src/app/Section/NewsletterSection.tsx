@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import './NewsletterSection.css';
 import { createPortal } from 'react-dom';
 
 interface NewsletterSectionProps {
@@ -18,8 +17,8 @@ export function NewsletterSection({ darkMode, setDarkMode }: NewsletterSectionPr
                 <div className="max-w-7xl mx-auto">
 
                     <div className={`max-w-2xl mx-auto p-8 sm:p-12 rounded-3xl shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 ${darkMode
-                        ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
-                        : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300'
+                        ? 'bg-white/6 text-white ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20'
+                        : 'bg-white text-black border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
                         }`}>
 
                         <div className="text-center mb-16">

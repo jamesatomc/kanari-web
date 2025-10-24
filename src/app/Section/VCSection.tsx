@@ -5,41 +5,39 @@ import './VCSection.css';
 
 interface VCSectionProps {
     darkMode: boolean;
-    setDarkMode: (darkMode: boolean) => void;
 }
 
-export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
-
+export function VCSection({ darkMode }: VCSectionProps) {
     // Sample VC and Investor data (replace with your actual data)
     const vcs = [
         {
             name: "Leading Venture Partners",
-            logo: "https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=LVP",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Invested $2.5 million in Series A funding to support blockchain infrastructure development.",
         },
         {
             name: "Innovation Capital",
-            logo: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=IC",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Strategic partner providing $1.8 million for AI and machine learning initiatives.",
         },
         {
             name: "Tech Growth Fund",
-            logo: "https://via.placeholder.com/150x150/10B981/FFFFFF?text=TGF",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Early investor with $3.2 million commitment to digital transformation projects.",
         },
         {
             name: "Digital Future Ventures",
-            logo: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=DFV",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Series B lead investor contributing $5 million for Southeast Asia expansion.",
         },
         {
             name: "Blockchain Capital Asia",
-            logo: "https://via.placeholder.com/150x150/EF4444/FFFFFF?text=BCA",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Specialized blockchain investor with $4.1 million in funding and strategic guidance.",
         },
         {
             name: "NextGen Partners",
-            logo: "https://via.placeholder.com/150x150/6366F1/FFFFFF?text=NGP",
+            logo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop",
             investmentDetails: "Growth stage investor providing $2.8 million for technology scaling and team expansion.",
         },
     ];
@@ -52,7 +50,7 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
     useEffect(() => {
         if (!isPaused) {
             let animationId: number;
-            
+
             const scroll = () => {
                 if (scrollContainerRef.current) {
                     const container = scrollContainerRef.current;
@@ -80,113 +78,133 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
     return (
         <section className="py-16 sm:py-20 px-4">
             <div className="max-w-7xl mx-auto">
-                {/* Section Header - matching KanariFoundation style */}
-                <div className="text-center mb-16">
-                    <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
-                        ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                        : 'bg-blue-100 text-blue-800 border border-blue-200'
-                        }`}>
-                        💼 Trusted by Leading Investors
-                    </div>
 
-                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                        ? 'from-blue-300 to-purple-300'
-                        : 'from-blue-800 to-purple-800'
-                        } bg-clip-text text-transparent`}>
-                        Backed by Leading Investors
+                {/* NEW: prominent VC header to show strong VC backing */}
+                <div className="text-center mb-10">
+                    <h2 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        Backed by Venture Capital & Strategic Investors
                     </h2>
-                    
-                    <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
-                        Kanari Network is supported by a strong network of investors who believe in our vision 
-                        for the future of blockchain technology and digital innovation.
+
+                    <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-3xl mx-auto`}>
+                        Our product and design are validated by top funds — we prioritize product-market fit, growth, and measurable impact.
                     </p>
                 </div>
 
-                {/* VC Cards Scrolling Section */}
-                <div 
+                {/* Hero-like VC layout: left stat / center images / right headline+cta */}
+                <div className="mb-12">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+                            {/* Left: stat */}
+                            <div className="w-full lg:w-1/4 text-left hidden md:block">
+                                <div className="text-sm text-gray-500 mb-6">(01) ABOUT US</div>
+                                <div className="text-6xl md:text-7xl font-extrabold text-black dark:text-white leading-none">0.9</div>
+                                <div className="flex items-center mt-2">
+                                    <div className="flex -space-x-2 mr-3">
+                                        <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80&auto=format&fit=crop" alt="a" className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1545996124-1b5b7b4a8d06?w=80&q=80&auto=format&fit=crop" alt="b" className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1549221987-6f12d6b6d3a6?w=80&q=80&auto=format&fit=crop" alt="c" className="w-full h-full object-cover" />
+                                        </div>
+                                    </div>
+                                    <div className="text-xs text-gray-500">CUSTOMER SATISFACTION</div>
+                                </div>
+                            </div>
+
+                            {/* Center: two image tiles */}
+                            <div className="w-full lg:w-2/4 flex justify-center">
+                                <div className="flex gap-6 items-center">
+                                    <div className="vc-image-tile rounded-[24px] overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
+                                        <Image
+                                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop"
+                                            alt="tile1"
+                                            width={420}
+                                            height={300}
+                                            className="object-cover w-full h-full"
+                                        />
+                                    </div>
+                                    <div className="vc-image-tile rounded-[24px] overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
+                                        <Image
+                                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&q=80&auto=format&fit=crop"
+                                            alt="tile2"
+                                            width={420}
+                                            height={300}
+                                            className="object-cover w-full h-full"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Right: headline + description + CTA */}
+                            <div className="w-full lg:w-1/4 text-left lg:text-right">
+                                <div className="text-sm text-gray-400 mb-4 hidden md:block">(01) ABOUT US</div>
+                                <h2 className={`vc-hero-title text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    More Than Aesthetic —<br />We Design for Impact.
+                                </h2>
+                                <p className={`text-sm md:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-md mx-auto lg:mx-0`}>
+                                    We're not just another agency—we're a design powerhouse that cuts the excess and sharpens what truly matters.
+                                </p>
+                                <div className="mt-6 flex justify-center lg:justify-end">
+                                    <a
+                                        className={`inline-flex items-center gap-3 px-5 py-3 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${darkMode
+                                            ? 'bg-white/6 text-white ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20'
+                                            : 'bg-black text-white hover:bg-gray-900'
+                                        }`}
+                                        href="#"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        Learn More
+                                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Scroller header to call attention */}
+                <div className="mb-3">
+                    <div className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Investors & Backers</div>
+                </div>
+
+                {/* Scrollable VC logos (pills) - keep auto scroll behavior */}
+                <div
                     className="relative overflow-hidden mb-8"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                 >
                     <div
                         ref={scrollContainerRef}
-                        className="flex space-x-6 overflow-x-hidden scrollbar-hide"
+                        className="flex space-x-6 overflow-x-auto scrollbar-hide py-6 px-2"
+                        style={{ scrollBehavior: 'smooth' }}
+                        role="list"
+                        aria-label="Investor logos"
                     >
-                        {/* Duplicate the array to create seamless loop */}
-                        {[...vcs, ...vcs].map((vc, index) => (
-                            <div
-                                key={index}
-                                className="flex-shrink-0 w-48 h-48 cursor-pointer group"
-                                onClick={() => setSelectedVC(index % vcs.length)}
-                            >
-                                <div className={`w-full h-full rounded-3xl p-6 transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center ${darkMode
-                                    ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
-                                    : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg hover:shadow-xl'
-                                    }`}>
-                                    
-                                    <div className="w-20 h-20 rounded-2xl overflow-hidden mb-4 ring-2 ring-blue-500/20 group-hover:ring-blue-500/40 transition-all duration-300">
-                                        <Image
-                                            src={vc.logo}
-                                            alt={vc.name}
-                                            width={80}
-                                            height={80}
-                                            className="w-full h-full object-cover"
-                                        />
+                        {[...vcs, ...vcs].map((vc, index) => {
+                            const idx = index % vcs.length;
+                            const isSelected = selectedVC === idx;
+                            return (
+                                <button
+                                    key={index}
+                                    role="listitem"
+                                    aria-pressed={isSelected}
+                                    className={`vc-logo-pill flex items-center gap-3 px-6 py-3 rounded-full transition-transform duration-200 text-sm whitespace-nowrap ${isSelected ? 'ring-2 ring-blue-500 shadow-lg scale-105 z-10' : 'hover:scale-105'} ${darkMode ? 'bg-white/6 border border-white/10' : 'bg-white/40 border border-gray-200'}`}
+                                    onClick={() => setSelectedVC(idx)}
+                                >
+                                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+                                        <img src={vc.logo} alt={vc.name} className="w-full h-full object-cover" />
                                     </div>
-                                    
-                                    <h3 className={`text-sm font-semibold text-center line-clamp-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                        {vc.name}
-                                    </h3>
-                                </div>
-                            </div>
-                        ))}
+                                    <span className={`${darkMode ? 'text-white' : 'text-gray-800'} font-medium`}>{vc.name}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
-
-                {/* Static grid for desktop */}
-                {/* <div className="hidden lg:grid lg:grid-cols-3 gap-8 mt-16">
-                    {vcs.slice(0, 6).map((vc, index) => (
-                        <div
-                            key={index}
-                            className="cursor-pointer group"
-                            onClick={() => setSelectedVC(index)}
-                        >
-                            <div className={`p-8 rounded-3xl transition-all duration-300 hover:scale-105 ${darkMode
-                                ? 'bg-gradient-to-br from-gray-800/50 to-purple-900/30 border border-purple-500/20 hover:border-purple-400/40'
-                                : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg hover:shadow-xl'
-                                }`}>
-                                
-                                <div className="flex items-center space-x-4 mb-4">
-                                    <div className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-purple-500/20 group-hover:ring-purple-500/40 transition-all duration-300">
-                                        <Image
-                                            src={vc.logo}
-                                            alt={vc.name}
-                                            width={64}
-                                            height={64}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                            {vc.name}
-                                        </h3>
-                                    </div>
-                                </div>
-                                
-                                <p className={`text-sm leading-relaxed line-clamp-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                    {vc.investmentDetails}
-                                </p>
-
-                                <div className="flex items-center space-x-2 text-purple-600 group-hover:text-purple-700 transition-colors pt-4 mt-4 border-t border-gray-200/20">
-                                    <span className="text-sm font-medium">Learn More</span>
-                                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
 
                 {/* Modal/Popup for VC Details */}
                 {selectedVC !== null && (
@@ -195,7 +213,7 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                         onClick={() => setSelectedVC(null)}
                     >
                         <div
-                            className={`w-full max-w-2xl p-8 rounded-3xl shadow-2xl relative transform transition-all duration-300 ${darkMode
+                            className={`w-full max-w-2xl p-8 rounded-[32px] shadow-2xl relative transform transition-all duration-300 ${darkMode
                                 ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700'
                                 : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
                                 }`}
@@ -212,9 +230,9 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                            
+
                             <div className="flex flex-col items-center text-center">
-                                <div className="w-32 h-32 rounded-3xl overflow-hidden mb-6 ring-4 ring-blue-500/20">
+                                <div className="w-32 h-32 rounded-[20px] overflow-hidden mb-6 ring-4 ring-blue-500/20 shadow-lg">
                                     <Image
                                         src={vcs[selectedVC].logo}
                                         alt={vcs[selectedVC].name}
@@ -223,11 +241,11 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                
+
                                 <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                     {vcs[selectedVC].name}
                                 </h3>
-                                
+
                                 <p className={`text-base sm:text-lg leading-relaxed max-w-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                     {vcs[selectedVC].investmentDetails}
                                 </p>

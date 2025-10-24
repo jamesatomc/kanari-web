@@ -44,32 +44,22 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   };
 
   return (
-    <nav className={`m-3 backdrop-blur-xl bg-opacity-60 flex justify-between items-center w-[calc(100%-24px)] z-30 h-18 mx-auto px-8 py-5 fixed top-0 left-0 right-0 rounded-2xl transition-all duration-500 shadow-lg ${darkMode 
-      ? 'bg-gray-900/80 text-white border border-blue-500/30 shadow-blue-500/10' 
-      : 'bg-white/85 text-black border border-blue-200/50 shadow-blue-500/10'
-    } ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
-      
-      {/* Animated background gradient */}
-      <div className={`absolute inset-0 rounded-2xl opacity-30 ${darkMode 
-        ? 'bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-blue-900/20' 
-        : 'bg-gradient-to-r from-blue-50/50 via-indigo-50/50 to-blue-50/50'
-      }`}></div>
+    <nav className={`m-3 flex justify-between items-center w-[calc(100%-24px)] z-30 h-18 mx-auto px-6 py-4 fixed top-0 left-0 right-0 rounded-2xl transition-transform duration-300 ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0' } ${darkMode ? 'bg-gray-900/90 text-white border border-blue-600/20' : 'bg-white/95 text-black border border-gray-200' }`}>
       
       {/* Logo Section */}
-      <div className="flex items-center relative z-10 group"> 
-        <div className={`absolute -inset-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-500/10'} blur-md`}></div>
+      <div className="flex items-center relative z-10">
         <div className="relative">
           <Image
             src="/kariicon1.png"
             alt="Kanari Logo"
             width={46}
             height={46}
-            className="relative transform transition-all duration-500 hover:rotate-12 hover:scale-110 rounded-full ring-2 ring-transparent hover:ring-blue-400/50"
+            className="relative transform transition duration-200 hover:scale-105 rounded-full ring-1 ring-transparent"
           />
         </div>
         <h1 className="text-3xl font-bold font-signature ml-3 relative">
           <Link
-            className={`relative transition-all duration-300 hover:scale-110 ${
+            className={`relative transition-all duration-300 hover:scale-105 ${
               darkMode 
                 ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-blue-300 font-extrabold' 
                 : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 font-extrabold'
@@ -81,7 +71,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         </h1>
       </div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation (simplified styling) */}
       <ul className="hidden lg:flex justify-center items-center space-x-2">
         {/* Home link */}
         <li className="nav-links px-4 py-2 cursor-pointer font-medium relative group">
@@ -124,18 +114,14 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
       <div className="hidden lg:block relative z-10">
         <button 
           onClick={() => setDarkMode(!darkMode)}
-          className={`relative p-3 rounded-2xl transition-all duration-300 transform hover:scale-110 group ${
-            darkMode 
-              ? 'bg-gray-800/60 hover:bg-gray-700/80 text-amber-300 hover:text-amber-200 shadow-lg shadow-amber-500/20' 
-              : 'bg-gray-100/60 hover:bg-gray-200/80 text-blue-600 hover:text-blue-500 shadow-lg shadow-blue-500/20'
-          }`}
+          className={`relative p-2 rounded-lg transition duration-200 ${darkMode ? 'bg-gray-800 text-amber-300' : 'bg-gray-100 text-blue-600'}`}
           aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
-          <div className={`absolute inset-0 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity ${darkMode ? 'bg-amber-400' : 'bg-blue-400'} blur-sm`}></div>
+          {/* simplified toggle background */}
           <div className="relative">
             {darkMode 
-              ? <FaSun size={22} className="transform transition-transform hover:rotate-180 duration-500" /> 
-              : <FaMoon size={22} className="transform transition-transform hover:rotate-12 duration-300" />}
+              ? <FaSun size={22} className="transform transition-transform hover:rotate-90 duration-300" /> 
+              : <FaMoon size={22} className="transform transition-transform duration-200" />}
           </div>
         </button>
       </div>
@@ -150,8 +136,8 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         }`}
       >
         <div className="relative">
-          <FaBars size={24} className={`absolute transition-all duration-300 ${nav ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`} />
-          <FaTimes size={24} className={`transition-all duration-300 ${nav ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-180'}`} />
+          <FaBars size={24} className={`absolute transition-opacity duration-200 ${nav ? 'opacity-0' : 'opacity-100'}`} />
+          <FaTimes size={24} className={`transition-opacity duration-200 ${nav ? 'opacity-100' : 'opacity-0'}`} />
         </div>
       </div>
 
@@ -166,19 +152,11 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
           
           {/* Mobile menu panel */}
           <div 
-            className={`absolute top-0 left-0 w-[85%] max-w-sm h-screen overflow-y-auto transition-all duration-500 ease-out transform ${
-              nav ? 'translate-x-0' : '-translate-x-full'
-            } ${darkMode
-              ? 'bg-gray-900/95 text-gray-100 border-r border-blue-500/30'
-              : 'bg-white/95 text-gray-800 border-r border-blue-200/50'
-            } backdrop-blur-xl rounded-r-3xl shadow-2xl`}
+            className={`absolute top-0 left-0 w-[85%] max-w-sm h-screen overflow-y-auto transition-all duration-500 ease-out transform ${nav ? 'translate-x-0' : '-translate-x-full'} ${darkMode ? 'bg-gray-900/95 text-gray-100 border-r border-blue-500/30' : 'bg-white/95 text-gray-800 border-r border-blue-200/50'} backdrop-blur-xl rounded-r-3xl shadow-2xl`}
             onClick={e => e.stopPropagation()}
           >
-            {/* Top gradient bar */}
-            <div className={`h-1 w-full ${darkMode 
-              ? 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500' 
-              : 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600'
-            } rounded-tr-3xl`}></div>
+            {/* subtle top bar */}
+            <div className={`h-1 w-full ${darkMode ? 'bg-blue-600/40' : 'bg-blue-600/50'} rounded-tr-3xl`}></div>
             
             {/* Mobile menu header */}
             <div className="p-8 border-b border-gray-200/10">
@@ -189,7 +167,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
                     alt="Kanari Logo"
                     width={40}
                     height={40}
-                    className="rounded-full ring-2 ring-blue-400/30"
+                    className="rounded-full"
                   />
                   <h2 className={`text-2xl font-bold ${
                     darkMode 

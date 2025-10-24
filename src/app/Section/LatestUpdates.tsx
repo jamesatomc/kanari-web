@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './LatestUpdates.css';
 import Image from 'next/image'
 
 interface LatestUpdatesProps {
@@ -123,8 +122,8 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`block rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 group ${darkMode
-                                ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
-                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
+                        ? 'bg-white/6 text-white ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20'
+                        : 'bg-white text-black border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
                                 }`}
                         >
                             <div className="relative h-64 md:h-80 overflow-hidden">
@@ -189,8 +188,8 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                 onClick={scrollUp}
                                 className={`absolute top-2 right-2 z-10 p-2 rounded-full transition-all duration-300 ${
                                     darkMode 
-                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-purple-400 hover:text-purple-300' 
-                                    : 'bg-white/80 hover:bg-gray-100/80 text-purple-600 hover:text-purple-700'
+                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-blue-400 hover:text-blue-300' 
+                                    : 'bg-white/80 hover:bg-gray-100/80 text-blue-600 hover:text-blue-700'
                                 } backdrop-blur-sm shadow-lg hover:scale-110`}
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,8 +204,8 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                 onClick={scrollDown}
                                 className={`absolute bottom-2 right-2 z-10 p-2 rounded-full transition-all duration-300 ${
                                     darkMode 
-                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-purple-400 hover:text-purple-300' 
-                                    : 'bg-white/80 hover:bg-gray-100/80 text-purple-600 hover:text-purple-700'
+                                    ? 'bg-gray-800/80 hover:bg-gray-700/80 text-blue-400 hover:text-blue-300' 
+                                    : 'bg-white/80 hover:bg-gray-100/80 text-blue-600 hover:text-blue-700'
                                 } backdrop-blur-sm shadow-lg hover:scale-110`}
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,8 +228,8 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`block rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 group min-h-[120px] ${darkMode
-                                            ? 'bg-gradient-to-br from-gray-800/50 to-purple-900/30 border border-purple-500/20 hover:border-purple-400/40'
-                                            : 'bg-gradient-to-br from-white to-purple-50 border border-purple-200 hover:border-purple-300 shadow-lg'
+                                            ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20 hover:border-blue-400/40'
+                                            : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200 hover:border-blue-300 shadow-lg'
                                             }`}
                                     >
                                         <div className="flex">
@@ -258,13 +257,13 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                                 
                                                 <div className="flex items-center justify-between mt-3">
                                                     <div className="flex items-center space-x-2">
-                                                        <div className={`w-1.5 h-1.5 rounded-full ${darkMode ? 'bg-purple-400' : 'bg-purple-600'}`}></div>
+                                                        <div className={`w-1.5 h-1.5 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
                                                         <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                                             {blog.data}
                                                         </span>
                                                     </div>
                                                     
-                                                <svg className={`w-4 h-4 transform group-hover:translate-x-1 transition-transform ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} 
+                                                <svg className={`w-4 h-4 transform group-hover:translate-x-1 transition-transform ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} 
                                                      fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                                 </svg>

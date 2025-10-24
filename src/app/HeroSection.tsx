@@ -8,7 +8,6 @@ import LatestUpdates from './Section/LatestUpdates';
 import { InvestorCard } from './Section/body/InvestorCard';
 import LoadingHeroSection from './Section/body/LoadingHeroSection';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { Highlight } from 'prism-react-renderer'
 import { VCSection } from './Section/VCSection';
 
@@ -85,18 +84,14 @@ module kanari::example {
     }
 
     return (
-        <div className={`transition-colors duration-300 ${darkMode
-            ? 'bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950'
-            : 'bg-gradient-to-br from-white via-blue-50 to-indigo-50'
-            }`}>
+        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'}`}>
 
 
             <main className="relative min-h-screen overflow-hidden">
 
                 {/* Background Elements */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-purple-500/10' : 'bg-purple-200/30'} rounded-full blur-3xl`}></div>
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className={`absolute top-24 right-24 w-72 h-72 ${darkMode ? 'bg-blue-600/6' : 'bg-blue-200/20'} rounded-full blur-lg`} />
                 </div>
 
                 <div className="relative z-10">
@@ -104,103 +99,78 @@ module kanari::example {
 
                     {/* Hero Video Banner */}
                     <section
-                        className="pt-24 py-2 px-2"
+                        className="pt-24 py-2 px-4"
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        <div className="parallax-bg rounded-[30px] overflow-hidden shadow-2xl border border-blue-500/20 relative group">
+                        <div className="rounded-[20px] overflow-hidden relative shadow-lg border border-gray-200/10">
                             <video
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="object-cover h-[700px] w-full scale-105 group-hover:scale-100 transition-transform duration-700"
+                                className="absolute inset-0 w-full h-full object-cover"
                             >
                                 <source src="/Lines.mp4" type="video/mp4" />
                             </video>
 
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-950/90 via-slate-900/80 to-indigo-950/90 backdrop-blur-sm">
-                                {/* Clean decorative elements */}
-                                <div className="absolute inset-8 border border-blue-500/20 rounded-lg"></div>
-                                <div className="absolute inset-10 border border-indigo-400/30 rounded-lg"></div>
+                            {/* overlay to improve contrast */}
+                            <div className="absolute inset-0 bg-black/55"></div>
 
-                                {/* Top border with gradient */}
-                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/90 via-indigo-500/90 to-blue-400/90"></div>
-
-                                {/* Main Hero Content */}
-                                <div className="max-w-4xl mx-auto h-full flex flex-col items-center justify-center px-4 space-y-8 relative z-20">
-                                    <div className="relative text-center">
-                                        <div className="absolute inset-0 blur-md bg-blue-500/10 rounded-3xl"></div>
-                                        <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight animate-slide-up opacity-0 mx-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
-                                            Secure Metadata
-                                            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 animate-slide-up opacity-0 [animation-delay:0.2s]">
-                                                on MoveVM
-                                            </span>
+                            {/* Content layout: stacked on small screens, side-by-side on md+ */}
+                            <div className="relative z-10 min-h-[420px] md:min-h-[600px] flex items-start">
+                                <div className="w-full flex flex-col md:flex-row px-6 md:px-12 py-8 md:py-12 gap-6">
+                                    {/* Left: Responsive heading */}
+                                    <div className="flex-1 flex items-start">
+                                        <h1
+                                            className="w-full text-center md:text-left text-4xl sm:text-5xl md:text-[4.8rem] lg:text-[6.5rem] leading-[0.95] md:leading-[0.9] font-extrabold text-white tracking-tight break-words"
+                                            style={{ fontFamily: "'Exo 2', sans-serif", textShadow: '0 8px 30px rgba(0,0,0,0.6)' }}
+                                        >
+                                            Where Simplicity
+                                            <span className="block mt-1">Meets Genius.</span>
                                         </h1>
                                     </div>
 
-                                    <p className="text-white/90 text-center text-sm sm:text-base md:text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 [animation-delay:0.4s]">
-                                        Build secure and transparent file metadata storage solutions powered by
-                                        Move Virtual Machine for the Web3 ecosystem.
-                                    </p>
+                                    {/* Right: supporting text + CTA (centered on mobile) */}
+                                    <div className="w-full md:max-w-md flex flex-col items-center md:items-end justify-center text-center md:text-right space-y-4">
+                                        <p className="max-w-xs text-sm md:text-base text-white/90">
+                                            We craft bold, strategic, and unforgettable designs that don't just look good — they work. Elevate your brand with clarity, creativity, and impact.
+                                        </p>
 
-                                    {/* CTA Buttons - Fixed z-index and interactivity */}
-                                    <div className="flex flex-wrap justify-center gap-4 mt-8 relative z-30">
-                                        <a
-                                            href="https://docs.kanari.network/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`relative px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer ${darkMode
-                                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
-                                                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
-                                                }`}
-                                            style={{ pointerEvents: 'auto' }}
-                                        >
-                                            <span className="flex items-center relative z-10">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                                        <div className="flex flex-col sm:flex-row gap-3 items-center md:items-end">
+                                            <a href="https://docs.kanari.network/" target="_blank" rel="noopener noreferrer"
+                                                className="px-6 py-3 rounded-full bg-black text-white font-medium inline-flex items-center gap-2 shadow-md hover:opacity-95 transition">
+                                                Get Started
+                                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                                                 </svg>
-                                                Explore Docs
-                                            </span>
-                                        </a>
-                                        <a
-                                            href="https://gg1ycocxact.typeform.com/to/ITdq2wel"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`relative px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 cursor-pointer ${darkMode
-                                                ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white hover:bg-gray-700/30'
-                                                : 'border-gray-300 text-white hover:border-gray-400 hover:bg-white/10'
-                                                }`}
-                                            style={{ pointerEvents: 'auto' }}
-                                        >
-                                            <span className="flex items-center relative z-10">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                                                </svg>
+                                            </a>
+                                            <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel" target="_blank" rel="noopener noreferrer"
+                                                className="px-5 py-3 rounded-full border border-white/30 text-white/90 hover:opacity-95 transition">
                                                 Join Testnet
-                                            </span>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
+
+                    <VCSection darkMode={darkMode} setDarkMode={setDarkMode} />
+
                     {/* Features and Use Cases Section */}
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto">
                             {/* Section Header */}
                             <div className="text-center mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                    }`}>
+                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-blue-100 text-blue-800 border border-blue-200'}`}>
                                     🚀 Secure Metadata Management
                                 </div>
 
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-300 to-purple-300'
-                                    : 'from-blue-800 to-purple-800'
+                                    ? 'from-blue-400 to-indigo-400'
+                                    : 'from-blue-800 to-indigo-800'
                                     } bg-clip-text text-transparent`}>
                                     Use Cases and Features
                                 </h2>
@@ -217,8 +187,8 @@ module kanari::example {
                                     data-aos="fade-right"
                                     data-aos-delay="100"
                                     className={`w-full space-y-6 p-8 rounded-3xl shadow-lg backdrop-blur-sm ${darkMode
-                                        ? 'bg-gradient-to-br from-gray-800/50 to-blue-900/30 border border-blue-500/20'
-                                        : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                                        ? 'bg-white/6 text-white ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20'
+                                        : 'bg-white text-black border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
                                         }`}
                                 >
                                     <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -274,8 +244,8 @@ module kanari::example {
                                     data-aos="fade-left"
                                     data-aos-delay="200"
                                 >
-                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-30"></div>
-                                    <pre className="relative p-4 sm:p-6 text-xs sm:text-sm bg-gray-900 text-gray-100 rounded-xl shadow-2xl overflow-x-auto">
+                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl blur opacity-30"></div>
+                                    <pre className={`relative p-4 sm:p-6 text-xs sm:text-sm rounded-xl shadow-2xl overflow-x-auto ${darkMode ? 'bg-gradient-to-br from-gray-800/60 to-blue-900/40 text-gray-100 border border-blue-700/20' : 'bg-gradient-to-br from-white to-blue-50 text-gray-900 border border-blue-200'}`}>
                                         <div className="flex items-center space-x-2 mb-4">
                                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -308,12 +278,6 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                    }`}>
-                                    🔐 Secure File Metadata Platform
-                                </div>
 
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
@@ -389,12 +353,6 @@ module kanari::example {
                         <div className="max-w-7xl mx-auto text-center">
                             {/* Section Header */}
                             <div className="text-center mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                    }`}>
-                                    🌐 Web3 Metadata Solutions
-                                </div>
 
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
@@ -420,7 +378,7 @@ module kanari::example {
                                         }
                                         title="Secure File Tracking"
                                         description="Track file history and maintain immutable records of metadata changes with transparent audit trails."
-                                        // onClick={() => window.open('https://kanari.site/', '_blank')}
+                                    // onClick={() => window.open('https://kanari.site/', '_blank')}
                                     />
                                 </div>
 
@@ -461,7 +419,6 @@ module kanari::example {
 
                     <OfficialChannels darkMode={darkMode} setDarkMode={setDarkMode} />
 
-                    <VCSection darkMode={darkMode} setDarkMode={setDarkMode} />
 
                     {/* Newsletter Section */}
                     <div data-aos="fade-left" data-aos-delay="300">
