@@ -21,8 +21,6 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                     width={24}
                     height={24}
                     className="w-6 h-6"
-                    // changed: make filter depend on darkMode so it renders correctly on light/mobile
-                    style={{ filter: darkMode ? 'brightness(0) invert(1)' : 'none' }}
                 />
             ),
             link: "https://bsky.app/profile/kanari.network",

@@ -134,7 +134,7 @@ module kanari::example {
                                     {/* Right: supporting text + CTA (centered on mobile) */}
                                     <div className="w-full md:max-w-md flex flex-col items-center md:items-end justify-center text-center md:text-right space-y-4">
                                         <p className="max-w-xs text-sm md:text-base text-white/90">
-                                            We craft bold, strategic, and unforgettable designs that don't just look good — they work. Elevate your brand with clarity, creativity, and impact.
+                                            We craft bold, strategic, and unforgettable designs that don&apos;t just look good — they work. Elevate your brand with clarity, creativity, and impact.
                                         </p>
 
                                         <div className="flex flex-col sm:flex-row gap-3 items-center md:items-end">

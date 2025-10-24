@@ -62,9 +62,6 @@
   z-index: 100;
 }
 
-/* Import Japanese font for kanji elements */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
 @keyframes gradient-x {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

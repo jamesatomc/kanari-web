@@ -40,7 +40,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
     };
 
     return (
-        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white' }`}>>
+        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'}`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
@@ -61,13 +61,13 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
                                     ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
                                     : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                }`}>
+                                    }`}>
                                     🎨 Brand Resources & Assets
                                 </div>
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
                                     ? 'from-white via-blue-300 to-indigo-300'
                                     : 'from-gray-900 via-blue-700 to-indigo-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Media Kit
                                     <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
                                         Everything You Need
@@ -81,13 +81,13 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
                                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
                                     : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
-                                }`}>
+                                    }`}>
                                     Download Full Kit
                                 </button>
                                 <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
                                     ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
                                     : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                }`}>
+                                    }`}>
                                     Contact Brand Team
                                 </button>
                             </div>
@@ -101,7 +101,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-orange-300 to-purple-300'
                                     : 'from-orange-800 to-purple-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Brand Colors
                                 </h2>
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
@@ -113,16 +113,15 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 {colors.map((color) => (
                                     <div
                                         key={color.hex}
-                                        className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 ${darkMode 
-                                            ? 'bg-gray-800/50 border border-gray-700/50 hover:border-gray-600/70' 
+                                        className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 ${darkMode
+                                            ? 'bg-gray-800/50 border border-gray-700/50 hover:border-gray-600/70'
                                             : 'bg-white border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
-                                        }`}
+                                            }`}
                                     >
                                         <div
                                             onClick={() => copyToClipboard(color.hex)}
-                                            className={`w-full h-32 ${color.bgClass} cursor-pointer transition-all duration-300 group-hover:h-36 ${
-                                                color.name === 'Pure White' ? `border-b ${darkMode ? 'border-gray-600' : 'border-gray-200'}` : ''
-                                            }`}
+                                            className={`w-full h-32 ${color.bgClass} cursor-pointer transition-all duration-300 group-hover:h-36 ${color.name === 'Pure White' ? `border-b ${darkMode ? 'border-gray-600' : 'border-gray-200'}` : ''
+                                                }`}
                                             title={`Click to copy: ${color.hex}`}
                                         >
                                             <div className="w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -144,10 +143,10 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                                 </span>
                                                 <button
                                                     onClick={() => copyToClipboard(color.hex)}
-                                                    className={`text-sm font-medium transition-colors ${darkMode 
-                                                        ? 'text-purple-400 hover:text-purple-300' 
+                                                    className={`text-sm font-medium transition-colors ${darkMode
+                                                        ? 'text-purple-400 hover:text-purple-300'
                                                         : 'text-purple-600 hover:text-purple-800'
-                                                    }`}
+                                                        }`}
                                                 >
                                                     Copy
                                                 </button>
@@ -166,7 +165,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
                                     ? 'from-purple-300 to-orange-300'
                                     : 'from-purple-800 to-orange-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Logo Assets
                                 </h2>
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
@@ -176,10 +175,10 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                 {/* Light Logo */}
-                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode 
-                                    ? 'bg-gray-800/50 border border-gray-700/50' 
+                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode
+                                    ? 'bg-gray-800/50 border border-gray-700/50'
                                     : 'bg-white border border-gray-200 shadow-xl'
-                                }`}>
+                                    }`}>
                                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 flex justify-center items-center min-h-[200px]">
                                         <Image
                                             src="/images/logo-light.png"
@@ -214,7 +213,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                                 className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
                                                     ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
                                                     : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                                }`}
+                                                    }`}
                                             >
                                                 SVG
                                             </button>
@@ -223,10 +222,10 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                 </div>
 
                                 {/* Dark Logo */}
-                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode 
-                                    ? 'bg-gray-800/50 border border-gray-700/50' 
+                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode
+                                    ? 'bg-gray-800/50 border border-gray-700/50'
                                     : 'bg-white border border-gray-200 shadow-xl'
-                                }`}>
+                                    }`}>
                                     <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-12 flex justify-center items-center min-h-[200px]">
                                         <Image
                                             src="/images/logo-dark.png"
@@ -261,7 +260,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                                 className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
                                                     ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
                                                     : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                                }`}
+                                                    }`}
                                             >
                                                 SVG
                                             </button>
@@ -278,7 +277,7 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                             <div className={`rounded-3xl p-8 sm:p-12 text-center ${darkMode
                                 ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
                                 : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                            } backdrop-blur-sm`}>
+                                } backdrop-blur-sm`}>
                                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                     Need More Resources?
                                 </h2>

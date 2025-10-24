@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./LoadingHeroSection.css";
+
 
 const LoadingHeroSection = () => {
     const [progress, setProgress] = useState(0);

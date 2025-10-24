@@ -5,9 +5,10 @@ import './VCSection.css';
 
 interface VCSectionProps {
     darkMode: boolean;
+    setDarkMode: (darkMode: boolean) => void;
 }
 
-export function VCSection({ darkMode }: VCSectionProps) {
+export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
     // Sample VC and Investor data (replace with your actual data)
     const vcs = [
         {
@@ -101,13 +102,16 @@ export function VCSection({ darkMode }: VCSectionProps) {
                                 <div className="flex items-center mt-2">
                                     <div className="flex -space-x-2 mr-3">
                                         <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
-                                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80&auto=format&fit=crop" alt="a" className="w-full h-full object-cover" />
+                                            {/* replaced <img> with next/image */}
+                                            <Image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80&auto=format&fit=crop" alt="a" width={32} height={32} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
-                                            <img src="https://images.unsplash.com/photo-1545996124-1b5b7b4a8d06?w=80&q=80&auto=format&fit=crop" alt="b" className="w-full h-full object-cover" />
+                                            {/* replaced <img> with next/image */}
+                                            <Image src="https://images.unsplash.com/photo-1545996124-1b5b7b4a8d06?w=80&q=80&auto=format&fit=crop" alt="b" width={32} height={32} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="w-8 h-8 rounded-full ring-2 ring-white overflow-hidden">
-                                            <img src="https://images.unsplash.com/photo-1549221987-6f12d6b6d3a6?w=80&q=80&auto=format&fit=crop" alt="c" className="w-full h-full object-cover" />
+                                            {/* replaced <img> with next/image */}
+                                            <Image src="https://images.unsplash.com/photo-1549221987-6f12d6b6d3a6?w=80&q=80&auto=format&fit=crop" alt="c" width={32} height={32} className="w-full h-full object-cover" />
                                         </div>
                                     </div>
                                     <div className="text-xs text-gray-500">CUSTOMER SATISFACTION</div>
@@ -145,7 +149,7 @@ export function VCSection({ darkMode }: VCSectionProps) {
                                     More Than Aesthetic —<br />We Design for Impact.
                                 </h2>
                                 <p className={`text-sm md:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-md mx-auto lg:mx-0`}>
-                                    We're not just another agency—we're a design powerhouse that cuts the excess and sharpens what truly matters.
+                                    We&apos;re not just another agency—we&apos;re a design powerhouse that cuts the excess and sharpens what truly matters.
                                 </p>
                                 <div className="mt-6 flex justify-center lg:justify-end">
                                     <a
@@ -191,13 +195,14 @@ export function VCSection({ darkMode }: VCSectionProps) {
                             return (
                                 <button
                                     key={index}
-                                    role="listitem"
+                                    /* removed role="listitem" — button is already semantic for aria-pressed */
                                     aria-pressed={isSelected}
                                     className={`vc-logo-pill flex items-center gap-3 px-6 py-3 rounded-full transition-transform duration-200 text-sm whitespace-nowrap ${isSelected ? 'ring-2 ring-blue-500 shadow-lg scale-105 z-10' : 'hover:scale-105'} ${darkMode ? 'bg-white/6 border border-white/10' : 'bg-white/40 border border-gray-200'}`}
                                     onClick={() => setSelectedVC(idx)}
                                 >
                                     <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
-                                        <img src={vc.logo} alt={vc.name} className="w-full h-full object-cover" />
+                                        {/* replaced <img> with next/image */}
+                                        <Image src={vc.logo} alt={vc.name} width={56} height={56} className="w-full h-full object-cover" />
                                     </div>
                                     <span className={`${darkMode ? 'text-white' : 'text-gray-800'} font-medium`}>{vc.name}</span>
                                 </button>
