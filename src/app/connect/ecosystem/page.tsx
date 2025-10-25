@@ -117,8 +117,8 @@ function EcosystemHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/5' : 'bg-blue-200/20'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/5' : 'bg-indigo-200/20'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/10' : 'bg-indigo-200/30'} rounded-full blur-3xl`}></div>
                 </div>
 
                 <div className="relative z-10">
@@ -137,9 +137,9 @@ function EcosystemHubComponent({ darkMode, setDarkMode }: { darkMode: boolean; s
                                 </div>
                                 
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-200 to-indigo-200'
-                                    : 'from-gray-900 via-blue-800 to-indigo-900'
-                                } bg-clip-text text-transparent`}>
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
+                                    } bg-clip-text text-transparent`}>
                                     Ecosystem Hub
                                     <span className="block mt-2 text-2xl sm:text-3xl md:text-3xl font-medium opacity-80">
                                         Discover, Build, Innovate

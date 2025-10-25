@@ -45,8 +45,8 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-32 right-32 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-32 left-32 w-80 h-80 ${darkMode ? 'bg-indigo-500/10' : 'bg-indigo-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
+                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/10' : 'bg-indigo-200/30'} rounded-full blur-3xl`}></div>
                 </div>
 
                 {/* Content */}
@@ -65,8 +65,8 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                                     🎨 Brand Resources & Assets
                                 </div>
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-300 to-indigo-300'
-                                    : 'from-gray-900 via-blue-700 to-indigo-800'
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
                                     Media Kit
                                     <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
@@ -99,8 +99,8 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-orange-300 to-purple-300'
-                                    : 'from-orange-800 to-purple-800'
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
                                     Brand Colors
                                 </h2>
@@ -163,8 +163,8 @@ function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDa
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-purple-300 to-orange-300'
-                                    : 'from-purple-800 to-orange-800'
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
                                     Logo Assets
                                 </h2>

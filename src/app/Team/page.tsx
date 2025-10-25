@@ -61,8 +61,8 @@ function TeamComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMo
                                 </div>
 
                                 <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-white via-blue-300 to-indigo-300'
-                                    : 'from-gray-900 via-blue-700 to-indigo-800'
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
                                     Our Team
                                     <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
