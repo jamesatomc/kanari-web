@@ -139,14 +139,14 @@ module kanari::example {
 
                                         <div className="flex flex-col sm:flex-row gap-3 items-center md:items-end">
                                             <a href="https://docs.kanari.network/" target="_blank" rel="noopener noreferrer"
-                                                className="px-6 py-3 rounded-full bg-black text-white font-medium inline-flex items-center gap-2 shadow-md hover:opacity-95 transition">
+                                                className={`px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 shadow-md hover:opacity-95 transition ${darkMode ? 'border border-gray-700 bg-black text-white' : 'bg-white text-black'}`}>
                                                 Get Started
                                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                                     <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                                                 </svg>
                                             </a>
                                             <a href="https://gg1ycocxact.typeform.com/to/ITdq2wel" target="_blank" rel="noopener noreferrer"
-                                                className="px-5 py-3 rounded-full border border-white/30 text-white/90 hover:opacity-95 transition">
+                                                className={`px-5 py-3 rounded-full border hover:opacity-95 transition ${darkMode ? 'border-white text-white/90' : 'border-white text-white/90'}`}>
                                                 Join Testnet
                                             </a>
                                         </div>
@@ -162,19 +162,15 @@ module kanari::example {
                     {/* Features and Use Cases Section */}
                     <section className="py-16 sm:py-20 px-4">
                         <div className="max-w-7xl mx-auto">
+
                             {/* Section Header */}
                             <div className="text-center mb-16">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${darkMode ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-blue-100 text-blue-800 border border-blue-200'}`}>
-                                    🚀 Secure Metadata Management
-                                </div>
-
                                 <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-400 to-indigo-400'
-                                    : 'from-blue-800 to-indigo-800'
+                                    ? 'from-blue-300 to-purple-300'
+                                    : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
                                     Use Cases and Features
                                 </h2>
-
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
                                     Explore the capabilities of Kanari Network and Move VM for secure and transparent file metadata management in the Web3 ecosystem.
                                 </p>
@@ -244,8 +240,8 @@ module kanari::example {
                                     data-aos="fade-left"
                                     data-aos-delay="200"
                                 >
-                                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl blur opacity-30"></div>
-                                    <pre className={`relative p-4 sm:p-6 text-xs sm:text-sm rounded-xl shadow-2xl overflow-x-auto ${darkMode ? 'bg-gradient-to-br from-gray-800/60 to-blue-900/40 text-gray-100 border border-blue-700/20' : 'bg-gradient-to-br from-white to-blue-50 text-gray-900 border border-blue-200'}`}>
+                                    <div className="absolute -inset-0.5 rounded-xl blur opacity-30"></div>
+                                    <pre className={`relative p-4 sm:p-6 text-xs sm:text-sm rounded-xl shadow-2xl overflow-x-auto ${darkMode ? 'bg-gradient-to-br from-gray-800/60 to-blue-900/40 text-gray-100 border border-blue-700/20' : 'bg-gray-50 text-black border border-blue-200'}`}>
                                         <div className="flex items-center space-x-2 mb-4">
                                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>

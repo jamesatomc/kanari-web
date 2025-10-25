@@ -171,6 +171,108 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                     </div>
                 </div>
 
+                {/* Scroller header to call attention */}
+                <div className="mb-3">
+                    <div className={`text-sm font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Investors & Backers</div>
+                </div>
+
+                {/* Scrollable VC logos (pills) - keep auto scroll behavior */}
+                <div
+                    className="relative overflow-hidden mb-8"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex space-x-6 overflow-x-auto scrollbar-hide py-6 px-2"
+                        style={{ scrollBehavior: 'smooth' }}
+                        role="list"
+                        aria-label="Investor logos"
+                    >
+                        {[...vcs, ...vcs].map((vc, index) => {
+                            const idx = index % vcs.length;
+                            const isSelected = selectedVC === idx;
+                            return (
+                                <button
+                                    key={index}
+                                    /* removed role="listitem" — button is already semantic for aria-pressed */
+                                    aria-pressed={isSelected}
+                                    className={`vc-logo-pill flex items-center gap-3 px-6 py-3 rounded-full transition-transform duration-200 text-sm whitespace-nowrap ${isSelected ? 'ring-2 ring-blue-500 shadow-lg scale-105 z-10' : 'hover:scale-105'} ${darkMode ? 'bg-white/6 border border-white/10' : 'bg-white/40 border border-gray-200'}`}
+                                    onClick={() => setSelectedVC(idx)}
+                                >
+                                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+                                        {/* replaced <img> with next/image */}
+                                        <Image src={vc.logo} alt={vc.name} width={56} height={56} className="w-full h-full object-cover" />
+                                    </div>
+                                    <span className={`${darkMode ? 'text-white' : 'text-gray-800'} font-medium`}>{vc.name}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Modal/Popup for VC Details */}
+                {selectedVC !== null && (
+                    <div
+                        className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm p-4"
+                        onClick={() => setSelectedVC(null)}
+                    >
+                        <div
+                            className={`w-full max-w-2xl p-8 rounded-[32px] shadow-2xl relative transform transition-all duration-300 ${darkMode
+                                ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700'
+                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                                }`}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                className={`absolute top-6 right-6 p-2 rounded-full transition-colors ${darkMode
+                                    ? 'text-gray-400 hover:text-white hover:bg-gray-700'
+                                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                onClick={() => setSelectedVC(null)}
+                            >
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+
+                            <div className="flex flex-col items-center text-center">
+                                <div className="w-32 h-32 rounded-[20px] overflow-hidden mb-6 ring-4 ring-blue-500/20 shadow-lg">
+                                    <Image
+                                        src={vcs[selectedVC].logo}
+                                        alt={vcs[selectedVC].name}
+                                        width={128}
+                                        height={128}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                    {vcs[selectedVC].name}
+                                </h3>
+
+                                <p className={`text-base sm:text-lg leading-relaxed max-w-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                    {vcs[selectedVC].investmentDetails}
+                                </p>
+
+                                <div className="flex items-center space-x-4 mt-8">
+                                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                        ? 'bg-blue-500/20 text-blue-300'
+                                        : 'bg-blue-100 text-blue-800'
+                                        }`}>
+                                        Strategic Partner
+                                    </span>
+                                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${darkMode
+                                        ? 'bg-purple-500/20 text-purple-300'
+                                        : 'bg-purple-100 text-purple-800'
+                                        }`}>
+                                        Active Investor
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );
