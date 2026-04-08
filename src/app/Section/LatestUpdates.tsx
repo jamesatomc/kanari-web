@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image'
 
 interface LatestUpdatesProps {
@@ -10,46 +10,46 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
     const blogupdates = [
         {
             title: '#01',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
+            image: 'https://raw.githubusercontent.com/kanari-network/about/main/kari1.png',
+            Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
             description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
             data: '27-01-2024',
         },
-        {
-            title: '#02',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
-            description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
-            data: '27-01-2024',
-        },
-        {
-            title: '#03',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
-            description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
-            data: '27-01-2024',
-        },
-        {
-            title: '#04',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
-            description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
-            data: '27-01-2024',
-        },
-        {
-            title: '#05',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
-            description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
-            data: '27-01-2024',
-        },
-        {
-            title: '#06',
-            image: 'https://kanari.site/kariicon1.png',
-            Url: 'https://blog.kanari.network/Kanari_SDK_Design',
-            description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
-            data: '27-01-2024',
-        },
+        // {
+        //     title: '#02',
+        //     image: 'https://kanari.site/kariicon1.png',
+        //     Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
+        //     description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
+        //     data: '27-01-2024',
+        // },
+        // {
+        //     title: '#03',
+        //     image: 'https://kanari.site/kariicon1.png',
+        //     Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
+        //     description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
+        //     data: '27-01-2024',
+        // },
+        // {
+        //     title: '#04',
+        //     image: 'https://kanari.site/kariicon1.png',
+        //     Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
+        //     description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
+        //     data: '27-01-2024',
+        // },
+        // {
+        //     title: '#05',
+        //     image: 'https://kanari.site/kariicon1.png',
+        //     Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
+        //     description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
+        //     data: '27-01-2024',
+        // },
+        // {
+        //     title: '#06',
+        //     image: 'https://kanari.site/kariicon1.png',
+        //     Url: 'https://blog.kanarinetwork.site/Kanari_SDK_Design',
+        //     description: 'KANARI SDK Design: A New Era for Blockchain Interoperability and Digital Asset Security',
+        //     data: '27-01-2024',
+        // },
     ];
 
     const featuredBlog = blogupdates[0];

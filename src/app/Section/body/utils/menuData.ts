@@ -32,13 +32,13 @@ export const menuData: MenuSection[] = [
         description: 'Build on Kanari Network'
       },
       {
-        href: 'https://kanari.site/api',
+        href: 'https://docs.kanarinetwork.site/api',
         label: 'API Reference',
         icon: '📚',
         description: 'Complete API documentation'
       },
       {
-        href: 'https://kanari.site/tutorials',
+        href: 'https://docs.kanarinetwork.site/tutorials',
         label: 'Tutorials',
         icon: '🎓',
         description: 'Step-by-step guides'
@@ -56,40 +56,40 @@ export const menuData: MenuSection[] = [
     mobileBorderColor: 'border-blue-600/30',
     hoverEffect: 'hover:bg-blue-100 dark:hover:bg-blue-800/20'
   },
-  {
-    title: 'Build',
-    items: [
-      {
-        href: 'https://docs.kanari.site/',
-        label: 'Documentation',
-        icon: '📖',
-        description: 'Technical documentation'
-      },
-      {
-        href: 'https://kanari.site/build/tools',
-        label: 'Tools',
-        icon: '🛠️',
-        description: 'Development tools'
-      },
-      {
-        href: 'https://kanari.site/build/resources',
-        label: 'Resources',
-        icon: '💎',
-        description: 'Additional resources'
-      }
-    ],
-    titleColor: {
-      light: 'text-indigo-700',
-      dark: 'text-indigo-300'
-    },
-    gradientColors: {
-      light: 'bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600',
-      dark: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-500'
-    },
-    mobileColor: 'text-indigo-600',
-    mobileBorderColor: 'border-indigo-600/30',
-    hoverEffect: 'hover:bg-indigo-100 dark:hover:bg-indigo-800/20'
-  },
+  // {
+  //   title: 'Build',
+  //   items: [
+  //     {
+  //       href: 'https://docs.kanarinetwork.site/',
+  //       label: 'Documentation',
+  //       icon: '📖',
+  //       description: 'Technical documentation'
+  //     },
+  //     {
+  //       href: 'https://kanarinetwork.site/build/tools',
+  //       label: 'Tools',
+  //       icon: '🛠️',
+  //       description: 'Development tools'
+  //     },
+  //     {
+  //       href: 'https://kanarinetwork.site/build/resources',
+  //       label: 'Resources',
+  //       icon: '💎',
+  //       description: 'Additional resources'
+  //     }
+  //   ],
+  //   titleColor: {
+  //     light: 'text-indigo-700',
+  //     dark: 'text-indigo-300'
+  //   },
+  //   gradientColors: {
+  //     light: 'bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600',
+  //     dark: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-500'
+  //   },
+  //   mobileColor: 'text-indigo-600',
+  //   mobileBorderColor: 'border-indigo-600/30',
+  //   hoverEffect: 'hover:bg-indigo-100 dark:hover:bg-indigo-800/20'
+  // },
   // {
   //   title: 'Connect',
   //   items: [

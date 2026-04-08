@@ -10,7 +10,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
-  const [discordHover, setDiscordHover] = useState(false);
+  // const [discordHover, setDiscordHover] = useState(false);
   const [blueskyHover, setBlueskyHover] = useState(false);
   const [githubHover, setGithubHover] = useState(false);
 
@@ -20,18 +20,18 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
         ? 'bg-gray-900/90 text-gray-100 border border-blue-700/30'
         : 'bg-white/90 text-gray-800 border border-blue-300/30'
         } rounded-2xl shadow-xl p-8 sm:p-10 transition-all duration-300 relative overflow-hidden`}>
-        
+
         {/* Japanese-inspired decorative elements */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/80 via-indigo-500/60 to-blue-500/80"></div>
-        
+
         {/* Japanese wave pattern (seigaiha) */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-5" 
-             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')"}}>
+        <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-5"
+          style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48cGF0aCBmaWxsPSIjMzk4M0Y2IiBkPSJNMCAwQzUwIDAgNTAgNTAgMCAxMDBIMjAwQzE1MCAxMDAgMTUwIDUwIDIwMCAwSDBaIi8+PC9zdmc+')" }}>
         </div>
-        
+
         {/* Asanoha pattern */}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-repeat opacity-5"
-             style={{backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMEwwIDIwaDIwTDAgNDBoMjBsMjAtMjBIMjBMNDAgMEgyMHoiIGZpbGw9ImN1cnJlbnRDb2xvciIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9zdmc+')"}}>
+          style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMEwwIDIwaDIwTDAgNDBoMjBsMjAtMjBIMjBMNDAgMEgyMHoiIGZpbGw9ImN1cnJlbnRDb2xvciIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9zdmc+')" }}>
         </div>
 
         <div className="mx-auto w-full max-w-screen-xl py-6 lg:py-8 relative">
@@ -50,8 +50,8 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     height={40}
                   />
                 </div>
-                <span className={`text-2xl font-bold bg-gradient-to-r ${darkMode 
-                  ? 'from-blue-400 to-indigo-400' 
+                <span className={`text-2xl font-bold bg-gradient-to-r ${darkMode
+                  ? 'from-blue-400 to-indigo-400'
                   : 'from-blue-600 to-indigo-600'} 
                   bg-clip-text text-transparent transition-all duration-300`}>
                   Kanari Network
@@ -76,23 +76,18 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://docs.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
+                    <a href="https://docs.kanarinetwork.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Docs
                     </a>
                   </li>
                   <li>
-                    <a href="https://karimove.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
-                      Kari Move
+                    <a href="https://movekari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
+                      Kanari Move
                     </a>
                   </li>
                   <li>
-                    <a href="https://whitepaper.kanari.site/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
+                    <a href="https://whitepaperkari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Whitepaper
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://kanarinet.slack.com/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
-                      Developer forum
                     </a>
                   </li>
                 </ul>
@@ -112,11 +107,6 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="inline-block hover:translate-x-1 transition-transform hover:text-indigo-500 decoration-2 underline-offset-4">
-                      AI soon
-                    </a>
-                  </li>
-                  <li>
                     <a href="https://github.com/kanari-network/kanari-sdk" className="inline-block hover:translate-x-1 transition-transform hover:text-indigo-500 decoration-2 underline-offset-4">
                       Kanari SDK
                     </a>
@@ -132,11 +122,11 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                   About
                 </h2>
                 <ul className="space-y-3">
-                  <li>
+                  {/* <li>
                     <a href="/KanariFoundation" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Kanari Foundation
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="/MediaKit" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Media Kit
@@ -167,9 +157,9 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
             <div className={`px-4 ${darkMode ? 'text-blue-400/50' : 'text-blue-600/50'}`}>
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
-                <path d="M12,6a6,6,0,1,0,6,6A6,6,0,0,0,12,6Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/>
-                <circle cx="12" cy="12" r="2"/>
+                <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" />
+                <path d="M12,6a6,6,0,1,0,6,6A6,6,0,0,0,12,6Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z" />
+                <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
@@ -183,7 +173,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                 Kanari Network™
               </Link>
               <span className="relative inline-flex items-center">
-                <span className="mx-1">·</span> community 
+                <span className="mx-1">·</span> community
                 <span className="ml-1 text-xs opacity-70">コミュニティ</span>
               </span>
             </span>
@@ -192,7 +182,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               {/* Social icons with Japanese-style hover effect */}
               {/* Bluesky */}
               <a
-                href="https://bsky.app/profile/kanari.site"
+                href="https://bsky.app/profile/kanarinetwork.bsky.social"
                 className="relative group"
                 onMouseEnter={() => setBlueskyHover(true)}
                 onMouseLeave={() => setBlueskyHover(false)}
@@ -209,7 +199,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
               </a>
 
               {/* Discord */}
-              <a
+              {/* <a
                 href="https://discord.gg/QU6fTacXab"
                 className="relative group"
                 onMouseEnter={() => setDiscordHover(true)}
@@ -226,7 +216,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                   <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
                 </svg>
                 <span className="sr-only">Discord community</span>
-              </a>
+              </a> */}
 
               {/* Github */}
               <a
@@ -254,7 +244,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Bottom decorative bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-blue-500/60 to-indigo-500/80"></div>
       </footer>

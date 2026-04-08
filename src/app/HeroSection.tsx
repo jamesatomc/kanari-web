@@ -138,7 +138,7 @@ module kanari::example {
                                         </p>
 
                                         <div className="flex flex-col sm:flex-row gap-3 items-center md:items-end">
-                                            <a href="https://docs.kanari.network/" target="_blank" rel="noopener noreferrer"
+                                            <a href="https://docs.kanarinetwork.site/" target="_blank" rel="noopener noreferrer"
                                                 className={`px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 shadow-md hover:opacity-95 transition ${darkMode ? 'border border-gray-700 bg-black text-white' : 'bg-white text-black'}`}>
                                                 Get Started
                                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -157,7 +157,7 @@ module kanari::example {
                     </section>
 
 
-                    <VCSection darkMode={darkMode} setDarkMode={setDarkMode} />
+                    {/* <VCSection darkMode={darkMode} setDarkMode={setDarkMode} /> */}
 
                     {/* Features and Use Cases Section */}
                     <section className="py-16 sm:py-20 px-4">

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaSun, FaTimes } from "react-icons/fa";
 import Image from "next/image"; 
 import { FaMoon } from "react-icons/fa6";
