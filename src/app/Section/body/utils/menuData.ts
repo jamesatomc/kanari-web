@@ -38,7 +38,7 @@ export const menuData: MenuSection[] = [
         description: 'Complete API documentation'
       },
       {
-        href: 'https://docs.kanarinetwork.site/tutorials',
+        href: 'https://movekari.netlify.app/',
         label: 'Tutorials',
         icon: '🎓',
         description: 'Step-by-step guides'

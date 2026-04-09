@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../Section/body/Navbar';
 import Footer from '../Section/body/Footer';
 import PageWrapper from '../components/PageWrapper';
@@ -9,15 +9,15 @@ import { Icons } from '../components/IconLibrary';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function DeveloperPortalComponent({ 
-    darkMode: externalDarkMode, 
-    setDarkMode: externalSetDarkMode 
-}: { 
-    darkMode?: boolean; 
-    setDarkMode?: (darkMode: boolean) => void 
+function DeveloperPortalComponent({
+    darkMode: externalDarkMode,
+    setDarkMode: externalSetDarkMode
+}: {
+    darkMode?: boolean;
+    setDarkMode?: (darkMode: boolean) => void
 } = {}) {
     const [internalDarkMode, setInternalDarkMode] = useState(false);
-    
+
     const darkMode = externalDarkMode !== undefined ? externalDarkMode : internalDarkMode;
     const setDarkMode = externalSetDarkMode || setInternalDarkMode;
 
@@ -38,7 +38,7 @@ function DeveloperPortalComponent({
     };
 
     return (
-        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white' }`}>
+        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'}`}>
 
             <main className="relative min-h-screen overflow-hidden">
                 {/* Background Elements */}
@@ -61,8 +61,8 @@ function DeveloperPortalComponent({
                                     }`}>
                                     🚀 Build the Future
                                 </div>
-                                
-                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
+
+                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-linear-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
                                     : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
@@ -77,18 +77,18 @@ function DeveloperPortalComponent({
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-                                    <a href="https://docs.kanari.site/"
+                                    <a href="https://docs.kanarinetwork.site/"
                                         className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
-                                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25'
-                                            : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25'
-                                        }`}>
+                                            ? 'bg-linear-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25'
+                                            : 'bg-linear-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25'
+                                            }`}>
                                         📚 View Documentation
                                     </a>
                                     <a href="https://github.com/kanari-network"
                                         className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
                                             ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
                                             : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                        }`}>
+                                            }`}>
                                         💻 GitHub Repository
                                     </a>
                                 </div>
@@ -100,10 +100,10 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-16" data-aos="fade-up">
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                     ? 'from-blue-300 to-indigo-300'
                                     : 'from-blue-800 to-indigo-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Quick Start Guide
                                 </h2>
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
@@ -114,7 +114,7 @@ function DeveloperPortalComponent({
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {quickStartResources.map((resource, index) => (
                                     <div key={resource.id} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
-                                        <DeveloperCard 
+                                        <DeveloperCard
                                             darkMode={darkMode}
                                             icon={renderIcon(resource.icon)}
                                             title={resource.title}
@@ -131,10 +131,10 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-16" data-aos="fade-up">
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                     ? 'from-indigo-300 to-blue-300'
                                     : 'from-indigo-800 to-blue-800'
-                                } bg-clip-text text-transparent`}>
+                                    } bg-clip-text text-transparent`}>
                                     Development Tools
                                 </h2>
                                 <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-3xl mx-auto`}>
@@ -145,7 +145,7 @@ function DeveloperPortalComponent({
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {popularResources.map((resource, index) => (
                                     <div key={resource.id} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
-                                        <DeveloperCard 
+                                        <DeveloperCard
                                             darkMode={darkMode}
                                             icon={renderIcon(resource.icon)}
                                             title={resource.title}
@@ -162,9 +162,9 @@ function DeveloperPortalComponent({
                     <section className="py-16 px-4">
                         <div className="max-w-7xl mx-auto">
                             <div className={`rounded-3xl p-8 sm:p-12 ${darkMode
-                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
-                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                            } backdrop-blur-sm`}>
+                                ? 'bg-linear-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
+                                : 'bg-linear-to-r from-blue-600 to-indigo-600'
+                                } backdrop-blur-sm`}>
                                 <div className="text-center">
                                     <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                                         Join Our Developer Community

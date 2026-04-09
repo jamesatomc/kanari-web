@@ -8,7 +8,7 @@ import LatestUpdates from './Section/LatestUpdates';
 import { InvestorCard } from './Section/body/InvestorCard';
 import LoadingHeroSection from './Section/body/LoadingHeroSection';
 import AOS from 'aos';
-import { Highlight } from 'prism-react-renderer'
+import { Highlight, themes } from 'prism-react-renderer'
 import { VCSection } from './Section/VCSection';
 import { RoadmapSection } from './Section/RoadmapSection';
 
@@ -235,7 +235,7 @@ module kanari::example {
                                     </div>
                                 </div>
 
-                                {/* Right Content - Code Preview */}
+                               {/* Right Content - Code Preview */}
                                 <div
                                     className="w-full relative"
                                     data-aos="fade-left"
@@ -249,6 +249,7 @@ module kanari::example {
                                             <div className="w-3 h-3 rounded-full bg-green-500"></div>
                                         </div>
                                         <Highlight
+                                            theme={darkMode ? themes.vsDark : themes.github} /* 💡 เพิ่มบรรทัดนี้ */
                                             code={codeExample}
                                             language="rust"
                                         >

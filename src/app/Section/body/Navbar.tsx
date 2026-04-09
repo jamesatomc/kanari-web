@@ -61,8 +61,8 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
           <Link
             className={`relative transition-all duration-300 hover:scale-105 ${
               darkMode 
-                ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-blue-300 font-extrabold' 
-                : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 font-extrabold'
+                ? 'text-transparent bg-clip-text bg-linear-to-r from-blue-300 via-indigo-300 to-blue-300 font-extrabold' 
+                : 'text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-blue-600 font-extrabold'
             }`}
             href="/"
           >
@@ -77,7 +77,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         <li className="nav-links px-4 py-2 cursor-pointer font-medium relative group">
           <Link 
             href="/" 
-            className={`relative inline-block transform transition-all duration-300 hover:translate-y-[-2px] ${
+            className={`relative inline-block transform transition-all duration-300 hover:-translate-y-0.5 ${
               darkMode 
                 ? 'text-gray-200 hover:text-blue-300' 
                 : 'text-gray-700 hover:text-blue-600'
@@ -87,8 +87,8 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
           </Link>
           <div className={`absolute -bottom-1 left-0 w-full h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center rounded-full ${
             darkMode 
-              ? 'bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400' 
-              : 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500'
+              ? 'bg-linear-to-r from-blue-400 via-indigo-400 to-blue-400' 
+              : 'bg-linear-to-r from-blue-500 via-indigo-500 to-blue-500'
           }`}></div>
         </li>
 
@@ -171,8 +171,8 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
                   />
                   <h2 className={`text-2xl font-bold ${
                     darkMode 
-                      ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300' 
-                      : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600'
+                      ? 'text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-indigo-300' 
+                      : 'text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600'
                   }`}>
                     Kanari
                   </h2>

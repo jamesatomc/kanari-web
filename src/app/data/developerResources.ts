@@ -13,7 +13,7 @@ export const developerResources: DeveloperResource[] = [
         id: 'quick-start-guide',
         title: 'Quick Start Guide',
         description: 'Get up and running with Kanari Network in minutes with our comprehensive quick start guide and examples.',
-        url: 'https://docs.kanari.site/quick-start',
+        url: 'https://docs.kanarinetwork.site/docs',
         icon: 'lightning',
         category: 'quick-start'
     },
@@ -21,7 +21,7 @@ export const developerResources: DeveloperResource[] = [
         id: 'api-documentation',
         title: 'API Documentation',
         description: 'Explore our detailed API blockchain documentation with examples, endpoints, and integration guides.',
-        url: 'https://docs.kanari.site/api',
+        url: 'https://docs.kanarinetwork.site/docs/api/api-reference',
         icon: 'document',
         category: 'quick-start'
     },
@@ -38,7 +38,7 @@ export const developerResources: DeveloperResource[] = [
         id: 'installation-guide',
         title: 'Installation Guide',
         description: 'Step-by-step guide to install and configure Kanari Network development environment.',
-        url: 'https://docs.kanari.site/installation',
+        url: 'https://docs.kanarinetwork.site/docs/introduction/getting-started',
         icon: 'download',
         category: 'popular'
     },
@@ -46,18 +46,18 @@ export const developerResources: DeveloperResource[] = [
         id: 'api-reference',
         title: 'API Reference',
         description: 'Complete API documentation with examples, endpoints, and integration patterns.',
-        url: 'https://docs.kanari.site/api-reference',
+        url: 'https://docs.kanarinetwork.site/api-reference',
         icon: 'document',
         category: 'popular'
     },
-    {
-        id: 'best-practices',
-        title: 'Best Practices',
-        description: 'Learn about recommended practices, security guidelines, and optimization tips.',
-        url: 'https://docs.kanari.site/best-practices',
-        icon: 'check',
-        category: 'popular'
-    }
+    // {
+    //     id: 'best-practices',
+    //     title: 'Best Practices',
+    //     description: 'Learn about recommended practices, security guidelines, and optimization tips.',
+    //     url: 'https://docs.kanarinetwork.site/best-practices',
+    //     icon: 'check',
+    //     category: 'popular'
+    // }
 ];
 
 export const getResourcesByCategory = (category: DeveloperResource['category']) => {
