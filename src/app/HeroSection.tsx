@@ -10,6 +10,7 @@ import LoadingHeroSection from './Section/body/LoadingHeroSection';
 import AOS from 'aos';
 import { Highlight } from 'prism-react-renderer'
 import { VCSection } from './Section/VCSection';
+import { RoadmapSection } from './Section/RoadmapSection';
 
 
 interface Props {
@@ -118,12 +119,12 @@ module kanari::example {
                             <div className="absolute inset-0 bg-black/55"></div>
 
                             {/* Content layout: stacked on small screens, side-by-side on md+ */}
-                            <div className="relative z-10 min-h-[420px] md:min-h-[600px] flex items-start">
+                            <div className="relative z-10 min-h-105 md:min-h-150 flex items-start">
                                 <div className="w-full flex flex-col md:flex-row px-6 md:px-12 py-8 md:py-12 gap-6">
                                     {/* Left: Responsive heading */}
                                     <div className="flex-1 flex items-start">
                                         <h1
-                                            className="w-full text-center md:text-left text-4xl sm:text-5xl md:text-[4.8rem] lg:text-[6.5rem] leading-[0.95] md:leading-[0.9] font-extrabold text-white tracking-tight break-words"
+                                            className="w-full text-center md:text-left text-4xl sm:text-5xl md:text-[4.8rem] lg:text-[6.5rem] leading-[0.95] md:leading-[0.9] font-extrabold text-white tracking-tight wrap-break-word"
                                             style={{ fontFamily: "'Exo 2', sans-serif", textShadow: '0 8px 30px rgba(0,0,0,0.6)' }}
                                         >
                                             Where Simplicity
@@ -165,7 +166,7 @@ module kanari::example {
 
                             {/* Section Header */}
                             <div className="text-center mb-16">
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
                                     : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
@@ -189,7 +190,7 @@ module kanari::example {
                                 >
                                     <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                         Secure Metadata Management
-                                        <span className="block mt-2 text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                                        <span className="block mt-2 text-base sm:text-lg text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">
                                             Powered by MoveVM
                                         </span>
                                     </h3>
@@ -214,7 +215,7 @@ module kanari::example {
                                                     }`}
                                             >
                                                 <svg
-                                                    className="h-5 w-5 flex-shrink-0 text-blue-500"
+                                                    className="h-5 w-5 shrink-0 text-blue-500"
                                                     fill="none"
                                                     stroke="currentColor"
                                                     viewBox="0 0 24 24"
@@ -241,7 +242,7 @@ module kanari::example {
                                     data-aos-delay="200"
                                 >
                                     <div className="absolute -inset-0.5 rounded-xl blur opacity-30"></div>
-                                    <pre className={`relative p-4 sm:p-6 text-xs sm:text-sm rounded-xl shadow-2xl overflow-x-auto ${darkMode ? 'bg-gradient-to-br from-gray-800/60 to-blue-900/40 text-gray-100 border border-blue-700/20' : 'bg-gray-50 text-black border border-blue-200'}`}>
+                                    <pre className={`relative p-4 sm:p-6 text-xs sm:text-sm rounded-xl shadow-2xl overflow-x-auto ${darkMode ? 'bg-linear-to-br from-gray-800/60 to-blue-900/40 text-gray-100 border border-blue-700/20' : 'bg-gray-50 text-black border border-blue-200'}`}>
                                         <div className="flex items-center space-x-2 mb-4">
                                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -275,7 +276,7 @@ module kanari::example {
                             {/* Section Header */}
                             <div className="text-center mb-16">
 
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
                                     : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
@@ -350,7 +351,7 @@ module kanari::example {
                             {/* Section Header */}
                             <div className="text-center mb-16">
 
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                     ? 'from-blue-300 to-purple-300'
                                     : 'from-blue-800 to-purple-800'
                                     } bg-clip-text text-transparent`}>
@@ -414,6 +415,10 @@ module kanari::example {
                     <LatestUpdates darkMode={darkMode} setDarkMode={setDarkMode} />
 
                     <OfficialChannels darkMode={darkMode} setDarkMode={setDarkMode} />
+{/* 
+                    <VCSection darkMode={darkMode} setDarkMode={setDarkMode} /> */}
+
+                    <RoadmapSection darkMode={darkMode} setDarkMode={setDarkMode} />
 
 
                     {/* Newsletter Section */}

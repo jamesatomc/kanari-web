@@ -100,7 +100,7 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                         📰 Stay Updated with Our Latest News
                     </div> */}
 
-                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                         ? 'from-blue-300 to-purple-300'
                         : 'from-blue-800 to-purple-800'
                         } bg-clip-text text-transparent`}>
@@ -136,7 +136,7 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                 />
 
                                 {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
 
                                 {/* Badge */}
                                 <div className="absolute top-4 left-4">
@@ -214,7 +214,7 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
 
                         <div
                             ref={scrollRef}
-                            className="h-[500px] overflow-y-scroll custom-scrollbar"
+                            className="h-125 overflow-y-scroll custom-scrollbar"
                             onScroll={handleScroll}
                             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                         >
@@ -225,7 +225,7 @@ export function LatestUpdates({ darkMode, setDarkMode }: LatestUpdatesProps) {
                                         href={blog.Url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`block rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 group min-h-[120px] ${darkMode
+                                        className={`block rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 group min-h-30 ${darkMode
                                             ? 'bg-white/6 text-white ring-1 ring-white/10 hover:bg-white/10 hover:ring-white/20'
                                             : 'bg-white text-black border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
                                             }`}

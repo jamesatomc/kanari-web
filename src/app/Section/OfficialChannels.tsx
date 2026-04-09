@@ -80,7 +80,7 @@ export function OfficialChannels({ darkMode, setDarkMode }: OfficialChannelsProp
                         📢 Connect with Our Community
                     </div> */}
 
-                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                    <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                         ? 'from-blue-300 to-purple-300'
                         : 'from-blue-800 to-purple-800'
                         } bg-clip-text text-transparent`}>

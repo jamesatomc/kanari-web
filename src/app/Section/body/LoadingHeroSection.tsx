@@ -20,7 +20,7 @@ const LoadingHeroSection = () => {
     }, []);
 
     return (
-        <div className="min-h-screen w-full bg-gradient-to-br from-gray-950 via-slate-900 to-indigo-950 relative overflow-hidden">
+        <div className="min-h-screen w-full bg-linear-to-br from-gray-950 via-slate-900 to-indigo-950 relative overflow-hidden">
             {/* Modern Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -34,13 +34,13 @@ const LoadingHeroSection = () => {
             <div className="relative z-10 container mx-auto h-screen flex flex-col items-center justify-center px-4">
                 {/* Modern Loading Circle */}
                 <div className="relative mb-12">
-                    <div className="w-48 h-48 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 p-1 backdrop-blur-sm">
+                    <div className="w-48 h-48 rounded-full bg-linear-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 p-1 backdrop-blur-sm">
                         <div className="w-full h-full rounded-full border border-blue-400/20 flex items-center justify-center relative">
                             {/* Modern spinning ring */}
                             <div className="absolute w-44 h-44 rounded-full border-2 border-t-blue-400 border-r-transparent border-b-purple-500 border-l-transparent animate-spin-modern"></div>
                             
                             {/* Clean percentage display */}
-                            <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                            <div className="text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500">
                                 {Math.round(progress)}%
                             </div>
                         </div>
@@ -50,7 +50,7 @@ const LoadingHeroSection = () => {
                 {/* Modern Progress Card */}
                 <div className="w-full max-w-2xl bg-white/5 backdrop-blur-md rounded-3xl border border-blue-500/20 overflow-hidden shadow-xl">
                     {/* Header */}
-                    <div className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-b border-blue-500/10">
+                    <div className="flex items-center gap-3 px-6 py-4 bg-linear-to-r from-blue-900/20 to-purple-900/20 border-b border-blue-500/10">
                         <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                         <div className="w-3 h-3 rounded-full bg-purple-500"></div>
                         <div className="w-3 h-3 rounded-full bg-indigo-500"></div>
@@ -85,12 +85,12 @@ const LoadingHeroSection = () => {
                         </div>
                         
                         {/* Modern Progress Bar */}
-                        <div className="h-3 bg-gray-900/30 rounded-full mt-6 p-[1px] border border-blue-500/20">
+                        <div className="h-3 bg-gray-900/30 rounded-full mt-6 p-px border border-blue-500/20">
                             <div 
-                                className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-500 relative overflow-hidden"
+                                className="h-full rounded-full bg-linear-to-r from-blue-500 to-purple-600 transition-all duration-500 relative overflow-hidden"
                                 style={{ width: `${progress}%` }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
                             </div>
                         </div>
                     </div>

@@ -121,7 +121,7 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                             {/* Center: two image tiles */}
                             <div className="w-full lg:w-2/4 flex justify-center">
                                 <div className="flex gap-6 items-center">
-                                    <div className="vc-image-tile rounded-[24px] overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
+                                    <div className="vc-image-tile rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                                         <Image
                                             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=80&auto=format&fit=crop"
                                             alt="tile1"
@@ -130,7 +130,7 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                                             className="object-cover w-full h-full"
                                         />
                                     </div>
-                                    <div className="vc-image-tile rounded-[24px] overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
+                                    <div className="vc-image-tile rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
                                         <Image
                                             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&q=80&auto=format&fit=crop"
                                             alt="tile2"
@@ -200,7 +200,7 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                                     className={`vc-logo-pill flex items-center gap-3 px-6 py-3 rounded-full transition-transform duration-200 text-sm whitespace-nowrap ${isSelected ? 'ring-2 ring-blue-500 shadow-lg scale-105 z-10' : 'hover:scale-105'} ${darkMode ? 'bg-white/6 border border-white/10' : 'bg-white/40 border border-gray-200'}`}
                                     onClick={() => setSelectedVC(idx)}
                                 >
-                                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+                                    <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 shadow-sm">
                                         {/* replaced <img> with next/image */}
                                         <Image src={vc.logo} alt={vc.name} width={56} height={56} className="w-full h-full object-cover" />
                                     </div>
@@ -218,9 +218,9 @@ export function VCSection({ darkMode, setDarkMode }: VCSectionProps) {
                         onClick={() => setSelectedVC(null)}
                     >
                         <div
-                            className={`w-full max-w-2xl p-8 rounded-[32px] shadow-2xl relative transform transition-all duration-300 ${darkMode
-                                ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700'
-                                : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                            className={`w-full max-w-2xl p-8 rounded-4xl shadow-2xl relative transform transition-all duration-300 ${darkMode
+                                ? 'bg-linear-to-br from-gray-800 to-gray-900 border border-gray-700'
+                                : 'bg-linear-to-br from-white to-blue-50 border border-blue-200'
                                 }`}
                             onClick={(e) => e.stopPropagation()}
                         >
