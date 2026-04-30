@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
         } rounded-2xl shadow-xl p-8 sm:p-10 transition-all duration-300 relative overflow-hidden`}>
 
         {/* Japanese-inspired decorative elements */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/80 via-indigo-500/60 to-blue-500/80"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-500/80 via-indigo-500/60 to-blue-500/80"></div>
 
         {/* Japanese wave pattern (seigaiha) */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-repeat-x opacity-5"
@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
           style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMEwwIDIwaDIwTDAgNDBoMjBsMjAtMjBIMjBMNDAgMEgyMHoiIGZpbGw9ImN1cnJlbnRDb2xvciIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9zdmc+')" }}>
         </div>
 
-        <div className="mx-auto w-full max-w-screen-xl py-6 lg:py-8 relative">
+        <div className="mx-auto w-full max-w-7xl py-6 lg:py-8 relative">
           {/* Logo Section */}
           <div className="md:flex md:justify-between">
             <div className="mb-8 md:mb-0 group">
@@ -50,7 +50,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     height={40}
                   />
                 </div>
-                <span className={`text-2xl font-bold bg-gradient-to-r ${darkMode
+                <span className={`text-2xl font-bold bg-linear-to-r ${darkMode
                   ? 'from-blue-400 to-indigo-400'
                   : 'from-blue-600 to-indigo-600'} 
                   bg-clip-text text-transparent transition-all duration-300`}>
@@ -81,12 +81,12 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://movekari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
+                    <a href="https://movekanari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Kanari Move
                     </a>
                   </li>
                   <li>
-                    <a href="https://whitepaperkari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
+                    <a href="https://whitepaperkanari.netlify.app/" className="inline-block hover:translate-x-1 transition-transform hover:text-blue-500 decoration-2 underline-offset-4">
                       Whitepaper
                     </a>
                   </li>
@@ -154,7 +154,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
 
           {/* Divider - Japanese style with mon pattern */}
           <div className="my-8 flex items-center">
-            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+            <div className="grow h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent"></div>
             <div className={`px-4 ${darkMode ? 'text-blue-400/50' : 'text-blue-600/50'}`}>
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" />
@@ -162,13 +162,13 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
-            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+            <div className="grow h-px bg-linear-to-r from-transparent via-indigo-500/30 to-transparent"></div>
           </div>
 
           {/* Copyright and Social */}
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className={`text-sm sm:text-center ${darkMode ? 'text-gray-400' : 'text-gray-600'} relative inline-block`}>
-              © 2025{' '}
+              © 2026{' '}
               <Link href="/" className={`${darkMode ? 'text-white' : 'text-gray-900'} hover:text-blue-500 transition-colors`}>
                 Kanari Network™
               </Link>
@@ -246,7 +246,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode, setDarkMode }) => {
         </div>
 
         {/* Bottom decorative bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500/80 via-blue-500/60 to-indigo-500/80"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-indigo-500/80 via-blue-500/60 to-indigo-500/80"></div>
       </footer>
     </div>
   );

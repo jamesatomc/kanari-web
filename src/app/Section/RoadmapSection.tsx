@@ -27,7 +27,7 @@ export function RoadmapSection({ darkMode, setDarkMode }: RoadmapSectionProps) {
         {
             phase: "Phase 2",
             status: "In Progress",
-            title: "Mainnet Launch & Ecosystem",
+            title: "Devnet Launch & Ecosystem",
             description: "Expanding node infrastructure, launching the official dashboard, and integrating third-party dApps.",
             badgeClass: darkMode ? "bg-purple-500/20 text-purple-300 border-purple-500/30" : "bg-purple-100 text-purple-800 border-purple-200",
             dotClass: "bg-purple-500",

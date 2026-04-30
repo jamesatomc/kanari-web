@@ -177,7 +177,7 @@ function DeveloperPortalComponent({
                                             Join Discord
                                         </button>
                                         <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600">
-                                            Follow on Twitter
+                                            Follow on 
                                         </button>
                                     </div>
                                 </div>

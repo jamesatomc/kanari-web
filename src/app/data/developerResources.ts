@@ -46,7 +46,7 @@ export const developerResources: DeveloperResource[] = [
         id: 'api-reference',
         title: 'API Reference',
         description: 'Complete API documentation with examples, endpoints, and integration patterns.',
-        url: 'https://docs.kanarinetwork.site/api-reference',
+        url: 'https://docs.kanarinetwork.site/docs/api/api-reference',
         icon: 'document',
         category: 'popular'
     },
