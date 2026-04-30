@@ -32,13 +32,13 @@ export const menuData: MenuSection[] = [
         description: 'Build on Kanari Network'
       },
       {
-        href: 'https://docs.kanarinetwork.site/api',
+        href: 'https://docs.kanarinetwork.site/docs/api/api-reference',
         label: 'API Reference',
         icon: '📚',
         description: 'Complete API documentation'
       },
       {
-        href: 'https://movekari.netlify.app/',
+        href: 'https://movekanari.netlify.app/',
         label: 'Tutorials',
         icon: '🎓',
         description: 'Step-by-step guides'

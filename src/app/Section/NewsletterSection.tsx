@@ -23,7 +23,7 @@ export function NewsletterSection({ darkMode, setDarkMode }: NewsletterSectionPr
 
                         <div className="text-center mb-16">
 
-                            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
+                            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r ${darkMode
                                 ? 'from-blue-300 to-purple-300'
                                 : 'from-blue-800 to-purple-800'
                                 } bg-clip-text text-transparent`}>
@@ -74,8 +74,8 @@ export function NewsletterSection({ darkMode, setDarkMode }: NewsletterSectionPr
                             <button
                                 type="submit"
                                 className={`w-full py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
-                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
-                                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
+                                    ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
+                                    : 'bg-linear-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
                                     }`}
                             >
                                 Subscribe to Newsletter
@@ -117,14 +117,14 @@ export function NewsletterSection({ darkMode, setDarkMode }: NewsletterSectionPr
             </section>
 
             {showTerms && createPortal(
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-9999 p-4">
                     <div className={`w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl shadow-2xl ${darkMode
-                        ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700'
-                        : 'bg-gradient-to-br from-white to-blue-50 border border-blue-200'
+                        ? 'bg-linear-to-br from-gray-800 to-gray-900 border border-gray-700'
+                        : 'bg-linear-to-br from-white to-blue-50 border border-blue-200'
                         }`}>
 
                         <div className="flex justify-between items-center p-8 border-b border-gray-200/20">
-                            <h2 className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${darkMode
+                            <h2 className={`text-2xl sm:text-3xl font-bold bg-linear-to-r ${darkMode
                                 ? 'from-blue-300 to-purple-300'
                                 : 'from-blue-800 to-purple-800'
                                 } bg-clip-text text-transparent`}>
@@ -188,8 +188,8 @@ export function NewsletterSection({ darkMode, setDarkMode }: NewsletterSectionPr
                             <button
                                 onClick={() => setShowTerms(false)}
                                 className={`px-6 py-3 rounded-2xl font-medium text-white transition-all duration-300 ${darkMode
-                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500'
-                                    : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                                    ? 'bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500'
+                                    : 'bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
                                     }`}
                             >
                                 Accept

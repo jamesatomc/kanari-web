@@ -41,7 +41,7 @@ export default function DropdownMenu({
     >
       <Link
         href=""
-        className={`relative inline-flex items-center space-x-1 transform transition-all duration-300 hover:translate-y-[-2px] ${darkMode
+        className={`relative inline-flex items-center space-x-1 transform transition-all duration-300 hover:-translate-y-0.5 ${darkMode
             ? 'text-white hover:text-red-300'
             : 'text-gray-800 hover:text-red-600'
           }`}
@@ -61,7 +61,7 @@ export default function DropdownMenu({
 
       {/* Enhanced dropdown menu */}
       <div
-        className={`absolute top-full left-1/2 -translate-x-1/2 shadow-2xl rounded-2xl w-[380px] py-6 px-6 opacity-0 group-hover:opacity-100 
+        className={`absolute top-full left-1/2 -translate-x-1/2 shadow-2xl rounded-2xl w-95 py-6 px-6 opacity-0 group-hover:opacity-100 
           transition-all duration-300 invisible group-hover:visible transform origin-top scale-95 group-hover:scale-100 z-50
           ${darkMode
             ? 'bg-gray-800/95 backdrop-blur-xl border border-red-500/20'
@@ -70,7 +70,7 @@ export default function DropdownMenu({
       >
         {/* Header */}
         <div className="mb-4 pb-3 border-b border-gray-200/20 flex items-center space-x-2">
-          <div className={`w-2 h-2 rounded-full ${gradientColors.replace('bg-gradient-to-r', 'bg-red-500')}`}></div>
+          <div className={`w-2 h-2 rounded-full ${gradientColors.replace('bg-linear-to-r', 'bg-red-500')}`}></div>
           <span className={`text-sm font-bold uppercase tracking-wider ${titleColor}`}>
             {title === 'Learn' ? '🎓 Learning Hub' :
               title === 'Build' ? '🔨 Build Tools' : '🌐 Community'}
