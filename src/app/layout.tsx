@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kanari Network",
-  description: "Kanari Network is a modern bank card for a modern world",
+  description: "Kanari Network is community-powered infrastructure for digital ownership.",
   icons: {
     icon: ['/icons/favicon.ico?v=4'],
     apple:['/icons/apple-touch-icon.png?v=4'],
@@ -22,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d)}catch(e){}` }} />
+      </head>
+      <body>{children}</body>
       <SpeedInsights />
       <Analytics />
     </html>

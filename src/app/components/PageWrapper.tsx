@@ -1,34 +1,61 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+
+interface PageWrapperContextProps {
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
+}
+
+const PageWrapperContext = createContext<PageWrapperContextProps | undefined>(undefined);
+
+export const usePageWrapper = () => {
+  const context = useContext(PageWrapperContext);
+  if (!context) {
+    throw new Error('usePageWrapper must be used within a PageWrapperProvider');
+  }
+  return context;
+};
 
 interface PageWrapperProps {
-  children: (props: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) => React.ReactNode;
+  children: (props: PageWrapperContextProps) => ReactNode;
 }
 
 export default function PageWrapper({ children }: PageWrapperProps) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true); // Initialize with dark mode by default
 
-  // Load dark mode preference from localStorage on component mount
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedDarkMode = localStorage.getItem('darkMode');
-      if (storedDarkMode) {
-        try {
-          setDarkMode(JSON.parse(storedDarkMode));
-        } catch (error) {
-          console.error('Error parsing dark mode preference:', error);
-        }
-      }
+    // Check for saved preference in localStorage
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode !== null) {
+      setDarkMode(savedDarkMode === 'true');
+    } else {
+      // Default to dark mode if no preference is saved
+      setDarkMode(true);
+      localStorage.setItem('darkMode', 'true');
+    }
+    
+    // Apply dark mode class to document element
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
-  // Save dark mode preference to localStorage whenever it changes
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    // Update localStorage and document class when darkMode changes
+    localStorage.setItem('darkMode', darkMode.toString());
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
 
-  return <>{children({ darkMode, setDarkMode })}</>;
+  return (
+    <PageWrapperContext.Provider value={{ darkMode, setDarkMode }}>
+      {children({ darkMode, setDarkMode })}
+    </PageWrapperContext.Provider>
+  );
 }

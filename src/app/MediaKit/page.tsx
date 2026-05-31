@@ -1,315 +1,63 @@
 'use client';
-import React from 'react';
-import { toast } from 'react-hot-toast';
-import Navbar from '../Section/body/Navbar';
-import Footer from '../Section/body/Footer';
-import Image from 'next/image'
-import PageWrapper from '../components/PageWrapper';
+
+import Image from 'next/image';
+import { toast, Toaster } from 'react-hot-toast';
+import { ArrowIcon, PageCTA, PageHero, PageShell, SectionHeading } from '../components/SiteChrome';
 
 const colors = [
-    { name: 'Primary Purple', hex: '#7C3AED', bgClass: 'bg-purple-600', description: 'Main brand color' },
-    { name: 'Accent Orange', hex: '#F97316', bgClass: 'bg-orange-500', description: 'Highlight color' },
-    { name: 'Pure White', hex: '#FFFFFF', bgClass: 'bg-white', description: 'Clean backgrounds' },
-    { name: 'Deep Blue', hex: '#1E40AF', bgClass: 'bg-blue-700', description: 'Trust & stability' },
+  { name: 'Kanari Lime', hex: '#C8F43D', text: '#111B18' },
+  { name: 'Network Purple', hex: '#CABDFF', text: '#111B18' },
+  { name: 'Deep Ink', hex: '#111B18', text: '#FFFFFF' },
+  { name: 'Warm Paper', hex: '#FFFDF7', text: '#111B18' },
 ];
 
-function MediaKitComponent({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (darkMode: boolean) => void }) {
-    const copyToClipboard = (hex: string) => {
-        navigator.clipboard.writeText(hex);
-        toast.success(`Copied ${hex} to clipboard!`, {
-            style: {
-                background: darkMode ? '#374151' : '#fff',
-                color: darkMode ? '#fff' : '#000',
-            },
-        });
-    };
-
-    const downloadFile = (url: string) => {
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = url.split('/').pop() || '';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        toast.success('Download started!', {
-            style: {
-                background: darkMode ? '#374151' : '#fff',
-                color: darkMode ? '#fff' : '#000',
-            },
-        });
-    };
-
-    return (
-        <div className={`transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'}`}>
-
-            <main className="relative min-h-screen overflow-hidden">
-                {/* Background Elements */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className={`absolute top-20 right-20 w-96 h-96 ${darkMode ? 'bg-blue-500/10' : 'bg-blue-200/30'} rounded-full blur-3xl`}></div>
-                    <div className={`absolute bottom-20 left-20 w-80 h-80 ${darkMode ? 'bg-indigo-500/10' : 'bg-indigo-200/30'} rounded-full blur-3xl`}></div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                    <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-                    <section className="pt-16 sm:pt-24 py-2 px-2"></section>
-
-                    {/* Hero Section */}
-                    <section className="py-16 sm:py-20 px-4">
-                        <div className="max-w-7xl mx-auto text-center">
-                            <div className="space-y-6 sm:space-y-8 mb-12">
-                                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${darkMode
-                                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-                                    : 'bg-blue-100 text-blue-800 border border-blue-200'
-                                    }`}>
-                                    🎨 Brand Resources & Assets
-                                </div>
-                                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-300 to-purple-300'
-                                    : 'from-blue-800 to-purple-800'
-                                    } bg-clip-text text-transparent`}>
-                                    Media Kit
-                                    <span className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium opacity-80">
-                                        Everything You Need
-                                    </span>
-                                </h1>
-                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-4xl mx-auto leading-relaxed`}>
-                                    Professional brand assets, logos, and guidelines for journalists, partners, and community members creating content about Kanari Network.
-                                </p>
-                            </div>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${darkMode
-                                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-lg shadow-blue-500/25'
-                                    : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25'
-                                    }`}>
-                                    Download Full Kit
-                                </button>
-                                <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border-2 ${darkMode
-                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
-                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                    }`}>
-                                    Contact Brand Team
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Brand Colors Section */}
-                    <section className="py-16 px-4">
-                        <div className="max-w-7xl mx-auto">
-                            <div className="text-center mb-12">
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-300 to-purple-300'
-                                    : 'from-blue-800 to-purple-800'
-                                    } bg-clip-text text-transparent`}>
-                                    Brand Colors
-                                </h2>
-                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
-                                    Our carefully selected palette that represents innovation, trust, and energy
-                                </p>
-                            </div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {colors.map((color) => (
-                                    <div
-                                        key={color.hex}
-                                        className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 ${darkMode
-                                            ? 'bg-gray-800/50 border border-gray-700/50 hover:border-gray-600/70'
-                                            : 'bg-white border border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl'
-                                            }`}
-                                    >
-                                        <div
-                                            onClick={() => copyToClipboard(color.hex)}
-                                            className={`w-full h-32 ${color.bgClass} cursor-pointer transition-all duration-300 group-hover:h-36 ${color.name === 'Pure White' ? `border-b ${darkMode ? 'border-gray-600' : 'border-gray-200'}` : ''
-                                                }`}
-                                            title={`Click to copy: ${color.hex}`}
-                                        >
-                                            <div className="w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div className="p-6">
-                                            <h3 className={`text-base sm:text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                {color.name}
-                                            </h3>
-                                            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mb-3`}>
-                                                {color.description}
-                                            </p>
-                                            <div className="flex items-center justify-between">
-                                                <span className={`text-sm font-mono ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                                    {color.hex}
-                                                </span>
-                                                <button
-                                                    onClick={() => copyToClipboard(color.hex)}
-                                                    className={`text-sm font-medium transition-colors ${darkMode
-                                                        ? 'text-purple-400 hover:text-purple-300'
-                                                        : 'text-purple-600 hover:text-purple-800'
-                                                        }`}
-                                                >
-                                                    Copy
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Logo Assets Section */}
-                    <section className="py-16 px-4">
-                        <div className="max-w-7xl mx-auto">
-                            <div className="text-center mb-12">
-                                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode
-                                    ? 'from-blue-300 to-purple-300'
-                                    : 'from-blue-800 to-purple-800'
-                                    } bg-clip-text text-transparent`}>
-                                    Logo Assets
-                                </h2>
-                                <p className={`text-base sm:text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-2xl mx-auto`}>
-                                    High-quality logos optimized for different use cases and backgrounds
-                                </p>
-                            </div>
-
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                {/* Light Logo */}
-                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode
-                                    ? 'bg-gray-800/50 border border-gray-700/50'
-                                    : 'bg-white border border-gray-200 shadow-xl'
-                                    }`}>
-                                    <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 flex justify-center items-center min-h-[200px]">
-                                        <Image
-                                            src="/images/logo-light.png"
-                                            alt="Kanari Light Logo"
-                                            width={250}
-                                            height={60}
-                                            className="w-auto max-h-16 mx-auto"
-                                        />
-                                    </div>
-                                    <div className="p-8">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full"></div>
-                                            <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                Light Version
-                                            </h3>
-                                        </div>
-                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm sm:text-base mb-6 leading-relaxed`}>
-                                            Perfect for dark backgrounds, presentations, and digital media. Available in multiple formats for maximum compatibility.
-                                        </p>
-                                        <div className="flex gap-4">
-                                            <button
-                                                onClick={() => downloadFile('/images/logo-light.png')}
-                                                className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-600 text-white rounded-xl hover:from-purple-700 hover:to-orange-700 flex items-center justify-center gap-2 transition-all duration-300 font-semibold"
-                                            >
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                </svg>
-                                                PNG
-                                            </button>
-                                            <button
-                                                onClick={() => downloadFile('/images/logo-light.svg')}
-                                                className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
-                                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
-                                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                                    }`}
-                                            >
-                                                SVG
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Dark Logo */}
-                                <div className={`group rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${darkMode
-                                    ? 'bg-gray-800/50 border border-gray-700/50'
-                                    : 'bg-white border border-gray-200 shadow-xl'
-                                    }`}>
-                                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-12 flex justify-center items-center min-h-[200px]">
-                                        <Image
-                                            src="/images/logo-dark.png"
-                                            alt="Kanari Dark Logo"
-                                            width={250}
-                                            height={60}
-                                            className="w-auto max-h-16 mx-auto"
-                                        />
-                                    </div>
-                                    <div className="p-8">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full"></div>
-                                            <h3 className={`text-xl sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                Dark Version
-                                            </h3>
-                                        </div>
-                                        <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'} text-sm sm:text-base mb-6 leading-relaxed`}>
-                                            Ideal for light backgrounds, documents, and print materials. Maintains brand consistency across all mediums.
-                                        </p>
-                                        <div className="flex gap-4">
-                                            <button
-                                                onClick={() => downloadFile('/images/logo-dark.png')}
-                                                className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-600 to-purple-600 text-white rounded-xl hover:from-orange-700 hover:to-purple-700 flex items-center justify-center gap-2 transition-all duration-300 font-semibold"
-                                            >
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                </svg>
-                                                PNG
-                                            </button>
-                                            <button
-                                                onClick={() => downloadFile('/images/logo-dark.svg')}
-                                                className={`flex-1 px-6 py-3 rounded-xl border-2 transition-all duration-300 font-semibold ${darkMode
-                                                    ? 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
-                                                    : 'border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900'
-                                                    }`}
-                                            >
-                                                SVG
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Usage Guidelines CTA */}
-                    <section className="py-16 px-4">
-                        <div className="max-w-4xl mx-auto">
-                            <div className={`rounded-3xl p-8 sm:p-12 text-center ${darkMode
-                                ? 'bg-gradient-to-r from-blue-900/50 to-indigo-900/50 border border-blue-500/20'
-                                : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                                } backdrop-blur-sm`}>
-                                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                                    Need More Resources?
-                                </h2>
-                                <p className="text-orange-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-                                    Looking for specific assets, brand guidelines, or have questions about usage? We&apos;re here to help.
-                                </p>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                                        Download Full Kit
-                                    </button>
-                                    <button className="px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-blue-600">
-                                        Contact Brand Team
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
-                </div>
-            </main>
-        </div>
-    );
-}
-
 export default function MediaKit() {
-    return (
-        <PageWrapper>
-            {({ darkMode, setDarkMode }) => (
-                <MediaKitComponent darkMode={darkMode} setDarkMode={setDarkMode} />
-            )}
-        </PageWrapper>
-    );
-}
+  const copy = (hex: string) => {
+    navigator.clipboard.writeText(hex);
+    toast.success(`Copied ${hex}`);
+  };
+  const download = (url: string) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = url.split('/').pop() || '';
+    link.click();
+  };
 
+  return (
+    <PageShell>
+      <Toaster />
+      <PageHero kicker="Media kit" title="A brand made" accent="to move." description="Official Kanari logos, colors, and visual resources for community members, partners, and the press." />
+      <section className="subpage-section section-wrap">
+        <SectionHeading kicker="01 / Palette" title="Color with a point of view." description="Click any color to copy its hex value." />
+        <div className="resource-grid">
+          {colors.map((color) => (
+            <button className="color-chip" style={{ background: color.hex, color: color.text }} onClick={() => copy(color.hex)} key={color.hex}>
+              <span>{color.hex}</span>
+              <div><strong>{color.name}</strong><small>Click to copy</small></div>
+            </button>
+          ))}
+        </div>
+      </section>
+      <section className="subpage-section subpage-section--tint">
+        <div className="section-wrap">
+          <SectionHeading kicker="02 / Logos" title="The Kanari mark." description="Download production-ready raster or vector assets." />
+          <div className="resource-grid">
+            <article className="resource-card">
+              <div className="logo-preview logo-preview--light"><Image src="/images/logo-dark.png" width={300} height={100} alt="Kanari logo for light backgrounds" /></div>
+              <h3>For light backgrounds</h3>
+              <p>Use this version on paper, cream, and other bright surfaces.</p>
+              <button onClick={() => download('/images/logo-dark.svg')}>Download SVG <ArrowIcon /></button>
+            </article>
+            <article className="resource-card dark-card">
+              <div className="logo-preview logo-preview--dark"><Image src="/images/logo-light.png" width={300} height={100} alt="Kanari logo for dark backgrounds" /></div>
+              <h3>For dark backgrounds</h3>
+              <p>Use this version where the light mark needs room to stand out.</p>
+              <button onClick={() => download('/images/logo-light.svg')}>Download SVG <ArrowIcon /></button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <PageCTA kicker="Brand support" title="Need something specific?" description="Reach out for additional formats, partnership materials, or guidance on using the Kanari brand." href="mailto:hello@kanarinetwork.site?subject=Kanari%20Brand%20Support" label="Contact the team" />
+    </PageShell>
+  );
+}

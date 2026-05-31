@@ -1,110 +1,77 @@
-export const privacyPolicyContent = `# 🔒 Privacy Policy - Kanari Network
+export const privacyPolicyContent = `# Privacy Policy - Kanari Network
 
----
+*Effective date: May 31, 2026*
 
-*Last Updated: [Current Date]*
+## 1. Overview
 
-## 1. Introduction
+This Privacy Policy explains how Kanari Network ("Kanari," "we," "our," or "us") handles information when you visit our website, read our documentation, subscribe to updates, or interact with links and resources provided through our website.
 
-**Kanari Network** ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Layer 2 blockchain solution for Bitcoin ("Kanari Network" or the "Service").
+Kanari is built around open infrastructure. Public blockchain activity is not private. Information submitted to a public blockchain may be visible to anyone and may not be removable.
 
-**Please read this Privacy Policy carefully.** By accessing or using the Service, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.
+## 2. Information We May Process
 
----
+### 2.1 Information You Choose to Provide
 
-## 2. Information We Collect
+- **Contact information**: such as an email address when you contact us or subscribe to updates.
+- **Messages**: information included in questions, feedback, or partnership inquiries.
+- **Public wallet information**: if you choose to share a public wallet address or interact with public blockchain tools.
 
-### 2.1 Information You Provide
+### 2.2 Website and Analytics Information
 
-- **Wallet Information**: Public wallet addresses used to interact with our network.
-- **Transaction Data**: Information about transactions you conduct on the Kanari Network.
-- **Account Information**: If you create an account, we may collect email addresses and usernames.
-- **Communication**: Content of communications you send to us.
+Our website may process limited technical information to understand performance and usage, such as:
 
-### 2.2 Automatically Collected Information
+- Browser and device type
+- Pages visited and approximate request timing
+- Referring pages
+- General diagnostic and performance information
 
-- **Network Data**: Information about your interactions with the Kanari Network blockchain.
-- **Technical Data**: IP address, browser type, device information, operating system, and other technical identifiers.
-- **Usage Data**: How you interact with our Service, websites, and applications.
+We use analytics and performance tooling to improve the website. The providers operating those tools may process information according to their own privacy terms.
 
----
+## 3. How We Use Information
 
-## 3. How We Use Your Information
+We may use information to:
 
-We use the collected information for:
+- Operate, maintain, and improve our website and documentation
+- Respond to messages and support requests
+- Send updates when you have requested them
+- Understand website performance and diagnose technical issues
+- Protect the website and address misuse
+- Comply with applicable legal obligations
 
-- **Providing, operating, and maintaining** our Service
-- **Processing and completing** transactions
-- **Preventing fraud** and securing our network
-- **Complying** with legal obligations
-- **Improving and optimizing** our Service
-- **Communicating** with you about updates, security alerts, and support
+## 4. Public Blockchain Activity
 
----
+Transactions and other information submitted to a public blockchain can be publicly visible. Kanari does not control the operation of independent blockchain networks, wallets, explorers, or third-party applications. Before submitting information on-chain, review the privacy implications carefully.
 
-## 4. Blockchain Data and Privacy
+## 5. Third-Party Services and Links
 
-Kanari Network operates on blockchain technology, which is inherently transparent. Please be aware that:
+Our website links to services operated by others, including documentation, source-code hosting, social channels, and community resources. Their privacy practices are governed by their own policies. We encourage you to review those policies before providing information.
 
-- Blockchain transactions are publicly visible
-- Your public wallet address and transaction history on the blockchain are accessible to anyone
-- Once recorded on the blockchain, information cannot be altered or deleted
+## 6. Data Sharing
 
----
+We do not sell personal information. We may share limited information:
 
-## 5. Data Sharing and Disclosure
+- With service providers that help operate or improve the website
+- When required to comply with law or a valid legal process
+- To investigate abuse, security issues, or threats to users
+- As part of an organizational change, where permitted by law
 
-We may share your information with:
+## 7. Data Retention
 
-- Service providers that help us deliver our Service
-- Legal and regulatory authorities when required by law
-- Business partners with your consent
-- In connection with a merger, sale, or acquisition
+We keep information only for as long as reasonably necessary for the purposes described in this policy, unless a longer retention period is required by law. Public blockchain data may remain available independently of Kanari.
 
----
+## 8. Your Choices
 
-## 6. Your Privacy Rights
+Depending on where you live, you may have rights related to your personal information, such as requesting access, correction, or deletion. These rights may be limited where information has been submitted to a public blockchain or is processed by an independent third party.
 
-Depending on your jurisdiction, you may have rights to:
+## 9. Security
 
-- Access your personal information
-- Correct inaccurate data
-- Delete your data (where technically possible and legally permitted)
-- Object to processing
-- Data portability
+We use reasonable measures to protect information processed through our website. No online service can guarantee absolute security.
 
-Please note that due to the nature of blockchain technology, we cannot modify or delete data recorded on the blockchain.
+## 10. Changes to This Policy
 
----
+We may update this Privacy Policy as our website and services develop. The effective date at the top of this page indicates when the policy was last updated.
 
-## 7. Data Security
+## 11. Contact
 
-We implement appropriate technical and organizational measures to protect your information. However, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.
-
----
-
-## 8. International Transfers
-
-Your information may be transferred to and processed in countries other than your country of residence, which may have different data protection laws.
-
----
-
-## 9. Changes to This Privacy Policy
-
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
-
----
-
-## 10. Contact Us
-
-If you have any questions about this Privacy Policy, please contact us at:
-
-- Email: [privacy@kanarinetwork.com]
-- Address: [Company Address]
-
----
-
-## 11. Governing Law
-
-This Privacy Policy is governed by the laws of [Jurisdiction], without regard to its conflict of law provisions
+For privacy questions, contact [privacy@kanarinetwork.site](mailto:privacy@kanarinetwork.site?subject=Kanari%20Privacy%20Question).
 `;
