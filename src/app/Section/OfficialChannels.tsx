@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 import { ArrowIcon, SectionHeading } from '../components/SiteChrome';
 
 const channels = [
@@ -15,11 +16,19 @@ function ChannelIcon({ type }: { type: string }) {
 
 export function OfficialChannels() {
   return (
-    <section className="home-section section-wrap" id="channels">
+    <section className="home-section section-wrap" id="channels" data-reveal>
       <SectionHeading kicker="Official channels" title="Stay close to the work." description="Follow progress and find the place where you want to participate." />
       <div className="channel-grid">
-        {channels.map(([name, description, href, icon]) => (
-          <a className="channel-card" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} key={name}>
+        {channels.map(([name, description, href, icon], index) => (
+          <a
+            className="channel-card"
+            href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noreferrer' : undefined}
+            key={name}
+            data-reveal
+            style={{ '--reveal-delay': `${index * 80}ms` } as CSSProperties}
+          >
             <div className="channel-card__icon"><ChannelIcon type={icon} /></div>
             <h3>{name}</h3>
             <p>{description}</p>

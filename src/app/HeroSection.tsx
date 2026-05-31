@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
+import { useEffect } from 'react';
 import { ArrowIcon, SiteFooter, SiteHeader } from './components/SiteChrome';
 import LatestUpdates from './Section/LatestUpdates';
 import { NewsletterSection } from './Section/NewsletterSection';
@@ -41,6 +43,61 @@ const steps = [
   ['02', 'Create', 'Use Move and the Kanari SDK to shape your product.', '/DeveloperPortal'],
   ['03', 'Launch', 'Join testnet and bring your next project on-chain.', 'https://gg1ycocxact.typeform.com/to/ITdq2wel'],
 ];
+
+function ScrollMotionController() {
+  useEffect(() => {
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.18 },
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    let animationFrame = 0;
+    const updateScrollVars = () => {
+      const heroProgress = Math.min(window.scrollY / Math.max(window.innerHeight * 0.9, 1), 1);
+      document.documentElement.style.setProperty('--scroll-y', `${window.scrollY.toFixed(2)}px`);
+      document.documentElement.style.setProperty('--hero-progress', heroProgress.toFixed(3));
+      animationFrame = 0;
+    };
+
+    const onScroll = () => {
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(updateScrollVars);
+      }
+    };
+
+    updateScrollVars();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      revealObserver.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (animationFrame) {
+        window.cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, []);
+
+  return null;
+}
 
 function NetworkGraphic() {
   return (
@@ -105,11 +162,12 @@ function FeatureGraphic({ type }: { type: string }) {
 export default function HeroSection() {
   return (
     <main className="site-shell">
+      <ScrollMotionController />
       <div className="site-noise" />
       <SiteHeader />
 
       <section className="hero-section">
-        <div className="hero-copy">
+        <div className="hero-copy" data-reveal>
           <p className="eyebrow"><span /> A network for what&apos;s next</p>
           <h1>
             Build freely.<br />
@@ -129,7 +187,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="hero-visual">
+        <div className="hero-visual" data-reveal style={{ '--reveal-delay': '110ms' } as CSSProperties}>
           <div className="hero-sticker hero-sticker--top">MOVE<br />POWERED</div>
           <NetworkGraphic />
           <div className="hero-sticker hero-sticker--bottom">OPEN<br />NETWORK</div>
@@ -147,7 +205,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <section className="intro-section section-wrap" id="network">
+      <section className="intro-section section-wrap" id="network" data-reveal>
         <p className="section-kicker">WHY KANARI</p>
         <div>
           <h2>A more open way<br />to move forward.</h2>
@@ -158,9 +216,15 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <section className="feature-grid section-wrap">
-        {features.map((feature) => (
-          <Link className={`feature-card ${feature.className}`} href={feature.href} key={feature.index}>
+      <section className="feature-grid section-wrap" data-reveal>
+        {features.map((feature, index) => (
+          <Link
+            className={`feature-card ${feature.className}`}
+            href={feature.href}
+            key={feature.index}
+            data-reveal
+            style={{ '--reveal-delay': `${index * 85}ms` } as CSSProperties}
+          >
             <div className="feature-card__top">
               <span>{feature.index}</span>
               <span>+</span>
@@ -174,7 +238,7 @@ export default function HeroSection() {
         ))}
       </section>
 
-      <section className="developer-section section-wrap" id="developers">
+      <section className="developer-section section-wrap" id="developers" data-reveal>
         <div className="developer-panel">
           <div className="developer-copy">
             <p className="section-kicker">FOR DEVELOPERS</p>
@@ -188,23 +252,31 @@ export default function HeroSection() {
           <div className="developer-terminal" aria-label="Move code example">
             <div className="terminal-top"><i /><i /><i /><span>kanari.move</span></div>
             <pre><code><em>module</em> kanari::hello {'{'}{'\n'}
-  <em>public fun</em> build_future() {'{'}{'\n'}
-    <strong>move_to</strong>(community, idea);{'\n'}
-  {'}'}{'\n'}
-{'}'}</code></pre>
+              <em>public fun</em> build_future() {'{'}{'\n'}
+              <strong>move_to</strong>(community, idea);{'\n'}
+              {'}'}{'\n'}
+              {'}'}</code></pre>
             <div className="terminal-status"><span /> ready to build</div>
           </div>
         </div>
       </section>
 
-      <section className="steps-section section-wrap" id="start">
+      <section className="steps-section section-wrap" id="start" data-reveal>
         <div className="steps-heading">
           <p className="section-kicker">GET STARTED</p>
           <h2>From idea to<br />network in three.</h2>
         </div>
         <div className="steps-list">
-          {steps.map(([number, title, description, href]) => (
-            <a className="step-row" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} key={number}>
+          {steps.map(([number, title, description, href], index) => (
+            <a
+              className="step-row"
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noreferrer' : undefined}
+              key={number}
+              data-reveal
+              style={{ '--reveal-delay': `${index * 70}ms` } as CSSProperties}
+            >
               <span className="step-number">{number}</span>
               <h3>{title}</h3>
               <p>{description}</p>
@@ -220,7 +292,7 @@ export default function HeroSection() {
       <OfficialChannels />
       <NewsletterSection />
 
-      <section className="cta-section section-wrap">
+      <section className="cta-section section-wrap" data-reveal>
         <div className="cta-card">
           <p className="section-kicker">KANARI NETWORK</p>
           <h2>Ready to build<br /><span>something yours?</span></h2>

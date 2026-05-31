@@ -12,7 +12,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="newsletter-section section-wrap">
+    <section className="newsletter-section section-wrap" data-reveal>
       <div>
         <p className="section-kicker">Newsletter</p>
         <h2>Keep up with<br /><span>what is moving.</span></h2>

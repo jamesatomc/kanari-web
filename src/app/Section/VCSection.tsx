@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { ArrowIcon, SectionHeading } from '../components/SiteChrome';
 import './VCSection.css';
 
@@ -21,7 +22,7 @@ const partnershipAreas = [
 
 export function VCSection() {
   return (
-    <section className="vc-section section-wrap" id="partnerships">
+    <section className="vc-section section-wrap" id="partnerships" data-reveal>
       <div className="vc-section__heading">
         <SectionHeading
           kicker="Venture & partnerships"
@@ -33,7 +34,7 @@ export function VCSection() {
         </a>
       </div>
 
-      <div className="vc-panel">
+      <div className="vc-panel" data-reveal>
         <div className="vc-panel__statement">
           <span>PARTNER WITH KANARI</span>
           <h3>More than capital.<br /><em>Shared direction.</em></h3>
@@ -51,8 +52,8 @@ export function VCSection() {
       </div>
 
       <div className="vc-area-grid">
-        {partnershipAreas.map((area) => (
-          <article className="vc-area-card" key={area.index}>
+        {partnershipAreas.map((area, index) => (
+          <article className="vc-area-card" key={area.index} data-reveal style={{ '--reveal-delay': `${index * 75}ms` } as CSSProperties}>
             <span>{area.index}</span>
             <h3>{area.title}</h3>
             <p>{area.description}</p>
