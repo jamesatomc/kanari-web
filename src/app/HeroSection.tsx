@@ -102,19 +102,23 @@ function ScrollMotionController() {
 function NetworkGraphic() {
   return (
     <div className="network-graphic" aria-hidden="true">
-      <div className="network-orbit network-orbit--one" />
-      <div className="network-orbit network-orbit--two" />
-      <div className="network-orbit network-orbit--three" />
+      <span className="network-glow network-glow--one" />
+      <span className="network-glow network-glow--two" />
+      <div className="network-rotor">
+        <div className="network-orbit network-orbit--one" />
+        <div className="network-orbit network-orbit--two" />
+        <div className="network-orbit network-orbit--three" />
+        <span className="network-node network-node--one"><span>01</span></span>
+        <span className="network-node network-node--two"><span>K</span></span>
+        <span className="network-node network-node--three"><span>+</span></span>
+        <span className="network-node network-node--four"><span>M</span></span>
+        <span className="network-spark network-spark--one" />
+        <span className="network-spark network-spark--two" />
+        <span className="network-spark network-spark--three" />
+      </div>
       <div className="network-core">
         <Image src="/kariicon1.png" alt="" width={92} height={92} priority />
       </div>
-      <span className="network-node network-node--one">01</span>
-      <span className="network-node network-node--two">K</span>
-      <span className="network-node network-node--three">+</span>
-      <span className="network-node network-node--four">M</span>
-      <span className="network-spark network-spark--one" />
-      <span className="network-spark network-spark--two" />
-      <span className="network-spark network-spark--three" />
     </div>
   );
 }
@@ -251,10 +255,11 @@ export default function HeroSection() {
           </div>
           <div className="developer-terminal" aria-label="Move code example">
             <div className="terminal-top"><i /><i /><i /><span>kanari.move</span></div>
-            <pre><code><em>module</em> kanari::hello {'{'}{'\n'}
-              <em>public fun</em> build_future() {'{'}{'\n'}
-              <strong>move_to</strong>(community, idea);{'\n'}
-              {'}'}{'\n'}
+            <pre><code><em>module</em>{' kanari::hello {\n'}
+              {'\n'}
+              <em>public fun</em>{' build_future() {\n'}
+              {'  '}<strong>move_to</strong>{'(community, idea);\n'}
+              {'}\n'}
               {'}'}</code></pre>
             <div className="terminal-status"><span /> ready to build</div>
           </div>
