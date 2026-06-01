@@ -47,7 +47,7 @@ export function SiteHeader() {
       <header className={`site-header ${headerVisible ? '' : 'site-header--hidden'}`}>
         <Link href="/" className="brand" aria-label="Kanari Network home">
           <Image src="/kariicon1.png" alt="" width={42} height={42} priority />
-          <span>kanari</span>
+          <span>KANARI</span>
         </Link>
       <nav className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`} aria-label="Main navigation">
         <Link href="/DeveloperPortal" onClick={() => setMenuOpen(false)}>Developers</Link>
@@ -89,7 +89,7 @@ export function SiteFooter() {
     <footer className="site-footer section-wrap">
       <Link href="/" className="brand">
         <Image src="/kariicon1.png" alt="" width={36} height={36} />
-        <span>kanari</span>
+        <span>KANARI</span>
       </Link>
       <p>Community-powered infrastructure for digital ownership.</p>
       <div>
