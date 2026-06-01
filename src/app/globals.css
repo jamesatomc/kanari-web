@@ -234,9 +234,28 @@ h1, h2, h3, p { margin-top: 0; }
   .network-graphic { width: min(84vw, 380px); }
   .network-node { width: 43px; height: 43px; }
   .hero-sticker { width: 70px; height: 70px; font-size: 8px; }
-  .step-row { min-height: 155px; grid-template-columns: 32px 1fr 32px; gap: 9px; }
-  .step-row h3 { font-size: 25px; }
-  .step-row p { grid-column: 2 / 4; align-self: start; margin-top: -34px; padding-right: 16px; }
+  .step-row {
+    min-height: auto;
+    padding: 24px 0;
+    grid-template-columns: 36px 1fr 48px;
+    grid-template-areas:
+      "number title arrow"
+      ". description arrow";
+    gap: 8px 12px;
+    align-items: start;
+  }
+  .step-number { grid-area: number; padding-top: 5px; }
+  .step-row h3 { grid-area: title; font-size: 30px; }
+  .step-row p {
+    grid-area: description;
+    margin: 0;
+    padding-right: 0;
+  }
+  .step-arrow {
+    grid-area: arrow;
+    align-self: center;
+    justify-self: end;
+  }
   .cta-card h2 { font-size: 65px; }
   .cta-orb--one { right: -180px; }
   .cta-orb--two { right: -100px; }
