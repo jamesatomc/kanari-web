@@ -302,7 +302,6 @@ h1, h2, h3, p { margin-top: 0; }
 .dark .button--ghost { border-color: rgba(255,255,255,.2); color: #f7f4eb; background: rgba(255,255,255,.04); }
 .dark .intro-section, .dark .steps-list, .dark .step-row { border-color: rgba(255,255,255,.16); }
 .dark .step-row:hover { background: rgba(200,244,61,.08); }
-.dark .site-footer { border-color: rgba(255,255,255,.12); }
 .dark .subpage-section--tint { color: #f7f4eb; background: #202b27; }
 .dark .resource-card, .dark .person-card, .dark .prose-card { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.045); }
 .dark .resource-card:hover { background: rgba(255,255,255,.085); }
