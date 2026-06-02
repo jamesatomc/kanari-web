@@ -236,10 +236,10 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 @media (max-width: 700px) {
-  :root { --type-hero-title: clamp(60px, 15vw, 86px); }
+  :root { --type-hero-title: clamp(60px, 15vw, 86px); --type-section-title: clamp(50px, 13vw, 68px); }
   .section-wrap, .site-header, .hero-section { width: calc(100% - 24px); }
   .hero-section { padding-top: 50px; }
-  .intro-section h2, .developer-copy h2, .steps-heading h2, .cta-card h2 { font-size: clamp(50px, 13vw, 68px); line-height: .96; }
+  .intro-section h2, .developer-copy h2, .steps-heading h2, .cta-card h2 { line-height: .96; }
   .developer-panel { padding: 30px 20px; }
   .developer-terminal { box-shadow: 12px 14px 0 color-mix(in srgb, var(--deep-green) 14%, transparent); }
 }
