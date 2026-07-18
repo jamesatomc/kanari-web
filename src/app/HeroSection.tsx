@@ -245,7 +245,7 @@ export default function HeroSection() {
       <section className="developer-section section-wrap" id="developers" data-reveal>
         <div className="developer-panel">
           <div className="developer-copy">
-            <p className="section-kicker">FOR DEVELOPERS</p>
+            <p className="section-kicker developer-kicker">FOR DEVELOPERS</p>
             <h2>Ideas move<br />faster here.</h2>
             <p>
               Start with familiar tools, clear documentation, and a Move-powered foundation built for
@@ -257,9 +257,9 @@ export default function HeroSection() {
             <div className="terminal-top"><i /><i /><i /><span>kanari.move</span></div>
             <pre><code><em>module</em>{' kanari::hello {\n'}
               {'\n'}
-              <em>public fun</em>{' build_future() {\n'}
-              {'  '}<strong>move_to</strong>{'(community, idea);\n'}
-              {'}\n'}
+              {'  '}<em>public fun</em>{' build_future() {\n'}
+              {'  '}{'  '}<strong>move_to</strong>{'(community, idea);\n'}
+              {'  '}{'}\n'}
               {'}'}</code></pre>
             <div className="terminal-status"><span /> ready to build</div>
           </div>
