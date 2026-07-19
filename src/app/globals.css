@@ -431,7 +431,11 @@ h1, h2, h3, p { margin-top: 0; }
 .dark .mermaid-rendered svg foreignObject div { color: #111b18 !important; fill: #111b18 !important; opacity: 1 !important; }
 .dark .mermaid-rendered svg .cluster-label text,
 .dark .mermaid-rendered svg .cluster-label foreignObject,
-.dark .mermaid-rendered svg .cluster-label foreignObject div { color: #f7f4eb !important; fill: #f7f4eb !important; }
+.dark .mermaid-rendered svg .cluster-label foreignObject div,
+.dark .mermaid-rendered svg .cluster-label span,
+.dark .mermaid-rendered svg .cluster-label p,
+.dark .mermaid-rendered svg .cluster span,
+.dark .mermaid-rendered svg .cluster div { color: #f7f4eb !important; fill: #f7f4eb !important; opacity: 1 !important; text-shadow: 0 1px 4px rgba(0,0,0,.65); }
 .dark .mermaid-rendered svg .edgePaths path,
 .dark .mermaid-rendered svg .flowchart-link { stroke: #cabdff !important; stroke-width: 2.4px !important; opacity: 1 !important; }
 .dark .mermaid-rendered svg marker path { fill: #cabdff !important; stroke: #cabdff !important; }
