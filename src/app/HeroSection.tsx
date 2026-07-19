@@ -14,24 +14,24 @@ import { VCSection } from './Section/VCSection';
 const features = [
   {
     index: '01',
-    title: 'Own your digital assets.',
-    description: 'Move-powered ownership gives every asset a clear, verifiable history without hidden intermediaries.',
+    title: 'Move-native assets.',
+    description: 'Coins, NFTs, objects, dynamic fields, and events are executed through the Kanari Move runtime.',
     className: 'feature-card--lime',
     graphic: 'ownership',
     href: '/connect/ecosystem',
   },
   {
     index: '02',
-    title: 'Build with confidence.',
-    description: 'A developer-first SDK and secure smart contracts make shipping on Kanari fast, clear, and composable.',
+    title: 'DAG-backed finality.',
+    description: 'Mysticeti DAG metadata, transaction-driven checkpoints, and state roots keep validators aligned.',
     className: 'feature-card--dark',
     graphic: 'build',
-    href: '/DeveloperPortal',
+    href: '/ProtocolStack',
   },
   {
     index: '03',
-    title: 'Connect without limits.',
-    description: 'Create products that move naturally across an open network designed for people, teams, and ideas.',
+    title: 'RPC ready.',
+    description: 'JSON-RPC, explorer views, SDK clients, and gateway-friendly nodes are ready for real integrations.',
     className: 'feature-card--lavender',
     graphic: 'connect',
     href: '/connect/community',
@@ -39,9 +39,9 @@ const features = [
 ];
 
 const steps = [
-  ['01', 'Explore', 'Read the docs and find the building blocks for your idea.', '/connect/ecosystem'],
-  ['02', 'Create', 'Use Move and the Kanari SDK to shape your product.', '/DeveloperPortal'],
-  ['03', 'Launch', 'Join testnet and bring your next project on-chain.', 'https://gg1ycocxact.typeform.com/to/ITdq2wel'],
+  ['01', 'Run a node', 'Start local devnet or four authorities with the node scripts.', '/DeveloperPortal'],
+  ['02', 'Send transactions', 'Submit signed Move/object transactions through JSON-RPC.', '/DeveloperPortal'],
+  ['03', 'Observe state', 'Track checkpoints, state roots, objects, and activity in the protocol stack.', '/ProtocolStack'],
 ];
 
 function ScrollMotionController() {
@@ -174,38 +174,38 @@ export default function HeroSection() {
         <div className="hero-copy" data-reveal>
           <p className="eyebrow"><span /> A network for what&apos;s next</p>
           <h1>
-            Build freely.<br />
-            <span>Own everything.</span>
+            Move fast.<br />
+            <span>Commit cleanly.</span>
           </h1>
           <p className="hero-description">
-            Kanari is a community-powered blockchain for the next generation of digital ownership.
-            Simple to build on. Open to everyone.
+            Kanari is a Move-powered blockchain stack with transaction-driven checkpoints,
+            Mysticeti DAG metadata, deterministic state roots, and gateway-ready JSON-RPC.
           </p>
           <div className="hero-actions">
             <a className="button button--dark" href="https://gg1ycocxact.typeform.com/to/ITdq2wel" target="_blank" rel="noreferrer">
               Join testnet <ArrowIcon />
             </a>
-            <Link className="button button--ghost" href="/DeveloperPortal">
-              Start building <ArrowIcon />
+            <Link className="button button--ghost" href="/ProtocolStack">
+              View protocol stack <ArrowIcon />
             </Link>
           </div>
         </div>
 
         <div className="hero-visual" data-reveal style={{ '--reveal-delay': '110ms' } as CSSProperties}>
-          <div className="hero-sticker hero-sticker--top">MOVE<br />POWERED</div>
+          <div className="hero-sticker hero-sticker--top">MYSTICETI<br />DAG</div>
           <NetworkGraphic />
-          <div className="hero-sticker hero-sticker--bottom">OPEN<br />NETWORK</div>
+          <div className="hero-sticker hero-sticker--bottom">STATE<br />ROOTS</div>
         </div>
       </section>
 
       <section className="ticker" aria-label="Kanari highlights">
         <div className="ticker-track">
-          <span>COMMUNITY POWERED</span><b>+</b>
-          <span>MOVE SECURED</span><b>+</b>
-          <span>OPEN BY DESIGN</span><b>+</b>
-          <span>BUILD WHAT&apos;S NEXT</span><b>+</b>
-          <span>COMMUNITY POWERED</span><b>+</b>
-          <span>MOVE SECURED</span><b>+</b>
+          <span>MOVE RUNTIME</span><b>+</b>
+          <span>TRANSACTION CHECKPOINTS</span><b>+</b>
+          <span>MYSTICETI DAG</span><b>+</b>
+          <span>JSON-RPC GATEWAY</span><b>+</b>
+          <span>SPARSE MERKLE ROOTS</span><b>+</b>
+          <span>OBJECT OWNERSHIP</span><b>+</b>
         </div>
       </section>
 
@@ -214,8 +214,9 @@ export default function HeroSection() {
         <div>
           <h2>A more open way<br />to move forward.</h2>
           <p>
-            The internet should give people more control, not less. Kanari combines transparent
-            infrastructure with an approachable developer experience so ownership stays where it belongs.
+            Kanari keeps blockchain height tied to committed transaction work. Validators can sit idle
+            without minting empty checkpoints, then converge through signed transactions, deterministic
+            Move execution, and checkpoint synchronization.
           </p>
         </div>
       </section>
@@ -248,20 +249,20 @@ export default function HeroSection() {
             <p className="section-kicker developer-kicker">FOR DEVELOPERS</p>
             <h2>Ideas move<br />faster here.</h2>
             <p>
-              Start with familiar tools, clear documentation, and a Move-powered foundation built for
-              secure digital assets.
+              Start local, run four nodes, submit signed transactions, inspect state roots, and build
+              against typed JSON-RPC responses.
             </p>
             <Link className="button button--light" href="/DeveloperPortal">Explore developer portal <ArrowIcon /></Link>
           </div>
           <div className="developer-terminal" aria-label="Move code example">
-            <div className="terminal-top"><i /><i /><i /><span>kanari.move</span></div>
+            <div className="terminal-top"><i /><i /><i /><span>kanari devnet</span></div>
             <pre><code><em>module</em>{' kanari::hello {\n'}
               {'\n'}
-              {'  '}<em>public fun</em>{' build_future() {\n'}
-              {'  '}{'  '}<strong>move_to</strong>{'(community, idea);\n'}
+              {'  '}<em>public fun</em>{' commit_asset(owner: address) {\n'}
+              {'  '}{'  '}<strong>move_to</strong>{'(owner, Asset { id });\n'}
               {'  '}{'}\n'}
               {'}'}</code></pre>
-            <div className="terminal-status"><span /> ready to build</div>
+            <div className="terminal-status"><span /> checkpoint only when tx commits</div>
           </div>
         </div>
       </section>

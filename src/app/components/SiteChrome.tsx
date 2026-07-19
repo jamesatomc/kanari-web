@@ -51,6 +51,7 @@ export function SiteHeader() {
         </Link>
       <nav className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`} aria-label="Main navigation">
         <Link href="/DeveloperPortal" onClick={() => setMenuOpen(false)}>Developers</Link>
+        <Link href="/ProtocolStack" onClick={() => setMenuOpen(false)}>Protocol</Link>
         <Link href="/connect/ecosystem" onClick={() => setMenuOpen(false)}>Ecosystem</Link>
           <Link href="/connect/community" onClick={() => setMenuOpen(false)}>Community</Link>
         <Link href="/KanariFoundation" onClick={() => setMenuOpen(false)}>Foundation</Link>
@@ -94,6 +95,7 @@ export function SiteFooter() {
       <p>Community-powered infrastructure for digital ownership.</p>
       <div>
         <Link href="/DeveloperPortal">Developers</Link>
+        <Link href="/ProtocolStack">Protocol</Link>
         <Link href="/connect/ecosystem">Ecosystem</Link>
         <Link href="/connect/community">Community</Link>
         <Link href="/KanariFoundation">Foundation</Link>
