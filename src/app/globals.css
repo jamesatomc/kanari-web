@@ -254,7 +254,7 @@ h1, h2, h3, p { margin-top: 0; }
 .step-number { color: var(--purple-strong); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
 .step-row h3 { margin: 0; font-size: 28px; font-weight: 950; letter-spacing: -.06em; }
 .step-row p { margin: 0; color: color-mix(in srgb, var(--ink) 62%, transparent); font-size: 14px; line-height: 1.5; }
-.step-arrow { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); }
+.step-arrow { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; color: #111b18; background: var(--lime);}
 
 .cta-section { padding-bottom: 28px; }
 .cta-card { min-height: 560px; padding: 64px; position: relative; overflow: hidden; border-radius: 34px; background: var(--lime); box-shadow: 0 28px 80px color-mix(in srgb, var(--deep-green) 13%, transparent); }
